@@ -1,5 +1,367 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
+\documentclass[11pt,a4paper]{amsart}
+\usepackage{amsfonts, amsthm}
+\usepackage{hyperref}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{url}
+\usepackage{amsxtra}
+\usepackage{mathrsfs}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{pdfsync}
+\usepackage{psfrag}
+\usepackage{tikz}
+\usepackage{soul}
+\usepackage{listings}
+\usepackage{cleveref}
+\usepackage{empheq}
+\usepackage{marvosym}
+
+\tikzstyle{nodino}=[circle,draw,fill,inner sep=0pt,minimum size=0.5mm]
+\tikzstyle{infinito}=[circle,inner sep=0pt,minimum size=0mm]
+\tikzstyle{nodo}=[circle,draw,fill,inner sep=0pt,minimum size=0.5*\widthof{k}]
+
+\newcommand{\blu}[1]{{\color{blue}#1}}
+\newcommand{\ros}[1]{{\color{red}#1}}
+\newcommand{\nero}[1]{{\color{black}#1}}
+\newcommand{\verde}[1]{{\color{green}#1}}
+\newcommand{\magenta}[1]{{\color{magenta}#1}}
+\newcommand{\ciano}[1]{{\color{cyan}#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DOCUMENT LAYOUT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\evensidemargin}{0cm}
+\setlength{\marginparwidth}{2cm}
+\hoffset=0truecm
+\voffset=-1.5truecm
+\footskip = 30pt
+\marginparsep=-0.2cm
+
+%%%%%%%%%%%%%%%
+%theorem's style
+%%%%%%%%%%%%%%%	
+\newtheorem{theorem}{Theorem}
+\newtheorem{prob}{Problem}
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{proposition}[lemma]{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{definition}[lemma]{Definition}
+\newtheorem{assumption}{Assumption}
+
+\theoremstyle{definition}
+\newtheorem{remark}[lemma]{Remark}
+
+%%%%%%%%%%%%%%%
+%numbering equations
+%%%%%%%%%%%%%%%
+\numberwithin{equation}{section}
+
+%%%%%%%%%%%%%%%%%%
+%TEMPORARY NEWCOMMANDS
+%AND PACKAGES
+%%%%%%%%%%%%%%%%%%
+%\newcommand{\comment}[1]{}
+%\def\sidenote#1{\begin{small}\marginpar{\bf #1}\end{small}}
+%\usepackage[notref,notcite]{showkeys}
+%\usepackage{refcheck}
+%\newcommand{\claudio}[1]{{\bf claudio: }{#1}\\ \noindent}
+%\newcommand{\diego}[1]{{\bf diego: }{#1}\\ \noindent}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%NEWCOMMANDS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\pd}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\be}{\begin{equation*}}
+\newcommand{\ee}{\end{equation*}}
+\newcommand{\n}{\noindent}
+\newcommand{\Wbb}{\mathbb{H}^{in}}
+%\newcommand{\Tau}{\mathcal{T}}
+
+\newcommand{\vertiii}[1]{{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert #1 
+    \right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}}
+
+\newcommand{\RE}{\mathbb R}
+\newcommand{\erre}{\mathbb R}
+\newcommand{\CO}{\mathbb C}
+\newcommand{\NA}{\mathbb N}
+\newcommand{\II}{\mathbb I}
+\newcommand{\Obb}{\mathbb O}
+\newcommand{\Gbb}{\mathbb G}
+\newcommand{\Hbb}{\mathbb{H}}
+%\newcommand{\PP}{\mathbb P}
+\newcommand{\BB}{\mathscr B}
+\newcommand{\DD}{\mathcal D}
+\newcommand{\OO}{\mathcal{O}}
+%\newcommand{\QQ}{\mathcal{Q}}
+\newcommand{\QQ}{Q}
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\GG}{\mathcal{G}}
+\newcommand{\UU}{\mathcal{U}}
+\newcommand{\ulim}{\operatorname{u}-\lim}
+\newcommand{\sgn}{\operatorname{sgn}\,}
+\newcommand{\supp}{\operatorname{supp}\,}
+\newcommand{\Ran}{\operatorname{Ran}\,}
+\newcommand{\Ker}{\operatorname{Ker}\,}
+\newcommand{\lf}{\left}
+\newcommand{\ri}{\right}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\al}{\alpha}
+\newcommand{\ual}{\undeline{\al}}
+\newcommand{\bt}{\beta}
+\newcommand{\Si}{\Sigma}
+\newcommand{\si}{\sigma}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\ga}{\gamma}
+\newcommand{\La}{\Lambda}
+\newcommand{\la}{\lambda}
+\newcommand{\de}{\delta}
+\newcommand{\De}{\Delta}
+\newcommand{\ci}{\mathbb{C}}
+\newcommand{\wconv}{\xrightarrow{w}}
+\newcommand{\ome}{\omega}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\arctanh}{arctanh}
+\providecommand{\ove}[1]{\overline{#1}}
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+%RENEWCOMMAND
+\renewcommand{\Im}{\operatorname{Im}\,}
+\renewcommand{\Re}{\operatorname{Re}\,}
+\renewcommand{\neg}{\operatorname{Neg}\,}
+
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+
+%MORENEWCOMMANDS
+\newcommand{\x}{\underline{x}}
+\newcommand{\y}{\underline{y}}
+\renewcommand{\v}{\underline{v}}
+\newcommand{\vd}{\underline{v}_2}
+\newcommand{\vu}{\underline{v}_1}
+\newcommand{\f}{\frac}
+\newcommand{\EE}{\mathcal E}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\VV}{R}
+\newcommand{\WW}{S}
+\newcommand{\ZZ}{Z}
+\newcommand{\omestar}{\tilde{\ome}}
+
+\newcommand{\vol}{\operatorname{Vol}}
+\newcommand{\one}{{\bf 1}}
+\renewcommand{\a}{\underline{a}}
+\renewcommand{\b}{\underline{b}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%ADDITIONS BY JASPER EENHOORN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\comm}[1]{}
+\setlength\parindent{24pt}
+\newcommand{\limrtoinf}{\underset{r\to\infty}{\lim}}
+\def\at{
+  \left.
+  \vphantom{\int}
+  \right|
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%AUTHOR AND TITLE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[]{On existence and uniqueness of ground state solutions to NONLINEAR SCHR\"ODINGER EQUATION}
+
+\author[]{Jasper Eenhoorn}
+\address{Department of Applied Physics, TU Delft, Lorentzweg 1, 2628CJ, Delft, Netherlands, EU}
+\email{j.s.eenhoorn@student.tudelft.nl}%
+
+\date{}
+
+%\begin{document}
+
+%\thanks{}
+
 \begin{document}
-(Type your content here.)
+\input{0abstract}
+\include{1introduction}
+\include{2physics}
+\include{3notation}
+\include{4existence}
+\include{5uniqueness}
+\include{6conclusions}	
+
+\subsection*{Acknowledgments.}  
+\comm{The authors are grateful to Gregory Berkolaiko, Pavel Exner and Delio Mugnolo for useful discussions. 
+D.F. and D.N.  acknowledge the support of FIRB 2012 project ``Dispersive dynamics: Fourier Analysis and Variational Methods'', Ministry of University and
+Research of Italian Republic  (code RBFR12MXPO).
+C.C. acknowledges the support of the FIR 2013 project ``Condensed Matter in Mathematical Physics'', Ministry of University and
+Research of Italian Republic  (code RBFR13WAET)}
+
+\begin{thebibliography}{99}
+\comm{
+\bibitem{[ACFN1]}
+R.~Adami, C.~Cacciapuoti, D.~Finco, and D.~Noja, \emph{Fast solitons on star
+  graphs}, Rev. Math. Phys \textbf{23} (2011), no.~4, 409--451.
+
+\bibitem{[ACFN2]}
+R.~Adami, C.~Cacciapuoti, D.~Finco, and D.~Noja, \emph{On the structure of
+ critical energy levels for the cubic focusing {NLS} on star graphs}, J. Phys.
+ A: Math. Theor. \textbf{45} (2012), 192001, 7pp.
+ 
+\bibitem{[ACFN4]}
+R.~Adami, C.~Cacciapuoti, D.~Finco, and D.~Noja, \emph{Stationary states of
+{NLS} on star graphs}, EPL \textbf{100} (2012), 10003, 6pp.
+
+\bibitem{[ACFN3]}
+R.~Adami, C.~Cacciapuoti, D.~Finco, and D.~Noja, \emph{Variational properties
+  and orbital stability of standing waves for {NLS} equation on a star graph},
+J. Differ.  Equations {\bf 257} (2014), 3738--3777.
+
+\bibitem{acfn-aihp} R. Adami, C. Cacciapuoti, D. Finco, D. Noja,
+{\em Constrained energy minimization and orbital stability for the NLS equation on a star graph},  
+Ann. Inst. Poincar\'e, An. Non Lin. \textbf{31} (2014), no. 6, 1289--1310. 
+ 
+\bibitem{ACFN16} R.~Adami, C.~Cacciapuoti, D.~Finco, and D.~Noja, \emph{Stable standing waves for a NLS on star graphs as local minimizers of the constrained energy},
+J. Differ. Equations \textbf{260} (2016) 7397--7415.
+
+\bibitem{ANcmp} R. Adami, and D.   Noja,
+ \emph{Stability and Symmetry-Breaking Bifurcation for the Ground States of a NLS
+ with a $\delta'$ Interaction}, Comm. Math. Phys. {\bf 318} (2013), 247--289. 
+ 
+\bibitem{ANV12}
+R.~Adami, D.~Noja, and N.~Visciglia \emph{Constrained energy minimization and ground states for NLS with point defects}, Discrete and Continuous Dynamical Systems B
+{\bf 18} (2013), 1155--1188. 
+
+\bibitem{AST1}  R. Adami, E. Serra, P.  Tilli, \emph{NLS ground states on graphs}, Calc. Var. and PDEs \textbf{54} (2015), no. 1, 743--761.
+
+\bibitem{AST2} R. Adami, E. Serra, P.  Tilli, \emph{Threshold phenomena and existence results for NLS ground states on metric graphs}, J. Func. An. \textbf{271} (2016), no. 1, 201--223.
+
+\bibitem{AF03} R.~A. Adams,  and J.~J.~F.~ Fournier, Sobolev spaces, Pure and Applied Mathematics Series Vol. 140, Academic press, 2003.
+
+\bibitem{AMN15} F. Ali Mehmeti, K. Ammari, and S. Nicaise, \emph{Dispersive effects for the Schr\"odinger equation on a tadpole graph}, arXiv:1512.05269 [math-ph] (2015).
+
+\bibitem{[BI1]}V. Banica, and L. I. Ignat, \emph{Dispersion for the Schr\"odinger equation on networks},  J. Math. Phys. \textbf{52} (2011), no. 8, 083703, 14pp.
+
+\bibitem{[BI2]}V. Banica, and  L. I. Ignat, \emph{Dispersion for the Schr\"odinger equation on the line with multiple Dirac delta potentials and on delta trees},  Analysis \& P.D.E. {\bf 7} (2014), no. 4, 903--927. 
+
+\bibitem{BerKu} G. Berkolaiko, P. Kuchment, Introduction to Quantum Graphs, Mathematical Surveys and Monographs 186,  AMS (2013).
+    
+\bibitem{Berko16} G. Berkolaiko, and  W. Liu, \emph{Simplicity of eigenvalues and non-vanishing of eigenfunctions of a quantum graph}, arXiv:1601.06225v2 [math-ph] (2016), to appear on J. Math. Anal. Appl.. 
+
+\bibitem{cfn15} C. Cacciapuoti, D. Finco, D. Noja, \emph{Topology induced bifurcations for the NLS on the tadpole graph}, Phys. Rev. E
+\textbf{91} (2015), no. 1,  013206, 8 pp.
+
+\bibitem{Caz03}
+T.~Cazenave, {S}emilinear {S}chr\"{o}dinger {E}quations, Courant Lecture Notes in Mathematics, AMS, vol. 10, Providence, 2003.
+
+\bibitem{Caz06}
+T.~Cazenave, An introduction to semilinear elliptic equations, Editora
+  do IM-UFRJ, Rio de Janeiro, 2006.
+
+\bibitem{[CL]}
+T.~Cazenave, and P.-L. Lions, \emph{Orbital stability of standing waves for some
+  nonlinear {S}chr\"odinger equations}, Commun. Math. Phys. \textbf{85} (1982),
+  549--561.
+  
+\bibitem{EJ} P. Exner, and M. Jex, \emph{On the ground state of quantum graphs with attractive $\delta$-coupling}, Physics Letters A \textbf{376} (2012), 713--717.
+
+\bibitem{H} S. Haeseler, \emph{Heat kernel estimates and related inequalities on metric graphs}, arXiv:1101.3010v1 [math-ph] (2011).
+
+\bibitem{Kelleretal} M. Keller, D. Lenz, and  R. Wojciechowski, \emph{Note on basic features of large time behaviour of heat kernels}, J. reine angew. Math. \textbf{708} (2015), 73--95.
+
+\bibitem{kirr-kevrekidis-pelinovsky:11} E. Kirr, P. G. Kevrekidis, and D. E. Pelinovsky, \emph{Symmetry-Breaking Bifurcation in the Nonlinear Schr\"odinger Equation with Symmetric Potentials}, Comm. Math. Phys, {\bf 308} (2011), 795--844. 
+
+\bibitem {KPS} V. Kostrykin, J. Potthoff, and R. Schrader, \emph{Contraction Semigroups on Metric Graphs}, 
+Proceedings of Symposia in Pure Mathematics \textbf{77} (2008), 423--458.
+
+\bibitem{[KS99]} V.~Kostrykin and R.~Schrader, \emph{{K}irchhoff's rule for quantum wires}, J.Phys. A: Math. Gen. \textbf{32} (1999), no.~4, 595--630.
+
+\bibitem{LL01}
+E.~H. Lieb and M.~Loss, Analysis, second ed., Graduate Studies in
+  Mathematics, vol.~14, American Mathematical Society, Providence, RI, 2001.
+
+\bibitem{[MP16]}  J. Marzuola, and D. E. Pelinovsky, \emph{Ground states on the dumbbell graph}, Applied Mathematics Research Express 2016, 98--145 (2016).
+  
+\bibitem{Mugnolo} D. Mugnolo, Semigroup Methods for Evolution Equations on Networks, Springer (2014).
+
+\bibitem{Noja14} D. Noja, \emph{Nonlinear Schr\"odinger equations on graphs:
+recent results and open problems}, Phil. Trans. Roy Soc. A {\bf 372} (2014), 20130002,
+20 pages.
+
+\bibitem{[NPS15]} D. Noja, D. Pelinovsky, and G. Shaikhova, \emph{Bifurcation and stability of standing waves in the nonlinear Schr\"odinger
+equation on the tadpole graph}, Nonlinearity {\bf 28} (2015), 2343--2378.
+
+\bibitem{[PS16]} D. E. Pelinovsky, and G. Schneider, \emph{Bifurcations of standing localized waves on periodic graphs},  arXiv:1603.05463v1 [math.DS] (2016).
+
+\bibitem{RSIV} M. Reed, and B. Simon, Methods of modern mathematical physics IV, Analysis of operators, Academic Press, London (1978).}
+\end{thebibliography}
+
+
+
+
+
+
+
+
 \end{document}
+
+
+
+\begin{figure}[h]
+	\begin{center}
+		\begin{tikzpicture}
+			\node at (0,0)[nodo](5){};
+			\node at (-2,0.5)[nodo](1){};
+			\node at (0.5,1.5)[nodo](2){};
+			\node at (1.5,-0.5)[nodo](3){};
+			\node at (-1.5,-1)[nodo](4){};
+			\node at (-5,0.5)[infinito](6){};
+			\draw [-,black] (-5.5,0.5) circle (0.5cm) ;			
+			\node at (-3.5,3)[infinito](7){};
+			\node at (1.5,3.5)[infinito](8){};
+			\node at (3.5,-2.5)[infinito](9){};
+			\node at (-2.5,-2.5)[infinito](10){};
+			\draw[-] (1)--(2);
+			\draw[-] (2)--(3);
+			\draw[-] (3)--(4);
+			\draw[-] (4)--(1);
+			\draw[-] (5)--(1);
+			\draw[-] (5)--(2);
+			\draw[-] (5)--(4);
+			\draw[-] (1)--(6);
+			\draw[-] (1)--(7);
+			\draw[-] (2)--(8);
+			\draw[-] (3)--(9);
+			\draw[-] (4)--(10);
+			\node at (-2.2,0.25){$v_1$};
+			\node at (0.25,1.7){$v_2$};
+			\node at (1.7,-0.3){$v_3$};
+			\node at (-1.25,-1.25){$v_4$};
+			\node at (0.25,-0.25){$v_5$};
+			\node at (-4.80,0.7){$v_6$};
+			\node at (-3.6,3.15){$\infty$};
+			\node at (1.6,3.65){$\infty$};
+			\node at (3.65,-2.65){$\infty$};
+			\node at (-2.65,-2.65){$\infty$};
+			%\node at (-3.5,0.75){$b_1$};
+			%\node at (-2.55,1.9){$b_2$};
+			%\node at (0.8,2.77){$b_3$};
+			%\node at (2.7,-1.3){$b_4$};
+			%\node at (-2.25,-1.65){$b_5$};
+			%\node at (-0.8,1.32){$b_6$};
+			%\node at (1.2,0.7){$b_7$};
+			%\node at (0.2,-1.1){$b_8$};
+			%\node at (-1.93,-0.3){$b_9$};
+			%\node at (-0.8,0.47){$b_{10}$};
+			%\node at (0.49,0.55){$b_{11}$};
+			%\node at (-0.9,-0.27){$b_{12}$};
+		\end{tikzpicture}
+		\caption{13 edges (9 interior, 4 exterior); 6 vertices; one tadpole.}
+	\end{center}
+\end{figure}

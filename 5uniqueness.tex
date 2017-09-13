@@ -1,0 +1,129 @@
+\newpage \section{Uniqueness of ground state}
+\comm{Uniqueness is proven by showing solution set $G$ contains at most one point: since $G$ is non-empty by chapter \ref{}, then $G$ contains precisely one point. The first lemma states that any points near a ground state initial condition ($\alpha\in G$) are not ground state. [[how about P?]]}
+
+\begin{lemma} Let $\alpha\in G$. There exists $\epsilon>0$ such that $(\alpha,\alpha+\epsilon)\subset N$.
+\begin{proof} By chapter 4, the solution set $G$ is non-empty. Let $\alpha\in G$ and let $u(\alpha,r)$ be the corresponding solution.  The function $w(\alpha,r)=\frac{\partial}{\partial\alpha}u(\alpha;r)$ satisfies
+
+By lemma \ref{wq}, the function $w$ is unbounded and by lemma \ref{kwong6}, $w$ has a unique zero $r_0\in(d,\infty)$. Let $r_1,r_2$ be such that $d<r_1<r_0<r_2$ and note that $w$ is positive in $r_1$ and negative in $r_2$. There exists $\epsilon>0$ such that, for all $\tilde\alpha\in(\alpha,\alpha+\epsilon)$,$$\tilde u(r_1)>u(r_1)\text{ and }\tilde u(r_2)<u(r_2),$$ where $\tilde u=u(\tilde\alpha,r)$. Hence there exists $r_3\in(r_1,r_2)$ such that the graphs of $u$ and $\tilde u$ intersect, i.e. $\tilde u(r_3)=u(r_3)$. See also figure \ref{}.
+
+To conclude $\tilde\alpha\in N$ requires existence of a $\tilde r$ such that $\tilde u(\tilde r)=0$. By contradiction, suppose that $\tilde u(r)>0$ for all $r>r_3$. (Note that $\tilde u(r)\geq u(r)>0$ on $r\leq r_3$, since $u(r)>0$ for all $r$.)
+
+Define the difference $z\coloneqq u-\tilde u$ and note that proving $z(r)>0$ on $(r_3,\infty)$ implies $\tilde u(r)<u(r)$ on that interval. This function satisfies the differential equation $$\label{zivp} BLA $$.
+\\
+\\
+Also by Sturm comparison of $z$ and $w$, the latter oscillates faster. Let $\tilde w$ be a solution of \eqref{wivp} such that $\tilde w(r_3)=0$. 
+\\
+\\
+By integration of the strong version of Sturm, $z(r)\to\infty$ as $r\to\infty$, but this is impossible as $0<\tilde u(r)<u(r)$ on $(r_3,\infty)$ and $u(r)\to0$ as $r\to\infty$. Therefore, $\tilde u$ vanishes at some point $\tilde r\in(r_3,\infty)$ and the proof is complete.
+\\
+\\ \comm{
+for any $\epsilon>0$, all solutions $\tilde u=u(\tilde\alpha,r)$ with $\tilde\alpha\in(\alpha,\alpha+\epsilon)$ are non-vanishing. Then  Remember that $w$ is the derivative of \eqref{ivp} with respect to the initial condition. And by \ref{} $w$ has a unique zero that is contained in the disconjugacy interval. [[]] Let $r_1,r_2$ be such that $d<r_1<r_0<r_2$ and note $w(r_1)=\frac{\partial}{\partial\alpha}u(\alpha;r_1)>0$ and $w(r_2)=\frac{\partial}{\partial\alpha}u(\alpha;r_2)<0$. Let $\epsilon>0$ such that for all $\tilde\alpha\in(\alpha,\alpha+\epsilon)$, $$\tilde u(r_1)>u(r_1)\text{ and }\tilde u(r_2)<u(r_2),$$ where $\tilde u=u(\tilde\alpha,r)$ and $\tilde\alpha\in(\alpha,\alpha+\epsilon)$. The solutions $u$ and $\tilde u$ intersect in some point $r_3$. THEY STURM COMPARE. RELATION Z=U-UT.} \end{proof}
+\end{lemma}
+
+\begin{lemma} Let $\alpha^*\in N$. Then $[\alpha^*,\infty)\subset N\text{ and }z:[\alpha^*,\infty)\to(0,\infty)$ is monotone decreasing.
+\begin{proof} 
+\underline{$N$ is open} 
+Let $\hat\alpha\in N$. Then there exists a $\hat r>0$ such that $u(\hat\alpha,\hat r)<0$. By continuous dependence on the initial data [[Cod. Lev.]], $u(\alpha,\hat r)<0$ for all $\alpha$ sufficiently close to $\hat\alpha$.
+\\ \\ 
+\underline{$z$ is continuous} 
+None of these solutions can be tangent to the $r$-axis, hence the function $z:N\to(0,\infty)$ is continuous. That is...
+\\ \\ 
+\underline{$z$ is decreasing} 
+Let $\alpha^*\in N$. Then by \ref{}, $w(z(\alpha^*))<0$ and for $\epsilon>0$ sufficiently small, $(\alpha^*,\alpha^*+\epsilon)\subset N$ and $u(z(\alpha^*),\alpha)<0$ for all $\alpha\in(\alpha^*,\alpha^*+\epsilon)$. Remember that $w$ is the derivative of $u$ with respect to the initial condition. Since $w(z(\alpha^*))<0$, for initial conditions upward of $\alpha^*$ ($\alpha\in(\alpha^*,\alpha^*+\epsilon)$): $u(\alpha,z(\alpha^*))<u(\alpha^*,z(\alpha^*))=0$. By the intermediate value theorem [[Cod. Lev.]], there exists a $r\in(0,z(\alpha^*))$ such that $u(\alpha,r)=0$. Then $z(\alpha)\leq r\leq z(\alpha^*)$ for all $\alpha\in(\alpha^*,\alpha^*+\epsilon)$. Conclusion: $z$ is decreasing on $(\alpha^*,\alpha^*+\epsilon)$.
+\\ \\ 
+\underline{Domain of $z$ extends to infinity}
+In fact, $z$ is decreasing on $[\alpha^*,\infty)$. That is, let $$\bar\alpha\coloneqq\sup\{\alpha>\alpha^*\subset N\text{ and }z:[\alpha^*,\alpha)\to(0,\infty)\text{ is decreasing}\}.$$ Then the lemma requires $\bar\alpha=\infty$. Suppose by contradiction $\bar\alpha<\infty$. 
+Then there exists $z(\bar\alpha)\coloneqq\lim_{\alpha\to\bar\alpha}z(\alpha)\in[0,\infty).$ Clearly, $\bar\alpha\in N$, since $u(\bar\alpha,z(\bar\alpha)=0$ by continuity of $z$. But then $[\bar\alpha,\bar\alpha+\epsilon)\in N$ for $\epsilon>0$ sufficiently small. This contradicts the definition of $\bar\alpha$ as the supremum. Then $\bar\alpha=\infty$. Conclusion: for $\alpha^*\in N$, $[\alpha^*,\infty)\subset N$ and $z:[\alpha^*,\infty)\to(0,\infty)$ is decreasing.
+\end{proof}
+\end{lemma}
+
+\begin{lemma}\label{wq}For $\alpha\in G\cup N,w$ has a unique zero $r_0\in(0,z(\alpha)).$ Furthermore, $w(z(\alpha))<0$ if $\alpha\in N$ and $\underset{r\to\infty}{\lim}w(r)=-\infty$ if $\alpha\in G$.
+\begin{proof} 
+\underline{Sign of $v$ changes in $\rho_0$} \\ \\ \underline{$v$ changes sign only once} \\ \\  \underline{$w$ has a first zero} \\ \\ \underline{Comparing $w$ and $v$, conclusion: $w$ has a unique zero} \\ \\ \underline{Also if $\alpha\in G$}
+\end{proof} 
+\end{lemma}
+
+\begin{lemma}Let $\alpha\in G\cup N$. There exists a unique $\beta_0>0$ such that $\rho(\beta_0)=\sigma(\beta_0)$.
+\begin{proof} \end{proof}
+\end{lemma}
+
+{\color{gray} Intermezzo: some definitions. Let $\theta(r)\coloneqq-ru'(r)/u(r)$ for $r\in[0,z(\alpha)$ and $\rho\coloneqq\theta^{-1}$. Then PPProperties. Many auxiliary functions will be introduced now. These functions construct the information needed to prove $w$ has a unique zero. Bear with me as the following functions and variables are introduced: $\theta(r),\beta,\rho(\beta),\phi_{\beta}(r),\nu_{\beta}(r)$. In the lemma that follows, even more functions and variables are introduced: $\bar\beta,\sigma(\beta),\xi(r), \Xi(r)\coloneqq\sigma(\beta)^{-1},\beta_0$.}
+
+{\color{teal}Define $\theta(r)\coloneqq-ru'(r)/u(r)$ on $r\in[0,z(\alpha))$. Note $\theta(r)$ has the following properties: \begin{enumerate}[(i)]\item $\theta(0)=0$, \item $\theta'(r)>0$ for all $r\in(0,z(\alpha))$, and \item $\underset{r\to z(\alpha)}{\lim}\theta(r)=\infty$. \end{enumerate} BOTH NOT TRIVIAL.
+
+Define $\rho\coloneqq\theta^{-1}$. Since $\theta(r)$ is continuous and increasing (?), there exists a unique $r=\rho(\beta)>0$ such that $\theta(r)=\beta$. SHOW. Then $\rho(r)$ is continuous and increasing, with $\rho(0)=0$ and $\underset{\beta\to\infty}{\lim}\rho(\beta)=z(\alpha).$
+
+Define $\nu_{\beta}(r)\coloneqq ru'(r)+\beta u(r)=-u(r){\theta(r)-\beta}.$ Let $\beta>0,$ then $\nu_{\beta}(r)>0$ if $r<\rho(\beta)$ and $\nu_{\beta}(r)<0$ if $r>\rho(\beta)$.
+
+Define $\phi_{\beta}(r)\coloneqq\left[\beta(p-1)-2\right]V(r)u(r)^p-rV'(r)u(r)^p+2\lambda u(r).$ Now observe $\nu_{\beta}(r)$ satisfies the differential equation $$\nu_{\beta}''(r)+\frac{1}{r}\nu_{\beta}(r)'-\lambda\nu_{\beta}+pV(r)u(r)^{p-1}\nu_{\beta}=\phi_{\beta}(r)$$}
+
+\newpage
+\begin{lemma}Let $\alpha\in G\cup N$. There exist $\beta_0>0$ and a unique function $\sigma:[0,\bar\beta]\to[0,\infty)$ with the following properties: \begin{enumerate}[(a)]
+	\item  $\sigma$ is continuous and decreasing, $\sigma(0)>0$ and $\sigma(\bar\beta)=0$;
+    \item for all $\beta>0$ we have: $\phi_\beta(r)<0$ if $r<\sigma(\beta)$, and $\phi_\beta>0$ if $r>\sigma(\beta)$.
+\end{enumerate}
+\begin{proof} 
+{\color{gray} Let $\beta>0$ and $r\in[0,z(\alpha)$. Then $\phi_{\beta}(r)=LLL$ where $\xi(r)=LLL$. Note that $\xi(r)\leq0$ and strictly decreasing on $(0,z(\alpha))$ with $\lim_{r\to z(\alpha)}\xi(r)=-\infty$. It remains to show $\Xi(r)=LLL$ satisfies $\Xi(0)>0$. Indeed, let $\Xi(0)=\bar\beta$, LLL, for all $\beta\in[0,\bar\beta]$. Note $\Xi(r)$ is continuous and decreasing, so $\sigma(\beta)\coloneqq\left.\Xi(r)^{-1}\right|_{[0,\bar\beta]}$ has properties (a) and (b). Also, note $\Xi(0)>0\iff\xi(0)>-2$. Consider the following cases ......$V(0)<\infty$ .... $V(0)=\infty$ ... hence $\xi(0)>-2$ for $\alpha\in(G\cup N)$. }
+\end{proof}
+\end{lemma}
+
+\newpage
+\begin{lemma}Let $\alpha\in (G\cup N),\text{ then }w$ has at least one zero in $(0,z(\alpha))$.
+\begin{proof}
+The Lagrange identity for \ref{ivp} and \ref{} will yield information about the zeroes of $w(r)$. Observe the following identities arising from the differential equations:\begin{gather*}
+(ru'(r))'+r\left[-\lambda u(r)+V(r)u(r)^p\right]=0\\
+(rw'(r))'+r\left[-\lambda w(r)+pV(r)u(r)^{p-1}w(r)\right]=0.
+\end{gather*} Now multiply by $w(r)$ and $u(r)$ respectively, subtract them and integrate from 0 to $z(\alpha)$, \begin{gather*}
+\int_0^{z(\alpha)}w(r)(ru'(r))'-u(r)(rw'(r))'dr=%
+\int_0^{z(\alpha)}r\left\{pV(r)u(r)^pw(r)-V(r)u(r)^pw(r)\right\}dr,
+\end{gather*} and perform partial integration:\begin{gather*}
+rw(r)u'(r)\at_0^{z(\alpha)}-ru(r)w'(r)\at_0^{z(\alpha)}-\int_0^{z(\alpha)}ru'(r)w'(r)-ru'(r)w'(r)dr\\=(p-1)\int_0^{z(\alpha)}rV(r)u(r)^pw(r)dr\\z(\alpha)w(z(\alpha))u'(z(\alpha))=(p-1)\int_0^{z(\alpha)}rV(r)u(r)^pw(r)dr.
+\end{gather*} Note that $u(z(\alpha))=0$.   In evaluating the integral term, {\color{gray}note $r>0$, $V(r)>0$, and $u(r)^p>0$. Suppose $w>0$ on $(0,z(\alpha))$. Then $z(\alpha)w(z(\alpha))u'(z(\alpha))\leq0$ contradicts $(p-1)\int_0^{z(\alpha)}rV(r)u(r)^pw(r)dr>0$ \Lightning. Hence $w$ has at least one zero in $(0,z(\alpha))$.}
+
+\underline{$\alpha\in G$} Suppose by contradiction that $w>0$ on $(0,\infty)$. {\color{gray} Then rewrite ... and note how the integral is still positive by assumption. Then $\left(\frac{u}{w}\right)'$ is positive. So $\frac{u}{w}$ is increasing. By RRR there exists two independent solutions that satisfy TTT. So TTT for some constants $\alpha_1,\alpha_0$. Since $w>0$ by hypothesis, $\alpha_1\geq0$. Suppose $\alpha_1=0$, then $w(r)\to0$ exponentially as $r\to\infty$. So $w$ changes sign by RRR, a contradiction. On the other hand, suppose $\alpha_1>0$, then by RRR there exists a $C$ such that LLL. To see this, note how RRR implies $u(r)\sim r^{-1/2}\exp^{-\sqrt{\lambda}r}$ as $r\to\infty$. These contradictions yield $w$ changes sign at least once on $(0,z(\alpha))$ for $\alpha\in(G\cup N)$.} the Lagrange identity for and the integral term is positive by the same reasoning as above. Claim: the function $u/w$ is positive and increasing. Firstly, it is positive in the origin, because $u(0),w(0)>0$. Secondly, it is increasing since $r$, $w(r)^2$ are positive, so is the derivative of $u/w$. Also, since $u(0),w(0)>0$ the function \\ \\
+\underline{}\\ \\
+\underline{}
+\end{proof}
+\end{lemma}
+\newpage
+\begin{lemma}Let $\alpha\in G\cup N$, and $u=u(\alpha,r)$. Then $u'(r)<0$ for all $r\in(0,z(\alpha))$ and $u'(z(\alpha))<0$ if $\alpha\in N$.
+\begin{proof} 
+Write $z(\alpha)=\infty$ when $\alpha\in G$, since: $u(\alpha,r)\to0$ as $r\to\infty$. %Thus $z(\alpha)=\infty$. 
+Let $\alpha\in G\cup N$. By lemma \ref{lya} then, $E(r)$ is well-defined for $r\in[0,z(\alpha))$ at least and $\lim_{r\to z(\alpha)}E(r)\geq0.$ Evaluate: \begin{empheq}{align*}\underset{r\to z(\alpha)}{\lim}E(r)&=\underset{r\to z(\alpha)}{\lim}\bigg[\frac{1}{2}u'(r)^2-\frac{\lambda}{2}u(r)^2+\frac{1}{p+1}V(r)u(r)^{p+1}\bigg] \\ &=u'(z(\alpha))^2\geq0.\end{empheq} 
+Since $E(r)$ is non-increasing, $E(r)\geq0$ for all $r\in[0,z(\alpha)]$.
+
+Suppose $u''(0)=0$ and note $u'(0)=0$, so $u\equiv\alpha$ \Lightning. Suppose $u''(0)>0$ then $u'(r)>0$ and $u(r)>u(0)=\alpha$ for $r>0$ and small. Now $\alpha\in(G\cup N)\iff -\frac{\lambda}{2}\alpha^2+\frac{1}{p+1}V(0)\alpha^{p+1}\geq0$, hence $$E(r)-E(0)=\frac{1}{2}\left[u'(r)^2-u'(0)^2\right]-\frac{\lambda}{2}\left[u(r)^2-u(0)^2\right]+\frac{1}{p+1}\left[V(r)u(r)^{p+1}-V(0)u(0)^{p+1}\right]\geq0.$$ This contradicts $E(r)$ nonincreasing. Hence $u''(0)<0$ and $u'(r)<0$ for $r>0$ and small.
+
+Claim: $u'<0$ on $(0,z(\alpha))$. Suppose by contradiction $r_0=\inf(r>0,u'(r)=0)<z(\alpha)$. Note how $u''(r_0)<0\implies u'(r)>0$ on $(0,r_0)$ \Lightning. Hence $u''(r_0)\geq0$. Invoke \ref{ivp}:
+%Note $u'(r_0)=0$ and 
+\begin{gather*}u''(r_0)=\lambda u(r_0)-V(r_0)u(r_0)^p\geq0\\u(r_0)\leq\left[\frac{\lambda}{V(r_0)}\right]^{1/(p-1)}<\left[\left(\frac{p+1}{2}\right)\frac{\lambda}{V(r_0)}\right]^{1/(p-1)}\\
+\implies-\frac{\lambda}{2}u(r_0)^2+\frac{1}{p+1}V(r_0)u(r_0)^{p+1}<0,\end{gather*}Then using $u'(r_0)=0$, evaluate $E(r_0)$: $$E(r_0)=-\frac{\lambda}{2}u(r_0)^2+\frac{1}{p+1}V(r_0)u(r_0)^{p+1}<0.$$ %\begin{empheq}{align*} \eqref{ivp}:\quad&u''(r)+\frac{N-1}{r}u'(r)+g(u(r))=0 \\ r=r_0, u'(r_0)=0:\quad&u''(r_0)+g(u(r))=0 \\ &-g(u(r_0))=u''(r_0) \\ &\lambda u(r_0)-V(r_0)u(r_0)^p=u''(r_0)\geq 0 \\ &\lambda u(r_0)-V(r_0)u(r_0)^p\geq0\quad[[]]\\ \implies &u(r_0)\leq\Bigg[\frac{\lambda}{V(r_0)}\Big]^{1/(p-1)}<\Bigg[\Bigg(\frac{p+1}{2}\Bigg)\frac{\lambda}{V(r_0)}\Big]^{1/(p-1)}\Bigg]\end{empheq}
+But $E(r_0)<0$ contradicts $E(r)\geq0$, so $u'<0$ on $(0,z(\alpha))$.
+
+It remains to show $u'(z(\alpha))<0$ whenever $\alpha\in N$. Suppose $u'(z(\alpha))=0$. Then $u\equiv0$, since $u(z(\alpha))=0$. Hence $u'(z(\alpha))<0$.
+%The following claim contradicts $\alpha\in(G\cup N)$. \underline{Claim:} $E(r_0)<0$. To see this, evaluate $E(r)$ in $r_0$ as follows: \begin{empheq}{align*} E(r_0)=~&\frac{1}{2}u'(r_0)^2-\frac{\lambda}{2}u(r_0)^2+\frac{1}{p+1}V(r_0)u(r_0)^{p+1} \\ =&-\frac{\lambda}{2}u(r_0)^2+\frac{1}{p+1}V(r_0)u(r_0)^{p+1} \end{empheq}
+
+%\underline{$u'(z(\alpha))<0$} Now if $\alpha\in N$, note that by the above $u'(r)<0$ on $(0,z(\alpha))$. If $u'(z(\alpha))=0$ then since $u(z(\alpha))=0$, the solution would be trivial, $u\equiv0$. Hence $u'(z(\alpha))<0$ and the proof is complete.
+\end{proof}
+\end{lemma}
+\newpage
+\begin{lemma}\label{lya}Suppose that $V(0):=\underset{r\to0}{\lim}~V(r)$ exists and is finite. Then $$0<\alpha<\left[\left(\frac{p+1}{2}\right)\frac{\lambda}{V(0)} \right]^{1/(p-1)}\implies \alpha\in P.$$
+\begin{proof}
+Consider the Lyapunov function $E(r)$, an analogue to the potential function of classical dynamics. Lyapunov theory treats the stability of a solution near an equilibrium point. For more on Lyapunov theory, see \cite{}. Define $$E(r)\coloneqq\frac{1}{2}u'(r)^2-\frac{\lambda}{2}u(r)^2+\frac{1}{p+1}V(r)u(r)^{p+1},$$  for $r\in[0,\infty)$ if $\alpha\in P\cup G$ and $r\in[0,z(\alpha)]$ if $\alpha\in N$. Then, rewrite \ref{ivp} and calculate $E'(r)$: \begin{align*} &u''(r)+\frac{1}{r}u'(r)-\lambda u(r)+V(r)u(r)^p=0\\
+&\left[u''(r)-\lambda u(r)+V(r)u(r)^p\right]=-\frac{1}{r}u'(r)\\
+E'(r)&=u''(r)u'(r)-\lambda u(r)u'(r)+V(r)u(r)^pu'(r)+\frac{1}{p+1}V'(r)u(r)^{p+1}\\ 
+&=\left[u''(r)-\lambda u(r)+V(r)u(r)^p\right]u'(r)+\frac{1}{p+1}V'(r)u(r)^{p+1}\\
+&=-\frac{u'(r)^2}{r}+\frac{1}{p+1}V'(r)u(r)^{p+1}\leq0\text{ for }r>0.
+\end{align*} Note that $V'(r)\leq0$ by (H2) and $u'(r)^2\geq0, u(r)^{p+1}\geq0$ and $r\geq0$. Conclusion: $E(r)$ is nonincreasing. 
+
+By these properties of $E(r)$ the implication will follow. Let $0<\alpha<\left[\left(\frac{p+1}{2}\right)\frac{\lambda}{V(0)} \right]^{1/(p-1)}.$ Rewrite this assumption on $\alpha$ and evaluate $E(0)$: \begin{gather*}\alpha<\left[\left(\frac{p+1}{2}\right)\frac{\lambda}{V(0)} \right]^{1/(p-1)}\iff\alpha^{p-1}<\left(\frac{p+1}{2}\right)\frac{\lambda}{V(0)}\iff
+%\frac{1}{p+1}V(0)\alpha^{p-1}<\frac{\lambda}{2}\\
+-\frac{\lambda}{2}\alpha^2+\frac{1}{p+1}V(0)\alpha^{p+1}<0\\\implies E(0)=\frac{1}{2}u'(0)^2-\frac{\lambda}{2}u(0)^2+\frac{1}{p+1}V(0)u(0)^{p+1}<0.\end{gather*} Remember $E(r)$ is nonincreasing, so $E(r)<0$ for $r>0$. To prove $\alpha\in P$, consider the contradictory cases: (i) $\alpha\in N$, (ii) $\alpha\in G$. Suppose $\alpha\in N$, then $u(z(\alpha))=0$ and $E(z(\alpha))=\frac{1}{2}u'(z(\alpha))^2\geq0$. This contradicts $E<0$. Suppose $\alpha\in G$. Then $u(r)\to0,u'(r)\to0$ as $r\to\infty$. Then $E(r)\to0$ as $r\to\infty$, contradicting $E<0$. Hence $\alpha\in P$.
+\end{proof}
+\end{lemma}
+\newpage
+\begin{lemma}\label{kwong6} (Lemma 6 in \cite{kwong}) Let $(c,\infty)$ be the disconjugacy interval of \eqref{}. Every solution of \eqref{} with a zero in $(c,\infty)$ is unbounded.
+
+Conversely, if the last zero of an unbounded solution of \eqref{} is $\rho$, then $\rho$ is an interior point of the disconjugacy interval. In the other words, $\rho>c$.
+\begin{proof} \end{proof}
+\end{lemma}
