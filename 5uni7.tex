@@ -1,0 +1,16 @@
+\begin{lemma} Let $\alpha^*\in N$. Then $[\alpha^*,\infty)\subset N\text{ and }z:[\alpha^*,\infty)\to(0,\infty)$ is monotone decreasing.
+\begin{proof} 
+\underline{$N$ is open} 
+Let $\hat\alpha\in N$. Then there exists a $\hat r>0$ such that $u(\hat\alpha,\hat r)<0$. By continuous dependence on the initial data [[Cod. Lev.]], $u(\alpha,\hat r)<0$ for all $\alpha$ sufficiently close to $\hat\alpha$.
+\\ \\ 
+\underline{$z$ is continuous} 
+None of these solutions can be tangent to the $r$-axis, hence the function $z:N\to(0,\infty)$ is continuous. That is...
+\\ \\ 
+\underline{$z$ is decreasing} 
+Let $\alpha^*\in N$. Then by \ref{}, $w(z(\alpha^*))<0$ and for $\epsilon>0$ sufficiently small, $(\alpha^*,\alpha^*+\epsilon)\subset N$ and $u(z(\alpha^*),\alpha)<0$ for all $\alpha\in(\alpha^*,\alpha^*+\epsilon)$. Remember that $w$ is the derivative of $u$ with respect to the initial condition. Since $w(z(\alpha^*))<0$, for initial conditions upward of $\alpha^*$ ($\alpha\in(\alpha^*,\alpha^*+\epsilon)$): $u(\alpha,z(\alpha^*))<u(\alpha^*,z(\alpha^*))=0$. By the intermediate value theorem [[Cod. Lev.]], there exists a $r\in(0,z(\alpha^*))$ such that $u(\alpha,r)=0$. Then $z(\alpha)\leq r\leq z(\alpha^*)$ for all $\alpha\in(\alpha^*,\alpha^*+\epsilon)$. Conclusion: $z$ is decreasing on $(\alpha^*,\alpha^*+\epsilon)$.
+\\ \\ 
+\underline{Domain of $z$ extends to infinity}
+In fact, $z$ is decreasing on $[\alpha^*,\infty)$. That is, let $$\bar\alpha\coloneqq\sup\{\alpha>\alpha^*\subset N\text{ and }z:[\alpha^*,\alpha)\to(0,\infty)\text{ is decreasing}\}.$$ Then the lemma requires $\bar\alpha=\infty$. Suppose by contradiction $\bar\alpha<\infty$. 
+Then there exists $z(\bar\alpha)\coloneqq\lim_{\alpha\to\bar\alpha}z(\alpha)\in[0,\infty).$ Clearly, $\bar\alpha\in N$, since $u(\bar\alpha,z(\bar\alpha)=0$ by continuity of $z$. But then $[\bar\alpha,\bar\alpha+\epsilon)\in N$ for $\epsilon>0$ sufficiently small. This contradicts the definition of $\bar\alpha$ as the supremum. Then $\bar\alpha=\infty$. Conclusion: for $\alpha^*\in N$, $[\alpha^*,\infty)\subset N$ and $z:[\alpha^*,\infty)\to(0,\infty)$ is decreasing.
+\end{proof}
+\end{lemma}

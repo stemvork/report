@@ -1,0 +1,15 @@
+\newpage
+\begin{lemma}\label{lya}Suppose that $V(0):=\underset{r\to0}{\lim}~V(r)$ exists and is finite. Then $$0<\alpha<\left[\left(\frac{p+1}{2}\right)\frac{\lambda}{V(0)} \right]^{1/(p-1)}\implies \alpha\in P.$$
+\begin{proof}
+Consider the Lyapunov function $E(r)$, an analogue to the potential function of classical dynamics. Lyapunov theory treats the stability of a solution near an equilibrium point. For more on Lyapunov theory, see \cite{}. Define $$E(r)\coloneqq\frac{1}{2}u'(r)^2-\frac{\lambda}{2}u(r)^2+\frac{1}{p+1}V(r)u(r)^{p+1},$$  for $r\in[0,\infty)$ if $\alpha\in P\cup G$ and $r\in[0,z(\alpha)]$ if $\alpha\in N$. Then, rewrite \ref{ivp} and calculate $E'(r)$: \begin{align*} &u''(r)+\frac{1}{r}u'(r)-\lambda u(r)+V(r)u(r)^p=0\\
+&\left[u''(r)-\lambda u(r)+V(r)u(r)^p\right]=-\frac{1}{r}u'(r)\\
+E'(r)&=u''(r)u'(r)-\lambda u(r)u'(r)+V(r)u(r)^pu'(r)+\frac{1}{p+1}V'(r)u(r)^{p+1}\\ 
+&=\left[u''(r)-\lambda u(r)+V(r)u(r)^p\right]u'(r)+\frac{1}{p+1}V'(r)u(r)^{p+1}\\
+&=-\frac{u'(r)^2}{r}+\frac{1}{p+1}V'(r)u(r)^{p+1}\leq0\text{ for }r>0.
+\end{align*} Note that $V'(r)\leq0$ by (H2) and $u'(r)^2\geq0, u(r)^{p+1}\geq0$ and $r\geq0$. Conclusion: $E(r)$ is nonincreasing. 
+
+By these properties of $E(r)$ the implication will follow. Let $0<\alpha<\left[\left(\frac{p+1}{2}\right)\frac{\lambda}{V(0)} \right]^{1/(p-1)}.$ Rewrite this assumption on $\alpha$ and evaluate $E(0)$: \begin{gather*}\alpha<\left[\left(\frac{p+1}{2}\right)\frac{\lambda}{V(0)} \right]^{1/(p-1)}\iff\alpha^{p-1}<\left(\frac{p+1}{2}\right)\frac{\lambda}{V(0)}\iff
+%\frac{1}{p+1}V(0)\alpha^{p-1}<\frac{\lambda}{2}\\
+-\frac{\lambda}{2}\alpha^2+\frac{1}{p+1}V(0)\alpha^{p+1}<0\\\implies E(0)=\frac{1}{2}u'(0)^2-\frac{\lambda}{2}u(0)^2+\frac{1}{p+1}V(0)u(0)^{p+1}<0.\end{gather*} Remember $E(r)$ is nonincreasing, so $E(r)<0$ for $r>0$. To prove $\alpha\in P$, consider the contradictory cases: (i) $\alpha\in N$, (ii) $\alpha\in G$. Suppose $\alpha\in N$, then $u(z(\alpha))=0$ and $E(z(\alpha))=\frac{1}{2}u'(z(\alpha))^2\geq0$. This contradicts $E<0$. Suppose $\alpha\in G$. Then $u(r)\to0,u'(r)\to0$ as $r\to\infty$. Then $E(r)\to0$ as $r\to\infty$, contradicting $E<0$. Hence $\alpha\in P$.
+\end{proof}
+\end{lemma}
