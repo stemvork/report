@@ -4,7 +4,11 @@
     \item for all $\beta>0$ we have: $\phi_\beta(r)<0$ if $r<\sigma(\beta)$, and $\phi_\beta>0$ if $r>\sigma(\beta)$.
 \end{enumerate}
 \begin{proof} 
-Let $\beta>0$ and $r\in[0,z(\alpha)$. Then $\phi_{\beta}(r)=LLLLLL$ where $\xi(r)=LLLLLL$. SHOW. \\
+Let $\beta>0$ and $r\in[0,z(\alpha))$. Then \begin{align*}
+\phi_{\beta}(r)&=\left[\beta(p-1)-2\right]V(r)u(r)^p-rV'(r)u(r)^p+2\lambda u(r) \\ &=V(r)u(r)^p\left[\beta(p-1)-2-\frac{rV'(r)u(r)^p}{V(r)u(r)^p}+\frac{2\lambda u(r)}{V(r)u(r)^p}\right] 
+%\\ &=V(r)u(r)^p\left[\beta(p-1)-2-r\frac{V'(r)}{V(r)}+\frac{2\lambda}{V(r)u(r)^{p-1}}\right] \\ &= V(r)u(r)^p\left[\beta(p-1)-2-\xi(r)\right]
+\end{align*} 
+where $\xi(r)=r\frac{V'(r)}{V(r)}-\frac{2\lambda}{V(r)u(r)^{p-1}}$.\\
 
 Note that $\xi(r)\leq0$ and strictly decreasing on $(0,z(\alpha))$ with $\lim_{r\to z(\alpha)}\xi(r)=-\infty$. SHOW. \\
 
