@@ -3,3 +3,10 @@ The previous chapter leads to the following initial value problem (IVP). \underl
 \begin{gather*}-u''(r)-\frac{N-1}{r}u'(r)=g(u(r))\tag{IVP}\label{ivp}\\ u(0)=\alpha,~u'(0)=0\end{gather*}
 \begin{equation}\label{ivpint}
 \end{equation}
+
+The possible initial values $u(0)=\alpha>0$ can be categorised in three solution sets: solutions that become negative ($N$), solutions that are positive ($P$) for all $r$ and solutions that vanish ($G$, for ground state). In terms of zeroes, solutions with initial condition in $N$ have at least one zero, solutions with initial condition in $P$ have no zeroes and solutions with initial condition in $G$ tend to zero for $r$ to infinity. Formally:
+$$
+  N = {\alpha>0:\text{there exists}r>0\text{such that}u(r;\alpha)=0} \\
+  G = {\alpha>0:u(r;\alpha)>0\text{for all}r>0\text{and}\underset_{r\to\infty}{\lim}u(r;\alpha)}\\
+  P = {\alpha>0:u(r;\alpha)>0\text{for all}r>0\text{and}\alpha\notin G}
+$$
