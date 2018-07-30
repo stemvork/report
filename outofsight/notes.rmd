@@ -1,0 +1,68 @@
+---
+author: J.S. Eenhoorn
+title: Collected notes, Bachelor's thesis
+output: pdf_document
+---
+
+# Notes in general
+* The most general form of the problem discussed in this work is $$\Delta u + f(u,r) = 0.$$ When $f=f(u)$, the problem is called *autonomous*. Note in that case $f$ has no explicit dependence on $r$. In general, $u=u(x)$ with $x\in\mathbb(R)^N$. For radially symmetric solutions $u=u(r)$ where $r=|x|$, the problem can be written as an initial value problem: $$u''(r)+\frac{N-1}{r}u'(r)+f(u(r),r)=0.$$ The initial conditions could be: $u(0)=\alpha>0$ and $u'(0)=0$. `Another example: $u'(0)=0$ and $\underset{r\to\infty}{\lim}u(r)=0$.` An example of $f$ would be $f=-u+u^3$. "This" model describes the leading order paraxial approximation of the electric field of an intense cw laser beam propagating through a homogenous and isotropic medium.
+
+# Notes on Existence
+## Notes on Berestycki
+* Introduction
+  * Existence of positive radial solutions to $$\Delta u + g(u) = 0\quad\mathrm{in }\mathbb{R}^N$$ where $g$ is a given nonlinear function satisfying $g(0)=0$.
+  * Many results based on topological and variational methods. They satisfy the associated initial value problem $$u''(r) + \frac{N-1}{r} u'(r) + g(u) = 0,\quad\mathrm{for }0<r<\infty\\ u(0)=\alpha>0\quad u'(0)=0$$ where $u=u(r)$ and $\alpha$ needs to be chosen such that $\underset{r\to\infty}{\lim}u(r)=0$.
+  * In this work, existence of positive radial solutions to this IVP satisfying "the extra (limit) condition" is proven directly from ODE methods. The method used is called a shooting argument and requires certain properties of $g$.
+  * Results are basically the same as the "local method" in ...
+  * The motivation for this work is threefold: (1) all solutions satisfy this ODE, hence ODE techniques may apply, (2) the method yields results for the supercritical case, (3) and results for the instability case.
+* Main result
+  * Consider $N\geq 2$.
+  * Let $g$ be Lipschitz continuous from $\mathbb{R}^+$ to $\mathbb{R}$ with $g(0)=0$ satisfying:
+    * $\kappa$ = $\inf\{\alpha>0|g(\alpha)\geq0\}$ and $\kappa>0$
+    * $\alpha_0 = \inf\{\alpha>0|G(\alpha)>0\}$ where
+      * $$G(t)=\int_0^t{g(s)ds}$$
+    * `Then $\alpha_0>\kappa$.`
+    * $$\underset{s\downarrow\kappa}{\lim} \frac{g(s)}{s-\kappa}>0$$
+    * $g(s)>0\quad\mathrm{for }s\in(\kappa,\alpha_0]$
+    * BETA IS INF OF $g(a)=0$ OVER $a>\alpha_0$ AND BETA $\leq\infty$.
+  * Then the following theorem summarises the problem statement:
+    * `\begin{theorem} Let ...`
+  * Then discussion of theorem, some remarks, blablabla.
+  * Then proof of the theorem, in steps:
+    * Prove that the solution is defined on the maximal interval $(0,\infty)$.
+    * The shooting method: there are sets of solutions belonging to certain initial conditions that are qualitatively different. If the sets are nonemtpy, disjoint and open, then existence (of positive radial solutions vanishing at infinity) is guaranteed. Two lemmas are stated.
+    * Proof of the two lemmas. Some remarks. The end.
+
+## Notes on previous work
+* The graph of $f(u)=-u+u^3$ and its integral $F(u)=-\frac{1}{2}u^2+\frac{1}{4}u^4$ clarify the validity of the assumptions on $f$. However, the implications/meaning of these assumptions are apparent only from the analysis that follows.
+
+* For $f=-u+u^3$, the nonlinearity has two zeroes: $0$ and $\kappa$. As far as the sign of $f$, for $u\in(0,\kappa):f(u)<0$ and for $u\in(\kappa,\infty):f(u)>0$. The integrand $F(u)$ has two zeroes: $0$ and $\alpha_0$, with $\alpha_0>\kappa$. Clearly, $F(u)<0$ for $u\in(0,\alpha_0)$ and $F(u)>0$ for $u\in(\alpha_0,\infty)$.
+
+* `That $u(r;\alpha)$ exists on any interval is guaranteed by $f$ being Lipschitz continuous.`
+
+* This interval of definition will extend, unless the function blows up. Hence, showing the solution remains bounded everywhere extends the interval to $\mathbb(R)^+=[$ **or** ( $0,\infty)$. Bounded above follows from analysis of $F$ and bounded below follows from the derivative of the solution vanishing.
+
+## Notes for new version
+
+# Notes on Uniqueness
+## Notes on François
+* $$\Delta u + f(u,|x|) = 0\\ u(R)=0\quad\mathrm{with }0<R\leq\infty$$
+* $R=\infty$ and $N=2$ of particular interest.
+* $f(u,r) = -\lambda u + V(r) u^p$ with $\lambda>0,p>1$ and $V:(0,\infty)\to(0,infty)$ nonincreasing subject to hypotheses.
+* Shooting argument for: $$u'' + \frac{1}{r}u' -\lambda u + Vu^p = 0\\u(0)=\alpha>0\quad\mathrm{and }\underset{r\to0}{\lim}ru'=0$$
+* Main idea is to study zeroes of related problem in $w$ satisfying $$w'' + \frac{1}{r} w' -\lambda w + pVu^{p-1}w = 0\\w(0)=1\quad\mathrm{and }\underset{r\to0}{\lim}rw'=0$$
+* Compare the global behaviour of $w$ to $u$ using Sturm theory.
+* Theorem: there are three solution sets and they are nonempty, disjoint and open. The set of ground state solutions has at most one point, hence there is a unique ground state solution. Proof relies on many intricate results, hence we admit 8 lemmata.
+* Proof:
+  * By lemmata 7 and 8, $G$ contains at most one point.
+  * By chapter 4, $G$ is nonempty. So $G={\alpha_0}$ for some $\alpha_0>0$.
+  * Also by lemmata 7 and 8, $(\alpha_0,\infty)\in N$.
+  * On the other hand, $\nexists \alpha_1<\alpha_0$ such that $\alpha_1\in N$.
+    * This would imply $[\alpha_1,\infty)\in N$ contradicting $\alpha_0\in G$.
+  * Hence, $N = (\alpha_0,\infty)$ and $P = (0,\alpha_0)$ completing the proof.
+  * Remark: the nonexistence of $\alpha_1<\alpha_0$ such that $\alpha_1\in N$ follows from monotonicity of $z(\alpha)$.
+
+## Notes on Yanagida
+## Notes on Kwong
+## Notes on previous work
+## Notes for new version
