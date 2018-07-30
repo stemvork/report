@@ -1,0 +1,240 @@
+\comm{\section{Main theorem\label{s:mainth}}
+\begin{proof}[Proof of Theorem \ref{t:prob1}]
+We prove first that $mE_0<\nu<\infty$. The lower bound $\nu>mE_0$ is a direct consequence of the fact that $E[\Psi] < E^{lin}[\Psi]$, for all $\Psi\in \EE$, and that, by the definition of $E_0$  and $E^{lin}$, one has
+\[\inf \{ E^{lin}[\Psi] \text{ s.t. } \Psi\in \EE , \, M[\Psi]=m  \} = -mE_0.\]\\
+To prove that $\nu<+\infty$ we first note that, by using  H\"older and   Gagliardo-Nirenberg inequalities, one can prove the bounds:  
+\begin{equation}\label{4.1a}
+ \|\Psi\|_{{2\mu+2}}^{2\mu+2} \leq c \|\Psi\|_{H^1}^{\mu} \|\Psi\|^{2+\mu}; \end{equation}
+\begin{equation}\label{W-1}
+(\Psi,W_- \Psi)  \leq \|W_-\|_r \|\Psi\|^2_{2r/(r-1)} \leq c \|W_-\|_r  \|\Psi\|_{H^1}^{2\alpha}\|\Psi\|_q^{2(1-\alpha)} \end{equation}
+for all $q\in[2,2r/(r-1)]$ and with $ \alpha= \frac{2}{2+q}\left(1-\frac{q(r-1)}{2r}\right)$; and 
+\begin{equation}\label{4.1b}
+ |\Psi(\v)|^2\leq \|\Psi\|_{\infty}^2\leq c  \|\Psi\|_{H^1}\|\Psi\| \quad  \forall \v \in V \,.
+\end{equation}
+We remark that the inequalities \eqref{4.1a} - \eqref{4.1b} hold true for any connected finite graph. 
+ If $M[\Psi] = m$, by \eqref{4.1a} - \eqref{4.1b} we have 
+\[
+ E[\Psi] + m
+ \geq \| \Psi \|_{H^1}^2 -C \frac{m^{\frac{2+\mu}{2}}}{\mu+1}\|\Psi\|_{H^1}^{\mu}
+  - C \sqrt m \sum_{\underline v\in V_v}|\alpha(\underline v)|   \|\Psi\|_{H^1} -  Cm^{1-1/(2r)} \|W_-\|_r  \|\Psi\|_{H^1}^{1/r}.
+\]
+We notice that for any $a,b,c,d>0$, $r\geq 1$, and   $0< \mu < 2$ there exist $\de,\beta >0$ such that $a x^2 - bx^\mu  -cx -d x^{1/r} > \de x^2 - \beta $, for any $x\geq0$, then  
+\beq
+\label{e:dec}
+ E[\Psi] + m
+ \geq \de \| \Psi\|_{H^1}^2 -\beta \,,
+\eeq
+which implies $\nu \leq \beta + m$.\\
+
+In the  remaining part of the proof we shall prove that we can choose $m^*$ such that for $m<m^*$ minimizing sequences have a  convergent subsequence.
+
+Let $\{\Psi_n\}_{n\in\NA}$ be a minimizing sequence, i.e., $\Psi_n \in\EE$, $M[\Psi_n]=m$, and $\lim_{n\to\infty} E[\Psi_n] = -\nu$. Concerning the mass constraint, we remark that it is enough to assume $M[\Psi_n]\to m$ as $n\to \infty$, in such a case one can define $\widetilde \Psi_n = \sqrt{m} \Psi_n /\|\Psi_n\|$ and note that $\lim_{n\to\infty} E[\widetilde\Psi_n] = \lim_{n\to\infty} E[\Psi_n] $. 
+
+We shall prove that there exists $\hat \Psi \in H^1 (\GG)$ such that $M[\hat \Psi] = m $, $E[\hat \Psi] =-\nu$ and $\Psi_n \to \hat \Psi$ in $ H^1 (\GG)$.
+
+We can assume that 
+$E[\Psi_n] \leq -\nu/2$ then by inequality \eqref{e:dec}, up to taking a subsequence,  we can assume that 
+\[
+\sup_{n\in\NA}\|\Psi_n\|_{H^1}\leq \infty,\]
+moreover the following lower bound holds true
+\beq
+\label{e:floor}
+ \frac{1}{\mu+1} \| \Psi_n\|_{2\mu+2}^{2\mu+2} +(\Psi,W_-\Psi) +  \sum_{\v \in V_- } |\al(v)| |\Psi_{n}(\v)|^2 \geq
+\frac{\nu}2 \,.
+\eeq
+
+Next we use Lem. \ref{l:cc} and  prove that  vanishing and dichotomy
+cannot occur for $\{\Psi_n\}_{n\in\NA}$. Set $\tau = \lim_{t\to\infty}\liminf_{n\to\infty}
+\rho(\Psi_n,t)$. First we prove that  vanishing cannot occur. If
+$\tau=0$,  then by Lem. \ref{l:cc} there would exist a subsequence $\Psi_{n_k}$
+such that $\| \Psi_{n_k}\|_{p} \to 0 $ for all $2<p\leq \infty$ but
+this, together with Eqs. \eqref{W-1} and \eqref{4.1b},   would contradict 
+\eqref{e:floor}. \\
+To prove that dichotomy cannot occur, suppose $0<\tau<m$, then there
+would exist $\VV_k$ and $\WW_k$ satisfying \eqref{dic1}-\eqref{dic7}.
+In particular we know that
+\[
+ \liminf_{k\to \infty} \left(\|\Psi_{n_k}' \|^2 - \| \VV_k' \|^2
+- \| \WW_k' \|^2 \right)  \geq 0
+\]
+\[
+\lim_{k\to \infty} \lf( \| \Psi_{n_k}\|_p^p - \|\VV_k \|_p^p -
+\| \WW_k \|_p^p \ri)=0 \qquad 2\leq p < \infty 
+\]
+and 
+\be
+\lim_{k\to \infty}\left||\Psi_{n_k}(\v)|^2-  |\VV_{k}(\v)|^2 -| \WW_{k}(\v)|^2\right| = 0\,.
+\ee
+Moreover we claim that 
+\begin{equation}\label{claim1}
+\lim_{k\to\infty}  (\Psi_{n_k}, W\Psi_{n_k}) - (\VV_k,W \VV_k) - (\WW_k, W\WW_k) \geq  0  ,
+\end{equation}
+we postpone the proof of this claim to the end of the discussion.  Summing up, we arrive at
+\be
+\liminf_{k\to\infty} \lf(
+E[\Psi_{n_k} ] - E[ \VV_k] - E[\WW_k]
+\ri) \geq 0 \,,
+\ee
+which implies
+\beq
+\label{e:black-1}
+\limsup_{k\to\infty} \lf(
+ E[ \VV_k] + E[\WW_k]
+\ri) \leq -\nu \,.
+\eeq
+Notice that, given $\Psi\in\EE$ and $\de >0$, then
+\[
+E[\Psi] = \frac{1}{\de^2} E[\de \Psi] + \frac{\de^{2\mu} -1}{\mu+1} \| \Psi
+\|_{2\mu+2}^{2\mu+2}.
+\]
+We remark that $\VV_k, \WW_k \in \EE$, since $\Psi_{n_k}$ satisfies   the continuity condition at
+the vertices  and the multiplication with the cut-off functions
+preserves that. Let $\de_k= \sqrt {m / M[\VV_k]}$ and $\ga_k = \sqrt {m / M[\WW_k]}$  such that $M[\de_k \VV_k] ,\,
+M[\ga_k \WW_k] =m$. Then, using the above equality and the fact that
+$E[\de_k \VV_k], E[\ga_k \WW_k] \geq -\nu$,  one has
+\[
+E[\VV_k] \geq - \frac{\nu}{\de^2_k} + \frac{\de^{2\mu}_k -1}{\mu+1} \| \VV_k
+\|_{2\mu+2}^{2\mu+2}
+\]
+\[
+E[\WW_k] \geq - \frac{\nu}{\ga^2_k} + \frac{\ga^{2\mu}_k -1}{\mu+1} \| \WW_k
+\|_{2\mu+2}^{2\mu+2}
+\]
+from which 
+\[
+E[\VV_k]+E[\WW_k] \geq -\nu \lf( \frac{1}{\de^2_k} + \frac{1}{\ga^2_k} \ri) +
+\frac{\de^{2\mu}_k -1}{\mu+1} \| \VV_k \|_{2\mu+2}^{2\mu+2} +
+\frac{\ga^{2\mu}_k -1}{\mu+1} \| \WW_k \|_{2\mu+2}^{2\mu+2}\,.
+\]
+Notice that  by \eqref{dic4}
+\[
+\frac{1}{\de^2_k} \to \frac{\tau}{m} \qquad \qquad \frac{1}{\ga^2_k} \to 1-\frac{\tau}{m}\,.
+\]
+Let $\theta = \min \{ (\tau/m)^{-\mu} , (1-\tau/m)^{-\mu} \}$ and notice that $\theta
+>1$ since $0<\tau/m <1$. Therefore
+\begin{align}
+\label{e:black-2}
+\liminf_{k\to\infty} \lf(
+ E[ \VV_k] + E[\WW_k]
+\ri) 
+&\geq -\nu + \frac{\theta -1}{\mu+1} \liminf_{k\to\infty} \| \Psi_{n_k}
+\|_{2\mu+2}^{2\mu+2} > -\nu,
+\end{align}
+where we used the fact that $\liminf_{k\to\infty} \| \Psi_{n_k}
+\|_{2\mu+2}^{2\mu+2} \neq 0$. The latter claim is proved by noticing
+that $\liminf_{k\to\infty} \| \Psi_{n_k} 
+\|_{2\mu+2}^{2\mu+2} = 0$,  together with $\| \Psi_{n_k}
+\|_{H^1}$ bounded and Eqs. \eqref{W-1} and \eqref{4.1b},  would imply $\liminf_{k\to\infty} (\Psi_{n_k},W_-\Psi_{n_k}) =0$
+ and $\liminf_{k\to\infty} \|\Psi_{n_k}\|_\infty =0$. Hence, there would be a contradiction with   inequality \eqref{e:floor}. We conclude that if $0<\tau<m$  we get a contradiction, cfr. inequalities \eqref{e:black-1} and \eqref{e:black-2}. To end the analysis of the case $0<\tau<m$ we are left to prove the claim \eqref{claim1}.  We rewrite $W = W_+- W_-$ and consider first the term with $W_+$. We have that 
+\[\begin{aligned}
+ &(\Psi_{n_k}, W_+\Psi_{n_k}) - (\VV_k,W_+ \VV_k) - (\WW_k, W_+\WW_k)     \\ 
+=&   \sum_e \int_{I_e}(W_+)_e \left[1 - (\Theta_k)_e^2 - (\Phi_k)_e^2\right] |(\Psi_{n_k})_e|^2 dx \geq 0. 
+\end{aligned}\]
+Since $\VV_k$ and $\WW_k$ have disjoint supports, we have that 
+\begin{equation*}\begin{aligned}
+&\left| (\Psi_{n_k}, W_-\Psi_{n_k}) - (\VV_k,W_- \VV_k) - (\WW_k, W_-\WW_k) \right|  \\ 
+\leq &  |(\ZZ_k, W_-\ZZ_k)| +2|(\VV_k,W_- \ZZ_k)| +2 |(\WW_k, W_-\ZZ_k) | \\  
+\leq & | (\ZZ_k, W_-\ZZ_k)| +2(\VV_k,W_-\VV_k)^{1/2 }(\ZZ_k,W_- \ZZ_k)^{1/2} +2(\WW_kW_-\WW_k)^{1/2 }(\ZZ_k,W_- \ZZ_k)^{1/2} .
+\end{aligned}\end{equation*}
+The terms containing $\VV_k$ and $\WW_k$ are bounded by Lemma \ref{l:cc} and inequality \eqref{W-1}. The terms containing $\ZZ_k$, go to zero by  inequality \eqref{W-1}  and because $\|\ZZ_k\|\to 0$ by Eq. \eqref{ZZk}. From which the claim \eqref{claim1} follows. 
+
+Since  $0\leq\tau<m$ leads us to a contradiction, it must be $\tau=m$. 
+
+Now we prove that for $m<m^\ast$ the minimizing sequence is not {\em runaway}. Here the limitation on the mass plays a role for the first time.
+By absurd suppose that $\{\Psi_n\}_{n\in\NA} $ is {\em runaway}, then we have that 
+\begin{equation}\label{limit}
+\lim_{n\to\infty} \Psi_{n} (\v) =0\quad \forall \underline{v}\in V\qquad \text{and}\qquad \lim_{n\to\infty}(\Psi_n, W_- \Psi_n)= 0.
+\end{equation} The first limit  is a direct consequence of Lem. \ref{l:cc}, Eq. \eqref{e:run-1}. To prove the second one, assume that $\Psi_n$ escapes at infinity on the external  edge $e^*$ (this can always be done up to taking a subsequence). We note that
+\begin{equation*}
+\lim_{n\to\infty}\int_{I_e} (W_-)_e |(\Psi_n)_e|^2 dx = 0 \qquad \forall e \neq e^* ,
+\end{equation*}
+this is a  direct consequence of Lemma \ref{l:cc} and inequality  \eqref{W-1} applied to the edge $I_e$. We are left to prove that 
+\begin{equation}\label{holiday}
+\lim_{n\to \infty}\int_{0}^{+\infty} (W_-)_{e^*} |(\Psi_n)_{e^*}|^2 dx = 0 . 
+\end{equation}
+ We start by noticing that  $\|\Psi_n\|_{H^1}$ is uniformly bounded, hence, so is $\|\Psi_n\|_p$ for all $p\in [2,+\infty]$, by \eqref{gajardo3} (with $q=2$). As a consequence, we have that  for any $\ve>0$ there exists $R>0$ (independent of $n$) such that
+ \begin{equation*}
+\int_{R}^{+\infty} (W_-)_{e^*} |(\Psi_n)_{e^*}|^2 dx \leq \|(W_-)_{e^*}\|_{L^r(R,\infty)} \|\Psi_n\|_{2r'}^2 \leq \ve,
+\end{equation*}
+with $r'$ such that $r^{-1}+{r'}^{-1} =1 $.  For such $R$, there exists $n_0$ such that for all $n>n_0$ one has 
+\begin{equation*}
+\int_{0}^{R} (W_-)_{e^*} |(\Psi_n)_{e^*}|^2 dx \leq  \|W_-\|_r \|(\Psi_n)_{e^*}\|_{L^{2r'}(0,R)}^2 \leq \ve  
+\end{equation*}
+by \eqref{e:run-1} (see also Rem. \ref{r:2.8}), from which the second limit in \eqref{limit}. 
+
+Recalling that, by Lem. \ref{l:cc} - Eq. \eqref{e:run-1}, one has $\lim_{n\to\infty}\|(\Psi_n)_e\|_{L^{2\mu+2}(I_e)} =0$ for all $e\neq e^*$, and by Eq. \eqref{limit}, we infer 
+ \begin{equation}
+ \label{little}
+ \lim_{n\to \infty} E[\Psi_n]  \geq \lim_{n\to\infty }  \int_0^\infty |(\Psi_n)_{e^*}'|^2 dx -\frac{1}{\mu+1} \int_0^\infty  |(\Psi_n)_{e^*}|^{2\mu+2} dx.
+ \end{equation}
+ Let  $\chi:\RE_+ \to [0,1]$ be a  function such that $\chi \in C^\infty(\RE_+)$, $\chi(0) = 0$ and $\chi(x)=1$ for all $x\geq 1$.  Define 
+\[\psi_n^*(x) :=  \chi(x)(\Psi_n)_{e^*}(x) , \]
+so that $\psi_n^*(0)= 0$, and ${\|\psi_n^*}'\|_{L^2(\RE_+)}^2 \leq c$. By Lem. \ref{l:cc} - Eq. \eqref{e:run-1}, for all $p\geq 2$,
+\begin{equation}\label{psinstar1}
+\lim_{n\to\infty} \|\Psi_n\|_p^p = \lim_{n\to\infty} \|(\Psi_n)_{e^*}\|_{L^p((0,\infty))}^p = \lim_{n\to\infty} \|\psi_n^*\|_{L^p((0,\infty))}^p,
+\end{equation}
+where we used the fact that $\lim_{n\to\infty} \|(\Psi_n)_{e^*}\|_{L^p((0,1))} = 0  $, and the trivial bound $ \|\psi_n^*\|_{L^p((0,1))} \leq  \|\chi\|_{L^\infty((0,1))} \|(\Psi_n)_{e^*}\|_{L^p((0,1))}$.  In particular, $ \lim_{n\to\infty} \|(\Psi_n)_{e^*}\|_{L^2((0,\infty))}^2 = \lim_{n\to\infty} \|\psi_n^*\|_{L^2((0,\infty))}^2 = m$. 
+Moreover we have that 
+ \begin{equation}\label{psinstar2}
+  \lim_{n\to\infty } \frac12 \int_0^\infty |(\Psi_n)_{e^*}'|^2 dx \geq   \lim_{n\to\infty } \frac12 \int_0^\infty |{\psi_n^*}'|^2 dx. 
+\end{equation}
+ To prove the latter inequality, we note that 
+\[\begin{aligned}
+ \lim_{n\to\infty } \int_0^\infty |(\Psi_n)_{e^*}'|^2 - |{\psi_n^*}'|^2 dx 
+ =&   
+ \lim_{n\to\infty } \int_0^\infty |(\Psi_n)_{e^*}'|^2\left(1-\chi^{2}\right)  dx  \\ 
+ & +
+ \lim_{n\to\infty } \int_0^1 |(\Psi_n)_{e^*}|^2 {\chi'}^{2} + 2\chi {\chi'} \Re \overline {(\Psi_n)_{e^*}'}(\Psi_n)_{e^*} dx \\
+ = &   \lim_{n\to\infty } \int_0^1 |(\Psi_n)_{e^*}'|^2\left(1- \chi^{2}\right)  dx  \geq 0 ,
+\end{aligned}\]
+where we used again Lem. \ref{l:cc} - Eq. \eqref{e:run-1} and the bounds $\|\chi\|_\infty, \|\chi'\|_\infty\leq c $. 
+
+We have the following chain of inequalities/identities  
+\begin{align}
+&\lim_{n\to \infty} E[\Psi_n] \nonumber \\
+& \geq 
+\lim_{n\to\infty } \int_0^\infty |{\psi_n^*}'(x)|^2 dx -\frac{1}{\mu+1} \int_0^\infty  |\psi_n^*(x)|^{2\mu+2} dx \nonumber\\
+&\text{(we used Eqs. \eqref{little}, \eqref{psinstar1} and \eqref{psinstar2})} \nonumber \\
+&   \geq \inf \Big\{ \int_0^\infty |\psi ' (x)|^{2} dx -\frac{1}{\mu+1} \int_0^\infty |\psi (x)|^{2\mu+2} \, dx  \text{ s.t. } \psi\in H^1(\RE^+), \, \psi(0)=0\, ,\| \psi\|_{L^2(\RE^+)}^2 =m \Big\} \nonumber \\ 
+&\text{(we used the fact that $\psi_n^*\in H^1(\RE_+)$,  $\psi_n^*(0)= 0$, and $\|\psi_n^*\|_{L^2(\RE_+)}^2 \to  m$ as $n\to\infty$)} \nonumber
+\\ 
+&  =  \inf \Big\{  \int_\RE |{\psi}' (x)|^{2} dx-\frac{1}{\mu+1} \int_\RE|{\psi} (x)|^{2\mu+2} \, dx   \text{ s.t. } \psi\in H^1(\RE), \, \psi(x)=0 \; \forall x\leq 0 ,\| \psi\|_{L^2(\RE)}^2 =m  \Big\}\nonumber \\
+&\text{(where we used the fact that $\psi\in H^1(\RE_+)$ and $\psi(0)= 0$ if and only if its zero extension} \nonumber\\
+&\text{belongs to $H^1(\RE)$, see, e.g., \cite[Th. 5.29]{AF03}})\nonumber
+\\ 
+& \geq \inf \left\{  \int_\RE |\psi  ' (x)|^{2} dx-\frac{1}{\mu+1} \int_\RE|\psi (x)|^{2\mu+2} \, dx  \text{ s.t. } \psi\in H^1(\RE), \, \| \psi\|_{L^2(\RE)}^2 =m  \right\} \label{infsol}\\
+&\text{(we enlarged the set on which the $\inf$ is taken).} \nonumber
+\end{align}
+
+It is well known that the infimum in the latter minimization problem is indeed  attained and that the minimizing function (up to translations and phase multiplications) is given by the soliton profile 
+\begin{equation*}%\label{soliton}
+\phi(x) = [ (\mu + 1) \ome_{\RE}]^{\frac{1}{2\mu}} \sech^{\frac{1}{\mu}} (\mu \sqrt{\ome_{\RE}} x).
+\end{equation*}
+The frequency   $\omega_\RE$ is fixed by the mass constraint through the relation  
+\begin{equation*}%\label{solmass}
+m =\|\phi\|^2_{L^2(\RE)} =   2\f{(\mu+1)^{\f 1 \mu }  }{\mu} \ome_\RE^{ \f 1 \mu - \f 1 2} \int_0^1 (1-t^2)^{\f 1 \mu -1} dt,
+\end{equation*}
+which gives 
+\begin{equation*}%\label{solmass2}
+\omega_\RE = \left( 2\f{(\mu+1)^{\f 1 \mu }  }{\mu}  \int_0^1 (1-t^2)^{\f 1 \mu -1} dt\right)^{-\frac{2\mu}{2-\mu}} m^{\frac{2\mu}{2-\mu}}.
+\end{equation*}
+The infimum in the minimization problem \eqref{infsol} is given by  the nonlinear energy  of the soliton 
+\begin{equation*}%\label{solen}
+  	  \int_\RE |\phi'(x) |^{2} dx-\frac{1}{\mu+1} \int_\RE|\phi(x)|^{2\mu+2} \, dx  =
+- \f{2-\mu}{2+\mu}  \; \ome_\erre \, m = -\gamma_\mu m^{1+\frac{2\mu}{2-\mu}}, 
+\end{equation*}
+with $\gamma_\mu= \f{2-\mu}{2+\mu}\left( 2\f{(\mu+1)^{\f 1 \mu }  }{\mu}  \int_0^1 (1-t^2)^{\f 1 \mu -1} dt\right)^{-\frac{2\mu}{2-\mu}}$. So that by the inequality \eqref{infsol}, we conclude that  if $\Psi_n$ is a runaway sequence  it must be 
+\begin{equation}\label{lower}
+\lim_{n\to \infty} E[\Psi_n] \geq  -\gamma_\mu m^{1+\frac{2\mu}{2-\mu}} .
+\end{equation}
+
+
+To show that for $m$ small enough a minimizing sequence cannot be runaway we  compute the energy   on a trial function.  As trial function we choose the  function $\Phi(\ome)$, with $\omega = \omega(m)$,  given in Th. \ref{t:bif}. By the same theorem we have that the energy  $ E[\Phi(\ome)] = -E_0 m + o(m)$, and by a simple continuity argument we infer that there exists $m^*$  such that $ E[\Phi(\ome)]  < -\gamma_\mu m^{1+\frac{2\mu}{2-\mu}}$ for all  $0<m<m^*$. This, together with the lower bound \eqref{lower},   imply that a minimizing sequence cannot be runaway. 
+
+By Lem. \ref{l:cc} we conclude that for all $0<m<m^*$ there exists a state $\hat\Psi \in\EE$ such that  minimizing sequences converge, up to taking  subsequences, to $\hat\Psi $ in $L^p$ for $p  \geq 2$. In particular, $M[\hat \Psi] = m$, and the potential, vertices, and nonlinear terms in $E[\Psi_n]$ converge to the corresponding ones in $E[\hat\Psi]$. Taking into account also the weak lower continuity of the $H^1$ norm we have
+\[
+E[ \hat \Psi] \leq \lim_{n\to \infty} E[ \Psi_n] = -\nu
+\]
+which implies that $E[ \hat \Psi] = -\nu$. Since $E[ \hat \Psi] = \lim_{n\to \infty}  E[ \Psi_n]$ then $\| \hat \Psi ' \| = \lim_{n\to \infty} \|  \Psi_n ' \|$ and we
+have proved that $\Phi_n \to \hat \Psi$ in $H^1$.
+\end{proof}}
