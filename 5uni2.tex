@@ -1,19 +1,14 @@
 \newpage
-\begin{lemma}Let $\alpha\in G\cup N$, and $u=u(\alpha,r)$. Then $u'(r)<0$ for all $r\in(0,z(\alpha))$ and $u'(z(\alpha))<0$ if $\alpha\in N$.\\
-
-\emph{\color{teal}So $u(r)$ has initial condition $u(0)=\alpha>0$. And then? Depens on the solution set. For solutions in $P$, the solution will remain positive. Without any further information on global behaviour. For solutions in $G\cup N$, there will be a first zero. This might be at infinity. Clearly, the solution is decreasing. In fact, the solution will prove to be strictly decreasing.}\\
-
-\emph{\color{red}Now, the Lyapunov function $E(r)$ is well-defined for $r\in(0,z(\alpha))$ and non-negative! For deriving $E(r)\geq0$ in $z(\alpha)$ use L'Hopital rule for limit? From the lemma before and the IVP it follows ``EASILY'' that $u''(0)<0$ and so $u'<0$ immediately to the right of $r=0$....... Even for $V(0)=\infty$ this property follows from the equation.\\ \\ Suppose by contradiction that $\exists r_0\in(0,z(\alpha))$ where $u'(r_0)=0$. Then by the IVP: $\lambda u(r_0) - V(r_0)u(r_0)^p = u''(r_0)\geq 0$. And so $u(r_0)$ by lemma 2.1 has $E(r_0)<0$: a contradiction. Thus $u'(r)<0$ for $r\in(0,z(\alpha))$. Also $u'(z(\alpha))<0$ to prevent $u\equiv0$.}\\
-
-\begin{proof}
-Write $z(\alpha)=\infty$ when $\alpha\in G$, since: $u(\alpha,r)\to0$ as $r\to\infty$. %Thus $z(\alpha)=\infty$.
-Let $\alpha\in G\cup N$. By lemma \ref{lya} then, $E(r)$ is well-defined for $r\in[0,z(\alpha))$ at least and $\lim_{r\to z(\alpha)}E(r)\geq0.$ Evaluate: \begin{empheq}{align*}\underset{r\to z(\alpha)}{\lim}E(r)&=\underset{r\to z(\alpha)}{\lim}\bigg[\frac{1}{2}u'(r)^2-\frac{\lambda}{2}u(r)^2+\frac{1}{p+1}V(r)u(r)^{p+1}\bigg] \\ &=u'(z(\alpha))^2\geq0.\end{empheq}
+\begin{lemma}Let $\alpha\in G\cup N$, and $u=u(\alpha,r)$. Then $u'(r)<0$ for all $r\in(0,z(\alpha))$ and $u'(z(\alpha))<0$ if $\alpha\in N$.
+\begin{proof} 
+Write $z(\alpha)=\infty$ when $\alpha\in G$, since: $u(\alpha,r)\to0$ as $r\to\infty$. %Thus $z(\alpha)=\infty$. 
+Let $\alpha\in G\cup N$. By lemma \ref{lya} then, $E(r)$ is well-defined for $r\in[0,z(\alpha))$ at least and $\lim_{r\to z(\alpha)}E(r)\geq0.$ Evaluate: \begin{empheq}{align*}\underset{r\to z(\alpha)}{\lim}E(r)&=\underset{r\to z(\alpha)}{\lim}\bigg[\frac{1}{2}u'(r)^2-\frac{\lambda}{2}u(r)^2+\frac{1}{p+1}V(r)u(r)^{p+1}\bigg] \\ &=u'(z(\alpha))^2\geq0.\end{empheq} 
 Since $E(r)$ is non-increasing, $E(r)\geq0$ for all $r\in[0,z(\alpha)]$.
 
 Suppose $u''(0)=0$ and note $u'(0)=0$, so $u\equiv\alpha$ \Lightning. Suppose $u''(0)>0$ then $u'(r)>0$ and $u(r)>u(0)=\alpha$ for $r>0$ and small. Now $\alpha\in(G\cup N)\iff -\frac{\lambda}{2}\alpha^2+\frac{1}{p+1}V(0)\alpha^{p+1}\geq0$, hence $$E(r)-E(0)=\frac{1}{2}\left[u'(r)^2-u'(0)^2\right]-\frac{\lambda}{2}\left[u(r)^2-u(0)^2\right]+\frac{1}{p+1}\left[V(r)u(r)^{p+1}-V(0)u(0)^{p+1}\right]\geq0.$$ This contradicts $E(r)$ nonincreasing. Hence $u''(0)<0$ and $u'(r)<0$ for $r>0$ and small.
 
 Claim: $u'<0$ on $(0,z(\alpha))$. Suppose by contradiction $r_0=\inf(r>0,u'(r)=0)<z(\alpha)$. Note how $u''(r_0)<0\implies u'(r)>0$ on $(0,r_0)$ \Lightning. Hence $u''(r_0)\geq0$. Invoke \ref{ivp}:
-%Note $u'(r_0)=0$ and
+%Note $u'(r_0)=0$ and 
 \begin{gather*}u''(r_0)=\lambda u(r_0)-V(r_0)u(r_0)^p\geq0\\u(r_0)\leq\left[\frac{\lambda}{V(r_0)}\right]^{1/(p-1)}<\left[\left(\frac{p+1}{2}\right)\frac{\lambda}{V(r_0)}\right]^{1/(p-1)}\\
 \implies-\frac{\lambda}{2}u(r_0)^2+\frac{1}{p+1}V(r_0)u(r_0)^{p+1}<0,\end{gather*}Then using $u'(r_0)=0$, evaluate $E(r_0)$: $$E(r_0)=-\frac{\lambda}{2}u(r_0)^2+\frac{1}{p+1}V(r_0)u(r_0)^{p+1}<0.$$ %\begin{empheq}{align*} \eqref{ivp}:\quad&u''(r)+\frac{N-1}{r}u'(r)+g(u(r))=0 \\ r=r_0, u'(r_0)=0:\quad&u''(r_0)+g(u(r))=0 \\ &-g(u(r_0))=u''(r_0) \\ &\lambda u(r_0)-V(r_0)u(r_0)^p=u''(r_0)\geq 0 \\ &\lambda u(r_0)-V(r_0)u(r_0)^p\geq0\quad[[]]\\ \implies &u(r_0)\leq\Bigg[\frac{\lambda}{V(r_0)}\Big]^{1/(p-1)}<\Bigg[\Bigg(\frac{p+1}{2}\Bigg)\frac{\lambda}{V(r_0)}\Big]^{1/(p-1)}\Bigg]\end{empheq}
 But $E(r_0)<0$ contradicts $E(r)\geq0$, so $u'<0$ on $(0,z(\alpha))$.
