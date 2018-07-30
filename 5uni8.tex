@@ -1,25 +1,39 @@
 \begin{lemma} Let $\alpha\in G$. There exists $\epsilon>0$ such that $(\alpha,\alpha+\epsilon)\subset N$.
-\begin{proof} 
-	
-By chapter 4, the solution set $G$ is non-empty. Let $\alpha\in G$ and let $u(\alpha,r)$ be the corresponding solution.  The function $w(\alpha,r)=\frac{\partial}{\partial\alpha}u(\alpha;r)$ satisfies
+\begin{proof}
+
+By chapter 4, the solution set $G$ is non-empty. Let $\alpha\in G$ and let $u(r;\alpha)$ be the corresponding solution.  The function $w(\alpha,r)=\frac{\partial}{\partial\alpha}u(\alpha;r)$ satisfies \ref.
 \\ \\
 
-By lemma \ref{wq}, the function $w$ is unbounded and by lemma \ref{kwong6}, $w$ has a unique zero $r_0\in(d,\infty)$. Let $r_1,r_2$ be such that $d<r_1<r_0<r_2$ and note that $w$ is positive in $r_1$ and negative in $r_2$. There exists $\epsilon>0$ such that, for all $\tilde\alpha\in(\alpha,\alpha+\epsilon)$,$$\tilde u(r_1)>u(r_1)\text{ and }\tilde u(r_2)<u(r_2),$$ where $\tilde u=u(\tilde\alpha,r)$. Hence there exists $r_3\in(r_1,r_2)$ such that the graphs of $u$ and $\tilde u$ intersect, i.e. $\tilde u(r_3)=u(r_3)$. See also figure \ref{}.
+By lemma \ref{wq}, the function $w$ is unbounded. By lemma \ref{kwong6}, $w$ has a unique zero $r_0\in(d,\infty)$. Kwong discusses the disconjugacy interval $(d,\infty)$ of \ref in more detail. Let $r_1,r_2$ be such that $d<r_1<r_0<r_2$ and note that $w(r_1)>0$ and $w(r_2)<0$. There exists $\epsilon>0$ such that, for all $\tilde\alpha\in(\alpha,\alpha+\epsilon)$,$$\tilde u(r_1)>u(r_1)\text{ and }\tilde u(r_2)<u(r_2),$$ where $\tilde u=u(\tilde\alpha,r)$. Hence there exists $r_3\in(r_1,r_2)$ such that the graphs of $u$ and $\tilde u$ intersect, i.e. $\tilde u(r_3)=u(r_3)$. See also figure \ref{}.
 \\ \\
 
 To conclude $\tilde\alpha\in N$ requires existence of a $\tilde r$ such that $\tilde u(\tilde r)=0$. By contradiction, suppose that $\tilde u(r)>0$ for all $r>r_3$. (Note that $\tilde u(r)\geq u(r)>0$ on $r\leq r_3$, since $u(r)>0$ for all $r$.)
 
-Define the difference $z\coloneqq u-\tilde u$ and note that proving $z(r)>0$ on $(r_3,\infty)$ implies $\tilde u(r)<u(r)$ on that interval. This function satisfies the differential equation $$\label{zivp} BLA $$.
-\\ \\
+Now, for $r>r_3$ and small, $\tilde u(r)<u(r)$. Claim: $u(r)>\tilde u(r)$ for all $r>r_3$. Define the difference between $u$ and $\tilde u$ as $z\coloneqq u-\tilde u$. Note $u(r)>\tilde u(r)\iff z(r)>0$. By contradiction, suppose there exists $r_4>r_3$ such that $\tilde u(r_4)=u(r_4)$ (equivalent to $z(r_4)=0$). On $(r_3,r_4)$ the function $z$ satisfies:
+% $$z''+\frac{1}{r}z'+\left[V(r)\frac{u^p-\tilde u^p}{u-\tilde u}\right]z = 0 $$
+\begin{align*}
+	&z''+\frac{1}{r}z'+\left[V(r)\frac{u^p-\tilde u^p}{u-\tilde u}\right]z = 0\quad\mathrm{because} \\
+	(1):\quad &u'' + \frac{1}{r}u' -\lambda u + Vu^p = 0 \\
+	(2):\quad &\tilde u'' + \frac{1}{r}\tilde u' -\lambda\tilde u + V\tilde u^p = 0\\
+	(1) - (2):\quad &u'' - \tilde u'' + \frac{1}{r}u' - \frac{1}{r}\tilde u' -\lambda u + \lambda\tilde u + Vu^p - V\tilde u^p = 0\\
+	 &z'' + \frac{1}{r}z' -\lambda z + \left[Vu^p - V\tilde u^p\right]
+	\frac{u-\tilde u}{u-\tilde u} = 0\\
+	 &z'' + \frac{1}{r}z' + \left[V(r)\frac{u^p-\tilde u^p}{u-\tilde u}-\lambda\right]z = 0
+\end{align*}
 
-Also by Sturm comparison of $z$ and $w$, the latter oscillates faster. Let $\tilde w$ be a solution of \eqref{wivp} such that $\tilde w(r_3)=0$. 
+%Using Sturm theory, the zeroes of $z$ can be studied.
+%and note that proving $z(r)>0$ on $(r_3,\infty)$ implies $\tilde u(r)<u(r)$ on that interval.
+% This function satisfies the differential equation $$\label{zivp} BLA $$.
+% \\ \\
+
+Also by Sturm comparison of $z$ and $w$, the latter oscillates faster. Let $\tilde w$ be a solution of \eqref{wivp} such that $\tilde w(r_3)=0$.
 \\ \\
 
 By integration of the strong version of Sturm, $z(r)\to\infty$ as $r\to\infty$, but this is impossible as $0<\tilde u(r)<u(r)$ on $(r_3,\infty)$ and $u(r)\to0$ as $r\to\infty$. Therefore, $\tilde u$ vanishes at some point $\tilde r\in(r_3,\infty)$ and the proof is complete.
-\\ \\ 
+\\ \\
 
 \comm{
-for any $\epsilon>0$, all solutions $\tilde u=u(\tilde\alpha,r)$ with $\tilde\alpha\in(\alpha,\alpha+\epsilon)$ are non-vanishing. Then  Remember that $w$ is the derivative of \eqref{ivp} with respect to the initial condition. And by \ref{} $w$ has a unique zero that is contained in the disconjugacy interval. [[]] Let $r_1,r_2$ be such that $d<r_1<r_0<r_2$ and note $w(r_1)=\frac{\partial}{\partial\alpha}u(\alpha;r_1)>0$ and $w(r_2)=\frac{\partial}{\partial\alpha}u(\alpha;r_2)<0$. Let $\epsilon>0$ such that for all $\tilde\alpha\in(\alpha,\alpha+\epsilon)$, $$\tilde u(r_1)>u(r_1)\text{ and }\tilde u(r_2)<u(r_2),$$ where $\tilde u=u(\tilde\alpha,r)$ and $\tilde\alpha\in(\alpha,\alpha+\epsilon)$. The solutions $u$ and $\tilde u$ intersect in some point $r_3$. THEY STURM COMPARE. RELATION Z=U-UT.} 
+for any $\epsilon>0$, all solutions $\tilde u=u(\tilde\alpha,r)$ with $\tilde\alpha\in(\alpha,\alpha+\epsilon)$ are non-vanishing. Then  Remember that $w$ is the derivative of \eqref{ivp} with respect to the initial condition. And by \ref{} $w$ has a unique zero that is contained in the disconjugacy interval. [[]] Let $r_1,r_2$ be such that $d<r_1<r_0<r_2$ and note $w(r_1)=\frac{\partial}{\partial\alpha}u(\alpha;r_1)>0$ and $w(r_2)=\frac{\partial}{\partial\alpha}u(\alpha;r_2)<0$. Let $\epsilon>0$ such that for all $\tilde\alpha\in(\alpha,\alpha+\epsilon)$, $$\tilde u(r_1)>u(r_1)\text{ and }\tilde u(r_2)<u(r_2),$$ where $\tilde u=u(\tilde\alpha,r)$ and $\tilde\alpha\in(\alpha,\alpha+\epsilon)$. The solutions $u$ and $\tilde u$ intersect in some point $r_3$. THEY STURM COMPARE. RELATION Z=U-UT.}
 
 \end{proof}
 \end{lemma}
