@@ -6,6 +6,30 @@
 \emph{\color{red}Now, the Lyapunov function $E(r)$ is well-defined for $r\in(0,z(\alpha))$ and non-negative! For deriving $E(r)\geq0$ in $z(\alpha)$ use L'Hopital rule for limit? From the lemma before and the IVP it follows ``EASILY'' that $u''(0)<0$ and so $u'<0$ immediately to the right of $r=0$....... Even for $V(0)=\infty$ this property follows from the equation.\\ \\ Suppose by contradiction that $\exists r_0\in(0,z(\alpha))$ where $u'(r_0)=0$. Then by the IVP: $\lambda u(r_0) - V(r_0)u(r_0)^p = u''(r_0)\geq 0$. And so $u(r_0)$ by lemma 2.1 has $E(r_0)<0$: a contradiction. Thus $u'(r)<0$ for $r\in(0,z(\alpha))$. Also $u'(z(\alpha))<0$ to prevent $u\equiv0$.}\\
 
 \begin{proof}
+  \begin{outline}
+    \1 As $\alpha\in G\cup N$, $E(r)\geq0$ for $r\in(0,z(\alpha))$.
+    \1 Even in $z(\alpha)$, $E(z(\alpha))\geq0$ (SHOW).
+    \1 By IVP and Lemma 5.1: $u''(0)<0$.
+    \1 Using an argument from Chapter 4: $u''(0)$ and $u'(0)=0$ would imply $u\equiv\alpha$.
+    \1 On the other hand $u''(0)>0$ and $u'(0)=0$ would imply $u(r)>u(0)=\alpha$ for $r>0$ and small.
+    \1 This contradicts $E'(r)\leq0$? (SHOW)
+    \1 Conclusion: $u''(0)<0$ and $u'(r)<0$ for $r>0$ and small.
+    \1 To show $u'(r)<0$ for $r\in(0,z(\alpha))$:
+      \2 Suppose by contradiction that there exists $r_0$ such that $u'(r_0)=0$.
+      \2 By the IVP: $u''(r_0)=\lambda u(r_0)-V(r_0)u(r_0)^p$.
+      \2 From the previous concavity argument, $u''(r_0)\geq0$ and $u''(r_0)=0$ would imply $u\equiv u(r_0)$.
+      \2 Then $u''(r_0)>0$ which can be used in analysis of $E(r_0)$.
+      \2 Evaluate $E(r_0)=\frac{1}{2}u'(r_0)^2-\frac{\lambda}{2}u(r_0)^2 + \frac{1}{p+1}V(r_0)u(r_0)^{p+1}\geq 0$.
+      \2 An interesting property of $u(r_0)$ by IVP, $u''(r_0)>0$ and $u'(r_0)=0$ follows
+        \3 $u(r_0)\leq\left[\frac{\lambda}{V(0)}\right]^{\frac{1}{p-1}}<
+        \left[\frac{\lambda}{V(0)}\frac{p+1}{2}\right]^{\frac{1}{p-1}} \iff -\frac{\lambda}{2}u(r_0)^2+\frac{1}{p+1}V(r_0)u(r_0)^{p+1}>0 \iff E(r_0)>0$
+        \3 Which contradicts $E(r)\geq0$ for $r\in(0,z(\alpha))$.
+      \2 Hence $u'(r)<0$ for $r\in(0,z(\alpha))$.
+    \1 If $\alpha\in N$ then $u'(z(\alpha))=0$ then $u\equiv0$.
+      \2 Concavity prevents $u'(z(\alpha))>0$. (SHOW)
+      \2 What does this yield if $\alpha\in G$? (SHOW)
+    \1 So for $\alpha\in N$: $u'(r)<0$ for $r\in(0,z(\alpha)]$.
+  \end{outline}
 Write $z(\alpha)=\infty$ when $\alpha\in G$, since: $u(\alpha,r)\to0$ as $r\to\infty$. %Thus $z(\alpha)=\infty$.
 Let $\alpha\in G\cup N$. By lemma \ref{lya} then, $E(r)$ is well-defined for $r\in[0,z(\alpha))$ at least and $\lim_{r\to z(\alpha)}E(r)\geq0.$ Evaluate: \begin{empheq}{align*}\underset{r\to z(\alpha)}{\lim}E(r)&=\underset{r\to z(\alpha)}{\lim}\bigg[\frac{1}{2}u'(r)^2-\frac{\lambda}{2}u(r)^2+\frac{1}{p+1}V(r)u(r)^{p+1}\bigg] \\ &=u'(z(\alpha))^2\geq0.\end{empheq}
 Since $E(r)$ is non-increasing, $E(r)\geq0$ for all $r\in[0,z(\alpha)]$.
