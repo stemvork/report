@@ -1,6 +1,41 @@
 \newpage
 \begin{lemma}Let $\alpha\in (G\cup N),\text{ then }w$ has at least one zero in $(0,z(\alpha))$.
 \begin{proof}
+  \begin{outlines}
+    \1 To conclude that $w$ has one zero in $(0,\za)$, use Lagrange identity.
+    \1 The proofs for $\a\in G$ and $\a\in N$ will be done seperately.
+    \1 First, suppose $\a\in N$.
+    \1 Rewrite IVP and \emph{w-d.e.} to the following:
+      \2 $(ru')'+r\left[-\lambda u+Vu^p\right]=0$
+      \2 $(rw')'+r\left[-\lambda w+pVu^{p-1}w\right]=0$
+    \1 Multiply by $w$ and $u$ respectively, then integrate from 0 to $\za$:
+      \2 $\int_0^{\za}w(ru')'-u(rw')'dr = \int_0^{\za}r\left[pVu^pw-Vu^pw\right]dr$
+    \1 By partial integration for left hand side, one obtains:
+      \2 $rwu'\at_0^{\za}-ruw'\at_0^{\za}-\int_0^{\za}\left[ru'w'-ru'w'\right]dr=(p-1)\int_0^{\za}rVu^pwdr$
+    \1 Use $u(\za)=0$ to obtain:
+      \2 $\za w(\za)u'(\za)-\za u(\za)w'(\za) = (p-1)\int_0^{\za}rVu^pwdr$
+    \1 Suppose $w>0$ on $(0,\za)$ then left hand side $\leq0$ as $\za>0$, $w(\za)\geq0$ (?) and $u'(\za)<0$.
+    \1 {\color{red} To resolve this, suppose $w>0$ on $(0,\za)$ then $\za>0$, $w(\za)>0$ and $u'(\za)<0\implies\text{ l.h.s. }<0$. That \emph{is} sufficient to show contradiction with $\text{r.h.s.}>0$ as ...}
+    \1 {\color{blue} To \emph{actually} resolve this, the initial supposition was correct: $w>0$ on $(0,\za)$ implies $\text{l.h.s.}\leg0$ as $\za>0$, \emph{importantly} $w(\za)>0$ and $u'(\za)<0$. Why can't $w(\za)=0$? By Sturm comparison! Since $pVwu^{p-1}\neq Vu^p$, the zeroes of $w$ and $u$ will not coincide!}
+      \2 Note work remains to be done to clarify this part of the argument. From \'Suppose $w>0$...\' to the contradiction.
+    \1 By this contradiction then, $w(r)$ has at least one zero on $(0,\za)$.
+    \1 To conclude the same for $\a\in G$, again, assume $w>0$ on $(0,\za)$ then still r.h.s. of \ref identity $>0$.
+    \1 As for the l.h.s. regard the expression $\frac{u}{w}$...
+      \2 Write $\left(\frac{u}{w}\right)'=\frac{wu'-uw'}{w^2}$.
+      \2 Note that $u(0)>0$ and $w(0)>0$ implies $\frac{u}{w}(0)>0$.
+      \2 Rewrite the \ref identity to read:
+        \3 $rwu'-ruw'=(p-1)\int_0^{\za}rVu^pwdr$
+        \3 $\frac{wu'}{w^2}-\frac{uw'}{w^2}=\frac{p-1}{rw^2}\int_0^{\za}rVu^pwdr>0$
+        \3 $\frac{wu'-uw'}{w^2}>0\implies \left(\frac{u}{w}\right)'>0$
+      \2 So $\uowd$ is increasing.
+    \1 Now, there is a hole.. Apparantly, this also implies $w>0$ yields contradiction.
+      \2 Intuitively, $\uowd$ increasing means that $w$ decays faster than $u$ everywhere.
+      \2 Then, as for $\a\in G$ the solution decays to 0, so must $w$.
+      \2 But, since $w$ decays faster than $u$, the zero of $w$ must be to the left of $\za=\infty$.
+      \2 Hence, $w$ has a zero in $(0,\za)$.
+        \3 Hooray!
+    \1 Might need to formalise this a bit further.
+  \end{outlines}
 The Lagrange identity for \ref{ivp} and \ref{} will yield information about the zeroes of $w(r)$. Observe the following identities arising from the differential equations:\begin{gather*}
 (ru'(r))'+r\left[-\lambda u(r)+V(r)u(r)^p\right]=0\\
 (rw'(r))'+r\left[-\lambda w(r)+pV(r)u(r)^{p-1}w(r)\right]=0.

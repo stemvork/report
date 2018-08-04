@@ -7,3 +7,45 @@ Define $\rho\coloneqq\theta^{-1}$. Since $\theta(r)$ is continuous and increasin
 Define $\nu_{\beta}(r)\coloneqq ru'(r)+\beta u(r)=-u(r){\theta(r)-\beta}.$ Let $\beta>0,$ then $\nu_{\beta}(r)>0$ if $r<\rho(\beta)$ and $\nu_{\beta}(r)<0$ if $r>\rho(\beta)$. SHOW.
 
 Define $\phi_{\beta}(r)\coloneqq\left[\beta(p-1)-2\right]V(r)u(r)^p-rV'(r)u(r)^p+2\lambda u(r).$ Now observe $\nu_{\beta}(r)$ satisfies the differential equation $$\nu_{\beta}''(r)+\frac{1}{r}\nu_{\beta}(r)'-\lambda\nu_{\beta}+pV(r)u(r)^{p-1}\nu_{\beta}=\phi_{\beta}(r)$$} SHOW.
+
+\begin{outlines}
+  \1 After these three lemmata, the following results are obtained:
+    \2 $\a\in P$ for $\a\in(0,\a_0)$ with $\a_0=
+      \left[\frac{\lambda}{V(0)}\frac{p+1}{2}\right]^{\frac{1}{p-1}}$, we have $\a\in P$.
+    \2 For $\a\in G$ we have $u'(r)<0$ on $(0,\za)$ and for $\a\in N$ we have $u'(r)<0$ on $(0,\za]$.
+    \2 For $\a\in G\cup N$ at least one zero for $w(r)$ in $(0,\za)$. In other words, $w$ oscillates faster.
+  \1 To obtain results about the zeroes of $u$ we will need more information about the zeroes of $w$.
+  \1 In fact, it will be shown that $w$ has a unique zero in $(0,\za)$.
+  \1 Then, by the difference function $z\coloneqq u-\tilde u$ and Sturm theory:
+    \2 $\a\in N\implies \tilde\a\in N\text{ for }\tilde\a\in(\a,\a+\epsilon)$.
+  \1 Lastly, $\a\in N\implies\tilde\a\in N\text{ for }\tilde\a\in[\a,\infty)$.
+    \2 So all initial conditions greater than or equal to initial conditions with solution in $N$ are also in $N$.
+    \2 Furthermore, the difference between $u$ and $\tilde u$ is decreasing with respect to increasing initial condition.
+  \1 This is sufficient to show that any initial condition below $\a_0\in G$ cannot be in $N$ as that would contradict $\a_0\in G$ by this property of initial conditions in $N$. As $G$ is nonempty by chapter 4 and $G$ and $N$ are now disjoint... also noting $P$ is disjoint with $G$ and $N$ and nonempty by lemma 5.1... $\a_0\in G$ is unique!
+    \2 Most work remains in explaining using lemmata 7 and 8 that $G$ contains at most one point.
+\end{outlines}
+\noindent\hrulefill
+\begin{outlines}
+  \1 In the lemmata following, many related properties are used. This section is dedicated to properly introducing those functions and their properties.
+  \1 First, let $\theta(r)\coloneqq-r\frac{u'(r)}{u(r)}$ for $r\in[0,\za]$.
+    \2 Note that by IVP: $\theta(0)=\underset{r\downarrow0}{\lim}\theta(r)=\underset{r\downarrow0}{\lim}-r\frac{u'(r)}{u(r)}=\underset{r\downarrow0}{\lim}\frac{-ru'(r)}{\a}=0$
+    \2 By properties $r>0$, $u'(r)<0$ on $(0,\za)$ and $u(r)>0$ on $(0,\za)$: $\theta(r)>0$ on $(0,\za)$.
+    \2 Also, $\theta(r)$ is increasing, that is $\theta(r)'>0$.
+      \3 To see this... SHOW
+    \2 The limit $\underset{r\to\za}{\lim}\theta(r)=\infty$.
+      \3 To see this for $\a\in N$ SHOW
+      \3 To see this for $\a\in G$ SHOW
+  \1 As $\theta(r)$ is continuous and increasing, there exists $\rho\coloneqq\theta^{-1}$ as there exists a unique $r=\rho(\beta)>0\text{ s.t. } \theta(r)=\beta$.
+    \2 Note that $\rho(0)=0$ and $\underset{\beta\to\infty}{\lim}\rho(\beta)=\za$.
+    \2 Note this $\rho(\beta)$ is continuous and increasing with respect to $\beta$.
+    \2 Note that $\rho(r)>0$ on $(0,\infty)$.
+  \1 Now define $\nub\coloneqq ru'(r)+\beta u(r)=-u(r)\left[\theta(r)-\beta\right]$
+  \1 Let $\beta>0$ then $\nub(r)>0$ if $r<\rho(\beta)$ and $\nub<0$ if $r>\rho(\beta)$.
+    \2 Note that $u(r)>0$ so $\nub>0$ if $\theta(r)-\beta<0$. That is, $0>\theta(r)-\beta\iff\beta>\theta(r)\iff\rho(\beta)>r$. Similarly, $\nub<0$ if $\beta<\theta(r)\iff\rho(\beta)<r$.
+  \1 All of these properties can also be illustrated by beautiful figures. SHOW
+  \1 \emph{Complicated:} $\nub(r)$ satisfies the following differential equation:
+    \2 $\nub''(r)+\frac{1}{r}\nub'(r)-\lambda\nub(r)+pV(r)u(r)^{p-1}\nub(r)=\phib(r)$
+    \2 Where $\phib(r)=\left[\beta(p-1)-2\right]V(r)u(r)^p-V'(r)u(r)^p+2\lambda u(r)$.
+    \2 SHOWWWWWWW
+  \1 In lemma 4 this will be used to show that the sign of $\phib$ is related to a continuous decreasing function $\sigma(\beta)$ and this function crosses $\rho(\beta)$ in a unique $\beta_0$ (lemma 5.5). The specific $\nu_{\beta_0}$ and $\rho_0=\rho(\beta_0)$ then are used in strong version of Sturm comparison theorem in lemma 6 to show that $w$ has a unique zero on $(0,\za)$! COOL! Hooray! Useful.
+\end{outlines}
