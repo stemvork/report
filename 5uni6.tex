@@ -1,22 +1,58 @@
-\begin{lemma}\label{wq}For $\alpha\in G\cup N,w$ has a unique zero $r_0\in(0,z(\alpha)).$ Furthermore, $w(z(\alpha))<0$ if $\alpha\in N$ and $\underset{r\to\infty}{\lim}w(r)=-\infty$ if $\alpha\in G$.
+% !TEX root = main.tex
 
-\emph{}\\[11pt]\emph{Some remarks: the functions $u(r)$ and $w(r)$ will be compared `'in the rest of the uniqueness proof'. This lemma derives that $w(r)$ has a \textbf{unique} zero $r_0$ to the left of $z(\alpha)$. Remember $z(\alpha)$ is the zero of $u(r)$. On the other hand, if $u(r)$ is positive and decreasing everywhere--has no finite zero $z(\alpha)$ such that $u(z(\alpha))=0$--then still $w(r)$ has a finite zero $r_0$ and $w(r)$remains negative to the right of the zero. Even more, the function $w(r)$ tends to negative infinity for $r\to\infty$, $\underset{r\to\infty}{\lim}w(r)=-\infty$.}\\[11pt]
+\begin{lemma}\label{wq}
+  For $\alpha\in G\cup N,w$ has a unique zero $r_0\in(0,z(\alpha)).$
+  Furthermore, $w(z(\alpha))<0$ if $\alpha\in N$
+  and $\underset{r\to\infty}{\lim}w(r)=-\infty$ if $\alpha\in G$.
+
+  \seperate
+
+  \emph{Some remarks: the functions $u(r)$ and $w(r)$ will be compared `'in the rest of the uniqueness proof'. This lemma derives that $w(r)$ has a \textbf{unique} zero $r_0$ to the left of $z(\alpha)$. Remember $z(\alpha)$ is the zero of $u(r)$. On the other hand, if $u(r)$ is positive and decreasing everywhere--has no finite zero $z(\alpha)$ such that $u(z(\alpha))=0$--then still $w(r)$ has a finite zero $r_0$ and $w(r)$remains negative to the right of the zero. Even more, the function $w(r)$ tends to negative infinity for $r\to\infty$, $\underset{r\to\infty}{\lim}w(r)=-\infty$.}
 
 \begin{proof}
-The solution $\nu(r)$ changes sign in $\rho_0\in[0,z(\alpha)]$. As $\nu(z(\alpha))z(\alpha)u'(z(\alpha))<0$, the solution $\nu(r)$ changes sign once. Let $\tau$ be the first zero of $w(r)$. Then by Sturm comparison, $\rho_0\in(0,\tau)$, i.e. $\nu$ oscillates faster than $w$.
+The solution $\nu(r)$ changes sign in $\rho_0\in[0,z(\alpha)]$.
+As $\nu(z(\alpha))z(\alpha)u'(z(\alpha))<0$, the solution $\nu(r)$ changes sign once.
+Let $\tau$ be the first zero of $w(r)$.
+Then by Sturm comparison, $\rho_0\in(0,\tau)$, i.e. $\nu$ oscillates faster than $w$.
 
 Also by Sturm comparison, $w$ can have no further zero and $\tau$ is the unique zero of $w$.
 
-\underline{Sign of $v$ changes in $\rho_0$} `'By previous lemmata' the sign of $\nu$ changes in $\rho_0$. Refer to lemma ... and/or figure ... Also, remember ...\\ \\
+\seperate
 
-\underline{$\nu$ changes sign only once} The argument that $\nu$ changes sign only once is given in lemma ... Remember that ...\\ \\
+\underline{Sign of $v$ changes in $\rho_0$}
+`'By previous lemmata' the sign of $\nu$ changes in $\rho_0$.
+Refer to lemma ... and/or figure ...
+Also, remember ...\\ \\
 
-\underline{$w$ has a first zero} Suppose $w(r)$ does not have a zero. Then ...\\ \\
+\underline{$\nu$ changes sign only once}
+The argument that $\nu$ changes sign only once is given in lemma ...
+Remember that ...\\ \\
 
-\underline{Comparing $w$ and $v$, conclusion: $w$ has a unique zero} One can compare $\nu$ and $w$ with Sturm's comparison theorem, which is given as ... In this theorem, take ... as ... and ... as ... to see that ...\\ \\
+\underline{$w$ has a first zero}
+Suppose $w(r)$ does not have a zero.
+Then ...\\ \\
 
-\underline{Also if $\alpha\in G$} When $\alpha\in G$ then $u(r)$ has no zero. The solution depends on $\alpha$ and the change of $u(r)$ with respect to $\alpha$ is given by the function $w(r)=\frac{\partial}{\partial\alpha}u(r)$. `'Since there are solutions that have a zero and some that don't', the function $w(r)$ must have a zero. Even more, the zero of $w$ will be to the left of the zero of $u(r)$. CIRKELREDENERING? Then $u(r)$ does not have a zero, the limit of $w(r)$ for $r$ to infinity is negative infinity. To see this, remark that for increasing $\alpha$, one will obtain a solution that \emph{has} a zero. Hence in that $r$-value, the function $u(r)$ decreases with increasing $\alpha$, ergo, the function $w(r)$ is increasingly ?? negative for $r$-values where $u(r)$ is positive.
+\underline{Comparing $w$ and $v$, conclusion: $w$ has a unique zero}
+One can compare $\nu$ and $w$ with Sturm's comparison theorem,
+which is given as ...
+In this theorem, take ... as ... and ... as ... to see that ...\\ \\
 
+\seperate
+
+\underline{Also if $\alpha\in G$}
+When $\alpha\in G$ then $u(r)$ has no zero.
+The solution depends on $\alpha$ and the change of $u(r)$ with respect to $\alpha$ is given by
+the function $w(r)=\frac{\partial}{\partial\alpha}u(r)$.
+`'Since there are solutions that have a zero and some that don't',
+the function $w(r)$ must have a zero.
+Even more, the zero of $w$ will be to the left of the zero of $u(r)$.
+CIRKELREDENERING?
+Then $u(r)$ does not have a zero, the limit of $w(r)$ for $r$ to infinity is negative infinity.
+To see this, note that for increasing $\alpha$, one will obtain a solution that \emph{has} a zero.
+Hence in that $r$-value, the function $u(r)$ decreases with increasing $\alpha$, ergo,
+the function $w(r)$ is increasingly ?? negative for $r$-values where $u(r)$ is positive.
+
+\seperate
 
 \end{proof}
 \end{lemma}

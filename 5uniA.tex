@@ -1,12 +1,43 @@
-{\color{gray} Intermezzo: some definitions. Let $\theta(r)\coloneqq-ru'(r)/u(r)$ for $r\in[0,z(\alpha)$ and $\rho\coloneqq\theta^{-1}$. Then PPProperties. Many auxiliary functions will be introduced now. These functions construct the information needed to prove $w$ has a unique zero. Bear with me as the following functions and variables are introduced: $\theta(r),\beta,\rho(\beta),\phi_{\beta}(r),\nu_{\beta}(r)$. In the lemma that follows, even more functions and variables are introduced: $\bar\beta,\sigma(\beta),\xi(r), \Xi(r)\coloneqq\sigma(\beta)^{-1},\beta_0$.}
+% !TEX root = main.tex
 
-{\color{teal}Define $\theta(r)\coloneqq-ru'(r)/u(r)$ on $r\in[0,z(\alpha))$. Note $\theta(r)$ has the following properties: \begin{enumerate}[(i)]\item $\theta(0)=0$, \item $\theta'(r)>0$ for all $r\in(0,z(\alpha))$, and \item $\underset{r\to z(\alpha)}{\lim}\theta(r)=\infty$. \end{enumerate} SHOW THETA(R) HAS THESE PROPERTIES.
+{\color{gray} Intermezzo: some definitions.
+Let $\theta(r)\coloneqq-ru'(r)/u(r)$ for $r\in[0,z(\alpha)$ and $\rho\coloneqq\theta^{-1}$.
+Then PPProperties.
+Many auxiliary functions will be introduced now.
+These functions construct the information needed to prove $w$ has a unique zero.
+Bear with me as the following functions and variables are introduced:
+$\theta(r),\beta,\rho(\beta),\phi_{\beta}(r),\nu_{\beta}(r)$.
+In the lemma that follows, even more functions and variables are introduced:
+$\bar\beta,\sigma(\beta),\xi(r), \Xi(r)\coloneqq\sigma(\beta)^{-1},\beta_0$.}
 
-Define $\rho\coloneqq\theta^{-1}$. Since $\theta(r)$ is continuous and increasing SHOW.., there exists a unique $r=\rho(\beta)>0$ such that $\theta(r)=\beta$. SHOW. Then $\rho(r)$ is continuous and increasing, with $\rho(0)=0$ and $\underset{\beta\to\infty}{\lim}\rho(\beta)=z(\alpha).$ SHOW.
+\seperate
 
-Define $\nu_{\beta}(r)\coloneqq ru'(r)+\beta u(r)=-u(r){\theta(r)-\beta}.$ Let $\beta>0,$ then $\nu_{\beta}(r)>0$ if $r<\rho(\beta)$ and $\nu_{\beta}(r)<0$ if $r>\rho(\beta)$. SHOW.
+{\color{teal}Define $\theta(r)\coloneqq-ru'(r)/u(r)$ on $r\in[0,z(\alpha))$.
+Note $\theta(r)$ has the following properties:
+\begin{enumerate}[(i)]
+    \item $\theta(0)=0$,
+    \item $\theta'(r)>0$ for all $r\in(0,z(\alpha))$, and
+    \item $\underset{r\to z(\alpha)}{\lim}\theta(r)=\infty$.
+\end{enumerate}
+\_SHOW THETA(R) HAS THESE PROPERTIES.
+
+\seperate
+
+Define $\rho\coloneqq\theta^{-1}$.
+Since $\theta(r)$ is continuous and increasing SHOW..,
+there exists a unique $r=\rho(\beta)>0$ such that $\theta(r)=\beta$. SHOW.
+Then $\rho(r)$ is continuous and increasing,
+with $\rho(0)=0$ and $\underset{\beta\to\infty}{\lim}\rho(\beta)=z(\alpha).$ SHOW.
+
+\seperate
+
+Define $\nu_{\beta}(r)\coloneqq ru'(r)+\beta u(r)=-u(r){\theta(r)-\beta}.$
+Let $\beta>0,$ then $\nu_{\beta}(r)>0$ if $r<\rho(\beta)$
+and $\nu_{\beta}(r)<0$ if $r>\rho(\beta)$. SHOW.
 
 Define $\phi_{\beta}(r)\coloneqq\left[\beta(p-1)-2\right]V(r)u(r)^p-rV'(r)u(r)^p+2\lambda u(r).$ Now observe $\nu_{\beta}(r)$ satisfies the differential equation $$\nu_{\beta}''(r)+\frac{1}{r}\nu_{\beta}(r)'-\lambda\nu_{\beta}+pV(r)u(r)^{p-1}\nu_{\beta}=\phi_{\beta}(r)$$} SHOW.
+
+\seperate
 
 \begin{outline}
   \1 After these three lemmata, the following results are obtained:
@@ -24,7 +55,9 @@ Define $\phi_{\beta}(r)\coloneqq\left[\beta(p-1)-2\right]V(r)u(r)^p-rV'(r)u(r)^p
   \1 This is sufficient to show that any initial condition below $\a_0\in G$ cannot be in $N$ as that would contradict $\a_0\in G$ by this property of initial conditions in $N$. As $G$ is nonempty by chapter 4 and $G$ and $N$ are now disjoint... also noting $P$ is disjoint with $G$ and $N$ and nonempty by lemma 5.1... $\a_0\in G$ is unique!
     \2 Most work remains in explaining using lemmata 7 and 8 that $G$ contains at most one point.
 \end{outline}
-\noindent\hrulefill
+
+\seperate
+
 \begin{outline}
   \1 In the lemmata following, many related properties are used. This section is dedicated to properly introducing those functions and their properties.
   \1 First, let $\theta(r)\coloneqq-r\frac{u'(r)}{u(r)}$ for $r\in[0,\za]$.

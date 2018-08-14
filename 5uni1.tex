@@ -1,9 +1,12 @@
+% !TEX root = main.tex
 \newpage
-\begin{lemma}\label{lya}Suppose that $V(0):=\underset{r\to0}{\lim}~V(r)$ exists and is finite. Then $$0<\alpha<\left[\left(\frac{p+1}{2}\right)\frac{\lambda}{V(0)} \right]^{1/(p-1)}\implies \alpha\in P.$$\\
+\begin{lemma}\label{lya}
+  Suppose that $V(0):=\underset{r\to0}{\lim}~V(r)$ exists and is finite.
+  Then $$0<\alpha<\left[\left(\frac{p+1}{2}\right)\frac{\lambda}{V(0)} \right]^{1/(p-1)}\implies \alpha\in P.$$
 
-\emph{\color{teal}Some remarks: as mentioned, the function $V(r)$ possibly has a singularity in $r=0$. In this lemma, we suppose the limit of $V(r)$ for $r\to0$ exists and is finite. Then a set of initial conditions is implied for which the solution is positive everywhere. This set is bound below by 0 and the upper bound is given by analysis of the Lyapunov function for this problem. Then, as the Lyapunov function is nonincreasing, for negative Lyapunov initial value ($E(0)<0$) the Lyapunov function remains negative. However, evaluating the Lyapunov function in $z(\alpha)$ or for $r\to\infty$ respectively, it follows that certain initial conditions yield nonnegative Lyapunov function values! From these contradictions, the set of initial conditions for which the solution belongs to $P$ is concluded.}\\[11pt]
+% \emph{\color{teal}Some remarks: as mentioned, the function $V(r)$ possibly has a singularity in $r=0$. In this lemma, we suppose the limit of $V(r)$ for $r\to0$ exists and is finite. Then a set of initial conditions is implied for which the solution is positive everywhere. This set is bound below by 0 and the upper bound is given by analysis of the Lyapunov function for this problem. Then, as the Lyapunov function is nonincreasing, for negative Lyapunov initial value ($E(0)<0$) the Lyapunov function remains negative. However, evaluating the Lyapunov function in $z(\alpha)$ or for $r\to\infty$ respectively, it follows that certain initial conditions yield nonnegative Lyapunov function values! From these contradictions, the set of initial conditions for which the solution belongs to $P$ is concluded.}
 
-\emph{\color{red}I would like to derive the Lyapunov function and explain/show how it is analogous to the classical dynamical potential. PHYSICS :). The argument that these initial conditions lead to negative $E(r)$ is given, but needs restructuring. Now, are these all initial conditions yielding solutions of $P$? Is it possible for $V(0)$ to be infinite and still yield $u\in P$?}
+% \emph{\color{red}I would like to derive the Lyapunov function and explain/show how it is analogous to the classical dynamical potential. PHYSICS :). The argument that these initial conditions lead to negative $E(r)$ is given, but needs restructuring. Now, are these all initial conditions yielding solutions of $P$? Is it possible for $V(0)$ to be infinite and still yield $u\in P$?}
 
 \begin{proof}
   \begin{outline}
@@ -20,17 +23,49 @@
       \2 $\ldots\in G$ would imply $\underset{r\to\infty}{\lim}E(r)=0$ contradicting $E<0$.
     \1 Conclusion: $\alpha\in P$.
   \end{outline}
-Define $$E(r)\coloneqq\frac{1}{2}u'(r)^2-\frac{\lambda}{2}u(r)^2+\frac{1}{p+1}V(r)u(r)^{p+1},$$  for $r\in[0,\infty)$ if $\alpha\in P\cup G$ and $r\in[0,z(\alpha)]$ if $\alpha\in N$. Then, rewrite \ref{ivp} and calculate $E'(r)$: \begin{align*} &u''(r)+\frac{1}{r}u'(r)-\lambda u(r)+V(r)u(r)^p=0\\
-&\left[u''(r)-\lambda u(r)+V(r)u(r)^p\right]=-\frac{1}{r}u'(r)\\
-E'(r)&=u''(r)u'(r)-\lambda u(r)u'(r)+V(r)u(r)^pu'(r)+\frac{1}{p+1}V'(r)u(r)^{p+1}\\
-&=\left[u''(r)-\lambda u(r)+V(r)u(r)^p\right]u'(r)+\frac{1}{p+1}V'(r)u(r)^{p+1}\\
-&=-\frac{u'(r)^2}{r}+\frac{1}{p+1}V'(r)u(r)^{p+1}\leq0\text{ for }r>0.
-\end{align*} Note that $V'(r)\leq0$ by (H2) and $u'(r)^2\geq0, u(r)^{p+1}\geq0$ and $r\geq0$. Conclusion: $E(r)$ is nonincreasing.
+  \seperate
+There exists an open interval of initial conditions belonging to set of initial conditions $P$.
+Remember solutions with $u(0)=\alpha\in P$ are positive definite on $(0,r_0)$ for some $r_0$ that satisfies $u'(r_0)=0$.
+To determine such an interval, define the Lyapunov function $E(r)$ as:
+$$E(r)\coloneqq\frac{1}{2}u'(r)^2-\frac{\lambda}{2}u(r)^2+\frac{1}{p+1}V(r)u(r)^{p+1},$$
+% for $r\in[0,\infty)$ if $\alpha\in P\cup G$ and $r\in[0,z(\alpha)]$ if $\alpha\in N$.
+% rewrite \ref{ivp} such that $u'(r)$ in $E(r)$ and
+Then, calculate $E'(r)$, where the IVP can be used to simplify the expression:
+\begin{align*}
+    % &u''(r)+\frac{1}{r}u'(r)-\lambda u(r)+V(r)u(r)^p=0\\
+    % &\left[u''(r)-\lambda u(r)+V(r)u(r)^p\right]=-\frac{1}{r}u'(r)\\
+    E'(r)&=u''(r)u'(r)-\lambda u(r)u'(r)+V(r)u(r)^pu'(r)+\frac{1}{p+1}V'(r)u(r)^{p+1}\\
+    &=\left[u''(r)-\lambda u(r)+V(r)u(r)^p\right]u'(r)+\frac{1}{p+1}V'(r)u(r)^{p+1}\\
+    &=-\frac{u'(r)^2}{r}+\frac{1}{p+1}V'(r)u(r)^{p+1}\leq0\text{ for }r>0.\\
+    \text{because }&\left[u''(r)-\lambda u(r)+V(r)u(r)^p\right]=-\frac{1}{r}u'(r)
+\end{align*}
+{\color{red}Layout?} Note that $V'(r)\leq0$ by hypothesis H2, $u'(r)^2\geq0, u(r)^{p+1}\geq0$ and $r\geq0$.
+\underline{Conclusion:} $E(r)$ is nonincreasing.
+\seperate
 
-By these properties of $E(r)$ the implication will follow. Let $0<\alpha<\left[\left(\frac{p+1}{2}\right)\frac{\lambda}{V(0)} \right]^{1/(p-1)}.$ Rewrite this assumption on $\alpha$ and evaluate $E(0)$: \begin{gather*}\alpha<\left[\left(\frac{p+1}{2}\right)\frac{\lambda}{V(0)} \right]^{1/(p-1)}\iff\alpha^{p-1}<\left(\frac{p+1}{2}\right)\frac{\lambda}{V(0)}\iff
+By these properties of $E(r)$ the implication will follow.
+Let $0<\alpha<\left[\left(\frac{p+1}{2}\right)\frac{\lambda}{V(0)} \right]^{1/(p-1)}.$
+Rewrite this assumption on $\alpha$ and evaluate $E(0)$:
+\begin{gather*}
+  \alpha<\left[\left(\frac{p+1}{2}\right)\frac{\lambda}{V(0)} \right]^{1/(p-1)}
+  \iff\alpha^{p-1}<\left(\frac{p+1}{2}\right)\frac{\lambda}{V(0)}\iff
 %\frac{1}{p+1}V(0)\alpha^{p-1}<\frac{\lambda}{2}\\
--\frac{\lambda}{2}\alpha^2+\frac{1}{p+1}V(0)\alpha^{p+1}<0\\\implies E(0)=\frac{1}{2}u'(0)^2-\frac{\lambda}{2}u(0)^2+\frac{1}{p+1}V(0)u(0)^{p+1}<0.\end{gather*} Remember $E(r)$ is nonincreasing, so $E(r)<0$ for $r>0$. To prove $\alpha\in P$, consider the contradictory cases: (i) $\alpha\in N$, (ii) $\alpha\in G$. Suppose $\alpha\in N$, then $u(z(\alpha))=0$ and $E(z(\alpha))=\frac{1}{2}u'(z(\alpha))^2\geq0$. This contradicts $E<0$. Suppose $\alpha\in G$. Then $u(r)\to0,u'(r)\to0$ as $r\to\infty$. Then $E(r)\to0$ as $r\to\infty$, contradicting $E<0$. Hence $\alpha\in P$.
+  -\frac{\lambda}{2}\alpha^2+\frac{1}{p+1}V(0)\alpha^{p+1}<0\\
+  \implies E(0)=\frac{1}{2}u'(0)^2-\frac{\lambda}{2}u(0)^2+\frac{1}{p+1}V(0)u(0)^{p+1}<0.
+\end{gather*}
+Remember $E(r)$ is nonincreasing, so $E(r)<0$ for $r>0$.
+\seperate
+To prove $\alpha\in P$, consider the contradictory cases:
+(i) $\alpha\in N$, (ii) $\alpha\in G$.
+Suppose $\alpha\in N$.
+Then $u(z(\alpha))=0$ and $E(z(\alpha))=\frac{1}{2}u'(z(\alpha))^2\geq0$.
+This contradicts $E<0$.
+Suppose $\alpha\in G$.
+Then $u(r)\to0,u'(r)\to0$ as $r\to\infty$.
+Then $E(r)\to0$ as $r\to\infty$, contradicting $E<0$.
+\underline{Conclusion:} $\alpha\in P$.
+
 \end{proof}
 \end{lemma}
 
-\subsection{Discussion} Consider the Lyapunov function $E(r)$, an analogue to the potential function of classical dynamics. Lyapunov theory treats the stability of a solution near an equilibrium point. For more on Lyapunov theory, see \cite{}.
+% \subsection{Discussion} Consider the Lyapunov function $E(r)$, an analogue to the potential function of classical dynamics. Lyapunov theory treats the stability of a solution near an equilibrium point. For more on Lyapunov theory, see \cite{}.

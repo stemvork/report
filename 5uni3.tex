@@ -1,3 +1,4 @@
+% !TEX root = main.tex
 \newpage
 \begin{lemma}Let $\alpha\in (G\cup N),\text{ then }w$ has at least one zero in $(0,z(\alpha))$.
 \begin{proof}
@@ -36,17 +37,57 @@
         \3 Hooray!
     \1 Might need to formalise this a bit further.
   \end{outline}
-The Lagrange identity for \ref{ivp} and \ref{} will yield information about the zeroes of $w(r)$. Observe the following identities arising from the differential equations:\begin{gather*}
-(ru'(r))'+r\left[-\lambda u(r)+V(r)u(r)^p\right]=0\\
-(rw'(r))'+r\left[-\lambda w(r)+pV(r)u(r)^{p-1}w(r)\right]=0.
-\end{gather*} Now multiply by $w(r)$ and $u(r)$ respectively, subtract them and integrate from 0 to $z(\alpha)$, \begin{gather*}
-\int_0^{z(\alpha)}w(r)(ru'(r))'-u(r)(rw'(r))'dr=%
-\int_0^{z(\alpha)}r\left\{pV(r)u(r)^pw(r)-V(r)u(r)^pw(r)\right\}dr,
-\end{gather*} and perform partial integration:\begin{gather*}
-rw(r)u'(r)\at_0^{z(\alpha)}-ru(r)w'(r)\at_0^{z(\alpha)}-\int_0^{z(\alpha)}ru'(r)w'(r)-ru'(r)w'(r)dr\\=(p-1)\int_0^{z(\alpha)}rV(r)u(r)^pw(r)dr\\z(\alpha)w(z(\alpha))u'(z(\alpha))=(p-1)\int_0^{z(\alpha)}rV(r)u(r)^pw(r)dr.
-\end{gather*} Note that $u(z(\alpha))=0$.   In evaluating the integral term, {\color{gray}note $r>0$, $V(r)>0$, and $u(r)^p>0$. Suppose $w>0$ on $(0,z(\alpha))$. Then $z(\alpha)w(z(\alpha))u'(z(\alpha))\leq0$ contradicts $(p-1)\int_0^{z(\alpha)}rV(r)u(r)^pw(r)dr>0$ \Lightning. Hence $w$ has at least one zero in $(0,z(\alpha))$.}
 
-\underline{$\alpha\in G$} Suppose by contradiction that $w>0$ on $(0,\infty)$. {\color{gray} Then rewrite ... and note how the integral is still positive by assumption. Then $\left(\frac{u}{w}\right)'$ is positive. So $\frac{u}{w}$ is increasing. By RRR there exists two independent solutions that satisfy TTT. So TTT for some constants $\alpha_1,\alpha_0$. Since $w>0$ by hypothesis, $\alpha_1\geq0$. Suppose $\alpha_1=0$, then $w(r)\to0$ exponentially as $r\to\infty$. So $w$ changes sign by RRR, a contradiction. On the other hand, suppose $\alpha_1>0$, then by RRR there exists a $C$ such that LLL. To see this, note how RRR implies $u(r)\sim r^{-1/2}\exp^{-\sqrt{\lambda}r}$ as $r\to\infty$. These contradictions yield $w$ changes sign at least once on $(0,z(\alpha))$ for $\alpha\in(G\cup N)$.} the Lagrange identity for and the integral term is positive by the same reasoning as above. Claim: the function $u/w$ is positive and increasing. Firstly, it is positive in the origin, because $u(0),w(0)>0$. Secondly, it is increasing since $r$, $w(r)^2$ are positive, so is the derivative of $u/w$. Also, since $u(0),w(0)>0$ the function \\ \\
+  \seperate
+
+The Lagrange identity for \ref{ivp} and \ref{} will yield information about the zeroes of $w(r)$.
+Observe the following identities arising from the differential equations:
+\begin{gather*}
+  (ru'(r))'+r\left[-\lambda u(r)+V(r)u(r)^p\right]=0\\
+  (rw'(r))'+r\left[-\lambda w(r)+pV(r)u(r)^{p-1}w(r)\right]=0.
+\end{gather*}
+Now multiply by $w(r)$ and $u(r)$ respectively, subtract \_them and integrate from 0 to $z(\alpha)$,
+\begin{gather*}
+  \int_0^{z(\alpha)}w(r)(ru'(r))'-u(r)(rw'(r))'dr=%
+  \int_0^{z(\alpha)}r\left\{pV(r)u(r)^pw(r)-V(r)u(r)^pw(r)\right\}dr,
+\end{gather*}
+and perform partial integration:
+\begin{gather*}
+  rw(r)u'(r)\at_0^{z(\alpha)}-ru(r)w'(r)\at_0^{z(\alpha)}-
+  \int_0^{z(\alpha)}ru'(r)w'(r)-ru'(r)w'(r)dr\\
+  =(p-1)\int_0^{z(\alpha)}rV(r)u(r)^pw(r)dr\\
+  z(\alpha)w(z(\alpha))u'(z(\alpha))=(p-1)\int_0^{z(\alpha)}rV(r)u(r)^pw(r)dr.
+\end{gather*}
+Note that $u(z(\alpha))=0$.
+
+\seperate
+
+In evaluating the integral term, {\color{gray}note $r>0$, $V(r)>0$, and $u(r)^p>0$.
+Suppose $w>0$ on $(0,z(\alpha))$.
+Then $z(\alpha)w(z(\alpha))u'(z(\alpha))\leq0$ contradicts
+$(p-1)\int_0^{z(\alpha)}rV(r)u(r)^pw(r)dr>0$ \Lightning.
+Hence $w$ has at least one zero in $(0,z(\alpha))$.}
+
+\seperate
+
+\underline{$\alpha\in G$}
+Suppose by contradiction that $w>0$ on $(0,\infty)$. {\color{gray}
+Then rewrite ... and note how the integral is still positive by assumption.
+Then $\left(\frac{u}{w}\right)'$ is positive.
+So $\frac{u}{w}$ is increasing.
+By RRR there exists two independent solutions that satisfy TTT.
+So TTT for some constants $\alpha_1,\alpha_0$.
+Since $w>0$ by hypothesis, $\alpha_1\geq0$.
+Suppose $\alpha_1=0$, then $w(r)\to0$ exponentially as $r\to\infty$.
+So $w$ changes sign by RRR, a contradiction.
+On the other hand, suppose $\alpha_1>0$, then by RRR there exists a $C$ such that LLL.
+To see this, note how RRR implies $u(r)\sim r^{-1/2}\exp^{-\sqrt{\lambda}r}$ as $r\to\infty$.
+These contradictions \_yield $w$ changes sign at least once on $(0,z(\alpha))$ for $\alpha\in(G\cup N)$.}
+the Lagrange identity for and the integral term is positive by the same reasoning as above.
+Claim: the function $u/w$ is positive and increasing.
+Firstly, it is positive in the origin, because $u(0),w(0)>0$.
+Secondly, it is increasing since $r$, $w(r)^2$ are positive, so is the derivative of $u/w$.
+Also, since $u(0),w(0)>0$ the function \\ \\
 \underline{}\\ \\
 \underline{}
 \end{proof}
