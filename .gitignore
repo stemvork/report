@@ -6,3 +6,9 @@
 *.log
 *.gz
 *.bak
+*.sty
+*.out
+*.xml
+*.bbl
+*.bcf
+*.blg

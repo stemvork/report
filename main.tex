@@ -6,6 +6,7 @@
 \usepackage{amsxtra}
 
 % \usepackage{geometry}
+% \usepackage[moderate]{savetrees}
 
 \usepackage{hyperref}
 \usepackage[english]{babel}
@@ -21,12 +22,21 @@
 \usepackage{soul}
 \usepackage{listings}
 \usepackage{cleveref}
-\usepackage{empheq}
+\usepackage[overload]{empheq}
+\usepackage{cases}
 \usepackage{marvosym}
 \usepackage{mathtools}
 
 \usepackage{markdown}
 \usepackage{outlines}
+
+\usepackage[
+backend=biber,
+style=alphabetic,
+sorting=ynt
+]{biblatex}
+\addbibresource{bib.bib}
+
 
 \tikzstyle{nodino}=[circle,draw,fill,inner sep=0pt,minimum size=0.5mm]
 \tikzstyle{infinito}=[circle,inner sep=0pt,minimum size=0mm]
@@ -188,7 +198,13 @@
   \right|
 }
 \newcommand{\rplus}{\mathbb{R}_+}
+\newcommand{\rtinf}{r\to\infty}
 \def\seperate{\vspace{1em}\hrule\vspace{1em}}
+\setlength\abovedisplayshortskip{100pt}
+\setlength\belowdisplayshortskip{0pt}
+\setlength\abovedisplayskip{20em}
+\setlength\belowdisplayskip{12pt}
+% \setlength\parskip{1em}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %AUTHOR AND TITLE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -211,6 +227,8 @@
 \include{3notation}
 \include{4existence}
 \setlength{\jot}{1ex}
+\setlength\abovedisplayskip{2ex}
+\setlength\belowdisplayskip{2ex}
 \include{5uniqueness}
 \include{5uni1}
 \include{5uni2}

@@ -1,0 +1,306 @@
+\documentclass[11pt,a4paper]{amsart}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+
+% \usepackage{geometry}
+% \usepackage[moderate]{savetrees}
+
+\usepackage{hyperref}
+\usepackage[english]{babel}
+\usepackage{url}
+\usepackage{lineno}
+\usepackage{mathrsfs}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage{graphicx}
+% \usepackage{pdfsync}
+\usepackage{psfrag}
+\usepackage{tikz}
+\usepackage{soul}
+\usepackage{listings}
+\usepackage{cleveref}
+\usepackage{empheq}
+\usepackage{marvosym}
+\usepackage{mathtools}
+
+\usepackage{markdown}
+\usepackage{outlines}
+
+\tikzstyle{nodino}=[circle,draw,fill,inner sep=0pt,minimum size=0.5mm]
+\tikzstyle{infinito}=[circle,inner sep=0pt,minimum size=0mm]
+\tikzstyle{nodo}=[circle,draw,fill,inner sep=0pt,minimum size=0.5*\widthof{k}]
+
+\newcommand{\blu}[1]{{\color{blue}#1}}
+\newcommand{\ros}[1]{{\color{red}#1}}
+\newcommand{\nero}[1]{{\color{black}#1}}
+\newcommand{\verde}[1]{{\color{green}#1}}
+\newcommand{\magenta}[1]{{\color{magenta}#1}}
+\newcommand{\ciano}[1]{{\color{cyan}#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DOCUMENT LAYOUT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\evensidemargin}{0cm}
+\setlength{\marginparwidth}{2cm}
+\hoffset=0truecm
+\voffset=-1.5truecm
+\footskip = 30pt
+\marginparsep=-0.2cm
+
+%%%%%%%%%%%%%%%
+%theorem's style
+%%%%%%%%%%%%%%%
+\newtheorem{theorem}{Theorem}
+\newtheorem{prob}{Problem}
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{proposition}[lemma]{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{definition}[lemma]{Definition}
+\newtheorem{assumption}{Assumption}
+
+\theoremstyle{definition}
+\newtheorem{remark}[lemma]{Remark}
+
+%%%%%%%%%%%%%%%
+%numbering equations
+%%%%%%%%%%%%%%%
+\numberwithin{equation}{section}
+
+%%%%%%%%%%%%%%%%%%
+%TEMPORARY NEWCOMMANDS
+%AND PACKAGES
+%%%%%%%%%%%%%%%%%%
+%\newcommand{\comment}[1]{}
+%\def\sidenote#1{\begin{small}\marginpar{\bf #1}\end{small}}
+%\usepackage[notref,notcite]{showkeys}
+%\usepackage{refcheck}
+%\newcommand{\claudio}[1]{{\bf claudio: }{#1}\\ \noindent}
+%\newcommand{\diego}[1]{{\bf diego: }{#1}\\ \noindent}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%NEWCOMMANDS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\pd}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\be}{\begin{equation*}}
+\newcommand{\ee}{\end{equation*}}
+\newcommand{\n}{\noindent}
+\newcommand{\Wbb}{\mathbb{H}^{in}}
+%\newcommand{\Tau}{\mathcal{T}}
+
+\newcommand{\vertiii}[1]{{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert #1
+    \right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}}
+
+\newcommand{\RE}{\mathbb R}
+\newcommand{\erre}{\mathbb R}
+\newcommand{\CO}{\mathbb C}
+\newcommand{\NA}{\mathbb N}
+\newcommand{\II}{\mathbb I}
+\newcommand{\Obb}{\mathbb O}
+\newcommand{\Gbb}{\mathbb G}
+\newcommand{\Hbb}{\mathbb{H}}
+%\newcommand{\PP}{\mathbb P}
+\newcommand{\BB}{\mathscr B}
+\newcommand{\DD}{\mathcal D}
+\newcommand{\OO}{\mathcal{O}}
+%\newcommand{\QQ}{\mathcal{Q}}
+\newcommand{\QQ}{Q}
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\GG}{\mathcal{G}}
+\newcommand{\UU}{\mathcal{U}}
+\newcommand{\ulim}{\operatorname{u}-\lim}
+\newcommand{\sgn}{\operatorname{sgn}\,}
+\newcommand{\supp}{\operatorname{supp}\,}
+\newcommand{\Ran}{\operatorname{Ran}\,}
+\newcommand{\Ker}{\operatorname{Ker}\,}
+\newcommand{\lf}{\left}
+\newcommand{\ri}{\right}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\al}{\alpha}
+\newcommand{\ual}{\undeline{\al}}
+\newcommand{\bt}{\beta}
+\newcommand{\Si}{\Sigma}
+\newcommand{\si}{\sigma}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\ga}{\gamma}
+\newcommand{\La}{\Lambda}
+\newcommand{\la}{\lambda}
+\newcommand{\de}{\delta}
+\newcommand{\De}{\Delta}
+\newcommand{\ci}{\mathbb{C}}
+\newcommand{\wconv}{\xrightarrow{w}}
+\newcommand{\ome}{\omega}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\arctanh}{arctanh}
+\providecommand{\ove}[1]{\overline{#1}}
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+%RENEWCOMMAND
+\renewcommand{\Im}{\operatorname{Im}\,}
+\renewcommand{\Re}{\operatorname{Re}\,}
+\renewcommand{\neg}{\operatorname{Neg}\,}
+
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+
+%MORENEWCOMMANDS
+\newcommand{\x}{\underline{x}}
+\newcommand{\y}{\underline{y}}
+\renewcommand{\v}{\underline{v}}
+\newcommand{\vd}{\underline{v}_2}
+\newcommand{\vu}{\underline{v}_1}
+\newcommand{\f}{\frac}
+\newcommand{\EE}{\mathcal E}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\VV}{R}
+\newcommand{\WW}{S}
+\newcommand{\ZZ}{Z}
+\newcommand{\omestar}{\tilde{\ome}}
+
+\newcommand{\vol}{\operatorname{Vol}}
+\newcommand{\one}{{\bf 1}}
+% \renewcommand{\a}{\underline{a}}
+\renewcommand{\b}{\underline{b}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%ADDITIONS BY JASPER EENHOORN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\a}{\alpha}
+\newcommand{\uowd}{\left(\frac{u}{w}\right)'}
+\newcommand{\nub}{\nu_{\beta}}
+\newcommand{\phib}{\phi_{\beta}}
+
+\newcommand{\comm}[1]{}
+\setlength\parindent{24pt}
+\newcommand{\limrtoinf}{\underset{r\to\infty}{\lim}}
+\newcommand{\za}{z(\alpha)}
+\def\at{
+  \left.
+  \vphantom{\int}
+  \right|
+}
+\newcommand{\rplus}{\mathbb{R}_+}
+\def\seperate{\vspace{1em}\hrule\vspace{1em}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%AUTHOR AND TITLE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[]{On existence and uniqueness of ground state solutions to NONLINEAR SCHR\"ODINGER EQUATION}
+
+\author[]{Jasper Eenhoorn}
+\address{Department of Applied Physics, TU Delft, Lorentzweg 1, 2628CJ, Delft, Netherlands, EU}
+\email{j.s.eenhoorn@student.tudelft.nl}%
+
+\date{}
+
+%\begin{document}
+
+%\thanks{}
+\begin{document}
+\begin{outline}
+  \1 Define Lyapunov function $E(r)$.
+  \1 Rewrite IVP to seperate $-\frac{1}{r}u'(r)$.
+  \1 Calculate $E'(r)$.
+  \1 Use IVP to simply expression.
+  \1 Conclude from sign of $E'(r)$ that $E(r)$ is nonincreasing.
+    \2 Note that $V'(r)\leq0$ and $u'(r)^2\geq0$, $r\geq0$ and $u(r)^{p+1}\geq0$.
+  \1 Evaluate $E(0)$. Analyse the sign of $E(0)$ as a function of $\alpha$.
+    \2 Solve $E(0)=0$ for $\bar\alpha$ and note $\alpha<\bar\alpha\implies E(0)<0$ and vice versa.
+  \1 Now analyse the behaviour of solutions with $\alpha<\bar\alpha$ using proof by contradiction.
+    \2 $\alpha<\bar\alpha\in N$ would imply $u(z(\alpha))=0$ and $E(z(\alpha))\geq0$ contradicting $E<0$.
+    \2 $\ldots\in G$ would imply $\underset{r\to\infty}{\lim}E(r)=0$ contradicting $E<0$.
+  \1 Conclusion: $\alpha\in P$.
+\end{outline}
+\seperate
+
+\begin{outline}
+  % This part is already in Lemma 5.1?
+  % TODO: What is the actual interval of definition of $E(r)$?
+  \1 As $\alpha\in G\cup N$, $E(r)\geq0$ for $r\in(0,z(\alpha))$.
+  \1 Even in $z(\alpha)$, $E(z(\alpha))\geq0$ (SHOW).
+
+  \1 By IVP and Lemma 5.1: $u''(0)<0$.
+  % TODO: Compare with $\lim_{r\to0}ru'(r)=0$.
+  \1 Using an argument from Chapter 4: $u''(0)$ and $u'(0)=0$ would imply $u\equiv\alpha$.
+
+  % TODO: Build the actual argument that contradicts E non-increasing.
+  \1 On the other hand $u''(0)>0$ and $u'(0)=0$ would imply $u(r)>u(0)=\alpha$ for $r>0$ and small.
+  \1 This contradicts $E'(r)\leq0$? (SHOW)
+  \1 Conclusion: $u''(0)<0$ and $u'(r)<0$ for $r>0$ and small.
+
+  % TODO: Draw figure F1.
+  \1 To show $u'(r)<0$ for $r\in(0,z(\alpha))$:
+    \2 Suppose by contradiction that there exists $r_0$ such that $u'(r_0)=0$.
+    \2 Let $r_0\coloneqq\{r>0:u'(r;\a)=0\}$.
+    \2 By the IVP: $u''(r_0)=\lambda u(r_0)-V(r_0)u(r_0)^p$.
+
+    \2 From the previous concavity argument, $u''(r_0)\geq0$ and $u''(r_0)=0$ would imply $u\equiv u(r_0)$.
+    \2 This concavity argument is Figure F1.
+
+    \2 Then $u''(r_0)>0$ which can be used in analysis of $E(r_0)$.
+    \2 Evaluate $E(r_0)=\frac{1}{2}u'(r_0)^2-\frac{\lambda}{2}u(r_0)^2 + \frac{1}{p+1}V(r_0)u(r_0)^{p+1}\geq 0$.
+    \2 An interesting property of $u(r_0)$ by IVP, $u''(r_0)>0$ and $u'(r_0)=0$ follows
+      \3 $u(r_0)\leq\left[\frac{\lambda}{V(0)}\right]^{\frac{1}{p-1}}<
+      \left[\frac{\lambda}{V(0)}\frac{p+1}{2}\right]^{\frac{1}{p-1}} \iff -\frac{\lambda}{2}u(r_0)^2+\frac{1}{p+1}V(r_0)u(r_0)^{p+1}>0 \iff E(r_0)>0$
+      \3 Which contradicts $E(r)\geq0$ for $r\in(0,z(\alpha))$.
+    \2 Hence $u'(r)<0$ for $r\in(0,z(\alpha))$.
+  \1 If $\alpha\in N$ then $u'(z(\alpha))=0$ then $u\equiv0$.
+    \2 Concavity prevents $u'(z(\alpha))>0$. (SHOW)
+    \2 What does this yield if $\alpha\in G$? (SHOW)
+  \1 So for $\alpha\in N$: $u'(r)<0$ for $r\in(0,z(\alpha)]$.
+\end{outline}
+%
+% \emph{\color{teal}So $u(r)$ has initial condition $u(0)=\alpha>0$. And then? Depens on the solution set. For solutions in $P$, the solution will remain positive. Without any further information on global behaviour. For solutions in $G\cup N$, there will be a first zero. This might be at infinity. Clearly, the solution is decreasing. In fact, the solution will prove to be strictly decreasing.}
+
+% \emph{\color{red}Now, the Lyapunov function $E(r)$ is well-defined for $r\in(0,z(\alpha))$ and non-negative! For deriving $E(r)\geq0$ in $z(\alpha)$ use L'Hopital rule for limit? From the lemma before and the IVP it follows ``EASILY'' that $u''(0)<0$ and so $u'<0$ immediately to the right of $r=0$....... Even for $V(0)=\infty$ this property follows from the equation.\\ \\ Suppose by contradiction that $\exists r_0\in(0,z(\alpha))$ where $u'(r_0)=0$. Then by the IVP: $\lambda u(r_0) - V(r_0)u(r_0)^p = u''(r_0)\geq 0$. And so $u(r_0)$ by lemma 2.1 has $E(r_0)<0$: a contradiction. Thus $u'(r)<0$ for $r\in(0,z(\alpha))$. Also $u'(z(\alpha))<0$ to prevent $u\equiv0$.}
+%
+\seperate
+
+\begin{outline}
+  \1 To conclude that $w$ has one zero in $(0,\za)$, use Lagrange identity.
+  \1 The proofs for $\a\in G$ and $\a\in N$ will be done seperately.
+  \1 First, suppose $\a\in N$.
+  \1 Rewrite IVP and \emph{w-d.e.} to the following:
+    \2 $(ru')'+r\left[-\lambda u+Vu^p\right]=0$
+    \2 $(rw')'+r\left[-\lambda w+pVu^{p-1}w\right]=0$
+  \1 Multiply by $w$ and $u$ respectively, then integrate from 0 to $\za$:
+    \2 $\int_0^{\za}w(ru')'-u(rw')'dr = \int_0^{\za}r\left[pVu^pw-Vu^pw\right]dr$
+  \1 By partial integration for left hand side, one obtains:
+    \2 $rwu'\at_0^{\za}-ruw'\at_0^{\za}-\int_0^{\za}\left[ru'w'-ru'w'\right]dr=(p-1)\int_0^{\za}rVu^pwdr$
+  \1 Use $u(\za)=0$ to obtain:
+    \2 $\za w(\za)u'(\za)-\za u(\za)w'(\za) = (p-1)\int_0^{\za}rVu^pwdr$
+  \1 Suppose $w>0$ on $(0,\za)$ then left hand side $\leq0$ as $\za>0$, $w(\za)\geq0$ (?) and $u'(\za)<0$.
+  \1 {\color{red} To resolve this, suppose $w>0$ on $(0,\za)$ then $\za>0$, $w(\za)>0$ and $u'(\za)<0\implies\text{ l.h.s. }<0$. That \emph{is} sufficient to show contradiction with $\text{r.h.s.}>0$ as ...}
+  \1 {\color{blue} To \emph{actually} resolve this, the initial supposition was correct: $w>0$ on $(0,\za)$ implies $\text{l.h.s.}\leq0$ as $\za>0$, \emph{importantly} $w(\za)>0$ and $u'(\za)<0$. Why can't $w(\za)=0$? By Sturm comparison! Since $pVwu^{p-1}\neq Vu^p$, the zeroes of $w$ and $u$ will not coincide!}
+    \2 Note work remains to be done to clarify this part of the argument. From \'Suppose $w>0$...\' to the contradiction.
+  \1 By this contradiction then, $w(r)$ has at least one zero on $(0,\za)$.
+  \1 To conclude the same for $\a\in G$, again, assume $w>0$ on $(0,\za)$ then still r.h.s. of \ref identity $>0$.
+  \1 As for the l.h.s. regard the expression $\frac{u}{w}$...
+    \2 Write $\left(\frac{u}{w}\right)'=\frac{wu'-uw'}{w^2}$.
+    \2 Note that $u(0)>0$ and $w(0)>0$ implies $\frac{u}{w}(0)>0$.
+    \2 Rewrite the \ref identity to read:
+      \3 $rwu'-ruw'=(p-1)\int_0^{\za}rVu^pwdr$
+      \3 $\frac{wu'}{w^2}-\frac{uw'}{w^2}=\frac{p-1}{rw^2}\int_0^{\za}rVu^pwdr>0$
+      \3 $\frac{wu'-uw'}{w^2}>0\implies \left(\frac{u}{w}\right)'>0$
+    \2 So $\uowd$ is increasing.
+  \1 Now, there is a hole.. Apparantly, this also implies $w>0$ yields contradiction.
+    \2 Intuitively, $\uowd$ increasing means that $w$ decays faster than $u$ everywhere.
+    \2 Then, as for $\a\in G$ the solution decays to 0, so must $w$.
+    \2 But, since $w$ decays faster than $u$, the zero of $w$ must be to the left of $\za=\infty$.
+    \2 Hence, $w$ has a zero in $(0,\za)$.
+      \3 Hooray!
+  \1 Might need to formalise this a bit further.
+\end{outline}
+\seperate
+
+% LEMMATA 4 through 8 still coming..
+
+\end{document}
