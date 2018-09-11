@@ -1,15 +1,19 @@
 % !TEX root = main.tex
 \section{Physics of NLS}
+% \reqnomode
 In this section, first, the nonlinear Schr\"odinger equation (NLS) will be derived from Maxwell's laws.
 A brief discussion of the assumptions involved in this derivation
 and the interpretation of (intermediate) results is given.
+The discussion is due to Gadi Fibich, for more details, see his book
+``The Nonlinear Schr\"odinger Equation''.
 In the end, the NLS is given as
 \begin{equation}
   2ik_0\psi_z(x,y,z) + \underbrace{\Delta_\bot\psi}_{\text{diffraction}}
 + \underbrace{k_0^2\frac{4n_2}{n_0}|\psi|^2\psi}_{\text{Kerr nonlinearity}} = 0.
 \end{equation}
 
-\seperate
+% \seperate
+\subsection{Vector electromagnetic fields: Maxwell's laws}~\\
 
 The propagation of electromagnetic waves in a medium is governed by Maxwell's laws.
 (In absence of external charges or currents.)
@@ -30,11 +34,12 @@ In vacuum, the relations between the electric or magnetic fields and induction f
     \vec{\mathcal{B}}=\mu_0\vec{\mathcal{H}},\quad \vec{\mathcal{D}}=\epsilon_0\vec{\mathcal{E}}
 \end{equation}
 
-\seperate
+% \seperate
+\subsection{Wave equation from Maxwell's laws}~\\
 
 From these relations and the vector identity for the curl of the curl, the wave equation can be derived.
 In particular,
-\begin{align*}
+\begin{align}
   \nabla\times\nabla\times\vec{\mathcal{E}}=
   \nabla\times(-\frac{\partial \vec{\mathcal{B}}}{\partial t})=
   -\frac{\partial}{\partial t}(\nabla\times\vec{\mathcal{B}}),
@@ -43,11 +48,11 @@ In particular,
   \nabla(\nabla\cdotp\vec{\mathcal{E}})-\nabla^2\vec{\mathcal{E}}=
   \nabla(\nabla\cdotp\vec{\mathcal{E}})-\Delta\vec{\mathcal{E}},
   \quad&\text{ by vector calculus.}
-\end{align*}
+\end{align}
 Also, calculate the curl of the magnetic field:
 $\nabla\times\vec{\mathcal{B}}=\mu_0\frac{\partial\vec{\mathcal{D}}}{\partial t}$.
 Then combining these results:
-\begin{align*}
+\begin{align}
   \Delta \vec{\mathcal{E}}-\nabla(\nabla\cdotp\vec{\mathcal{E}})=
   \mu_0\frac{\partial^2\vec{\mathcal{D}}}{\partial t^2}\\
   % \Delta \vec{\mathcal{E}}-\nabla(\epsilon_0\nabla\cdotp\vec{\mathcal{D}})=
@@ -55,24 +60,125 @@ Then combining these results:
   \Delta \vec{\mathcal{E}}-\nabla(\frac{1}{\epsilon_0}\nabla\cdotp\vec{\mathcal{D}})=
   \mu_0\epsilon_0\frac{\partial^2\vec{\mathcal{E}}}{\partial t^2}.
   % \Delta\vec{\mathcal{E}}=\frac{1}{c^2}\frac{\partial^2\vec{\mathcal{E}}}{\partial t^2}.
-\end{align*}
+\end{align}
 And using $\nabla\cdotp\vec{\mathcal{D}}=\nabla\cdotp\epsilon_0\vec{\mathcal{E}}=0$,
 this yields the wave equation, where $\mu_0\epsilon_0=1/c^2$:
 \begin{equation}
   \Delta\vec{\mathcal{E}}=\frac{1}{c^2}\frac{\partial^2\vec{\mathcal{E}}}{\partial t^2}.
 \end{equation}
 
+% \seperate
+\subsection{Scalar wave equation and solutions}~\\
+
+The components of the vector electric field are decoupled.
+Thus components of solutions to the vector wave equation
+satisfy a scalar wave equation:
+\begin{equation}
+  \Delta \mathcal{E}_i =
+  \sum_{i=1}^3\left[\frac{\partial^2\mathcal{E}_j}{\partial x_i^2}\right] =
+  \frac{1}{c^2} \frac{\partial^2 \mathcal{E}_j}{\partial t^2}.
+\end{equation}
+Decoupled means that the second derivative of any component with respect to time is related to
+the Laplacian of that component only. There is no term relating $\mathcal{E}_x$
+to $\mathcal{E}_y$ or $\mathcal{E}_z$ and vice versa.
+This can be seen from the following explication of the vector wave equation:
+\begin{equation}
+  \Delta \vec{\mathcal{E}} = \Delta \begin{bmatrix}
+    \mathcal{E}_x\\
+    \mathcal{E}_y\\
+    \mathcal{E}_z
+  \end{bmatrix} = \begin{bmatrix}
+    \frac{\partial^2\mathcal{E}_x}{\partial x^2}+
+    \frac{\partial^2\mathcal{E}_x}{\partial y^2}+
+    \frac{\partial^2\mathcal{E}_x}{\partial z^2}\\
+    \frac{\partial^2\mathcal{E}_y}{\partial x^2}+
+    \frac{\partial^2\mathcal{E}_y}{\partial y^2}+
+    \frac{\partial^2\mathcal{E}_y}{\partial z^2}\\
+    \frac{\partial^2\mathcal{E}_z}{\partial x^2}+
+    \frac{\partial^2\mathcal{E}_z}{\partial y^2}+
+    \frac{\partial^2\mathcal{E}_z}{\partial z^2}
+  \end{bmatrix} = \frac{1}{c^2} \begin{bmatrix}
+    \frac{\partial^2\mathcal{E}_x}{\partial t^2}\\
+    \frac{\partial^2\mathcal{E}_y}{\partial t^2}\\
+    \frac{\partial^2\mathcal{E}_z}{\partial t^2}
+  \end{bmatrix}
+\end{equation}
+The scalar solutions are of the form:
+\begin{equation}
+  \label{pwpz}\mathcal{E}_j=E_c\exp^{i(k_0z-\omega_0t)}+\text{ c.c.,}
+\end{equation}
+where $k_0^2=\omega_0^2/c^2$ is the dispersion relation for a plane wave travelling in the positive $z$-direction.
+For plane waves propagating in a general direction:
+\begin{equation}
+  \label{pwgd}\mathcal{E}_j=E_c\exp^{i(\vec{k_0}\cdotp\vec{r}-\omega_0t)}+\text{ c.c.,}
+\end{equation}
+where $\vec{k_0}=k_x^2\hat{i}+k_y^2\hat{j}+k_z^2\hat{k}$, $\vec{r}=x\hat{i}+y\hat{j}+z\hat{k}$
+and $|\vec{k_0}|^2=\omega_0^2/c^2$.
+In these expressions ``c.c.'' stands for complex conjugate, so that \ref{pwpz} actually reads (similar for \ref{pwgd}):
+\begin{equation}
+  \mathcal{E}_j=E_c\exp^{i(k_0z-\omega_0t)}+E_c\exp^{-i(k_0z-\omega_0t)}
+\end{equation}
+as $E_c$ is a constant real number.
+
+% \seperate
+\subsection{Linear polarisation and interpretation}~\\
+
+For a plane wave propagating in the positive $z$ direction, in what directions can the electric field point?
+Suppose $\vec{\mathcal{E}}=(\mathcal{E}_1,0,0)$ then $\vec{\mathcal{E}}$ solves the wave equation if
+\begin{equation}
+  \mathcal{E}_1=E_c\exp^{i(k_0z-\omega_0t)}+\text{ c.c.}
+\end{equation}
+which is actually inconsistent with Maxwell's laws.
+To see this, calculate
+\begin{equation}
+  0 = \nabla\cdotp\vec{\mathcal{D}}=\epsilon_0\nabla\cdotp\vec{\mathcal{E}}=\epsilon_0(\mathcal{E}_1)_x
+\end{equation}
+which implies the electric field is not localised in $x$.
+% But physical laser beams are localised in the $x,y$-plane.
+Then how can one speak of linearly polarised laser beams?
+The resolution is that in reality, $\mathcal{E}_2$ and $\mathcal{E}_3$ are not actually 0,
+such that $\vec{\mathcal{E}}$ is linearly polarised in the sense that $\mathcal{E}_1>>\mathcal{E}_2,\mathcal{E}_3$.
+
 \seperate
+\subsection{Paraxial beams and Helmholtz equation solutions}~\\
 
-Scalar solutions, plane waves propagating in positive z-direction and general direction, complex conjugates, wavenumber.
+To continue the discussion of solutions to the wave equation, consider a sum of plane waves.
+In particular, consider a laser beam representated by a sum of plane waves.
+For this more general situation, consider time-harmonic (monochromatic) solutions given by:
+\begin{equation}
+  \mathcal{E}_j(x,y,z,t) = \exp^{-i\omega_0t}E(x,y,z) +\text{ c.c.},
+\end{equation}
 
-\seperate
+solving a specific case of the (scalar) wave equation known as the \emph{Helmholtz} equation.
+\begin{equation}
+  \Delta E+k_0^2E=0\tag{Helmholtz}
+\end{equation}
 
-Polarisations, linear polarisation inconsistent with Maxwell, but in leading order still possible: $E_1<<E_2,E_3$.
+For a laser beam propagating in the $z$-direction, write the incoming field $E_0^{inc}(x,y)$ as a sum of plane waves:
 
-\seperate
+\begin{gather}
+  E_0^{inc}(x,y) = \frac{1}{2\pi}\int E_c(k_x,k_y)\exp^{i(k_x+k_y)}\mathrm{d}k_x\mathrm{d}k_y\text{ such that }\\
+  E(x,y,z) =  \frac{1}{2\pi}\int E_c(k_x,k_y)\exp^{i(k_x+k_y+\sqrt{k_0^2-k_x^2-k_y^2}z)}\mathrm{d}k_x\mathrm{d}k_y
+\end{gather}
 
-Helmholtz equation, laser beam as sum of plane waves, mostly parallel to z-axis (paraxial).
+However, since a laser beam is concentrated around the $z$-axis, $k_z\approx k_0$.
+Then $k_\perp=k_x^2+k_y^2<<k_z^2$.
+In other words, as $k_0^2\coloneqq k_x^2+k_y^2+k_z^2$, $k_z = \sqrt{k_0^2-k_x^2-k_y^2}$.
+Then $E(x,y,z)=E_c\exp^{i(k_x x+k_y y+k_z z)}=\exp^{ik_0z}\psi(x,y,z)\text{ with }\psi=E_c\exp^{i(k_x x+k_y y+(k_z-k_0)z)}$.
+
+This $\psi$ function is an envelope, of which the amplitude varies slowly in $z$.
+The envelope satisfies its own Helmholtz equation:
+
+\begin{equation}
+  \psi_{zz}+2ik_0\psi_z+\Delta_\perp\psi=0,
+\end{equation}
+
+where $\Delta_\perp=\psi_{xx}+\psi_{yy}$.
+In this equation, the $\psi_{zz}$ term can be neglected as $\psi_{zz}<<k_0\psi_z,~\psi_{zz}<<\Delta_\perp\psi$.
+The resulting equation is called the linear Schr\"odinger equation:
+\begin{equation}
+  2ik_0\psi_z+\Delta_\perp\psi=0.\tag{Linear Schr\"odinger}
+\end{equation}
 
 \seperate
 
@@ -81,6 +187,8 @@ This $\psi$ solves a Helmholtz equation.
 Neglect $\psi_{zz}$ (paraxial) to obtain the linear Schr\"odinger equation for $\psi$.
 
 \seperate
+
+{\color{red} Now the step needs to be made to the nonlinear Helmholtz equation. The different polarisations need to be described, weakly nonlinear and Kerr nonlinear. Then obtain nonlin HH to apply parax. approx. to obtain NLS. Then make steps to dimensionless NLS, consider solitary waves and specify the $\omega$...}
 
 Polarisation, linear polarisation, weakly nonlinear polarisation, Kerr nonlinearity.
 This all leads to nonlinear Helmholtz, apply paraxial approximation to obtain NLS.
@@ -97,6 +205,8 @@ with initial condition $R'(0)=0$ and finite {\color{red}power}: $\limrtoinf R(r)
 This is the equation for which existence and uniqueness of solutions will be discussed.
 
 \seperate
+
+% \leqnomode
 
 % Physics - Chapter 1
 % NLS as leading-order model for propagation of intense laser beams in isotropic bulk medium. A laser pulse is an electromagnetic wave and is governed by Maxwell’s equations.

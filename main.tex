@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper]{amsart}
+\documentclass[11pt,a4paper,reqno]{amsart}
 \usepackage{amsfonts}
 \usepackage{amsthm}
 \usepackage{amsmath}
@@ -204,6 +204,11 @@ sorting=ynt
 \setlength\belowdisplayshortskip{0pt}
 \setlength\abovedisplayskip{20em}
 \setlength\belowdisplayskip{12pt}
+% \makeatletter
+% \newcommand{\leqnomode}{\tagsleft@true\let\veqno\@@leqno}
+% \newcommand{\reqnomode}{\tagsleft@false\let\veqno\@@eqno}
+% \makeatother
+
 % \setlength\parskip{1em}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %AUTHOR AND TITLE

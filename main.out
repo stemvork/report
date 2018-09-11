@@ -1,14 +1,19 @@
 \BOOKMARK [1][-]{section.1}{1. Introduction}{}% 1
 \BOOKMARK [1][-]{section.2}{2. Physics of NLS}{}% 2
-\BOOKMARK [1][-]{section.3}{3. Solution sets and notation}{}% 3
-\BOOKMARK [1][-]{section.4}{4. Existence of ground state}{}% 4
-\BOOKMARK [2][-]{subsection.4.1}{4.1. Discussion of the theorem}{section.4}% 5
-\BOOKMARK [2][-]{subsection.4.2}{4.2. Conditions on g}{section.4}% 6
-\BOOKMARK [2][-]{subsection.4.3}{4.3. The solutions are defined on the semi-definite interval}{section.4}% 7
-\BOOKMARK [2][-]{subsection.4.4}{4.4. The shooting method}{section.4}% 8
-\BOOKMARK [2][-]{subsection.4.5}{4.5. P and N are nonempty and open}{section.4}% 9
-\BOOKMARK [2][-]{section*.58}{P is non-empty}{section.4}% 10
-\BOOKMARK [2][-]{section*.59}{P is open}{section.4}% 11
-\BOOKMARK [2][-]{section*.60}{N is open}{section.4}% 12
-\BOOKMARK [2][-]{subsection.4.6}{4.6. Conclusions on existence}{section.4}% 13
-\BOOKMARK [1][-]{section.5}{5. Uniqueness of ground state}{}% 14
+\BOOKMARK [2][-]{subsection.2.1}{2.1. Vector electromagnetic fields: Maxwell's laws}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{2.2. Wave equation from Maxwell's laws}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{2.3. Scalar wave equation and solutions}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{2.4. Linear polarisation and interpretation}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.5}{2.5. Paraxial beams and Helmholtz equation solutions}{section.2}% 7
+\BOOKMARK [1][-]{section.3}{3. Solution sets and notation}{}% 8
+\BOOKMARK [1][-]{section.4}{4. Existence of ground state}{}% 9
+\BOOKMARK [2][-]{subsection.4.1}{4.1. Discussion of the theorem}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.2}{4.2. Conditions on g}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.3}{4.3. The solutions are defined on the semi-definite interval}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.4}{4.4. The shooting method}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.5}{4.5. P and N are nonempty and open}{section.4}% 14
+\BOOKMARK [2][-]{section*.80}{P is non-empty}{section.4}% 15
+\BOOKMARK [2][-]{section*.81}{P is open}{section.4}% 16
+\BOOKMARK [2][-]{section*.82}{N is open}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.6}{4.6. Conclusions on existence}{section.4}% 18
+\BOOKMARK [1][-]{section.5}{5. Uniqueness of ground state}{}% 19
