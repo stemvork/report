@@ -1,0 +1,1134 @@
+in main theorem, f(0)=0 on one line
+decide whether or not additional result needs to be included
+
+in interval of definition, be precise about upper and lower bound.
+the upper bound is global, whereas the lower is for bounded r.
+
+seperate the quantity 2.11 into a lemma (see red)
+
+improve the proof by contradiction after 2.12
+
+
+% ---
+
+% ---
+
+% ---
+
+% ---
+
+% ---
+
+% ---
+
+% ---
+
+% Take $\delta=\min\left\{\delta_{r_0},\delta_{r_1}\right\}$. Now, we have
+% \[
+% \left|\a-\beta\right|<\delta~\implies~
+% \left|u(r_1,\beta)-u(r_0,\beta)\right|<\epsilon.
+% \]
+% 
+
+% ---
+
+%Since $u'(r_0,\a)$ is non-positive, $u'(r,\a)$ will remain non-positive and
+%converge to zero. This implies that $u(r,\a)$ is bounded from below by
+%$L=\underset{r\to\infty}{\lim} u(r,\a)$.
+
+% In hindsight, we can extend the interval $[r_0,r_1)$ to $[r_0,\infty)$, because
+% $u'\leq0$ on $[r_0,r_1]$. In fact, we have
+% \[ u'(r,\a)\leq0 \quad\text{on}\; [r_0,\infty). \]
+% We note how $u'(r,\a)\uparrow0$ for $r\to\infty$. 
+% Then $u(r,\a)\downarrow L$ for some lower bound $L$.
+
+% ---
+
+\begin{comment}
+\reviewgroup
+Solutions to differential equations are not necessarily defined for all $r$. For
+example, when the solution blows up (becomes infinite) or is otherwise not
+defined. Every initial value problem has a maximal interval of definition. Let
+$u(r,\a)$ be the solution to \cref{ivp} with initial condition $u(0,\a)=\a$.
+Then the Picard-Lindel\"of theorem \# (ref Teschl) states: if $g$ is locally
+Lipschitz in $u$ and uniformly continuous in $r$, then there exists a unique
+local solution to the IVP. Indeed, $g$ is locally Lipschitz continuous by
+assumption. Thus at least a local solution exists.
+
+In the explicit example $g(u)=-u+u^3$, we can use the fact that continuously
+differentiable functions are locally Lipschitz continuous. Clearly,
+$g'(u)=-1+3u^2$ is continuous. Then again, by Picard-Lindel\"of  there exists a
+unique local solution $u(r,\alpha)$ to \cref{ivp} on some interval
+$(0,R)\subset\rplus=(0,\infty)$. 
+
+%\# (Definition of locally Lipschitz continuous applied to $g$) $g$ is locally
+%Lipschitz continuous implies that the solution $u(\alpha,r)$ is defined on some
+%interval $[0,r_\alpha)$ \# (by ...) 
+
+Furthermore, the interval $(0,R)$ can be extended to the right as long as the
+solution is bounded. Boundedness of the solution is a sufficient and necessary
+condition for the interval of definition to be positive infinity:
+$r_\alpha=+\infty$. That is, solutions to initial value problem \cref{ivp} exist
+on $\rplus$. To see this, let $\a$ be an initial condition in
+$I=(\kappa,\lambda)$ and let $u(r,\a)$ be the corresponding solution of
+\cref{ivp}. The solution is bounded if it has both an upper and a lower bound.
+First, properties of the initial value problem and nonlinearity are used to
+derive an upper bound. Then, the extension $g(u)=0\text{ for }u\leq0$ will yield
+a decaying derivative and a lower bound.
+\endgroup
+\end{comment}
+
+% ---
+
+\begin{comment}
+\reviewgroup
+This chapter deals with the existence of ground state solutions. All proofs
+follow the text of \# \cite{ber81}, while expanding the argumentation and
+derivations.  The proof is based on a shooting method argument. That is, the set
+of initial conditions is categorised by qualitative behaviour of the
+corresponding solution. The interval of definition of any solution to the
+differential equation will be defined on the maximal interval. This is shown
+with a proof by contradiction. A lemma follows: the subsets $P$ and $N$ are
+disjoint, non-empty and open. The argument that $N$ is non-empty is outside the
+scope of this study.  To show that $P$ is non-empty, a certain interval is shown
+not to belong to $N$ or $G$. The arguments that $P$ and $N$ are open are similar
+and only the proof that $P$ is open is given. These properties yield the
+existence of elements not in $P$ or $N$. That solutions not belonging to $P$ or
+$N$ actually vanish at infinity concludes the existence proof. This is treated
+in lemma 1. We define the solutions and their sets as follows.
+\endgroup
+\end{comment}
+
+% ---
+
+% \section{Old versions}
+% \begin{lemma}\label{lem} 
+% Under the assumptions of \cref{exithm}, the sets $P$
+% and $N$ are non-empty, disjoint and open.  
+% \end{lemma}
+% \begin{proof}
+% 
+% \subsection{Introductory}
+% Consider the following cases: (i) $\a\in N$, (ii) $\a\notin P$, (iii)
+% $\a\in P$ and note they are mutually exclusive.  If the initial condition is
+% in $N$, then the solution vanishes in some point $r_0$.
+% Then, if the initial condition is not in $N$, the solution does not vanish
+% anywhere: $u(r,\a)>0$ for $r\geq0$.  If the initial condition is
+% \underline{not} in $P$, then the derivative is negative everywhere.  Disproving
+% these two cases yields the properties: the solution is positive everywhere, but
+% the derivative vanishes in some point $r_0$, which is exactly the definition of
+% $P$.
+% %The sets $P$ and $N$ are disjoint and the initial condition cannot be in $P$
+% %and not in $P$ and $P$.
+% Hence disproving case (i) and (ii) implies case (iii) applies.
+% 
+% \subsection{Openness}
+% \begin{claim} Solution set $P$ is open.  \end{claim}
+% %\textbf{Discuss solutions with $\a\in P$} Proof of the claim. 
+% Let $u(r,\a)$ be a solution to \cref{ivp} with $\a\in P$. From the above, we
+% know that the solution set $P$ is nonempty. 
+% %Also, any solution with $\a\in I$ is defined on the half line $(0,\infty)$.
+% By \# (ref), both $u(r,\a)$ and $u'(r,\a)$ depend continously on $\a$. From the
+% definition of solution set $P$, solutions with $\a\in P$ has the following
+% property: there exists an $r_0>0$ such that the derivative vanishes. 
+% %That is: 
+% $$u'(r_0,\a)=0\text{ for some }r_0>0.$$ Let $r_0$ be the smallest $r_0>0$ for
+% which the derivative vanishes, $u'(r_0,\a)=0$. 
+% %That is:  
+% $$r_0\coloneqq\inf\left\{r>0: u(r,\a)>0, u'(r,\a)=0\right\}>0.$$  
+% %
+% Not only does the derivative vanish in $r_0$. We know the solution to be
+% positive and decreasing up to $r_0$.
+% %Now we also know the solution to be positive on $[0,r_0]$ and the solution
+% %decreases (negative derivative) on $(0,r_0)$.  That is $u(r,\a)>0$ on $[0,r_0]$
+% %and $u'(r,\a)<0$ on $(0,r_0)$. 
+% Remember, when $\a\in P$, we have: \begin{empheq}[left = \empheqlbrace]{align*}
+% &u(r,\a)>0\quad\text{for all }r\in[0,r_0] \\ &u'(r,\a)<0\quad\text{for all
+% }r\in(0,r_0).  \end{empheq}
+% %
+% Evaluating the \cref{ivp} in $r_0$ with the assumption that $u'(r_0)=0$:
+% \begin{gather*} u''+\frac{N-1}{r}u'-u+u^3=0\\ u''(r_0,\a)=-g(u(r_0,\a)).
+% \end{gather*}
+% %
+% \subsection{Cases for $u''(r_0,\a)$}
+% \textbf{Cases for $u''(r_0,\a)$} Consider the following cases: $u''(r_0,\a)=0$
+% or $u''(r_0,\a)\neq0$. Suppose by contradiction that $u''(r_0,\a)=0$. Then,
+% since the solution attains values strictly between $\a$ and 0... the only
+% candidate value is $u(r_0,\a)=0$, such that $g(u(r_0,\a))=0$. That is, since
+% $u(r,\a)\in(0,\a)$ we have .. Remember the zeroes of $g(u(r,\a))$ are $0$ and
+% $\kappa$. 
+% 
+% \textbf{Solution must have $u(r_0,\a)\equiv\kappa$} But the solution is positive
+% everywhere $r_0$: $\a\in P\implies 0<u(r_0,\a)<\a$. In conclusion the only value
+% such that $u''(r_0,\a)=-g(u(r_0,\a))=0$ is $u(r_0,\a)=\kappa$. 
+% 
+% \textbf{$u(r_0,\a)\equiv\kappa$ as per example} However, let $u\equiv\kappa$ be
+% a solution to the \cref{ivp}. \# (Example of $g(u)=-u+u^3$.) Explicitly,
+% $\kappa=1$, and evaluating $u\equiv 1$ in the \cref{ivp} yields $0+0-1+1^3=0$.
+% Hence the solution $u\equiv\kappa$ solves the \cref{ivp} and $u(r_0,\a)=\kappa$
+% and $u'(r_0,\a)=0$. 
+% 
+% \textbf{Contradiction is found} But by Picard-Lindel\"of, the solutions to the
+% \cref{ivp} are unique! Now the solution $u\equiv\kappa$ does not satisfy the
+% earlier assumptions: $u'(r,\a)<0$ on $(0,r_0)$, a contradiction! So the
+% assumption $u''(r_0,\a)=0$ must be false \Lightning.
+% 
+% \textbf{Other case for $u''(r_0,\a)$} On the other hand, if $u''(r_0,\a)\neq0$
+% then $u''(r_0,\a)>0$. Concavity forces this. Also,
+% $u''(r_0,\a)=-g(u(r_0,\a))>0\implies u(r_0,\a)<\kappa$. In $r=0$, evaluating \#
+% IVP, where $u'(0,\a)=0$ and $u(0,\a)=\a$, $u''(0,a)=-g(\a)<0$, (from the graph
+% of $g$) so $u$ is concave down. 
+% 
+% \textbf{Second derivative changes sign once} Now, we know that for larger $r$,
+% the derivative vanishes $u''(r,\a)=0$ for some $r_0$, that is, $u'(r_0,\a)=0$.
+% Then the solution has precisely one inflection point between $0$ and $r_0$, that
+% is, the second derivative changes sign exactly once. 
+% 
+% \textbf{Conclusion $u''(r_0,\a)>0$} In conclusion, $u''(r_0,\a)>0$. \# PICTURE.
+% The combination of $u''(r_0,\a)>0$ and $u'(r_0,\a)=0$ implies that the solution
+% is increasing for $r$ larger than $r_0$ but small enough. That is, there exists
+% $r_1>r_0$ such that $u(r,\a)>u(r_0,\a)\text{ for all }r\in(r_0,r_1]$. 
+% 
+% \textbf{First mention of $\eps$-tube} Now consider an $\eps$-tube around
+% $u(r,\a)$ which guarantees that $u(r_1,\beta)>u(r_0,\beta)$ and
+% $0<u(r,\beta)<\beta\text{ for all }r\in(0,r_1]$. By continuous dependence on the
+% initial data, this $\eps$-tube implies $u(r,\beta)$ solves the \# IVP with
+% $\beta$ also in $P$. \# PICTURE of $\eps$-tube. Define the average of
+% $u(r_1,\a)$ and $u(r_0,\a)$ as
+% $\overline{u_\a}\coloneqq\frac{1}{2}\left[u(r_1,\a)-u(r_0,\a)\right]>0$. 
+% 
+% \textbf{Continuous dependence implies...} By continuous dependence on the
+% initial data $\exists\delta>0:|u(r,\a)-u(r,\beta)|<\eps$ whenever
+% $|\a-\beta|<\delta$. Let $\eps=\overline{u_\a}$. Then $\exists\ \delta_\a>0$
+% such that $|u(r,\a)-u(r,\beta)|<\overline{u_\a}=\ldots$ whenever
+% $|\a-\beta|<\delta_\a$. $u(r_1,\beta)>u(r_0,\beta)$ fails when $u(r_1,\beta)\leq
+% u(r_0,\beta)$, which is when $u(r_1,\beta)$ is minimal and $u(r_0,\beta)$ is
+% maximal, that is, when $u(r_1,\beta)=u(r_1,\a)-\eps$ and
+% $u(r_0,\beta)=u(r_0,\a)+\eps$. Another extreme case is when $u(r,\beta)\leq0$
+% for some $\tilde r$ in $(0,r_1]$.  $\eps$-tube around $u(r,\a)$. Note
+% $\uba-\eps>\uaa+\eps$
+% 
+% \textbf{The tube guarantees} $\implies \uba-\uaa>2\eps$. Dividing both sides by
+% 2 yields:
+% $\eps=\overline{u_\a}\coloneqq\frac{1}{2}\left[u(r_1,\a)-u(r_0,\a)\right]>0$ (1)
+% $\uab-\uaa<\eps$ (2) $\uba-\ubb<\eps$ $\ldots$ $\uab<\half\uav$ $\ubb>\half\uav$
+% $\implies \uab<\half\uav<\ubb$ $\implies \ubb-\uab>\half\uav>0$. In other words,
+% the $\eps$-tube definitely guarantees $\ubb>\uab$. If the tube also guarantees
+% $0<\ub<\beta$ then $\beta\in P$.
+% 
+% \textbf{About open sets, examples} Remember that a set is open if it contains a
+% ball around each of its points. Conversely, a set is closed if it is not open.
+% An example would be the interval $[0,2)$ that contains a ball around any value
+% near $2$. However, $0$ is in the interval, yet a ball around zero includes
+% negative values, which are not in the interval. Conclusion: $[0,2)$ is not open. 
+% 
+% \textbf{Formal definition of open} That is, for any $\alpha\in P$ there exists
+% $\eps>0$ such that $B_\eps(\alpha)\subset P$. Here $B_\eps(\alpha)$ denotes an
+% $\eps$-ball around $\alpha$, which is defined as
+% $$B_\eps(\alpha)\coloneqq\left\{\beta \in I : |\beta-\alpha|<\eps \right\}$$
+% 
+% \textbf{Open intervals} Equivalently, $P$ is open if for every $\alpha\in P$
+% there exists $\eps>0$ such that $(\alpha-\eps,\alpha+\eps)\subset P$.
+% 
+% \textbf{Let $\a\in P$ leads to $g(u(r,\a))=0$ or $\kappa$ and ...} Now, to show
+% that $P$ is open, let $\alpha$ be an initial condition in $P$. A valid
+% assumption, as $P$ is nonempty. The definition of $P$ yields the following
+% properties of $u(r,\alpha)$: \begin{subequations}
+% \begin{empheq}[left=\empheqlbrace]{align} &u(r,\alpha) > 0\text{ on }[0,r_0]\\
+% &u'(r,\alpha) < 0\text{ on }(0,r_0)\\ &u(r_0,\alpha) > 0\\ &u'(r_0,\alpha) =
+% 0\label{propp:4} \end{empheq} \end{subequations} \# (chapter numbering of
+% equations, not section.) Using \cref{propp:4} in the initial value problem
+% yields: $$u''(r_0,\alpha)=-g(u(r_0,\alpha)).$$ 
+% 
+% \textbf{Uniqueness argument} Consider two cases, $u''(r_0,\alpha)=0$  and
+% $u''(r_0,\alpha)\neq 0.$  The former case requires $g(u(r_0,\alpha))=0$. From
+% earlier analysis, the zeroes of $g(\ua))$  are 0 and $\kappa$. But property (1)
+% contradicts $\ua=0$.  By a uniqueness argument $\ua=\kappa$ also fails. 
+% 
+% \textbf{Why $u\equiv\kappa$ fails} Hence, $u''(r_0,\alpha)\neq0$. To see this,
+% consider $u\equiv\kappa$. This satisfies property (3) and (4) and solves the
+% IVP. By uniqueness of solutions \# REF, Boundary values, $u\equiv\kappa$ is the
+% only solution that satisfies (3) and (4). But this contradicts property (2),
+% $u'(r)<0$ on $(0,r_0)$. As a consequence, $\kappa\notin P$ and $u''(r,\alpha)$
+% and $u'(r,\alpha)$ never vanish for the same $r$ if $\alpha\in P$. 
+% 
+% \textbf{Let $\beta$ be in $\eps$-ball around $\a\in P$} Let $\beta\in
+% B_\eps(\alpha)$, that is, let $\beta$ within $\eps$-distance of $\alpha$, that
+% is, let $|\beta-\alpha|<\eps$. Then for $\beta$ to be a solution in $P$, the
+% same properties need to be derived. All in all, show that $\ub$ is positive up
+% to some $r_0$, and there exists $r_1$ such that $\ubb>\uab$.
+% 
+% \textbf{Continuous dependence on initial data} Define $\uav:=\uavv$. Let
+% $\eps=\uav.$ Then by continuous dependence on initial data,
+% $\exists\delta>0\text{ s.t. }|\alpha-\beta|<\delta\implies|\ua-\ub|<\uav$. This
+% also implies:
+% 
+% \begin{gather*} \text{Statement 1: }|\uab-\uaa|<\uav,\\ \text{Statement 2:
+% }|\ubb-\uba|<\uav \end{gather*}
+% 
+% \textbf{Start over again, properties of $\a\in P$} Let $\a\in P$. Remember that
+% $P$ is non-empty by the previous results. By definition of $P$ we have:
+% $$r_0=\inf\{r>0,~u'(\a,r)=0,~u(\a,r)>0\}>0$$ and \begin{empheq}[left =
+% \empheqlbrace]{align*} &u(\a,r)>0\quad\text{for all }r\in[0,r_0] \\
+% &u'(\a,r)<0\quad\text{for all }r\in(0,r_0).  \end{empheq}
+% 
+% \textbf{Split into two cases about $u''(r_0,\a),u\equiv\kappa$ is impossible} By
+% \cref{ivp} we have $u''(\a,r_0)=-g(u(\a,r_0))$. Consider as the first of two
+% cases, $u''(\a,r_0)=0$. Then $g(u(\a,r_0))=0$. The only zero of $g$ where
+% $0<u(\a,r_0)<\a$ is $\kappa$, i.e. $u(\a,r_0)=\kappa$. But since $u'(\a,r_0)=0$
+% and $u''(\a,r_0)=0$, $u(\a,r)\equiv\kappa$, which is impossible. 
+% 
+% \textbf{$u''(r_0,\a)\neq0$ leads to $u(r,\a)>u(r_0,\a)$} Consider the second
+% case, $u''(\a,r_0)\neq0$. Then because the derivative was negative up to $r_0$
+% and has now vanished, $u''(\a,r_0)>0$. This implies the derivative is positive
+% to the right of $r_0$ and there exists a $r_1>r_0$ such that $u(\a,r)>u(\a,r_0)$
+% for all $r\in(r_0,r_1]$. \# FIGURE. 
+% 
+% \textbf{Continuous dependence implies $\a^*\in P$} By continuous dependence on
+% the initial condition, let $\a^*$ be sufficiently close to $\a$ then for all
+% $r\in(0,r_1]$ the following hold: \begin{empheq}[left=\empheqlbrace]{align*}
+% &u(\a^*,r_1)>u(\a^*,r_0) \\ &\a^*>u(\a^*,r)>0 \end{empheq} which can be
+% interpreted as: for $\a^*$ sufficiently small, $u(\a^*,r_1)$ is still above
+% $u(\a^*,r_0)$, the derivative vanishes in some point $r_0^*\in(0,r_1]$ and the
+% solution does not vanish on $(0,r_1]$. Then these properties together imply
+% $\a^*\in P$ and hence $P$ is open. 
+% 
+% \textbf{About open sets} $P$ is open if for any initial condition $\a$ in $P$,
+% there exists a real number $\epsilon_\a>0$ such that points whose distance from
+% $\a$ is less than $\epsilon_\a$ are also in $P$.
+% %\end{proof} \end{lemma}
+% 
+% \textbf{Critical case for $u(r_0,\beta)<u(r_1,\beta)$}Of these absolute
+% inequalities, the most critical case (that allows $\uab>\ubb$) is when $\uab$ is
+% maximal within the $\eps$-tube and $\ubb$ is minimal within the $\eps$-tube.
+% That is, if $\uab<\ubb$ for this case, it is true for any combination of $\uab$
+% and $\ubb$. Hence we have the following to prove:
+% 
+% \textbf{$\eps$-tube again, many equations} Drawing of $\eps$ tube around $\ua$.
+% %Required: $u(r_1,\alpha)-\epsilon>u(r_0,\alpha)+\epsilon\implies
+% %u(r_1,\alpha)-u(r_0,\alpha)>2\epsilon.$
+% Required: $\uba-\eps>\uaa+\eps\implies\uba-\uaa>2\eps.$
+% 
+% \begin{gather*} \text{Statement 1: }\uab-\uaa<\eps=\half\uba-\half\uaa,\\
+% \text{Statement 2: }\uba-\ubb<\eps=\half\uba-\half\uaa.  \end{gather*}
+% 
+% \begin{gather*} 2\uab-2\uaa<\uba-\uaa,\\ 2\uba-2\ubb<\uba-\uaa.  \end{gather*}
+% 
+% \begin{gather*} 2\uab-\uaa<\uba,\\ \uba-2\ubb<-\uaa.  \end{gather*}
+% 
+% \begin{gather*} \uab<\half\left(\uba+\uaa\right),\\
+% \ubb>\half\left(\uba+\uaa\right).  \end{gather*}
+% 
+% \begin{gather*} \implies \uab<\half\Delta u_{\alpha}<\ubb.\\ \implies
+% \ubb-\uab>\half\Delta u_{\alpha}>0.  \end{gather*}
+% 
+% \textbf{Conclusion} The combination of $\ubb>\uab$ and
+% $\ub\in(0,\beta)\implies\beta\in P$.
+
+% ---
+
+%Lastly, make the shooting argument rigorous. The previous arguments show that a
+%solution that is positive and decreasing everywhere tends to 0. But does such a
+%solution actually exist? Let $I=(0,\infty)$ be the set of initial conditions.
+%If the set can be written as the union of \red{nonempty, open, disjoint sets}
+%then ... In other words, show $I=P\cup G\cup N$ where $P$ and $N$ are nonempty,
+%disjoint and open. Some ingredients are obvious. Some are less obvious.
+
+% ---
+
+% By properties \eqref{anprop}
+% \[
+% G(\alpha_p)-G(u(r_0,\a_p))=G(\a_p)>0,
+% \]
+% but the assumption $\a_p\in(\kappa,\a_0]$ implies $G(\a_p)\leq0$, a
+% contradiction, hence $\a_p\notin N$.
+
+%\begin{align*}
+%-\frac{1}{2}[u'(r_0)]^2-(N-1)&\int_0^{r_0}[u'(s)]^2\frac{ds}{s}=G(u(r_0,\a_p))-G(\a_p)\\
+%G(\a_p)-G(u(r_0,\a_p))&=\frac{1}{2}[u'(r_0)]^2+(N-1)\int_0^{r_0}[u'(s)]^2\frac{ds}{s}\\
+%G(\a_p)-G(0)&=\frac{1}{2}[u'(r_0)]^2+(N-1)\int_0^{r_0}[u'(s)]^2\frac{ds}{s}\\
+%G(\a_p)&=\frac{1}{2}[u'(r_0)]^2+(N-1)\int_0^{r_0}[u'(s)]^2\frac{ds}{s}\\
+%\implies &G(\a_p)>0, \end{align*} \beel
+%\eeel
+
+% ---
+
+% Similar to the previous argument and the proof of \cref{llemma}, observe
+% \cref{ivpint} for $r$ tending to infinity, and note the following:
+% $$l=\limrtoinf u(r,\a_p)\text{, }G(l)=G(0)=0,$$ 
+% 
+% and 
+% $$\limrtoinf\left[u'(r,\a_p)\right]^2=0,$$
+% 
+% as well as the lower bound on the integral term
+% $$\int_0^\infty\left[u'(\a_p,s)\right]^2\frac{ds}{s}>0,$$ 
+% 
+% to conclude that:
+% \begin{align*}
+% \limrtoinf\left[G(\a_p)-G(u(r,\a_p))\right]&=\limrtoinf\left[\frac{1}{2}[u'(r)]^2+(N-1)\int_0^{r}[u'(s)]^2\frac{ds}{s}\right]\\
+% G(\a_p)-G(l)&=0+(N-1)\int_0^{\infty}[u'(s)]^2\frac{ds}{s}\\ G(\a_p)-G(0)&>0\\
+% \implies G(\a_p)&>0, \end{align*} to reach the same contradiction,
+
+% ---
+
+% Similar to the previous argument and the proof of \cref{llemma}, observe
+% \cref{ivpint} for $r$ tending to infinity, and note the following:
+% $$l=\limrtoinf u(r,\a_p)\text{, }G(l)=G(0)=0,$$ 
+% 
+% and 
+% $$\limrtoinf\left[u'(r,\a_p)\right]^2=0,$$
+% 
+% as well as the lower bound on the integral term
+% $$\int_0^\infty\left[u'(\a_p,s)\right]^2\frac{ds}{s}>0,$$ 
+% 
+% to conclude that:
+% \begin{align*}
+% \limrtoinf\left[G(\a_p)-G(u(r,\a_p))\right]&=\limrtoinf\left[\frac{1}{2}[u'(r)]^2+(N-1)\int_0^{r}[u'(s)]^2\frac{ds}{s}\right]\\
+% G(\a_p)-G(l)&=0+(N-1)\int_0^{\infty}[u'(s)]^2\frac{ds}{s}\\ G(\a_p)-G(0)&>0\\
+% \implies G(\a_p)&>0, \end{align*} to reach the same contradiction,
+
+% ---
+
+% Similar to the previous argument and the proof of \cref{llemma}, observe
+% \cref{ivpint} for $r$ tending to infinity, and note the following:
+% $$l=\limrtoinf u(r,\a_p)\text{, }G(l)=G(0)=0,$$ 
+% 
+% and 
+% $$\limrtoinf\left[u'(r,\a_p)\right]^2=0,$$
+% 
+% as well as the lower bound on the integral term
+% $$\int_0^\infty\left[u'(\a_p,s)\right]^2\frac{ds}{s}>0,$$ 
+% 
+% to conclude that:
+% \begin{align*}
+% \limrtoinf\left[G(\a_p)-G(u(r,\a_p))\right]&=\limrtoinf\left[\frac{1}{2}[u'(r)]^2+(N-1)\int_0^{r}[u'(s)]^2\frac{ds}{s}\right]\\
+% G(\a_p)-G(l)&=0+(N-1)\int_0^{\infty}[u'(s)]^2\frac{ds}{s}\\ G(\a_p)-G(0)&>0\\
+% \implies G(\a_p)&>0, \end{align*} to reach the same contradiction,
+
+% ---
+
+% Similar to the previous argument and the proof of \cref{llemma}, observe
+% \cref{ivpint} for $r$ tending to infinity, and note the following:
+% $$l=\limrtoinf u(r,\a_p)\text{, }G(l)=G(0)=0,$$ 
+% 
+% and 
+% $$\limrtoinf\left[u'(r,\a_p)\right]^2=0,$$
+% 
+% as well as the lower bound on the integral term
+% $$\int_0^\infty\left[u'(\a_p,s)\right]^2\frac{ds}{s}>0,$$ 
+% 
+% to conclude that:
+% \begin{align*}
+% \limrtoinf\left[G(\a_p)-G(u(r,\a_p))\right]&=\limrtoinf\left[\frac{1}{2}[u'(r)]^2+(N-1)\int_0^{r}[u'(s)]^2\frac{ds}{s}\right]\\
+% G(\a_p)-G(l)&=0+(N-1)\int_0^{\infty}[u'(s)]^2\frac{ds}{s}\\ G(\a_p)-G(0)&>0\\
+% \implies G(\a_p)&>0, \end{align*} to reach the same contradiction,
+
+% ---
+
+% We note that choosing any $\omega\leq M$ yields a non-negative value for the
+% right-hand side of \eqref{omrm}. In the case that $N=2$, the left-hand side
+% evaluates to a negative number. Then, the inequality holds for all $r\geq0$. In
+% the case that $N=1$ or $N=3$, the left-hand side evalutes to 0. Then too, the
+% inequality holds for $r\geq0$. In the case that $N\geq4$, we write $(N-1)(N-3)$
+% as $(N-2)^2-1$ and obtain
+% \[ \frac{(N-2)^2-1}{4r^2}\leq M-\omega \]
+% %\sim \frac{1}{4r^2} \leq M-\omega. \]
+% 
+% Now, depending on the choice of $\omega\leq M$, there will be a least $R_1\geq0$
+% such that the inequality holds. Since $\omega\leq M$ and $r>0$, we solve and
+% find that for 
+% \[ r\geq \frac{(N-2)^2-1}{2\sqrt{M-\omega}} = R_1 \]
+% the inequality \eqref{omrm} holds. This concludes the proof of \cref{omrlem}.
+
+% ---
+
+% Since $u(r)-\kappa$ is non-negative and decreasing by assumption, we know that
+% $g(u(r))$ is positive for all $r$. For $u(r)>\kappa$, $g(u(r))$ is decreasing.  
+% By assumption \eqref{h3}, $g'(\kappa_+)>0$. Hence, for $r>0$
+% 
+%Note that the sign of $g(u)$ changes in $\kappa$, more specifically: $g(u)<0$
+%whenever $u(r)<\kappa$ and $g(u)>0$ whenever $u(r)>\kappa$. Thus, the first term
+%is positive everywhere. 
+
+
+% ---
+
+% We cannot have $L<0$. Then $\nu'\downarrow-\infty$ and $\nu\downarrow-\infty$.
+% But $\nu>0$ by assumption. We also cannot have $L\geq 0$. This would imply
+% $\nu\geq\nu(R_1)>0$ for all $r\geq R_1$. But this still agrees with $\nu''<0$
+% for $r\geq R_1$ and hence, $\nu'\downarrow-\infty$, contradicting $L\geq0$.
+% 
+% Hence $l=\kappa$ is an impossible assumption under the assumptions on $g$ and
+% hence $l\neq\kappa$. This concludes the proof of \cref{lemkap}.  
+
+\end{proof}
+
+% ---
+
+% Since the second derivative is
+% negative indefinitely, the derivative will become and stay negative. This
+% contradicts the assumption that $\nu(r)>0$ for $r\geq0$ and hence, $l=\kappa$ is
+% impossible. 
+%From the above, $-\nu''(r)>0$ for $r\geq R_1$ and thus $\nu''(r)<0$ for $r\geq
+%R_1$, which implies $\nu'(r)\downarrow L\geq-\infty$ as $r\uparrow\infty$. To
+%see this, remember that $\nu''(r)<0$ implies $\nu(r)$ will be concave down,
+%that is, the tangent line is above the function. Even if up to some $r\geq R_1$
+%the derivative $\nu'(r)$ is positive, since $\nu''(r)<0$ indefinitely the
+%derivative will become negative and stay negative. 
+%
+%Consider $L<0$ and $L\geq0$ as possible limits $L$. In the first case, $L<0$,
+%then $\nu(r)\to-\infty$ as $r\to\infty$ which is impossible, since $\nu(r)>0$
+%for $r\geq0$ by assumption. \Lightning. 
+%
+%Then consider $L\geq0$. \# (probleem lijkt vooral dat er teveel staat, probeer
+%tot het minimale te beperken.) Suppose $\nu'(R_1)\geq0$. Indeed, suppose
+%$\nu'(R_1)<0$. Then since $\nu''(r)<0$, the function is concave down and the
+%derivative will only decrease. Then the limit of the derivative can not be
+%$L\geq0$.
+%
+%But $\nu'(R_1)\geq0$ is also contradictory. To see this, suppose that for some
+%$R_2>R_1$ we have $\nu'(R_2)<0$. Then since $\nu''(r)<0$ for all $r$, the
+%function is concave down and the limit will be negative, contradicting the
+%assumption that $L\geq0$.  %But then, $\nu(r)>\nu(R_1)>0$.
+%
+%%\# (was merged) implies the derivative will be positive for $r\geq R_1$.
+%Suppose the derivative is negative for some $R_2>R_1$ then the derivative will
+%remain negative for $r\geq R_2$ as $\nu''(r)<0$. but Clearly, $\nu(r)\geq
+%\nu(R_1)>0$.
+%      
+%\# (Dit stukje zou moeten gaan over de tegenspraakt ussen nu tweede afgfeleide
+%altijd negatief EN limiet L groter gelijk 0 Wie impliceert wat en hoe past dit
+%in het geheel. Werkt toe naar tegenspraak: nu is dalend terwijl nu positief.
+%Tweede afgeleide kleiner dan nul geldt al vanaf veel eerder en zonder
+%voorwaarden?)
+%
+%This implies that $-\nu''(r)\geq\omega \nu(R_1)>0$ and That is,
+%$\nu'(r)\downarrow-\infty$ as $r\to\infty$. 
+%
+
+% ---
+
+%Note that by assumption, $g(\kappa)=0$, such that: 
+%\[ \underset{u(r)\downarrow\kappa}{\lim}~\frac{g(u(r))}{u(r)-\kappa}
+%%\underset{u(r)\downarrow\kappa}{\lim}~\frac{g(u(r))-g(\kappa)}{u(r)-\kappa}\\
+%\stackrel{u(r)-\kappa=h}{=}\underset{h\downarrow0}{\lim}
+%~\frac{g(\kappa+h)-g(\kappa)}{h}\\
+%=g'(\kappa^+). \]
+ % And by condition \# on $g$, we know $g'(\kappa^+)>0$.  
+ % \# By assumption, $g(\kappa)=0$ and using the definition of the derivative:
+ % $$\underset{u(r)\downarrow\kappa}{\lim}~\frac{g(u(r))}{u(r)-\kappa}=\underset{u(r)\downarrow\kappa}{\lim}~\frac{g(u(r))-g(\kappa)}{u(r)-\kappa}~\overset{(u(r)-\kappa=h)}{=}~\underset{h\downarrow0}{\lim}~\frac{g(\kappa+h)-g(\kappa)}{h}=
+ %  g'(\kappa^+)$$ 
+ % and $g'(\kappa^+)>0$ by conditions on $g$.  Let $\epsilon>0$.
+ % Then there exists $R_\epsilon>0$ such that 
+ % \begin{gather*} 
+ % r\geq R_\epsilon\implies\left|\frac{g(u(r))}{u(r)-\kappa}
+ % -
+ % g'(\kappa)\right|\leq\frac{\epsilon}{2}\\  
+ % and by definition of the absolute value 
+ % $$-\frac{\epsilon}{2}\leq\frac{g(u(r)}{u(r)-\kappa}-g'(\kappa)\leq\frac{\epsilon}{2}$$
+ %  of which the first inequality will be used:
+
+ %\begin{gather*}-\frac{\epsilon}{2}\leq\frac{g(u(r)}{u(r)-\kappa}-g'(\kappa)\\ %
+ % \frac{g(u(r)}{u(r)-\kappa}-g'(\kappa)\geq-\frac{\epsilon}{2}\\
+ % \implies\frac{g(u(r))}{u(r)-\kappa}\geq g'(\kappa)-\frac{\epsilon}{2}\tag{A}
+ % \end{gather*} Note also that there exists $R_\theta>0$ such that
+ % \begin{gather*} r\geq
+ % R_\theta\implies\left|\frac{(N-1)(N-3)}{4r^2}\right|\leq\frac{\epsilon}{2}\\ %
+ % and again using the definition of the absolute value: %
+ % \begin{gather*}-\frac{\epsilon}{2}\leq\frac{(N-1)(N-3)}{4r^2}\leq\frac{\epsilon}{2}\\
+ % \implies\frac{(N-1)(N-3)}{4r^2}\geq-\frac{\epsilon}{2}.\tag{B}\\ \text{Addition
+ % yields: }\frac{g(u(r))}{u(r)-\kappa}-\frac{(N-1)(N-3)}{4r^2}\geq
+ % g'(\kappa)-\epsilon\tag{A+B} \end{gather*} And the claim is valid, let
+ % $\omega=g'(\kappa)-\epsilon$ with $\epsilon>0$ small enough and
+ % $R_1=\max(R_\epsilon,R_\theta)$.
+%
+%\# (Can the argument be simplified? Because always concave down, derivative
+%always decreasing, hence negative eventually and tending to negative infinity
+%and by this the limit of nu is negative infinity contradicting nu positive.) 
+%
+
+% ---
+
+% Furthermore, if $g$ satisfies 
+% \[ \underset{s\downarrow\kappa}{\lim} \frac{g(s)}{s-\kappa} >0 \] 
+% and $g(\kappa)=0$, then $l\neq\kappa$.  
+
+% ---
+
+\begin{lemma} \label{omrlem}
+There exist $\omega>0$ and $R_1>0$ such that
+\be \label{omrlemeq} 
+\frac{g(u)}{u(r)-\kappa}
+-\frac{(N-1)(N-3)}{4r^2}\geq\omega
+\quad\text{for all}~r\geq R_1.
+\ee
+\end{lemma}
+
+% ---
+
+%conclusion: in any case $\nu''(r)<0$ for $r\geq r_1$ which implies
+%$\nu'(r)\downarrow-\infty$, which contradicts $\nu(r)>0$ for $r\geq0$ and
+%\end{proof} \section{differential equations, solutions and qualities} many
+%models in physics are formulated as differential equations. for example, the
+%motion of a pendulum, or the mechanics of a quantum particle. solving the
+%equation yields a closed form expression for the trajectory, velocity or
+%energy. in classical mechanics, with methods such as the lagrange formalism,
+%one single differential operator can even derive the motion of many systems in
+%various coordinate systems from the energy of the system. however, closed form
+%solutions to differential equations do not always exist. in these situations,
+%numerical approximations and their stability are of great importance. certain
+%qualitative properties can be justified from the differential equation alone.
+%basic qualities/properties to determine: existence, uniqueness, and continuous
+%dependence on initial data.
+%
+%% previous version of introduction %\section{existence of ground state
+%solutions} %in 1981, existence of ground state solutions was shown by
+%berestycki, lions and peletier for the following initial value problem
+%\ref{ivp} for $u(r,\a)$: %    \begin{empheq}[left=\empheqlbrace]{gather} %
+%u''+\frac{n-1}{r}u'+g(u)=0,\\ %       u(0,\a)=\a\text{ and }u'(0,\a)=0,\notag %
+%\end{empheq} %    % @ \begin{equation} u''+\frac{n-1}{r}u'-u+u^3=0,
+%\end{equation} %    % @ where $u=u(r)$\add{$u\in c^2(\re)$}.  %    where the
+%derivatives are with respect to $r$. the more general problem is: %    $$
+%\delta u+g(u)=0\text{ with }u\in c^2(\re^n). $$ %    % where $u=u(x)$ with
+%$x\in\re^n$ \add{$u\in c^2(\re^n)$}.  %    where $\delta$ is the laplacian and
+%$g(u)$ is a given nonlinear function satisfying $g(0)=0$. solutions to the
+%general problem found by advanced (e.g. variational) methods are radially
+%symmetric, motivating the study of the corresponding ordinary differential
+%equation with suitable methods.  % %motivated by the differential equation from
+%the chapter on physics, the focus will be on the specific case where
+%$g(u)=-u+u^3$: %    \begin{empheq}[left=\empheqlbrace]{gather}\label{ivp} %
+%u''+\frac{n-1}{r}u'-u+u^3=0,\\ %       u(0,\a)=\a\text{ and }u'(0,\a)=0.\notag
+%%    \end{empheq} % %in wave problems, a solution that is positive everywhere
+%is called ground state. such a function has zero nodes, while higher
+%order/energy functions have multiple \_\_oscillations.  %    % \rewrite{these
+%correspond to lowest energy state solutions.} %due to energy constraints, a
+%ground state function has to vanish for infinite radius.  % %    in summary,
+%ground state solutions are positive everywhere, has negative derivative
+%everywhere (decays) and tends to zero for infinite radius. formally: %    % @
+%the ground state solution is positive and decaying, tending to zero for $r$ to
+%infinity.  %    \begin{equation} %	    u(r)>0\text{ and }u'(r)<0\text{ for
+%}r>0\text{ and }\limrtoinf u(r)=0.  %    \end{equation} %    %    later, in
+%2011, genoud showed uniqueness of the ground state solution for a related
+%differential equation: %    \begin{equation} %    		u''+\frac{1}{r}u'-\lambda
+%u + v(r)u^3=0 %    \end{equation} %    this problem, when subject to similar
+%initial conditions, is equivalent to \st{the ivp} \cref{ivp} when $\lambda=1,\
+%p=3\text{ and }v(r)\equiv 1$. in this chapter, existence of ground state
+%solutions will be shown. uniqueness of the ground state solution will be proven
+%in the following chapter.  %    %% not to be edited yet % %\section{the
+%shooting method} the method used in [...] \_\_by berestycki, lions and peletier
+%to prove existence is called a shooting argument. three types of solutions are
+%distinguished and the possible initial conditions are categorised into solution
+%sets. let $i=(0,\infty)$ be the set of initial conditions. let $\a$ be an
+%initial condition in $i$ and let $u(r,\a)$ be the corresponding solution.  %
+%as formalised before, ground state solutions are positive and decreasing
+%everywhere, vanishing at infinity. define the set of initial conditions as: %
+%\begin{equation} g\coloneqq\left\{\a>0: u(r,\a)>0\text { and }u'(r,\a)<0\text{
+%for }r>0 \text{ and }\limrtoinf u(r,\a)=0\right\}\end{equation} % on the other
+%hand, the solution or its derivative might vanish for finite radius. define the
+%set of solutions that vanish\_\_become negative for finite $r$ be defined as: %
+%\begin{equation} n\coloneqq\left\{\a>0: \exists\ r_0\text{ such that
+%}u(r_0,\a)=0 \text{ and }u'(r,\a)<0\text{ for
+%}r\in(0,r_0]\right\}\end{equation} % lastly, define the set for solutions with
+%the derivative vanishing at finite radius as: % \begin{equation}
+%p\coloneqq\left\{\a>0: \exists\ r_0\text{ such that }u'(r_0,\a)=0 \text{ and
+%}u(r,\a)>0\text{ for }r\in(0,r_0]\right\}\end{equation} % these three solution
+%sets are clearly disjoint. that is, one solution cannot satisfy the properties
+%of any two solution sets simultaneously. then the total set of initial
+%conditions $i$ can be written as the union of disjoint sets, $i=p\cup g\cup n$.
+%\red{image of solution sets.} %
+%
+%  \section{interval of definition of solutions} \st{ground state} all solutions
+%  with initial condition in $i$ are defined on the maximal interval
+%  $(0,\infty)$... if the solutions are bounded. \ul{this type of} argument is
+%  \ul{called} a blowup argument. if the solution does not blow up, the interval
+%  of definition can be extended. the interval of definition cannot be extended
+%  if the solution blows up.  % how can this be guaranteed of any solution to
+%  the ivp?  % \red{any solution is continuous. any solution that is only
+%  defined on a finite interval $(r_1,r_2)$ tend to infinity for finite radius.
+%  that is, the solution blows up for some finite $r$.} % \flag{are solutions in
+%  $p$ bounded?} % \flag{solutions in $n$ are not bounded below.} % hence, to
+%  guarantee definition for all positive $r$, boundedness of the solution is
+%  necessary and sufficient.  % the solution is positive and decreasing, hence
+%  bounded above by the initial condition.  % \red{any solution has
+%  $u'(r,\a)\uparrow0\text{ for }r\to\infty$.} % then $u(r,\a)$ is bounded below
+%  by some lower bound.
+%
+%    conclusion: \underline{ground state} solutions are bounded.
+%
+%  \section{limit for positive decreasing solutions (lemma 1)} % to prove that
+%  the ground state solution vanishes at infinity, note that: %
+%  \begin{easylist}[itemize] %   @ $(u'(r,\a))^2$ is bounded. then $u(r,\a)$ is
+%  bounded implies $u'(r,\a)\to0$.  %   @ similarly, $u''(r,\a)$ is bounded, so
+%  $u'(r,\a)$ bounded implies $u''(r,\a)\to0$.  %   @ \red{missing steps..} %
+%  @ conclusion: $\limrtoinf u(r)=0$.\flag{in fact, this only shows $g\to0$!} %
+%  \end{easylist} % \seperate % % % % % however, it may be that $g\to0$ where
+%  $u(r,\a)\to\kappa$, since $g$ has two zeroes.  % to show that the solution
+%  does not tend to $\kappa$, allow the following analysis: %
+%  \begin{easylist}[itemize] %   @ regard $\nu(r)$ as a transform of the
+%  solution defined by $\nu(r)=r^{\frac{1}{2}(n-1)}\left[u(r)-\a\right]$.  %   @
+%  \red{missing steps..} % \end{easylist} % \seperate % %
+%    
+% \section{lemma 2 $p$ and $n$ are nonempty and open} \# the proofs for openness of both
+
+% ---
+
+%\textbf{Analysis:} 
+% Note that $\nu(r)=r^{(N-1)/2}\left[u(r)-\kappa\right]>0$ for $r\geq0$ by
+% definition.
+% % of $\nu(r)$. 
+% The factor $r^{(N-1)/2}$ is positive and increasing and the quantity in square
+% brackets is positive and decreasing under the assumption that $u(r)>\kappa$. 
+% %Thus $\nu(r)$ is positive. 
+% The differential equation \cref{nuivp} for $\nu(r)$  will be used to show that
+% $l=\kappa$ is impossible under the assumptions on $g$.
+% 
+% Before analysing $\nu(r)$ and its derivatives, a lower bound for the quantity in
+% braces in \cref{nuivp} will be calculated. Remember that by assumption
+% $u(r)\downarrow\kappa$ as $r\uparrow\infty$ and $g$ satisfies \todogroup A4
+% \endgroup.
+% 
+%\# (Merge with below) 
+
+% ---
+
+%factor out powers of $r$, after which all terms
+%carry $r^{(N-1)/2}$: 
+%\begin{align*} \nu(r)&=r^{(N-1)/2}\left[u(r)-\kappa\right]
+%\\
+%\nu'(r)&=\frac{1}{2}(N-1)r^{(N-1)/2}r^{-1}\left[u(r)-\kappa\right]+r^{(N-1)/2}u'(r)\\
+%\nu''(r)=&\frac{1}{4}(N-1)(N-3)r^{(N-1)/2}r^{-2}\left[u(r)-\kappa\right]+
+%\underline{(N-1)r^{(N-1)/2}r^{-1}u'(r)+r^{(N-1)/2}u''(r)} \end{align*} 
+%and multiply the IVP by $r^{(N-1)/2}$: \begin{align*}
+
+% ---
+
+%\begin{multline}
+%\nu''(r)=\frac{1}{4}(N-1)(N-3)r^{(N-5)/2}\left[u(r)-\kappa\right]\\
+%+\frac{1}{2}(N-1)r^{(N-3)/2}u'(r)+\frac{1}{2}(N-1)r^{(N-3)/2}u'(r)\\
+%+r^{(N-1)/2}u''(r)
+%\end{multline}
+
+% ---
+
+%
+%Combining this function, its derivatives and the \cref{ivp}, one can obtain a
+%differential equation in $v$. Analysis of this differential equation yields that
+%$l=\kappa$ is contradictory whenever $g$ satisfies A4 and $g(\kappa)=0$.
+      % Suppose to the contrary $l=\kappa$. Then introduce the following
+      % substitution: $$\nu(r)=r^{(1/2)(N-1)}\left[u(r)-\kappa\right],$$
+      %
+      % where $u(r)=u(r,\a_1)$. Combining this function, its derivatives and the
+      % \eqref{ivp}, one can obtain a differential equation in $\nu$.  This will
+      % then be used to argue that $l=\kappa$ can only lead to contradictions
+      % when $g$ satisfies \eqref{6} and $g(\kappa)=0$.
+%
+
+% ---
+
+%By similar argument the limit is zero.}
+
+% Note that $u'$ is bounded, so $u''$ has to converge to zero. 
+% $$\limrtoinf u''(r,\a_1)=0.$$ 
+% So the claim is valid and $g(l)=0$: 
+% \begin{align*}
+% \limrtoinf\left[u''(r,\a_1)+\frac{N-1}{r}u'(r,\a_1)\right]&=-g(l)\\
+% %
+% % -\limrtoinf\left[u''(r,\a_1)\right]
+% % -\limrtoinf\left[\frac{N-1}{r}u'(r,\a_1)\right]&=\limrtoinf g(u(r,\a_1))\\
+% \limrtoinf\left[u''(r,\a_1)\right]&=-g(l)\\ 0&=-g(l) 
+% \end{align*}
+%\end{proof}
+%\end{lemma}
+
+% \subsection{Limit is not $\kappa$} 
+%The next statement of the lemma reads "if $g(\kappa)$=0 then $l\neq\kappa$". 
+% For solutions with initial condition not in $P$ nor in $N$ to be ground state
+% solutions, we need to show that for everywhere positive decreasing solutions the
+% limit for $r$ to infinity of $u(r)$ is zero. That is,
+% $\underset{r\to\infty}{\lim}u(r)=0$. 
+
+% ---
+
+% \[ \underset{r\to\infty}{\lim}~\half[u'(r,\a_1)]^2+
+% (N-1)\underset{r\to\infty}{\lim}\int_0^r[u'(\a_1,s)]^2\frac{ds}{s}
+% =G(\a_1)-G(l)<\infty. \]
+
+% <\infty. \]
+
+% \[ \underset{r\to\infty}{\lim}~\frac{1}{2}[u'(r,\a_1)]^2+
+% (N-1)\int_0^\infty[u'(\a_1,s)]^2\frac{ds}{s}<\infty \]
+
+%The right hand side is finite by assuming $g(l)=0$. Since the right hand side is finite, both terms of the left hand side should be finite.  
+% The term $G(l)$ is finite if and only if $l$ is finite. 
+
+% ---
+
+% We wish to show that $g(l)=0$ by showing that $u'$ and $u''$ both converge to
+% $0$ as $r\to\infty$. 
+% To verify this, we need the limits of $u'$ and $u''$. 
+%They both need to converge to zero, 
+%such that the limit of the sum of $u''(r,\a_1)$
+%and $\frac{N-1}{r}u'(r,\a_1)$ evaluates to 0. 
+%Since the left hand side evaluates to zero, we have $g(l)=0$.  
+%\begin{claim} 
+%Both $u''\to0$ and $u'\to0$ as $r\to\infty.$ 
+%\end{claim} 
+
+% ---
+
+%\begin{easylist}[itemize] %@ \# Seperating into cases, not needed for lemma 1?
+%%@ \# Because of the radial symmetry of the problem, only positive initial
+%conditions are considered.  @ Remember $u(0,\a)=\a>0$.  @ Based on the graph of
+%$g(u)=u-u^3$, the initial conditions $\a$ can be divided into three categories.
+%@ Firstly, $g(\a))<0$ for $\a\in(0,\kappa)$.  @ Secondly, $g(\a))>0$ for
+%$\a\in(\kappa,\a_0)$, but $G(\a)<0$.  @ Lastly, both $g(\a)$ and $G(\a)$ are
+%positive for $\a>\a_0$.  \end{easylist} \subsection{Proof that the limit
+%exists}
+
+% ---
+
+%\subsection{Overview of lemma 1} overbodig Remember that $g(u)=-u+u^3$, hence
+%$g(0)=0$.  wrong Local Lipschitz continuity is implied by continuity, and $g$
+%is a continuous function. Continuous functions are locally bounded, therefore
+%they are locally Lipschitz continuous.  overbodig To simplify the argument at
+%any point, consider this lemma applied to the specific case of $g(u)=-u+u^3$.
+%That function is indeed locally Lipschitz continuous with $g(0)=0$.
+
+% ---
+
+% Ground state solutions need to be positive decreasing everywhere and converge to
+% 0 for $r\to\infty$. Suppose that a solution $u(r,\a)$ to \cref{ivp} is positive
+% decreasing everywhere. We will show that the solution vanishes in the limit for
+% $r\to\infty$. 
+% 
+% This lemma deals with the limit of $u(r,\a)$ for $r\to\infty$. Now that we know
+% the solutions are positive and decreasing, there are two concerns. Do positive
+% decreasing solutions have a limit? And is the limit zero? Both are true, the
+% limit for $r\to\infty$ will be shown to satisfy $g(l)=0$. However...
+% 
+% We know the nonlinearity $g$ has at least two zeroes. Furthermore, the specific
+% nonlinearity $g(u)=-u+u^3$ has two zeroes $\{0,\kappa\}$. By assumption, we have
+% $g(\kappa)=0$. This also satisfies the above...
+% 
+% However, $l=\kappa$ leads to contradictions. Thus $l=0$. By these arguments, a
+% positive decreasing solution actually tends to 0 for $r$ to infinity.
+
+% ---
+
+%\# (Dubbel) \ul{Claim 1: If $g$ satisfies A6 then $l\neq\kappa$.}
+%\begin{proof}[Proof of the first claim] Suppose by contradiction that
+%$l=\kappa$.  Then by definition:
+%$$\nu(r)=r^{\frac{1}{2}(N-1)}\left[u(r)-\kappa\right]\geq0.$$ We wish to derive
+%a lower bound on the term in braces found by the above derivation,
+%$$-\nu''(r)=\left\{\frac{g(u)}{u(r)-\kappa}-\frac{(N-1)(N-3)}{4r^2}\right\}\nu(r).$$
+%Note that $u(r)\uparrow\kappa$ as $r\uparrow\infty$ by assumption.\\
+%
+%Claim: there exist positive numbers $\omega$ and $R_1$ such that:
+%$$\frac{g(u)}{u(r)-\kappa}-\frac{(N-1)(N-3)}{4r^2}\geq\omega\quad\forall r\geq
+%R_1.$$
+%
+
+%
+%
+% (General NLS) Substituting $E=e^{ik_0z}\psi$ in the NLH \ref{nlh} and applying the paraxial
+% approximation $\psi_{zz}<<k_0\psi_z$, we obtain the nonlinear Schr\"odinger
+% equation (NLS)
+% \be \label{nls}
+% 2ik_0\psi_z(z,\bar{x})+\Delta_\perp\psi+k_0^2\frac{4n^2}{n_0}|\psi|^2\psi=0.
+% \ee
+%
+% \todogroup Instead, use dimensionless NLS (3.4) and rewrite soliton substition
+% to match that. This will yield $$R''+\frac{1}{r}R' - R + R^3=0$$ as is the
+% entrypoint/simplest form for the next chapters. \endgroup
+%
+(Focusing NLS) The previous results lead to the focusing NLS given by
+\begin{equation}
+i\psi_z(z,\bar{x})+\Delta\psi+|\psi|^{2\sigma}\psi=0.
+\end{equation}
+%
+Considering envelopes of constant shape (solitons) with
+$$ \psi_\omega^{\text{soliton}}=e^{i\omega z}R_\omega(\bar{x})$$
+%
+leads to an equation in $R_\omega(\bar{x})$ by the following steps
+%
+% \beel
+% @ $i\psi_z(z,\bar{x})=
+% i\left(i\omega e^{i\omega z}R_\omega(\bar{x})\right)=
+% -\omega e^{i\omega z}R_\omega(\bar{x})$
+% @ $\Delta\psi=\left(\Delta \eiwz\right)\Rom+\eiwz\left(\Delta\Rom\right)$
+% @ $|\psi|^{2\sigma}\psi=\left|\eiwz\Rom\right|^{2\sigma}\eiwz\Rom=
+% \left|\Rom\right|^{2\sigma}\eiwz\Rom$
+% @ such that
+% @ $\eiwz\left[-\omega\Rom+\Delta\Rom+\left|\Rom\right|^{2\sigma}\Rom\right]=0$
+% @ and
+% @ $\Delta\Rom-\omega\Rom+\left|\Rom\right|^{2\sigma}\Rom=0$
+% \eeel
+%
+
+% ---
+
+\begin{comment}
+Laser beams are focused, that is, the electric field is concentrated around the $z$-axis and falls of quickly as a function of the radial distance from the axis. Because of this concentrated nature, we know $k_z\approx k_0$. Similarly, the perpendicular wave number is negligible, $k_\perp=k_x^2+k_y^2<<k_z^2$. This motivates splitting the exponential in an oscillating term as a function of $z$ and an envelope term that varies slowly. 
+
+In other words, use $k_0^2\coloneqq k_x^2+k_y^2+k_z^2$ to write $k_z = \sqrt{k_0^2-k_x^2-k_y^2}$. \# HOW does this help? Move downward, include Taylor? The exponential can be split into \#
+\begin{equation*} 
+E(x,y,z)=e^{ik_0z}\psi(x,y,z)~\text{ with }~\psi=E_c\, e^{i(k_x x+k_y y+(k_z-k_0)z)}
+\end{equation*}
+The envelope function $\psi$ varies slowly in $z$ and satisfies its own Helmholtz equation:
+\begin{equation*}
+	\psi_{zz}+2ik_0\psi_z+\Delta_\perp\psi=0,
+\end{equation*}
+where $\Delta_\perp=\psi_{xx}+\psi_{yy}$. In this equation, \# WHY? because of the slow variance, the $\psi_{zz}$ term can be neglected as $\psi_{zz}<<k_0\psi_z~\text{ and }~\psi_{zz}<<\Delta_\perp\psi$. That is, the term $\psi_{zz}$ is small compared to both $\psi_z$ and $\Delta_\perp\psi$. \# MOTIVATION for $\psi_{zz}$ being small. The resulting equation is called the linear Schr\"odinger equation:
+\begin{equation*}
+\label{LS}
+	2ik_0\psi_z+\Delta_\perp\psi=0.\tag{Linear Schr\"odinger}
+\end{equation*}
+% Split into $E=\exp^{ik_0z}\psi(x,y,z)$, with $\psi$ an envelope function varying slowly in z. This $\psi$ solves a Helmholtz equation. Neglect $\psi_{zz}$ (paraxial) to obtain the linear Schr\"odinger equation for $\psi$.
+
+\# EXPAND Now the step needs to be made to the nonlinear Helmholtz equation. The different polarisations need to be described, weakly nonlinear and Kerr nonlinear. Then obtain nonlin HH to apply parax. approx. to obtain NLS. Then make steps to dimensionless NLS, consider solitary waves and specify the $\omega$...
+
+% Polarisation, linear polarisation, weakly nonlinear polarisation, Kerr nonlinearity. This all leads to nonlinear Helmholtz, apply paraxial approximation to obtain NLS. Step over to dimensionless NLS and consider solitary waves.
+
+\# NEW Solitary radially symmetric solutions to the dimensionless NLS. Specifically considering NLS solutions of the form:
+$$ \psi_\omega^\text{solitary}(r,z)=e^{i \omega z}R_\omega(r) $$
+where $\omega$ is a real number and $R_\omega$ is the solution of
+$$ -\omega R_\omega(r)+\Delta_\perp R_\omega(r)+R_\omega^3(r)=0.$$
+Since $R_\omega(r)$ is radial, $R'_\omega(0)=0$ and $\Delta_\perp=\frac{d^2}{dr^2}+\frac{1}{r}\frac{d}{dr}$. In addition, since $R_\omega$ has a finite power, it decays to zero at infinity, i.e. \# LIMIT EXPRESSION.
+
+\# WEAVE WITH ABOVE Then, by considering radially symmetric solitary wave solutions, one obtains the following equation:
+$$ R'' + \frac{1}{r}R' - R + R^3 = 0, $$
+with initial condition $R'(0)=0$ and finite power: $\limrtoinf R(r) = 0$. This is the equation for which existence and uniqueness of solutions will be discussed.
+\end{comment}
+
+\begin{comment}
+\todogroup
+Claim: this violates Maxwell's law for the divergence of the electric field:
+$\nabla\cdot\ev=0$. Substituting the mentioned plane wave yields
+\begin{gather*}
+\nabla\cdot\ev=\frac{\partial\mathcal{E}_x}{\partial
+x}+\frac{\partial\mathcal{E}_y}{\partial
+y}+\frac{\partial\mathcal{E}_z}{\partial z}\\
+=0 + 0 + ik_0 E_c \eikzwt\neq 0
+\end{gather*}
+The nonzero $z$-component is troublesome in light of the Maxwell divergence law
+for the electric field.  
+
+However, the electric field $\ev=(p,p,0)$ does satisfy Maxwell's law. This field
+is perpendicular to the wavevector $\vv{k}=(0,0,k_0)$. In fact, this relation
+holds more generally. Plane waves with wavevector $\vv{k}=(k_x,k_y,k_z)$ are
+physical when the electric field and wavevector are perpendicular.
+\endgroup
+\end{comment}
+
+% \section{Scalar wave equation and solutions}
+% In Cartesian coordinates, the Laplacian operator $\Delta$ reads $$\Delta=\nabla^2=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2}.$$ 
+% By the following explication we see that the second derivative of any component with respect to time is related to the Laplacian of that component only. There is no term relating $\mathcal{E}_x$ to $\mathcal{E}_y$ or $\mathcal{E}_z$ and vice versa. We say that the components of the electric field are decoupled. Components of solutions to the vector wave equation satisfy a scalar wave equation:
+% 
+% \begin{equation*}
+%   \Delta \mathcal{E}_j =
+%   \sum_{j=1}^3\left[\frac{\partial^2\mathcal{E}_j}{\partial x_j^2}\right] =
+%   \frac{1}{c^2} \frac{\partial^2 \mathcal{E}_j}{\partial t^2}.
+% \end{equation*}
+% For plane waves propagating in a general direction, the scalar solutions are of the form: % (with real amplitude $E_c\in\mathbb{R}$)
+% \begin{equation*}
+%   \label{pwgd}\mathcal{E}_j=E_c\,e^{i(\vv{k_0}\cdot\vv{r}-\omega_0t)}+\text{ c.c.,}
+% \end{equation*}
+% where $\vv{k_0}=k_x^2\hat{i}+k_y^2\hat{j}+k_z^2\hat{k}$, $\vv{r}=x\hat{i}+y\hat{j}+z\hat{k}$
+% and $|\vv{k_0}|^2=\omega_0^2/c^2$.
+% For a plane wave travelling the positive $z$-direction, the solutions read: 
+% \begin{equation*}
+% \mathcal{E}_j=E_c\,e^{i(k_0z-\omega_0t)}+\text{ c.c.,}
+% \label{pwpz}
+% \end{equation*}
+% where $k_0^2=\omega_0^2/c^2$ is the dispersion relation. Dispersion (spreading out) is a result of different frequencies propagating at different speeds.  In the above expressions ``c.c.'' stands for complex conjugate, so that the solutions (for plane waves) actually read:
+% \begin{equation*}
+% 	\mathcal{E}_j=E_c\,e^{i(k_0z-\omega_0t)}+E_c\,e^{-i(k_0z-\omega_0t)}
+% \end{equation*}
+
+
+
+
+% \section{Introduction}
+% \revgroup
+% In this section we derive the Nonlinear Schr\"odinger equation (NLS) that leads
+% to the aforementioned solition equation. The material is heavily based on
+% chapters 1 and 3 from the work by Gadi Fibich \cite{fibg}
+% 
+% Starting from Maxwell's laws and wave equations, certain approximations are made with specific attention to nonlinear effects. Spefically, the Kerr nonlinearity in the context of a paraxial beam. From the NLS \# further steps lead to the soliton equation.
+% \endgroup
+% 
+% This section reviews chapters 1 and 3 from \# ``The Nonlinear Schr\"odinger Equation'' by Gadi Fibich. First, the NLS is derived from Max\-well's laws. The laws lead to a vector wave equation. Since the components of the electric field are decoupled, the solutions also satisfy a scalar wave equation. \# REVERSE: THE SOLUTIONS ALSO SATISFY A SCALAR WAVE EQUATION, HENCE THE COMPONENTS OF THE ELECTRIC FIELD ARE DECOUPLED? Considering linear polarisation leads to a Helmholtz equation and considering paraxial beams leads to a Schr\"odinger equation. However, for some applications, nonlinear effects need to be considered. The Kerr nonlinearity leads to a nonlinear Helmholz equation (NLH) and its paraxial approximation leads to the NLS.
+% \begin{equation*}
+%   2ik_0\psi_z(x,y,z) + \underbrace{\Delta_\bot\psi}_{\text{diffraction}}
+%   + \underbrace{k_0^2\frac{4n_2}{n_0}|\psi|^2\psi}_{\text{Kerr nonlinearity}} = 0.
+% \end{equation*}
+% Later, in chapter 3.3.3 of \# Fibich, further analysis leads to a wave equation for \emph{solitons}. Solitons are local waves that maintain their shape whilst propagating at constant speeds. 
+% 
+% In 1981 and 2011 respectively, two papers were published on existence and uniqueness of ground state solutions to this type of equation. These papers are treated in chapters 2 and 3 as the central subject of this thesis. 
+% 
+% In the equation for solitons, $R$ represents... \# WHAT IS SAID IN CHAPTER 3 ABOUT THESE RESULTS
+% \begin{equation*}
+%   R'' + \frac{1}{r}R' - R + R^3 = 0.
+% \end{equation*}
+% 
+% \section{Vector electromagnetic fields: Maxwell's laws}
+% The propagation of electromagnetic waves in a medium is governed by Maxwell's laws in absence of external charges or currents. Remember that Maxwell's laws for the electric field $\mathcal{E}$, magnetic field $\mathcal{H}$, induction electric field $\mathcal{D}$ and induction magnetic field $\mathcal{B}$ are given by:
+% \begin{equation*}
+% \begin{gathered}
+%   % \nabla\times\bar\mathscr{E}=-\pd{\bar\mathscr{B}}{t}\\
+%   \nabla\times\ev = -\frac{\partial \bv}{\partial t},\quad
+%   \nabla\times\hv = -\frac{\partial \dv}{\partial t},\\
+%   \nabla\cdot\dv=0,\quad
+%   \nabla\cdot\bv=0.
+% \end{gathered}
+% \end{equation*}
+% These are vector fields: $\ev=(\mathcal{E}_1,\mathcal{E}_2,\mathcal{E}_3)$ in Cartesian ($x,y,z$) coordinates. In vacuum, the relations between the  fields and induction fields (electric or magnetic) are given as:
+% \begin{equation*}
+%   \bv=\mu_0\hv,\quad \dv=\epsilon_0\ev
+% \end{equation*}
+% 
+% \section{Wave equation from Maxwell's laws}
+% From these relations and the vector identity for the curl of the curl, a wave equation can be derived. We specifically use
+% \begin{align*}
+%   \nabla\times\nabla\times\ev=
+%   \nabla\times(-\frac{\partial \bv}{\partial t})=
+%   -\frac{\partial}{\partial t}(\nabla\times\bv),
+%   \quad&\text{ by Maxwell's laws, and}\\
+%   \nabla\times\nabla\times\ev=
+%   \nabla(\nabla\cdot\ev)-\nabla^2\ev=
+%   \nabla(\nabla\cdot\ev)-\Delta\ev,
+%   \quad&\text{ by vector calculus.}
+% \end{align*}
+% Also, the curl of the magnetic field can be written as:
+% $\nabla\times\bv=-\mu_0\frac{\partial\dv}{\partial t}$ (using the induction relation). This further simplifies Maxwell's law for $\ev$. % with brackets $\Delta=\left(\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2}\right)$
+% \begin{align*}
+%   \Delta \ev-\nabla(\nabla\cdot\ev)=
+%   \mu_0\frac{\partial^2\dv}{\partial t^2}\\
+%   % \Delta \ev-\nabla(\epsilon_0\nabla\cdot\dv)=
+%   % \mu_0\frac{\partial^2\dv}{\partial t^2}\\
+%   \Delta \ev-\nabla(\frac{1}{\epsilon_0}\nabla\cdot\dv)=
+%   \mu_0\frac{\partial^2\left(\epsilon_0\cdot\ev\right)}{\partial t^2}\\
+%   % \Delta\ev=\frac{1}{c^2}\frac{\partial^2\ev}{\partial t^2}.
+%   \Delta \ev-\nabla(\frac{1}{\epsilon_0}\nabla\cdot\dv)=
+%   \mu_0\epsilon_0\frac{\partial^2\ev}{\partial t^2}.
+% \end{align*}
+% Using $\nabla\cdot\dv=\nabla\cdot\epsilon_0\ev=0$, this yields the following wave equation, where $\mu_0\epsilon_0=1/c^2$:
+% \begin{equation}
+%   \Delta\ev=\frac{1}{c^2}\frac{\partial^2\ev}{\partial t^2}.
+% \end{equation}
+% 
+% 
+% \section{Scalar wave equation and solutions}
+% In Cartesian coordinates, the Laplacian operator $\Delta$ reads $$\Delta=\nabla^2=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2}.$$ 
+% By the following explication we see that the second derivative of any component with respect to time is related to the Laplacian of that component only. There is no term relating $\mathcal{E}_x$ to $\mathcal{E}_y$ or $\mathcal{E}_z$ and vice versa. We say that the components of the electric field are decoupled. Components of solutions to the vector wave equation satisfy a scalar wave equation:
+% 
+% \begin{equation*}
+%   \Delta \ev = \Delta
+%   \begin{bmatrix}
+%     \mathcal{E}_x\\
+%     \mathcal{E}_y\\
+%     \mathcal{E}_z
+%   \end{bmatrix} =
+%   \begin{bmatrix}
+%     \frac{\partial^2\mathcal{E}_x}{\partial x^2}+
+%     \frac{\partial^2\mathcal{E}_x}{\partial y^2}+
+%     \frac{\partial^2\mathcal{E}_x}{\partial z^2}\\
+%     \frac{\partial^2\mathcal{E}_y}{\partial x^2}+
+%     \frac{\partial^2\mathcal{E}_y}{\partial y^2}+
+%     \frac{\partial^2\mathcal{E}_y}{\partial z^2}\\
+%     \frac{\partial^2\mathcal{E}_z}{\partial x^2}+
+%     \frac{\partial^2\mathcal{E}_z}{\partial y^2}+
+%     \frac{\partial^2\mathcal{E}_z}{\partial z^2}
+%   \end{bmatrix} = \frac{1}{c^2}
+%   \begin{bmatrix}
+%     \frac{\partial^2\mathcal{E}_x}{\partial t^2}\\
+%     \frac{\partial^2\mathcal{E}_y}{\partial t^2}\\
+%     \frac{\partial^2\mathcal{E}_z}{\partial t^2}
+%   \end{bmatrix}
+% \end{equation*}
+% \begin{equation*}
+%   \Delta \mathcal{E}_j =
+%   \sum_{j=1}^3\left[\frac{\partial^2\mathcal{E}_j}{\partial x_j^2}\right] =
+%   \frac{1}{c^2} \frac{\partial^2 \mathcal{E}_j}{\partial t^2}.
+% \end{equation*}
+% For plane waves propagating in a general direction, the scalar solutions are of the form: % (with real amplitude $E_c\in\mathbb{R}$)
+% \begin{equation*}
+%   \label{pwgd}\mathcal{E}_j=E_c\,e^{i(\vv{k_0}\cdot\vv{r}-\omega_0t)}+\text{ c.c.,}
+% \end{equation*}
+% where $\vv{k_0}=k_x^2\hat{i}+k_y^2\hat{j}+k_z^2\hat{k}$, $\vv{r}=x\hat{i}+y\hat{j}+z\hat{k}$
+% and $|\vv{k_0}|^2=\omega_0^2/c^2$.
+% For a plane wave travelling the positive $z$-direction, the solutions read: 
+% \begin{equation*}
+% \mathcal{E}_j=E_c\,e^{i(k_0z-\omega_0t)}+\text{ c.c.,}
+% \label{pwpz}
+% \end{equation*}
+% where $k_0^2=\omega_0^2/c^2$ is the dispersion relation. Dispersion (spreading out) is a result of different frequencies propagating at different speeds.  In the above expressions ``c.c.'' stands for complex conjugate, so that the solutions (for plane waves) actually read:
+% \begin{equation*}
+% 	\mathcal{E}_j=E_c\,e^{i(k_0z-\omega_0t)}+E_c\,e^{-i(k_0z-\omega_0t)}
+% \end{equation*}
+% 
+% \section{Linear polarisation and interpretation}
+% For a plane wave propagating in the positive $z$ direction, in what directions can the electric field point? Suppose that the plane wave is polarised in the $x$-direction: $\ev=(\mathcal{E}_1,0,0)$. Then $\ev$ solves its wave equation if
+% \begin{equation*}
+%   \mathcal{E}_1=E_c\,e^{i(k_0z-\omega_0t)}+\text{ c.c.}\quad\mathcal{E}_2=\mathcal{E}_3=0
+% \end{equation*}
+% which is inconsistent with Maxwell's laws. To see this, calculate
+% \begin{equation*}
+% 	0 = \nabla\cdot\dv=\epsilon_0\nabla\cdot\ev=\epsilon_0(\mathcal{E}_1)_x
+% \end{equation*}
+% which contradicts the electric field being polarised in the $x$-direction. Then how to interpret linearly polarised laser beams? \# (Discuss phase angles and Jones matrix and actual linear polarisation.) The resolution is that in reality, $\mathcal{E}_2$ and $\mathcal{E}_3$ are not actually 0, such that $\ev$ is linearly polarised in the sense that $\mathcal{E}_1>>\mathcal{E}_2,\mathcal{E}_3$.
+% 
+% \section{Paraxial beams and Helmholtz equation solutions}
+% \subsection{Sum of plane waves and propagation}
+% To continue the discussion of solutions to the wave equation, consider a summation of plane wave solutions. In particular, consider how laser beams can be representated by a sum of plane waves. 
+% 
+% Laser beams have certain properties, such as time and spatial coherence. These are related to the correlation between waves at different times and positions. Strong coherence allows stationary interference, for example. The coherence is \# POSTIVILY OR NEGATIVELY influenced by propogation due to diffraction, dispersion and scattering. Laser beams in the ideal case have infinite time and spatial coherence, since they are plane waves, which have infinite coherence length, and infinite time coherence since they are monochromatic waves. Remember dispersion is a function of wavelength. \# DIFFRACTION TOO? SCATTERING?
+% 
+% First, consider time-harmonic (monochromatic) solutions given by:
+% \begin{equation*}
+% 	\mathcal{E}_j(x,y,z,t) = e^{-i\omega_0t}E(x,y,z) +\text{ c.c.},
+% \end{equation*}
+% solving a specific case of the (scalar) wave equation known as the \emph{Helmholtz} equation.
+% \begin{equation*}
+% 	\Delta E+k_0^2E=0 \tag{Helmholtz}
+% \end{equation*}
+% Write the incoming field $E_0^{inc}(x,y)$ as a sum of plane waves, then the electric field for non-zero $z$-value follows from propagation.
+% %
+% \begin{gather*}
+%   E_0^{inc}(x,y) = \frac{1}{2\pi}\int E_c(k_x,k_y)\, e^{i(k_x x+k_y y)}
+%   \mathrm{d}k_x\mathrm{d}k_y,~\text{ such that }\\
+%   E(x,y,z) =  \frac{1}{2\pi}\int E_c(k_x,k_y)\, e^{i(k_x x+k_y y+\sqrt{k_0^2-k_x^2-k_y^2}z)}\mathrm{d}k_x\mathrm{d}k_y
+% \end{gather*}
+% 
+% \subsection{Laser beams, paraxial approximation, linear Schr\"odinger}
+% Laser beams are focused, that is, the electric field is concentrated around the $z$-axis and falls of quickly as a function of the radial distance from the axis. Because of this concentrated nature, we know $k_z\approx k_0$. Similarly, the perpendicular wave number is negligible, $k_\perp=k_x^2+k_y^2<<k_z^2$. This motivates splitting the exponential in an oscillating term as a function of $z$ and an envelope term that varies slowly. 
+% 
+% In other words, use $k_0^2\coloneqq k_x^2+k_y^2+k_z^2$ to write $k_z = \sqrt{k_0^2-k_x^2-k_y^2}$. \# HOW does this help? Move downward, include Taylor? The exponential can be split into \#
+% \begin{equation*} 
+% E(x,y,z)=e^{ik_0z}\psi(x,y,z)~\text{ with }~\psi=E_c\, e^{i(k_x x+k_y y+(k_z-k_0)z)}
+% \end{equation*}
+% The envelope function $\psi$ varies slowly in $z$ and satisfies its own Helmholtz equation:
+% \begin{equation*}
+% 	\psi_{zz}+2ik_0\psi_z+\Delta_\perp\psi=0,
+% \end{equation*}
+% where $\Delta_\perp=\psi_{xx}+\psi_{yy}$. In this equation, \# WHY? because of the slow variance, the $\psi_{zz}$ term can be neglected as $\psi_{zz}<<k_0\psi_z~\text{ and }~\psi_{zz}<<\Delta_\perp\psi$. That is, the term $\psi_{zz}$ is small compared to both $\psi_z$ and $\Delta_\perp\psi$. \# MOTIVATION for $\psi_{zz}$ being small. The resulting equation is called the linear Schr\"odinger equation:
+% \begin{equation*}
+% \label{LS}
+% 	2ik_0\psi_z+\Delta_\perp\psi=0.\tag{Linear Schr\"odinger}
+% \end{equation*}
+% % Split into $E=\exp^{ik_0z}\psi(x,y,z)$, with $\psi$ an envelope function varying slowly in z. This $\psi$ solves a Helmholtz equation. Neglect $\psi_{zz}$ (paraxial) to obtain the linear Schr\"odinger equation for $\psi$.
+% 
+% \# EXPAND Now the step needs to be made to the nonlinear Helmholtz equation. The different polarisations need to be described, weakly nonlinear and Kerr nonlinear. Then obtain nonlin HH to apply parax. approx. to obtain NLS. Then make steps to dimensionless NLS, consider solitary waves and specify the $\omega$...
+% 
+% % Polarisation, linear polarisation, weakly nonlinear polarisation, Kerr nonlinearity. This all leads to nonlinear Helmholtz, apply paraxial approximation to obtain NLS. Step over to dimensionless NLS and consider solitary waves.
+% 
+% \# NEW Solitary radially symmetric solutions to the dimensionless NLS. Specifically considering NLS solutions of the form:
+% $$ \psi_\omega^\text{solitary}(r,z)=e^{i \omega z}R_\omega(r) $$
+% where $\omega$ is a real number and $R_\omega$ is the solution of
+% $$ -\omega R_\omega(r)+\Delta_\perp R_\omega(r)+R_\omega^3(r)=0.$$
+% Since $R_\omega(r)$ is radial, $R'_\omega(0)=0$ and $\Delta_\perp=\frac{d^2}{dr^2}+\frac{1}{r}\frac{d}{dr}$. In addition, since $R_\omega$ has a finite power, it decays to zero at infinity, i.e. \# LIMIT EXPRESSION.
+% 
+% \# WEAVE WITH ABOVE Then, by considering radially symmetric solitary wave solutions, one obtains the following equation:
+% $$ R'' + \frac{1}{r}R' - R + R^3 = 0, $$
+% with initial condition $R'(0)=0$ and finite power: $\limrtoinf R(r) = 0$. This is the equation for which existence and uniqueness of solutions will be discussed.
+

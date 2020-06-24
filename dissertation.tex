@@ -1,0 +1,142 @@
+% generate less warnings from hyperref
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{naturalnames}{hyperref}
+
+\documentclass[nativefonts]{dissertation}
+
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n} % fix the math font
+
+\usepackage[f]{esvect} % for nicer vectors
+\usepackage{mathtools} % for coloneqq
+\usepackage[parfill]{parskip} % for new pars
+\usepackage[at]{easylist}
+\usepackage[noabbrev]{cleveref} % for easier referencing
+\usepackage{comment} % for commenting out large parts
+\usepackage{multicol} % for maxwell equations
+\usepackage{lipsum}
+
+% review
+\usepackage{empheq} % for certain equation layouts
+% \usepackage{physics} % for absolute values
+\usepackage{commath} % for easier derivatives
+
+% \usepackage{biblatex}
+
+% abbreviations
+\newcommand{\beel}{\begin{easylist}}
+\newcommand{\eeel}{\end{easylist}}
+
+% theorem-like environments
+\usepackage{amsxtra}
+\usepackage{amsthm} 
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newenvironment{claim}[1]{\par\noindent\underline{Claim:}\space#1}{}
+\newenvironment{claimproof}[1]{\par\noindent\underline{Proof of the
+claim:}\space#1}{\leavevmode\unskip\penalty9999
+\hbox{}\nobreak\hfill\quad\hbox{$\blacksquare$}}
+
+% improvements
+\renewcommand{\leq}{\leqslant} 
+\renewcommand{\geq}{\geqslant}
+\usepackage{marvosym} % for lightning symbol
+
+% abbreviation of u
+\newcommand{\ua}{u(r,\alpha)} 
+\newcommand{\ub}{u(r,\beta)}
+
+% r specified, r0 = a, r1 = b
+\newcommand{\uaa}{u(r_0,\alpha)} 
+\newcommand{\uba}{u(r_1,\alpha)}
+\newcommand{\ubb}{u(r_1,\beta)} 
+\newcommand{\uab}{u(r_0,\beta)}
+
+% abbreviation of u average
+\newcommand{\uav}{\overline{u_{\alpha}}} 
+\newcommand{\uavv}{\half\uba-\half\uaa}
+
+% width of bar too small, switched to overline
+\renewcommand{\bar}[1]{\overline{#1}}
+
+% commands in lemma A and beyond
+\newcommand{\rb}{\rho(\beta)} 
+\newcommand{\tr}{\theta(r)}
+\newcommand{\sib}{\sigma(\beta)}
+
+% other abbreviations
+\newcommand{\half}{\frac{1}{2}}
+
+\newcommand{\ihat}{\hat{\textbf{\i}}} 
+\newcommand{\jhat}{\hat{\textbf{\j}}}
+
+% review
+%\newcommand{\pd}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\limrtoinf}{\underset{r\to\infty}{\lim}}
+\newcommand{\rplus}{\mathbb{R}_+} 
+\newcommand{\rtinf}{r\to\infty}
+\newcommand{\uowd}{\left(\frac{u}{w}\right)'}
+
+\newcommand{\be}{\begin{equation}} \newcommand{\ee}{\end{equation}}
+\newcommand{\lf}{\left} \newcommand{\ri}{\right} 
+\newcommand{\n}{\noindent}
+\newcommand{\f}{\frac}
+
+\renewcommand{\a}{\alpha} 
+\newcommand{\bt}{\beta} 
+%\newcommand{\del}{\delta}
+\newcommand{\eps}{\varepsilon}
+
+\newcommand{\za}{z(\alpha)} 
+\newcommand{\nub}{\nu_{\beta}}
+\newcommand{\phib}{\phi_{\beta}} 
+\newcommand{\one}{{\bf 1}}
+
+\begin{document}
+
+%% Specify the title and author of the thesis. This information will be used on
+%% the title page (in title/title.tex) and in the metadata of the final PDF.
+\title[An Introduction to the Shooting Method and Sturm Comparison Theorem]{An
+Explication of Existence and Uniqueness Results for a Nonlinear Schr\"odinger
+equation}
+\author{Jasper Sebastiaan}{Eenhoorn}
+
+%% Use Roman numerals for the page numbers of the title pages and table of
+%% contents.
+\frontmatter
+
+\include{title/title}
+
+%% The (optional) dedication can be used to thank someone or display a
+%% significant quotation.
+%\dedication{\epigraph{Science is a wonderful thing \\ if one does not have to earn one's living at it.}{Albert Einstein}}
+
+\tableofcontents
+
+%\include{summary/summary}
+%\include{preface/preface}
+
+%% Use Arabic numerals for the page numbers of the chapters.
+\mainmatter
+
+%% Turn on thumb indices.
+\thumbtrue
+
+\include{chapter-1/chapter-1}
+\include{chapter-2/chapter-2}
+%\include{conclusion/conclusion}
+%\include{epilogue/epilogue}
+%\include{acks/acks}
+
+%% Use letters for the chapter numbers of the appendices.
+\appendix
+
+%\include{appendix-a/appendix-a}
+
+%% Turn off thumb indices for unnumbered chapters.
+\thumbfalse
+
+%\include{cv/cv}
+%\include{publications/publications}
+
+\end{document}
+

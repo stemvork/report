@@ -1,0 +1,26 @@
+\gdef \the@ipfilectr {@-1}
+\babel@toc {english}{}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-2}
+\contentsline {chapter}{\numberline {1}Physics of NLS}{1}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}Derive the wave equation from Maxwell}{1}{section.1.1}% 
+\contentsline {section}{\numberline {1.2}Validity of plane wave solutions}{2}{section.1.2}% 
+\contentsline {section}{\numberline {1.3}Derivation of the Helmholtz equation}{3}{section.1.3}% 
+\contentsline {section}{\numberline {1.4}Derivation of the Linear Schr\"odinger equation}{3}{section.1.4}% 
+\contentsline {section}{\numberline {1.5}Polarisation field}{4}{section.1.5}% 
+\contentsline {section}{\numberline {1.6}Implications of nonlinear polarisation}{6}{section.1.6}% 
+\contentsline {section}{\numberline {1.7}Soliton solutions}{7}{section.1.7}% 
+\contentsline {section}{\color {title}References}{8}{equation.1.22}% 
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-3}
+\contentsline {chapter}{\numberline {2}Existence of ground state}{9}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Initial value problem and nonlinearity}{9}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Definitions of solution sets}{10}{section.2.2}% 
+\contentsline {section}{\numberline {2.3}Assumptions on $f$}{10}{section.2.3}% 
+\contentsline {section}{\numberline {2.4}Main theorem}{11}{section.2.4}% 
+\contentsline {section}{\numberline {2.5}Interval of definition}{11}{section.2.5}% 
+\contentsline {section}{\numberline {2.6}Asymptotics of positive decreasing solutions}{13}{section.2.6}% 
+\contentsline {section}{\numberline {2.7}$P$ is non-empty and open}{16}{section.2.7}% 
+\contentsline {section}{\color {title}References}{18}{equation.2.34}% 
+\gdef \the@ipfilectr {}
+\contentsfinish 
