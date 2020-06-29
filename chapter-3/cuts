@@ -1,0 +1,40 @@
+% ---
+
+% ---
+
+% ---
+
+% ---
+
+% ---
+
+% ---
+
+\section{Preliminaries}
+Remember that the solution set $I=(0,\infty)$ can be written as the disjoint union of $P, G$ and $N$ where $P, G, N$ are nonempty. That $P$ and $N$ are open was part of the proof (in chapter 2) that $G$ is nonempty.
+
+In this chapter, we will show that $P = (0,\a_0)$, $G=\left\{\a_0\right\}$ and $N = (\a_0,\infty)$. The first lemma deals with $P$ and the last two deal with $N$. The exact size of $P$ is apparent at the end...
+
+% ---
+
+Note that the equation \# no longer has the $N-1$ term from \# earlier. That is
+because $N=2$ is assumed throughout this chapter. Further results \# Also note
+that more assumptions are made about the nonlinearity $g(u)$. Before \# ... but
+now $g(u)=\lambda V(r)u(r) - u(r)^p$. Still, the argument can be studied in
+light of $g(u)=-u+u^3$ as required by the chapter on physics.
+
+% ---
+
+the location of the first zero as a function of initial condition $\a$. This
+function is shown to be monotone decreasing in initial condition $\a$. By
+studying related differential equation for $w(r)\text{, and }nu(r)$,  and
+comparing these differential equations to the initial value problem using the
+Sturm comparison theorem yields uniqueness of the ground state solution
+$u(r,\a_0)$.
+
+% ---
+
+
+Remember that the physics of lasers and water waves deals with solitons and that \# equation is an example of a soliton equation. The existence of solutions to this soliton equation was treated in chapter 2. By classical theory, the solution depends continuously on the initial condition \# ref. If solutions are unique then because of existence the problem always has a unique solution. That makes the problem well-posed.
+
+Question: does the equation $$u''+\frac{1}{r}u'- u + u^3 = 0$$ have unique solutions? Answer: yes, it does, in fact, $$u'' + \frac{1}{r} u' - \lambda u + V(r)u^p = 0 $$ has unique solutions, according to a paper from 2011 by Francois Genoud \# ref. In this chapter, the details of that paper will be reviewed. Supplementary, the proof from the paper by Kwong \# ref is reviewed. The reader should be familiar with \# solution sets (already introduced), uniqueness (of solutions), Sturm comparison theorem (but for ODE?)... After introducing these preliminaries, a series of lemmata will be presented. Together, they construct the proof that the solution sets have the required structure. That $\alpha_0\in G$ is a unique ground state solution.
