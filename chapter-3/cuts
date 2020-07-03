@@ -8,6 +8,11 @@
 
 % ---
 
+% &u''(r)+\frac{1}{r}u'(r)-\lambda u(r)+V(r)u(r)^p=0\\
+% &\left[u''(r)-\lambda u(r)+V(r)u(r)^p\right]=-\frac{1}{r}u'(r)\\
+% \text{as }&\left[u''(r)-\lambda u(r)+V(r)u(r)^p\right]=-\frac{1}{r}u'(r)
+%
+
 % ---
 
 \section{Preliminaries}
