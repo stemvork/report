@@ -25,16 +25,16 @@
 \gdef \the@ipfilectr {}
 \gdef \the@ipfilectr {@-4}
 \contentsline {chapter}{\numberline {3}Uniqueness}{19}{chapter.3}% 
-\contentsline {section}{\numberline {3.1}Initial value problem and solution sets}{23}{section.3.1}% 
-\contentsline {section}{\numberline {3.2}Lemma 1}{24}{section.3.2}% 
-\contentsline {section}{\numberline {3.3}Lemma 2}{26}{section.3.3}% 
-\contentsline {section}{\numberline {3.4}Lemma 3}{28}{section.3.4}% 
-\contentsline {section}{\numberline {3.5}Lemmata A}{29}{section.3.5}% 
-\contentsline {section}{\numberline {3.6}Lemma 4}{30}{section.3.6}% 
-\contentsline {section}{\numberline {3.7}Lemma 5}{33}{section.3.7}% 
-\contentsline {section}{\numberline {3.8}Lemma 6}{33}{section.3.8}% 
-\contentsline {section}{\numberline {3.9}Lemma 7}{34}{section.3.9}% 
-\contentsline {section}{\numberline {3.10}Lemma 8}{35}{section.3.10}% 
-\contentsline {section}{\color {title}References}{36}{lemma.3.12}% 
+\contentsline {section}{\numberline {3.1}Initial value problem and solution sets}{25}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}Lemma 1}{26}{section.3.2}% 
+\contentsline {section}{\numberline {3.3}Lemma 2}{28}{section.3.3}% 
+\contentsline {section}{\numberline {3.4}Lemma 3}{30}{section.3.4}% 
+\contentsline {section}{\numberline {3.5}Lemmata A}{31}{section.3.5}% 
+\contentsline {section}{\numberline {3.6}Lemma 4}{32}{section.3.6}% 
+\contentsline {section}{\numberline {3.7}Lemma 5}{35}{section.3.7}% 
+\contentsline {section}{\numberline {3.8}Lemma 6}{35}{section.3.8}% 
+\contentsline {section}{\numberline {3.9}Lemma 7}{36}{section.3.9}% 
+\contentsline {section}{\numberline {3.10}Lemma 8}{37}{section.3.10}% 
+\contentsline {section}{\color {title}References}{38}{lemma.3.12}% 
 \gdef \the@ipfilectr {}
 \contentsfinish 

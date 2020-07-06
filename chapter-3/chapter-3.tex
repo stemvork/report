@@ -1,13 +1,72 @@
+\newcommand{\e}{\epsilon}
 \chapter{Uniqueness}
 \label{uniqueness}
 
-\begin{lemma}\label{lya}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      MARK IVP
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The uniqueness of ground state solutions to the initial value problem
+\[
+\# u ivp
+\]
+
+was proven in \#Genoud. The central theorem is
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      MARK THEOREM
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem}
+Suppose that {\red hypotheses} \# to \# are satisfied. Then there exists $\a_0>0$ such
+that the solution sets have the following structure
+\[
+P = \left(0,\a_0\right),\quad G = \left\{\a_0\right\},\quad N =
+\left(\a_0,\infty\right).
+\]
+\end{theorem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      MARK PROOF
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}
+\# general proof, referring to lemma's
+\end{proof}
+
+Central to the proof is the Sturm Comparison theorem
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      MARK STURM
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem}
+\end{theorem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      MARK W IVP
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+as stated and proven in for example \#Kwong. Furthermore, we define 
+\[
+\# w definition
+\]
+
+and from \eqref{c3:ivp} we obtain the related initial value problem
+\[
+\# w ivp
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      MARK CONCLUSION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\red In the end, we wish to show that the function $\za$ is monotone decreasing in
+$\a$. Or actually, that $(\a, \a+\e)\subset N$ and if $\bar{\a}\in N$ then $\za :
+[\bar{\a}, \infty)\to(0,\infty)$ is monotone decreasing.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      MARK LEMMA 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{lemma}\label{genlem1}%\label{lya}
 Suppose that $V(0):=\underset{r\to0}{\lim}~V(r)$ exists and is finite. Then
 \[ 0<\alpha<\left[\left(\frac{p+1}{2}\right)\frac{\lambda}{V(0)}
 \right]^{1/(p-1)}\implies \alpha\in P. \]
 \end{lemma}
 \begin{proof}
-Define the Lyapunov (or energy) function $E(r)$ on $(0,\za)$ as
+We define the Lyapunov (or energy) function $E(r)$ on $(0,\za)$ as
 \[ E(r) \coloneqq \frac{1}{2}u'(r)^2
 -\frac{\lambda}{2} u(r)^2 + \frac{1}{p+1} V(r) u(r)^{p+1}. \]
 
@@ -50,29 +109,38 @@ So that we obtain
 
 \end{proof}
 
-\begin{lemma}
-Let $\alpha\in G\cup N$, and $u(r)=u(r, \a)$. Then $u'(r)<0$ for all
-$r\in(0,z(\alpha))$ and $u'(z(\alpha))<0$ if $\alpha\in N$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      MARK LEMMA 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{lemma}\label{genlem2}
+Let $\alpha \in G \cup N$, and $u(r) = u(r, \a)$. Then $u'(r) < 0$ for all
+$r \in (0, z(\alpha))$ and $u'(z(\alpha)) < 0$ if $\alpha \in N$.
 \end{lemma}
 \begin{proof}
-We have $E(\za)\geq0$ and $E$ is non-increasing, hence $E(0)\geq 0$.
+By \cref{eza} 
+%in Lemma \ref{genlem1}
+, we have $E(\za) \geq 0$ and $E(r)$ is non-increasing. 
+Hence $E(0) \geq 0$ for $r \geq 0$.
 
 We have by the IVP 
-\[ u''(0) + \underset{\lim}{r\downarrow 0} \frac{1}{r} u'(r) -
-\lambda u(0) + V(0)u(0)^p = 0. \]
+\[ u''(0) + \underset{r \downarrow 0}{\lim} \frac{1}{r} u'(r) -
+\lambda u(0) + V(0) u(0)^p = 0. \]
 
-Suppose that there exists $r_0\in(0,\za)$ such that $u'(r_0,\a)=0$.
+Suppose that there exists $r_0 \in (0,\za)$ such that $u'(r_0, \a)=0$.
 
-Then by the IVP \eqref{c3:ivp} we have 
-\[ u''(r_0,\a) - \lambda u(r_0,\a) + V(r_0)u(r_0)^p = 0. \]
+Then by the {\red IVP} \eqref{c3:ivp} we have 
+\[ u''(r_0, \a) - \lambda u(r_0, \a) + V(r_0) u(r_0)^p = 0. \]
 
 But then 
-\[ \lambda u(r_0,\a) - V(r_0)u(r_0,\a)^p = u''(r_0,\a)\geq 0, \]
+\[ \lambda u(r_0,\a) - V(r_0) u(r_0,\a)^p = u''(r_0, \a) \geq 0, \]
 
-because $u'(r)<0$ on $(0,r_0)$ 
+because $u'(r) < 0$ on $(0, r_0)$
 \end{proof}
 
-\begin{lemma}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      MARK LEMMA 3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{lemma}\label{genlem3}
 Let $\alpha\in (G\cup N).$ Then $w(r)=w(r,\a)$ has at least one zero in $(0,z(\alpha))$.
 \end{lemma}
 \begin{proof}
@@ -109,7 +177,10 @@ that $u(z(\a))=0$:
 
 \end{proof}
 
-\begin{lemma}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      MARK LEMMA 4
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{lemma}\label{genlem4}
 Let $\alpha\in G\cup N$. There exist $\beta_0>0$ and a unique function
 $\sigma:[0,\bar\beta]\to[0,\infty)$ with the following properties:
 \begin{enumerate}[(a)]
@@ -225,30 +296,185 @@ as $\sigma(\beta)$ determing the sign of $\phi_\beta(r)$ for all $\beta>0$.
 % for $\alpha\in(G\cup N)$.
 \end{proof}
 
-\begin{lemma}
-5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      MARK LEMMA 5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{lemma}\label{genlem5}
+Let $\a\in G\cup N$. There exists a unique $\beta_0 > 0$ such that $\rho \left(
+\beta_0 \right) = \sigma \left( \beta_0 \right)$.
 \end{lemma}
 \begin{proof}
+This follows immediately from the {\red aforementioned} properties of $\rho(\beta)$ and
+$\sigma(\beta)$. Sketching the two graphs, there is a unique
+intersection.\hfill\\
+
+\begin{centering}
+\begin{tikzpicture}[domain=0:5, samples=21,]
+\draw[->] (-0.5,0) -- + (5.5,0) node[right] {$\beta$};
+\draw[->] (0,-0.5) -- + (0,5.5) node[above] {$\rb,\sib$};
+
+% graph
+\draw[thick, draw=red, ->]
+    (0,3.7) node[left] {$\sigma(0)$} to [out=0,in=180] (5,0);
+\draw[thick, draw=blue]
+    (0,0) node[above left] {$\rho(0)$} to [out=0,in=180] (3.85,4.5);
+\draw[thick, draw=blue, ->]
+    (3.85,4.5) to (5,4.5);
+\draw[dashed]   (0,2.5) node[left]  {$\rho(\beta_0),\sigma(\beta_0)$}  -|
+                (2, 0)              node[below] {$\beta_0$};
+\draw[dashed]   (0,4.5) node[left] {$\za$} to (5.5,4.5);
+\end{tikzpicture}
+\end{centering} 
+%\begin{tikzpicture}[domain=0.5:4.5, samples=17]
+%% axes
+%\draw[->] (-0.5,0) -- node[below=5mm] {$f$ is decreasing}
+%                      + (5.5,0) node[right] {$x$};
+%\draw[->] (0,-0.5) -- + (0,5.5) node[above] {$y$};
+%% graph
+%\draw[line width=2pt, draw=red, ->] 
+%    plot (\x,{7-3*sqrt(\x)}) node[right]  {$f(x)$};
+%%
+%\draw[dashed]   (0,{7-3*sqrt(2)})   node[left] {$f(x_1)$}  -|
+%                (2, 0)              node[below] {$x_1$}
+%                (0,{7-3*sqrt(3)})   node[left] {$f(x_2)$}  -|
+%                (3, 0)              node[below] {$x_2$};
+%\end{tikzpicture}
 \end{proof}
 
-\begin{lemma}
-6
+We fix $\nu = \nu_{\beta_0}$ and $\rho_0 = \rho \left( \beta_0 \right)$. We will
+apply the Sturm comparison theorem to equations \eqref{} and \eqref{} in the 
+following lemma.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      MARK LEMMA 6
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{lemma}\label{genlem6}
+For $\alpha\in G\cup N$, $~w(r,\a)$ has a unique zero $r_0\in(0,z(\alpha)).$
+Furthermore, \hfill\\ $w(z(\alpha))<0$ for $\a\in N$ and if $\a\in G$, we have
+\[
+\underset{r\to\infty}{\lim}w(r)=-\infty.
+\]
 \end{lemma}
 \begin{proof}
+$\nu$ diff eq neg and $\nu>0$ on $(0,\rho_0)$
+
+$\nu$ diff eq pos and $\nu<0$ on $(\rho_0,\za)$.
+
+Moreover, $\nu(0) = \beta_0 \a > 0$ and $\underset{r\to 0}{\lim} r\nu'(r) = 0$.
+Furthermore, if $\a\in N$, ten 
+\[ \nu(\za) = \za u'(\za) < 0 \]
+by Lemma \# and so $\nu$ has a unique zero $\rho_0$ in $[0,\za]$.
+
+Let $\tau \in (0,\za)$ be the first zero of $w$, which exists by Lemma \#. Since
+$w$ satisfies
+
+$w$ ivp with initial data $w(0) = 1$ and $\underset{r\to 0}{\lim} rw'(r) = 0$
+
+by Sturm comparison theorem, see Theorem \#, we know that $\nu$ oscillates
+faster than $w$. Then $\rho_0 \in (0,\tau)$ and thus
+
+$\nu$ ivp on $(\tau, \za)$
+
+Since $w(\tau)=0$ and $\nu$ has no zero larger than $\rho_0$, by Sturm we have
+that $w$ has no further zero in $(\tau, \za)$ and we can set $r_0 = \tau$. If
+$\za < \infty$ then $w$ has no zero on $(\tau, \za]$ and we have $w(\za) < 0$.
+
+However, if $\za = \infty$, we can apply Lemma 6 of \cite[kwong]. The
+disconjugacy interal $(d, \infty)$ is such that 
+\[ d < \rho_0 < r_0. \]
+
+Indeed, if we had $\rho_0 \leq d$, we could find a solution $\tilde{w}$ linearly
+independent of $w$ such that $\tilde{w}(\tilde{r}) = 0$ for some $\tilde{r} > d
+\geq \rho_0$. But then $w + \tilde{w}$ is a solution of \# $w$ ivp with two
+zeroes in $(\rho_0, \infty)$ and thus, $\nu$ should have another zero in {\red that
+interval}. By this contradiction, we have $w(r_0) = 0$ with $r_0 \in (d,
+\infty)$ and Lemma 6 of \cite[kwong] implies that
+\[ \underset{r\to\infty}{\lim} w(r) = -\infty. \]
+
+
+% Interpreting the statements in this lemma, we will see that $w(r,\a)$ has a
+% \textbf{unique} zero $r_0$ to the left of $z(\alpha)$, the zero of the solution
+% $u(r,\a)$. When concerned with a ground state solution, $u(r,\a)$ has no finite
+% zero, signified by $z(\alpha)=\infty$. Then still $w(r,\a)$ has a finite zero
+% $r_0\in(0,\infty)$ and $w(r,\a)<0$ for $r>r_0$ and after $r_0$ the function
+% $w(r,\a)$ tends to negative infinity for $r\to\infty$, that is
+% $\underset{r\to\infty}{\lim}w(r)=-\infty$.
+% 
+% Remember that the differential equation in $\nu_{\beta}(r)$ changes sign when
+% equal to a value of $\phi_\beta(r)$. In turn, this function $\phi_\beta(r)$
+% changes sign in the $r$-value $\sigma(\beta)$. By fixing $\beta=\beta_0$ such
+% that $\rho(\beta)$ and $\sigma(\beta)$ intersect in $\beta_0$
+% ($\sigma(\beta_0)=\rho(\beta_0)=\rho_0$) we have achieved a crucial step.
+% Certain zeroes related to $\nub(r)$ now coincide because of this choice
+% $\beta=\beta_0$. Remember that $\phi_{\beta_0}$ changes sign in $r=\rho_0$.
+% Which implies that the differential equation in $\nu_{\beta_0}(r)$ changes sign
+% in $\rho_0$. But by the definition of $\nub(r)$, we can see that the zero of
+% $\nub(r)$ now coincides with the sign change of the differential equation:
+% $\rho_0$ is the value in which $\nu_{\beta_0}(r)$ changes sign, since
+% $$\nu_{\beta_0}(\rho_0)=-u(\rho_0)\left\{\theta(\rho_0)-\beta_0\right\}=0.$$ The
+% last equality follows from $\theta(\rho_0)=\beta_0\iff\rho(\beta_0)=\rho_0$ such
+% that $\theta(\rho_0)-\beta_0=0$.
+% %
+% \begin{gather*}
+% \nu''+\frac{1}{r}\nu'+\left[pV(r)u(r)^{p-1}-\lambda\right]\nu<0\quad\text{ on
+% }\quad(0,\rho_0)\quad\text{ where }\quad\nu>0\\
+% \nu''+\frac{1}{r}\nu'+\left[pV(r)u(r)^{p-1}-\lambda\right]\nu>0\quad\text{ on
+% }\quad(\rho_0,\infty)\quad\text{ where }\quad\nu<0 \end{gather*}
+% %
+% By \# we know that the solution $\nu(r)$ changes sign in
+% $\rho_0\in[0,z(\alpha)]$. $$\nu(z(\alpha))z(\alpha)u'(z(\alpha))<0,$$ the
+% solution $\nu(r)$ changes sign once. \# expand Since by \# $w(r,\a)$ has at
+% least one zero for $\a\in G\cup N$, let $\tau$ be the first zero of $w(r)$. \#
+% setup up the Sturm comparison functions for $w$ and $\nu$ and explain Since
+% $\nu(r)$ oscillates faster than $w(r,\a)$, there will be a zero to the left of
+% $\tau$. That is, $\nu(\rho_0)=0$ with $\rho_0\in(0,\tau)$. 
+% 
+% Also by Sturm comparison, $w$ can have no further zero and $\tau$ is the unique
+% zero of $w$. Suppose that $w$ has a zero with $r_1>r_0$. Then $\nu$ must have a
+% zero between $r_0$ and $r_1$. Yet, $\nu$ has a unique zero $\rho_)$, a
+% contradiction.
+% 
+% `'By previous lemmata' the sign of $\nu$ changes in $\rho_0$.  Refer to lemma
+% ... and/or figure ...  Also, remember ...  $\nu$ changes sign only once The
+% argument that $\nu$ changes sign only once is given in lemma ...  Remember that
+% ...  $w$ has a first zero Suppose $w(r)$ does not have a zero.  Then ...
+% Comparing $w$ and $v$, conclusion: $w$ has a unique zero One can compare $\nu$
+% and $w$ with\\ Sturm's comparison theorem, which is given as ...  In this
+% theorem, take ... as ... and ... as ... to see that ...  Also if $\alpha\in G$
+% When $\alpha\in G$ then $u(r)$ has no zero.  The solution depends on $\alpha$
+% and the change of $u(r)$ with respect to $\alpha$ is given by the function
+% $w(r)=\frac{\partial}{\partial\alpha}u(r)$.  `'Since there are solutions that
+% have a zero and some that don't', the function $w(r)$ must have a zero.  Even
+% more, the zero of $w$ will be to the left of the zero of $u(r)$.
+% CIRKELREDENERING?  Then $u(r)$ does not have a zero, the limit of $w(r)$ for $r$
+% to infinity is negative infinity.  To see this, note that for increasing
+% $\alpha$, one will obtain a solution that \emph{has} a zero.  Hence in that
+% $r$-value, the function $u(r)$ decreases with increasing $\alpha$, ergo, the
+% function $w(r)$ is increasingly ?? negative for $r$-values where $u(r)$ is
+% positive.
 \end{proof}
 
-\begin{lemma}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      MARK LEMMA 7
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{lemma}\label{genlem7}
 7
 \end{lemma}
 \begin{proof}
 \end{proof}
 
-\begin{lemma}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      MARK LEMMA 8
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{lemma}\label{genlem8}
 8
 \end{lemma}
 \begin{proof}
 \end{proof}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      MARK OLD MATERIAL
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Initial value problem and solution sets}
 We are interested in the uniqueness of ground state solutions to the soliton
 equation \eqref{}. The existence of solutions was treated in chapter \ref{ch2}.
@@ -548,7 +774,10 @@ Trailing back our steps, we see that $\xi(0)>-2$ which implies $\Xi(0)>0$. For a
 \section{Lemma 5}
 \begin{lemma}
 Let $\alpha\in G\cup N$.
-There exists a unique $\beta_0>0$ such that $\rho(\beta_0)=\sigma(\beta_0)$. This follows immediately from the aforementioned properties of $\rho(\beta)$ and $\sigma(\beta)$. Sketching the two graphs, there is a unique intersection.\hfill\\
+There exists a unique $\beta_0>0$ such that $\rho(\beta_0)=\sigma(\beta_0)$.
+This follows immediately from the aforementioned properties of $\rho(\beta)$ and
+$\sigma(\beta)$. Sketching the two graphs, there is a unique
+intersection.\hfill\\
 
 \begin{centering}
 \begin{tikzpicture}[domain=0:5, samples=21,]
