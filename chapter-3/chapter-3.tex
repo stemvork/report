@@ -1,4 +1,10 @@
 \newcommand{\e}{\epsilon}
+\def\at{
+  \left.
+  \vphantom{\int}
+  \right|
+}
+\newcommand{\as}{\a^{*}}
 \chapter{Uniqueness}
 \label{uniqueness}
 
@@ -87,7 +93,9 @@ where $E'(r)\leq 0$ holds because $u(r)>0$ on $(0,\za)$ and $V'<0$ by
 
 For $\a\in G\cup N$, we have $u(\za)=0$, where $\za<\infty$ for $\a\in N$ and
 $\za=\infty$ for $\a\in G$. We evaluate $E(\za)$ for $\a\in N$
-\[ E(\za) = \half u'(\za)^2 \geq 0. \]
+\be \label{eza}
+E(\za) = \half u'(\za)^2 \geq 0. 
+\ee
 
 For $\a\in G$, we have $u(r)\to 0$ and $u'(r)\to 0$ as $r\to\infty$, such that
 \[ E(r)\to 0\text{ as }r\to\infty. \]
@@ -122,19 +130,36 @@ By \cref{eza}
 , we have $E(\za) \geq 0$ and $E(r)$ is non-increasing. 
 Hence $E(0) \geq 0$ for $r \geq 0$.
 
-We have by the IVP 
+By Lemma \ref{genlem1} we know that for $\a \in G \cup N$, we have $E(r) \geq
+0$ for all $r \in (0, \za)$.
+
+By the IVP, we have for $r=0$
 \[ u''(0) + \underset{r \downarrow 0}{\lim} \frac{1}{r} u'(r) -
 \lambda u(0) + V(0) u(0)^p = 0. \]
 
-Suppose that there exists $r_0 \in (0,\za)$ such that $u'(r_0, \a)=0$.
+If $V(0) < \infty$ then ...
 
-Then by the {\red IVP} \eqref{c3:ivp} we have 
-\[ u''(r_0, \a) - \lambda u(r_0, \a) + V(r_0) u(r_0)^p = 0. \]
+If $V(0) = \infty$ then ...
 
-But then 
+Suppose by contradiction that there exists $r_0 \in (0,\za)$ such that $u'(r_0,
+\a)=0$. Then % by the {\red IVP} \eqref{c3:ivp} we have 
+\be \label{ivpdev0} 
+u''(r_0, \a) - \lambda u(r_0, \a) + V(r_0) u(r_0)^p = 0. 
+\ee
+
+Because ... we have $u''(r_0, \a) > 0$. Solving for $u''(r_0, \a)$ in
+\eqref{ivpdev0} 
 \[ \lambda u(r_0,\a) - V(r_0) u(r_0,\a)^p = u''(r_0, \a) \geq 0, \]
 
-because $u'(r) < 0$ on $(0, r_0)$
+where we can solve for $u(r_0, \a)$ to find that
+\[ u(r_0, \a) \leq \left[ \frac{\lambda}{V(0)} \right]^{\frac{1}{p-1}} <
+\left[ \frac{p+1}{2} \frac{\lambda}{V(0)} \right]^{\frac{1}{p-1}}. \]
+
+Now this implies by Lemma \ref{genlem1} that $E(r_0) < 0$, which contradicts
+$E(r) \geq 0$ for $\a \in G \cup N$. Therefore, we have $u'(r) < 0$ for all $r
+\in (0, \za)$. Lastly, if we have $u'(\za) = 0$ for $\a \in N$, we have $u
+\equiv 0$. Hence, we have $u'(\za) < 0$.
+
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -161,13 +186,39 @@ respectively and subtract to obtain:
 \end{gather*}
 
 Now, we integrate from $0$ to $\za$ to obtain: 
-\begin{gather*}
-  \int_0^{z(\alpha)}w(r)(ru'(r))'-u(r)(rw'(r))'dr=
-  \int_0^{z(\alpha)}r\left\{pV(r)u(r)^pw(r)-V(r)u(r)^pw(r)\right\}dr.
-\end{gather*}
+\begin{multline} \label{genlem3longdiff}
+  \int_0^{z(\alpha)}w(r)(ru'(r))'-u(r)(rw'(r))'\diff r\\
+  = \int_0^{z(\alpha)}r\left\{pV(r)u(r)^pw(r)-V(r)u(r)^pw(r)\right\}\diff r.
+\end{multline}
 
-Then, we perform partial integration for the left hand side and remember
-that $u(z(\a))=0$:
+By partial integration, the left hand side reads
+\[
+w(r) r u'(r) \at_0^{\za} - \int_0^{\za} r u'(r) w'(r) \diff r
+- u(r) r w'(r) \at_0^{\za} + \int_0^{\za} r w'(r) u'(r) \diff r,
+\]
+
+such that \eqref{genlem3longdiff} can be simplified to
+\[
+w(\za) \za u'('za) = \int_0^{\za}
+r \left\{ p V(r) u(r)^p w(r) - V(r) u(r)^p w(r) \right\} \diff r.
+\]
+
+using $u(\za) = 0$ and $r = 0$.
+
+{\red simplify the integral rhs to $(p-1) \int_0^{\za} r V(r) u(r)^p w(r) \diff
+r$ earlier on
+
+analyse the consequence of $w > 0$ to find contradiction}
+
+{\red deal with $\a \in G$ case referring to Genouds thesis, which needs to be
+added to the references.
+
+in the end, the contradiction will be that $\frac{u}{w}$ is everywhere positive,
+yet by the thesis of Genoud we have lim r to inf of the fraction is zero.}
+
+
+% Then, we perform partial integration for the left hand side and remember
+% that $u(z(\a))=0$:
 % \begin{align*}
 %   rw(r)u'(r)\at_0^{z(\alpha)}-ru(r)w'(r)\at_0^{z(\alpha)}&-
 %   \int_0^{z(\alpha)}\underbrace{\{ru'(r)w'(r)-ru'(r)w'(r)\}}_0dr\\
@@ -458,18 +509,86 @@ interval}. By this contradiction, we have $w(r_0) = 0$ with $r_0 \in (d,
 %      MARK LEMMA 7
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{lemma}\label{genlem7}
-7
+Let $\a \in G$. There exists $\epsilon > 0$ such that $(\a, \a + \epsilon)
+\subset N$. 
 \end{lemma}
 \begin{proof}
+define $r_1$ and $r_2$ left and right of $r_0$
+
+use $w$ to conclude that for $\tilde{\a} \in (\a, \a + \epsilon)$ we have
+\[
+\tilde{u}(r_1) > u(r_1)\quad\text{ and }\quad \tilde{u}(r_2) < u(r_2)
+\]
+
+then the graph of $\tilde{u}$ intersects the graph of $u$ for some $r_3 \in
+(r_1, r_2)$. we will prove that there exists $\tilde{r} \in (r_3, \infty)$ such
+that $\tilde{u}(\tilde{r}) = 0$, such that $\tilde{\a} \in N$. 
+
+By contradiction, we suppose that $\tilde{u}(r) > 0$ for all $r > r_3$.
+
+We will show that $\tilde{u}(r) < u(r)$ for all $r > r_3$.
+
+By contradiction, we suppose that $\tilde{u}(r_4) = u(r_4)$ for some $r_4 > r_3$
+and $u - \tilde{u} > 0$ on $(r_3, r_4)$.
+
+The function $z \coloneqq u - \tilde{u}$ satisfies
+\[ z'' + \frac{1}{r} z' + \left[ V(r) \frac{u^p - \tilde{u}^p}{u - \tilde{u}} 
+- \lambda \right] z = 0\quad\text{on}~(r_3, r_4). \]
+
+We shall compare this differential equation with \# w ivp.
+
+Since $z(r_3) = z(r_4)$ by assumption and
+\[ \frac{u^p - \tilde{u}^p}{u - \tilde{u}} < pu^{p-1} \]
+
+on $(r_3, r_4)$, we can apply Sturm's theorem \# ref. {\red Who oscillates
+faster than who?} Let $y$ be any solution of $w$ ivp linearly independent of
+$w$. ... There is no positive solution of $w$ ivp on $(d, \infty)$,
+contradicting ...
+
+Hence $z(r) > 0$ for all $r > r_3$. Then $w$ oscillates faster than $z$ ???
+
+Sturm comparing fractions
+
+Integrating sturm comparands
+
+Hence $z(r) \equiv u(r) - \tilde{u}(r) \to \infty$ as $r \to \infty$. This is
+impossible, since $0 < \tilde{u}(r) < u(r)$ on $(r_3, \infty)$ and $u(r) \to 0$
+as $r \to \infty$. Therefore, $\tilde{u}(r)$ must vanish at some point
+$\tilde{r} \in (r_3, \infty)$ and the proof is complete.
+ 
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      MARK LEMMA 8
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{lemma}\label{genlem8}
-8
+Let $\as \in N$. Then $\left[ \as, \infty \right) \subset N$ and $z : \left[
+\as, \infty \right) \to (0, \infty)$ is monotone decreasing.
 \end{lemma}
 \begin{proof}
+$N$ is open subset of $(0, \infty)$ ...
+
+$z$ is continuous ...
+
+By Lemma \ref{genlem6}, we have $w(z(\as)) < 0$. Then, there exists $\epsilon >
+0$ such that
+\[ (\as, \as + \epsilon) \subset N\quad\text{and}\quad u(z(\as), \a) < 0\quad
+\text{for all} ~ \a \in (\as, \as + \epsilon). \]
+
+The intermediate value theorem implies existence of an $r \in (0, z(\as))$ so
+that $u(r, \a) = 0$. We note that 
+\[ \za \leq r < z(\as)\quad\text{for all} ~ \a \in (\as, \as + \epsilon) \]
+
+and $z$ is decreasing, since ...
+
+We define
+\[ \bar{\a} \coloneqq \sup \left\{ \a > \as : \left[ \as, \a \right) \subset N ~
+\text{and} ~ z : \left[ \as, \a \right) \to (0, \infty) ~ \text{ is decreasing}
+\right\}. \]
+
+
+By contradiction, we suppose that $\bar{\a} < \infty$. Then there exists ...
+
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
