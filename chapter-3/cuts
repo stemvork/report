@@ -8,6 +8,38 @@
 
 % ---
 
+% ---
+
+% ---
+
+% For $\a\in G\cup N$, we have $u(\za)=0$, where $\za<\infty$ for $\a\in N$ and
+% $\za=\infty$ for $\a\in G$. We evaluate $E(\za)$ for $\a\in N$
+% \be \label{eza}
+% E(\za) = \half u'(\za)^2 \geq 0. 
+% \ee
+% 
+% For $\a\in G$, we have $u(r)\to 0$ and $u'(r)\to 0$ as $r\to\infty$, such that
+% \[ E(r)\to 0\text{ as }r\to\infty. \]
+
+% ---
+
+% then the graph of $\tilde{u}$ intersects the graph of $u$ for some $r_3 \in
+% (r_1, r_2)$. we will prove that there exists $\tilde{r} \in (r_3, \infty)$ such
+% that $\tilde{u}(\tilde{r}) = 0$, such that $\tilde{\a} \in N$. 
+% 
+% ---
+
+% Then, we perform partial integration for the left hand side and remember
+% that $u(z(\a))=0$:
+% \begin{align*}
+%   rw(r)u'(r)\at_0^{z(\alpha)}-ru(r)w'(r)\at_0^{z(\alpha)}&-
+%   \int_0^{z(\alpha)}\underbrace{\{ru'(r)w'(r)-ru'(r)w'(r)\}}_0dr\\
+%   &=(p-1)\int_0^{z(\alpha)}rV(r)u(r)^pw(r)dr\\
+%   z(\alpha)w(z(\alpha))u'(z(\alpha))&=(p-1)\int_0^{z(\alpha)}rV(r)u(r)^pw(r)dr.
+% \end{align*}
+
+% ---
+
 % &u''(r)+\frac{1}{r}u'(r)-\lambda u(r)+V(r)u(r)^p=0\\
 % &\left[u''(r)-\lambda u(r)+V(r)u(r)^p\right]=-\frac{1}{r}u'(r)\\
 % \text{as }&\left[u''(r)-\lambda u(r)+V(r)u(r)^p\right]=-\frac{1}{r}u'(r)
