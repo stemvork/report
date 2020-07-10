@@ -31,18 +31,8 @@
 \contentsline {section}{\numberline {3.2}Sturm theory and related lemmata}{20}{section.3.2}% 
 \contentsline {section}{\numberline {3.3}Basic properties of solutions}{21}{section.3.3}% 
 \contentsline {section}{\numberline {3.4}Auxiliary functions related to solutions}{24}{section.3.4}% 
-\contentsline {section}{\numberline {3.5}More advanced properties of solutions}{25}{section.3.5}% 
-\contentsline {section}{\numberline {3.6}More advanced properties of solutions}{27}{section.3.6}% 
-\contentsline {section}{\numberline {3.7}Initial value problem and solution sets}{30}{section.3.7}% 
-\contentsline {section}{\numberline {3.8}Lemma 1}{31}{section.3.8}% 
-\contentsline {section}{\numberline {3.9}Lemma 2}{33}{section.3.9}% 
-\contentsline {section}{\numberline {3.10}Lemma 3}{35}{section.3.10}% 
-\contentsline {section}{\numberline {3.11}Lemmata A}{36}{section.3.11}% 
-\contentsline {section}{\numberline {3.12}Lemma 4}{37}{section.3.12}% 
-\contentsline {section}{\numberline {3.13}Lemma 5}{40}{section.3.13}% 
-\contentsline {section}{\numberline {3.14}Lemma 6}{40}{section.3.14}% 
-\contentsline {section}{\numberline {3.15}Lemma 7}{41}{section.3.15}% 
-\contentsline {section}{\numberline {3.16}Lemma 8}{42}{section.3.16}% 
-\contentsline {section}{\color {title}References}{43}{lemma.3.12}% 
+\contentsline {section}{\numberline {3.5}More advanced properties of solutions}{27}{section.3.5}% 
+\contentsline {section}{\numberline {3.6}Proof of main theorem}{30}{section.3.6}% 
+\contentsline {section}{\color {title}References}{30}{section.3.6}% 
 \gdef \the@ipfilectr {}
 \contentsfinish 

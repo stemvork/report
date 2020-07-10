@@ -10,6 +10,20 @@
 
 % ---
 
+% Now that we have confirmed $\Xi(0)>0$ and $\Xi(r)$ strictly decreasing... \#
+% Let $\Xi(0)=\bar\beta$, \#, for all $\beta\in[0,\bar\beta]$. Note $\Xi(r)$ is
+% continuous and decreasing, so
+% $\sigma(\beta)\coloneqq\left.\Xi(r)^{-1}\right|_{[0,\bar\beta]}$ has
+% properties (a) and (b).\# Also, note $\Xi(0)>0\iff\xi(0)>-2$. \# \# Show that
+% there is an implication from the property of $V(0)$ to the property of
+% $\xi(0)$. By definition? $\xi(0) = 0 * V'(0)/V(0) + 2\lambda /
+% (V(0)*u(0)^{p-1}$... What do I know about $V'(0)?$ And about $V(0)?$ By lemma
+% 5.1 ??  % % % % % % % Also, as $u(0,\a)=\a>0$, we have $\a^{p-1}>0$ and
+% $V(0)>0$ (finite or infinite) implies the second term of $\xi > 0$... Yes,
+% definitely some Lyapunov/lemma 5.1 property involved here. Consider the
+% following cases ......$V(0)<\infty$ .... $V(0)=\infty$ ... hence $\xi(0)>-2$
+% for $\alpha\in(G\cup N)$.
+
 % ---
 
 % For $\a\in G\cup N$, we have $u(\za)=0$, where $\za<\infty$ for $\a\in N$ and

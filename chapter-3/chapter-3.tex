@@ -72,7 +72,7 @@ Lastly, we define
 and require that $h(r)$ is non-increasing on $(0, \infty)$ 
 \be \label{vh4} h'(r) \leq 0 \quad \text{on} ~ (0, \infty). \ee
 
-\begin{theorem}
+\begin{theorem} \label{genmain}
 Suppose that \eqref{vh1}-\eqref{vh4} are satisfied. Then there exists $\a_0>0$ such
 that the solution sets have the following structure
 \[
@@ -80,14 +80,6 @@ P = \left( 0, \a_0 \right), \quad G = \left\{ \a_0 \right\}, \quad N =
 \left( \a_0, \infty \right).
 \]
 \end{theorem}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      MARK PROOF
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-{\red move proof to the end}
-\begin{proof}
-\# general proof, referring to lemma's
-\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      MARK STURM
@@ -98,7 +90,7 @@ Sturmian theory. In particular, the main Sturm comparison theorem and certain
 corollaries, as well as the concept of a \emph{disconjugay interval}.
 
 Important theory for the following lemmata is Sturm Comparison theorem as stated
-and proven in for example \cite{kwong}.
+and proven in for example \cite[p.~246]{kwong}.
 
 
 \begin{theorem}
@@ -134,12 +126,14 @@ and proven in for example \cite{kwong}.
 
 \end{theorem}
 
+\begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      MARK CONCLUSION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 {\red In the end, we wish to show that the function $\za$ is monotone decreasing in
 $\a$. Or actually, that $(\a, \a+\e)\subset N$ and if $\bar{\a}\in N$ then $\za :
 [\bar{\a}, \infty)\to(0,\infty)$ is monotone decreasing.}
+\end{comment}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -193,7 +187,7 @@ where $E'(r)\leq 0$ holds because $V' \leq 0$ by \eqref{vh2} and
 \end{dcases}
 \ee
 
-For $\a \in N$, we have $u(\za) = 0$. We evaluate $E(\za)$ {\red for $\a \in N$}
+For $\a \in N$, we have $u(\za) = 0$. We evaluate $E(\za)$ %{\red for $\a \in N$}
 \be \label{eza}
 E(\za) = \half u'(\za)^2 \geq 0. 
 \ee
@@ -222,8 +216,8 @@ We will solve $E(0) < 0$ for $\a$, where we remember that $u(0, \a) = \a > 0$
     + \frac{1}{p+1} V(0) \a^{p+1} < 0. 
 \]
 
-{\red actually, $(ru') = 0$ "in" $r=0$. WRONG: We use $u'(0)=0$ and $u(0)=\a$ to
-    simplify the expression to
+{\red actually, lim $(ru') = 0$ for $r$ down to $0$. 
+    %WRONG: We use $u'(0)=0$ and $u(0)=\a$ to simplify the expression to
 \[ 
     E(0) = -\frac{\lambda}{2}\alpha^2 + 
     \frac{1}{p+1} V(0)\alpha^{p+1} = 0. 
@@ -275,11 +269,14 @@ where we can solve for $u(r_0, \a)$ to find that
 \[ u(r_0, \a) \leq \left[ \frac{\lambda}{V(0)} \right]^{\tfrac{1}{p-1}} <
 \left[ \frac{p+1}{2} \frac{\lambda}{V(0)} \right]^{\tfrac{1}{p-1}}. \]
 
-Now this implies by {\red or \eqref{lyadef}} Lemma \ref{genlem1} that $E(r_0) <
+Now this implies by or \eqref{lyadef} 
+%Lemma \ref{genlem1} 
+that $E(r_0) <
 0$, which contradicts \eqref{epos}. Therefore, we have $u'(r) < 0$ for all $r
-\in (0, \za)$. {\red short?} Lastly, if we have $u'(\za) = 0$ for $\a \in N$, we have $u
+\in (0, \za)$. 
+%{\red short?} 
+Lastly, if we have $u'(\za) = 0$ for $\a \in N$, we have $u
 \equiv 0$. Hence, we have $u'(\za) < 0$.
-
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -380,7 +377,7 @@ $\theta$ and $\rho$ and $\nu$ and $\phi$ and $\xi$ mostly
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      MARK LEMMA 4
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{More advanced properties of solutions}
+% \section{More advanced properties of solutions}
 \begin{lemma}\label{genlem4}
 Let $\alpha \in G \cup N$. There exist $\beta_0 > 0$ and a unique function
 $\sigma : [0, \bar\beta] \to [0, \infty)$ with the following properties:
@@ -447,8 +444,8 @@ We note that by \eqref{}
     \phib(r)<0 \iff \beta < \Xi(r).
 \]
 
+{\red choose between two representations
 We claim that $\xi(r)$ is non-positive and strictly decreasing on $(,)$
-{\red either interval in text, or in math}
 \be \label{xiclaim}
 \begin{dcases}
 \xi(r) \leq 0 \quad \text{on} ~ (,)\\
@@ -458,6 +455,7 @@ We claim that $\xi(r)$ is non-positive and strictly decreasing on $(,)$
 
 In other words: 
 $$\xi(r)\leq0\text{ and }\xi'(r)<0\text{ on }(0,\za).$$ 
+}
 
 By \eqref{vh4}, we have $h'(r) \leq 0$ on $(0, \infty)$. Since $u'(r, \a) < 0$
 by Lemma \ref{genlem2} and $V' \leq 0$ by \eqref{vh2}, the second term in
@@ -481,10 +479,10 @@ $\a \in G$, we conclude that
     \lim_{r\to z(\alpha)}\xi(r)=-\infty,
 \ee
 
-{\red where we remember the notation $\za = \infty$ to unite the cases for $\a
-\in G$ and $\a \in N$.}
+{\red maybe clean up notation: introduce somewhere the notation $\za = \infty$
+for $\a \in G$ to unite the cases for $\a \in G$ and $\a \in N$.}
 
-Even if $V(r)$ is non-zero, then still, the fraction blows up by the behaviour
+\revgroup Even if $V(r)$ is non-zero, then still, the fraction blows up by the behaviour
 of $u(r)$ near $\za$.
 
 Next, we can show that $\Xi(0)>0$ and $\Xi(r)$ is continuous and strictly
@@ -516,21 +514,8 @@ $$\beta<\Xi(r)\iff\beta(p-1)-2-\xi(r)<0\quad\text{ and vice versa.}$$
 $\sigma(\beta)$ with the aforementioned properties. that is $\sigma(\beta)$ is
 continuous and decreasing and $\sigma(0)>0$ and $\sigma(\bar{\beta})=0$ as well
 as $\sigma(\beta)$ determing the sign of $\phi_\beta(r)$ for all $\beta>0$.
-
-% Now that we have confirmed $\Xi(0)>0$ and $\Xi(r)$ strictly decreasing... \#
-% Let $\Xi(0)=\bar\beta$, \#, for all $\beta\in[0,\bar\beta]$. Note $\Xi(r)$ is
-% continuous and decreasing, so
-% $\sigma(\beta)\coloneqq\left.\Xi(r)^{-1}\right|_{[0,\bar\beta]}$ has
-% properties (a) and (b).\# Also, note $\Xi(0)>0\iff\xi(0)>-2$. \# \# Show that
-% there is an implication from the property of $V(0)$ to the property of
-% $\xi(0)$. By definition? $\xi(0) = 0 * V'(0)/V(0) + 2\lambda /
-% (V(0)*u(0)^{p-1}$... What do I know about $V'(0)?$ And about $V(0)?$ By lemma
-% 5.1 ??  % % % % % % % Also, as $u(0,\a)=\a>0$, we have $\a^{p-1}>0$ and
-% $V(0)>0$ (finite or infinite) implies the second term of $\xi > 0$... Yes,
-% definitely some Lyapunov/lemma 5.1 property involved here. Consider the
-% following cases ......$V(0)<\infty$ .... $V(0)=\infty$ ... hence $\xi(0)>-2$
-% for $\alpha\in(G\cup N)$.
 \end{proof}
+\endgroup
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      MARK LEMMA 5
@@ -772,12 +757,12 @@ Since $z(r_3) = z(r_4) = 0$ by assumption and
 \frac{u^p - \tilde{u}^p}{u - \tilde{u}} < pu^{p-1} 
 \ee
 
-on $(r_3, r_4)$, we can apply Sturm's theorem \# ref. {\red Who oscillates
-faster than who?} Let $y$ be any solution of $w$ ivp linearly independent of
+on $(r_3, r_4)$, we can apply Sturm's theorem \# ref. {\red $w$ oscillates
+faster than $z$} Let $y$ be any solution of $w$ ivp linearly independent of
 $w$. ... There is no positive solution of $w$ ivp on $(d, \infty)$,
 contradicting ...
 
-Hence $z(r) > 0$ for all $r > r_3$. Then $w$ oscillates faster than $z$ ???
+Hence $z(r) > 0$ for all $r > r_3$. % Then $w$ oscillates faster than $z$.
 
 Sturm comparing fractions
 
@@ -822,7 +807,15 @@ We define
 By contradiction, we suppose that $\bar{\a} < \infty$. Then there exists ...
 \end{proof}
 
-\hrule
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      MARK PROOF
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Proof of main theorem}
+\begin{proof}[Proof of Theorem \ref{genmain}]
+\# general proof, referring to lemma's
+\end{proof}
+
+\begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      MARK OLD MATERIAL
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1474,6 +1467,6 @@ There exists $\epsilon>0$ such that $(\alpha,\alpha+\epsilon)\subset N$.
 %    @
 %  \end{easylist}
 %  In conclusion...
-
+\end{comment}
 \references{dissertation}
 
