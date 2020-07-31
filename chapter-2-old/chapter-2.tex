@@ -63,28 +63,18 @@ N\coloneqq\Big\{\;\a>0 \;\Big|\; \exists r_0:
 % u(r_0,\a)=0 \;\text{and}\; u'(r,\a)<0 \;\text{for}\; r\in(0,r_0] \;\Big\}.
 u(r_0,\a)=0 \;\text{and}\; u'(r,\a)<0 \;\text{for all}\; r\leq r_0 \;\Big\}.
 \ee
-We note that the sets $P$ and $N$ are disjoint by definition. Either the
-derivative vanishes first, or the solution vanishes first. 
 
-We will show that the sets $P$ and $N$ are non-empty, and open. Then, there
-exist initial conditions that belong to neither $P$ nor $N$. Solutions that
-belong to neither $P$ nor $N$ are \emph{everywhere positive and decreasing}
-\be \label{evwposdec}
-\begin{dcases}
-u(r,\a)>0\quad\text{for}~r\geq0,~\text{and}\\
-u'(r,\a)<0\quad\text{for}~r>0. 
-\end{dcases}
-\ee
+\revgroup These solution sets are disjoint by definition and we write the union of initial
+conditions as $I=P\cupdot G\cupdot N$.\endgroup
 
-Lastly, we will show that under certain assumptions, such an element belongs to
-$G$.
+% \# As noted in \cite{ber81}, for $u(r,\a)\leq 0$ the nonlinearity $f(t)$ is
+% extended as
+% $$f(t)=0,\quad\text{for}\; t\leq0.$$ 
 
 \section{Assumptions on $f$}
 We assume that $f$ is locally Lipschitz continuous from $\R_+\to\R$ and
-satisfies $f(0)=0$. 
-% Local Lipschitz continuity is an important condition for the
-% Picard-Lindel\"of local existence and uniqueness theorem. 
-Additionally, we
+satisfies $f(0)=0$. Local Lipschitz continuity is an important condition for the
+Picard-Lindel\"of local existence and uniqueness theorem. Additionally, we
 assume that hypotheses (H1)--(H5) are satisfied. Firstly,
 \be \label{h1} f(\kappa) = 0,\text{ for some }\kappa>0.\tag{H1}\ee
 Secondly, defining $F(t)$ as the integral of $f(t)$
@@ -100,7 +90,7 @@ Thirdly, the right-derivative of $f(s)$ at $\kappa$ is positive
 and fourthly, we have 
 \be \label{h4} f(s) > 0\quad\text{for}~s\in\left(\kappa, \a_0\right].\tag{H4} \ee
 We define
-\be \label{lambdadef} \lambda \coloneqq \inf\left\{\;\a>\a_0 \;\middle|\; f(\a) = 0 \;\right\}, \ee
+\be \lambda \coloneqq \inf\left\{\;\a>\a_0 \;\middle|\; f(\a) = 0 \;\right\}, \ee
 and note that $\a_0<\lambda\leq \infty$. In the situation where $\lambda =
 \infty$, we assume
 %\be f(t)>0\quad\text{for}~\a>\kappa, \ee
@@ -109,48 +99,33 @@ and note that $\a_0<\lambda\leq \infty$. In the situation where $\lambda =
 l<\frac{n+2}{n-2}. \tag{H5} \ee
 
 \section{Main theorem}
-\begin{theorem} 
-Let $f\text{ be a locally Lipschitz continuous function on
+\begin{theorem} Let $f\text{ be a locally Lipschitz continuous function on
 }\mathbb{R}_+=[0,\infty)$ such that $f(0)=0$ and $f$ satisfies
-hypotheses $(H1)-(H5)$. Then there exists a number $\a\in(\a_0,\lambda)$ such
+hypothese $(H1)-(H5)$. Then there exists a number $\a\in(\a_0,\lambda)$ such
 that the solution $u(r,\a)\in C^2(\mathbb{R}_+)$ of the initial value problem
-\be
-\label{thmivp}
+\eqref{ivp} has 
+% the properties positive and decreasing 
+% for $r\in(0, \infty)$ and limit
+\be \label{lemlimcas}
 \begin{dcases}
--u''(r) - \frac{n-1}{r} u'(r) = f(u(r)),~\text{for}~r>0,\\
-~u(0) = \a,\quad u'(0) = 0\\
+u(r,\a)>0\quad\text{for all}\;r\geq0,\\%\quad\text{and}\\
+u'(r,\a)<0\quad\text{for all}\;r>0,
 \end{dcases}
 \ee
+and \[ \underset{r\to\infty}{\lim} u(r) = 0. \]
+Then $\a\in G$. Hence $G$ is non-empty.
 
-is an element of solution set $G$ defined in \eqref{gset}
-\[
-G\coloneqq\left\{\;\a>0 \;\middle|\; u(r,\a)>0 \;\text{and}\;
-u'(r,\a)<0\; \text{for all}\; r>0\; \text{and}\;
-\limrtoinf u(r,\a)=0\;\right\}.  
-\]
-% {\opt If in addition, we assume that $f$ satisfies ?? then there exists constants
-% such that etc... }
+% r to infty vanish \todogroup math \endgroup 
+If in addition, we assume that $f$ satisfies ?? then there exists constants
+such that etc... 
 \end{theorem}
 
-\begin{proof}
-We will show in Lemma \ref{gintlemma}-\ref{thm:dechyp} that solutions to the
-differential problem \eqref{thmivp} are defined for $0 < r < \infty$.
-Furthermore, by Lemma \ref{lemlim} solutions with $\a\notin\left(P\cupdot
-N\right)$ satisfy
-\[ \underset{r\to\infty}{\lim} u(r,\a) = 0. \]
-
-Lastly, we will show that solution sets $P$ and $N$ are non-empty and open.
-In Lemma \ref{psol} we show that solution set $P$ is non-empty and open. By
-similar argument, solution set $N$ is open. For the argument that $N$ is
-non-empty, we refer to "$I_-$ is non-empty" in \cite[p. 147]{ber81}. 
-
-%Then, there exist elements $\a\notin\left(P \cupdot N\right)$ and $G$ is
-In conclusion, $G$ is non-empty. 
-\end{proof}
 
 \section{Interval of definition}\label{semidef}
 Existence of local unique solutions is guaranteed by the Picard-Lindel\"of
 theorem, see for example \cite[Theorem.~2.2]{teschl}. 
+% \todogroup about local existence, local unique existence, lipschitz condition,
+% maximal intervals and global solutions \endgroup
 
 In these circumstances, boundedness of the solution $u(r,\a)$ is a sufficient
 condition for the solution to be defined on the maximal interval $[0, \infty)$.
@@ -161,96 +136,114 @@ and the solution is defined on $[0,r_0)$. Or (ii) for some $M>0$ we have
 \[ \left|u(r,\a)\right|\leq M,\quad\text{for all}~r\geq 0, \]
 and the solution is defined for all $r\geq0$.
 
-\begin{lemma} \label{gintlemma}
-For any initial condition $\a>0$ and $r>0$, we have the identity
-% \be \label{gint}
-% -\half\left[u'(r)\right]^2
-% -(n-1)\int_0^r\left[u'(s)\right]^2\frac{\diff s}{s}=
-% F(u(r))-F(\alpha).
-% \ee
-\be \label{gint}
-\half\left[u'(r)\right]^2
-+ (n-1)\int_0^r\left[u'(s)\right]^2\frac{\diff s}{s}=
-F(\alpha)-F(u(r)).
-\ee
 
+In this section, we will derive an upper and a lower bound for $u(r,\a)$. Since
+the solution is initially decreasing, possibly the initial condition $\a$ is an
+upper bound.
+\begin{lemma}
+$u(r,\a)\leq u(0,\a)=\a$\quad\text{for }$r\geq0$.
 \end{lemma}
 \begin{proof}
-We multiply the IVP \eqref{ivp} by $-u'(r)$. Then we integrate from $0$
-to $r$ to obtain
+    \todogroup Seperate into lemma about the quantity \eqref{gint}.
+In this proof, we write $u(r)=u(r,\a)$ for brevity. We start with \eqref{ivp}
+and multiply by $u'(r)$. Then we integrate from $0$ to $r$ to obtain
 \be \label{gintstart}
-\int_0^r\left[u'(s)u''(s)\right]ds
-+\int_0^r\left[\frac{n-1}{s}[u'(s)]^2\right]\diff s=
--\int_0^r\left[u'(s)f(u(s))\right]\diff s.
+-\int_0^r\left[u'(s)u''(s)\right]ds
+-\int_0^r\left[\frac{n-1}{s}[u'(s)]^2\right]\diff s=
+\int_0^r\left[u'(s)f(u(s))\right]\diff s.
 \ee
 
 We use the chain rule simplify the first term in \eqref{gintstart} and obtain
 \[ \od{}{r}[u'(r)^2]=2u'(r)u''(r)\stackrel{\eqref{ivpcond}}{\iff}
    \half[u'(r)]^2 = \int_0^r\left[u'(s)u''(s)\right]\diff s. \]
 
-Then, we rewrite the right-hand side of \eqref{gintstart} 
-\[ -\int_0^r\left[u'(s)f(u(s))\right]\diff s=
-   \int_r^0\left[\od{u}{s}f(u(s))\right]\diff s \]
-
-and use the fundamental theorem of calculus
-\[  \int_{u(r)}^{u(0)} f(u)\diff u=
-   F(u(0))-F(u(r)). \]
+Then, we rewrite the right-hand side of \eqref{gintstart} using the fundamental
+theorem of calculus
+\[ \int_0^r\left[u'(s)f(u(s))\right]\diff s=
+   \int_0^r\left[\od{u}{s}f(u(s))\right]\diff s= 
+   \int_{u(0)}^{u(r)} f(u)\diff u=
+   F(u(r))-F(u(0)). \]
 
 Finally, using $u(0)=\a$, we have rewritten \eqref{gintstart} as
-\[
-\half\left[u'(r)\right]^2
-+(n-1)\int_0^r\left[u'(s)\right]^2\frac{\diff s}{s}=
-F(\a)-F(u(r)).\qedhere
-\]
-\end{proof}
+\be \label{gint}
+-\half\left[u'(r)\right]^2
+-(n-1)\int_0^r\left[u'(s)\right]^2\frac{\diff s}{s}=
+F(u(r))-F(\alpha).
+\ee
+\endgroup
 
-
-In this section, we will derive an upper and a lower bound for $u(r,\a)$. Since
-the solution is initially decreasing, possibly the initial condition $\a$ is an
-upper bound.
-\begin{lemma}
-Let $\a>\kappa$. Then $u(r,\a)\leq u(0,\a)=\a$\quad\text{for }$r\geq0$.
-\end{lemma}
-\begin{proof}
-% In this proof, we write $u(r)=u(r,\a)$ for brevity.  
+%This expression will be useful in the following proof by contradiction. 
 We suppose by contradiction that 
-\be \label{ubas} \a<u(r_0,\a)<\lambda,\quad\text{for some}\;r_0>0.\ee
+\be \label{ubas} u(r_0)>\a,\quad\text{for some}\;r_0>0.\ee
 
-% We note that for $\a>\kappa$, we have $F'(\a)>0$ by assumption \eqref{h4}. 
-By \eqref{h4} and \eqref{lambdadef}, we have $F$ non-decreasing on
-$(\kappa,\lambda)$.  Then,
-\[ F(\kappa)<F(\a)<F(u(r_0,\a))<F(\lambda). \]
+\todogroup Be more specific about: in which quantity, with which assumption, do we have which result.
+By the assumptions on $f(u)$, we have $f(u)>0$ on $(\a_0,\infty)$. As a result,
+$F(u)$ is increasing on $(\a_0,\infty)$. Using assumption \eqref{ubas} and
+$\a>\kappa$, we deduce that
+\[ F(u(r_0))>F(\a) 
+\iff F(u(r_0))-F(\a)>0. \]
+%\[ F(u(r_0,\alpha))-F(u(0,\alpha))=F(u(r_0,\alpha))-F(\alpha)>0 \Lightning\]
+This contradicts \eqref{gint}, as the left-hand side is clearly non-positive. 
+\end{proof}\endgroup
 
-In particular, we have
-\[ F(\a) - F(u(r_0,\a)) < 0. \]
-
-This contradicts Lemma \ref{gintlemma}, as the left-hand side is clearly
-non-negative.
-\end{proof}
-
+% The upper bound on $u(r,\a)$ is
+% \[ u(r,\alpha)\leq\alpha\;\text{for}\;r\geq0. \]
+% 
+% \subsection{Lower bound} 
 We will show that $u(r,\a)$ has a lower bound for $r<\infty$. Let $r_0$ be the first
 zero of $u(r,\a)$
 \be \label{r0inf}
 r_0\coloneqq\inf\left\{\;r>0 \;\middle|\; u(r,\a)=0\;\right\}.
 \ee
-If $r_0=\infty$, then we have $u(r,\a)>0$ for all $r>0$. When $r_0<\infty$, we
-have the following bound on the derivative $u'(r,\a)$.
+If $r_0=\infty$, then we have $u(r,\a)>0$ for all $r>0$. Suppose to the contrary 
+that $r_0<\infty$, then we have the following bound on the derivative $u'(r,\a)$.
 
 \begin{lemma} \label{thm:dechyp}
-Suppose that there exists $r_0>0$ such that 
-\be \begin{dcases}
-u(r_0,\a)=0\\
-u'(r_0,\a)<0.
-\end{dcases} \ee
-
-If we have $f(u)=0$ for $u\leq 0$, then for $r\geq r_0$ we have
+Suppose that $r_0<\infty$. Then for $r\geq r_0$, we have
 \be \label{dechyp}
 u'(r,\a)=\left(\frac{r_0}{r}\right)^{n-1}u'(r_0,\a)\geq u'(r_0,\a).
 \ee
 \end{lemma}
-
 \begin{proof}
-For $u(r,\a)\leq0$ the IVP \eqref{ivp} reads 
+We consider the sign of $u'(r_0, \a)$. Firstly, if $u'(r_0,\a)=0$ then $u$
+and $u'$ vanish simultaneously in $r_0.$ Then from \eqref{ivp} we have
+\[ u'' = 0,\quad\text{with }u(r_0)=u'(r_0)=0, \]
+which is solved by
+\[ u(r) = c_1 r + c_2, \] %\quad\text{and }u'(r) = c_1,   \]
+where we must have $c_1 = c_2 = 0$ to satisfy the conditions at $r_0$, so that
+$u\equiv 0$. But this contradicts $u(0, \a)=\a>0$. Hence, $u$ and $u'$ cannot
+vanish simultaneously for $\a>0$. 
+
+Secondly, if $u'(r_0,\a)>0$ we also reach a contradiction. By \eqref{ivp} with
+$u(r_0,\a)=0$,
+    \[ u''(r_0, \a) + \frac{n-1}{r}u'(r_0, \a) = -f(0) = 0 \]
+
+we see that $u''$ and $u'$ have opposite signs in $r_0$. Then either:
+\be \begin{dcases}
+\text{(i)}~u''>0\quad\text{and}\quad u'<0\quad\text{in}~r_0,\quad\text{or}\\
+\text{(ii)}~u''<0\quad\text{and}\quad u'>0\quad\text{in}~r_0. 
+\end{dcases} \ee
+The latter case implies that $u(r,\a)<0$ in a left neighborhood of $r_0$, which
+contradicts $u(r,\a)>0$ on $[0, r_0)$. Thus, we have $u'(r_0,\a)<0$.
+% The latter case implies that $u(r,\a)<0$ for $r\in (r_0-\epsilon, r_0)$
+% with $\epsilon>0$ sufficiently small. 
+% Thus $u'(r_0,\a)<0$. % For the allowed initial conditions are $I=(0,\infty)$ or a
+%restriction thereof.
+% \begin{comment}
+% Together with \eqref{ivp}. 
+% Since the solution is decreasing, suppose for some $r_0>0$ to
+% have $u(r_0,\a)=0$. Then by condition A1, for $r>r_0$ near $r_0$ the solution is
+% negative and the nonlinearity is extended with $f(u(r,\a))=0$. 
+% \end{comment}
+% \todogroup MOVE When $\a>\kappa$, the solution $u(r,\a)$ will initially be
+% decreasing. \endgroup
+% 
+% To see this, note that the IVP \eqref{ivp} reads (Initially, the solution will be decreasing. More precisely, for $r>0$ small
+% enough, we have $u'(r,\a)<0$. \#) 
+%whenever $u(r,\a)\leq0$, say on $[r_0,r_1)$ for some $r_1>0$. 
+
+In the following, we extend $f(u)=0$ for $u\leq0$. Then for $u(r,\a)\leq0$ the
+IVP \eqref{ivp} reads 
 \be \label{ivpuneg} 
 -u''(r,\a)-\frac{n-1}{r}u'(r,\a)=0,
 \ee
@@ -260,7 +253,7 @@ We solve \eqref{ivpuneg} for $u'=u'(r,\a)$ and seperate the variables, resulting
 in
 \[ \frac{\diff u'}{u'}=-\frac{n-1}{r}\diff r. \]
 
-We integrate the expression from $r_0$ to $r$ and evaluate the limits
+We integrate the expression from $r_0$ to $r$ and evaluate the limits to get
 \[ \left.\ln{u'}\right\rvert_{r_0}^r=\left[(n-1)\ln{r}\right]_r^{r_0}\iff
   \ln{u'(r)}-\ln{u'(r_0)}=(n-1)\left[\ln{r_0}-\ln{r}\right]. \]
 
@@ -278,34 +271,25 @@ In conclusion, the solution $u(r,\a)$ is bounded for bounded $r$. More
 specifically, in the case of everywhere positive solutions, we have
 $$ 0<u(r,\a)\leq\a\quad\text{for all}~r>0.$$
 
-Alternatively, for solutions with $u(r_0,\a)=0$ and $u'(r_0,\a)<0$
-by Lemma \ref{thm:dechyp} we have  
-% for some $r_0>0$
+\todogroup Explicit expression for $u(r,\a)$.\endgroup
+Alternatively, for solutions with $u(r_0,\a)=0$ for some $r_0>0$, by
+Lemma \ref{thm:dechyp}
+we have 
+%$u'(r,\a)$ bounded for $r$ bounded by \eqref{dechyp}. Thus, we have
 \be \label{dechypsol} u(r,\a) \geq 
+%\;\stackrel{u(r_0,\a)=0}{\geq}~
 \int_{r_0}^r 
+% u'(s,\a)ds\geq
 \left(\frac{r_0}{s}\right)^{n-1} u'(r_0,\a)\diff s >
--\infty\quad\text{for}~r>r_0,
+-\infty\quad\text{for}~r_0<r<\infty.
 \ee
-
-such that for $n=2$, we have 
-\be \label{upastns}
-u(r,\a) \geq r_0 u'(r_0,\a)\left(\ln{r}-\ln{r_0}\right)
-\ee
-
-and for $n>2$, we have
-\be \label{upastns}
-u(r,\a) \geq \frac{r_0^{n-1} u'(r_0,\a)}{2-n}\left(r^{2-n}-r_0^{2-n}\right).
-\ee
-
 
 \section{Asymptotics of positive decreasing solutions}
-In this section, we will show that everywhere positive decreasing solutions
-$u(r,\a)$ vanish in the limit as $r\to\infty$. 
-% The proof will be in {\red
-% three steps (superfluous?)}: (i) we show that the nonlinearity $f(u)\to 0$ in the limit as
-% $r\to\infty$, (ii) we show via a translation $\nu(r)=u(r)-\kappa$ that
-% $l=\kappa$ does not satisfy the IVP, such that $l=0$, which requires (iii) that 
-% $\nu''(r)$ is positive everywhere.
+We will show that everywhere positive decreasing solutions $u(r,\a)$ vanish in
+the limit as $r\to\infty$. The proof will be in \todogroup three steps: (i) we show that
+the nonlinearity $f(u)\to 0$ in the limit as $r\to\infty$, (ii) we show
+via a translation $\nu(r)=u(r)-\kappa$ that $l=\kappa$ does not satisfy the IVP,
+such that $l=0$.\endgroup
 
 \begin{lemma}\label{lemlim}
 Let $f:\R^+\to\R$ be a locally Lipschitz continuous function such that $f(0)=0$.
@@ -320,9 +304,9 @@ u'(r,\a_1)<0\quad\text{for all}\;r>0.
 Then the number $l \coloneqq \underset{r\to\infty}{\lim}u(r,\a_1)$ satisfies
 $f(l)=0$.
 
-If additionally, $f(u)$ satisfies \eqref{h3}, then $l=0$.
-\end{lemma}
+If additionally $f(u)$ satisfies \eqref{h3}, then $l=0$.
 
+\end{lemma}
 \begin{proof}[Proof step 1] 
 By assumption \eqref{lemlimcas} on $u(r,\a_1)$ and the monotone convergence
 theorem, we have $0\leq l<\a_1$. Then $f(l)<f(\a_1)$. We consider the
@@ -336,32 +320,34 @@ We restate \cref{gint}
 \[
 \half\left[u'(r,\a_1)\right]^2
 +(n-1)\int_0^r\left[u'(s,\a_1)\right]^2\frac{\diff s}{s}=
-F(\alpha_1)-F(u(r,\a_1))
+F(\alpha_1)-F(u(r,\a_1)),
+\]
+and consider the limit as $r\to\infty$
+\[ 
+\underset{r\to\infty}{\lim} \left[\half\left[u'(r,\a_1)\right]^2
++(n-1)\int_0^r\left[u'(s,\a_1)\right]^2\frac{\diff s}{s}\right]
+= F(\a_1) - \underset{r\to\infty}{\lim} F(u(r,\a_1)), 
 \]
 
-and note that the right hand side is finite. We write
-\[
-(n-1)\int_0^r\left[u'(s,\a_1)\right]^2\frac{\diff s}{s}
-= F(\a_1) - F(u(r,\a_1))- 
-\half\left[u'(r,\a_1)\right]^2
-\]
+where we use $\underset{r\to\infty}{\lim} F(u(r,\a_1)) = F(l)<\infty$ to write
+\be \label{gintlim} 
+\underset{r\to\infty}{\lim}~\half[u'(r,\a_1)]^2
+%(n-1)\int_0^\infty[u'(\a_1,s)]^2\frac{ds}{s}
++(n-1)\int_0^\infty u'(s,\a_1)^2 \frac{\diff s}{s}
+=F(\a_1)-F(l).
+\ee
 
-and note that the left hand side is increasing and bounded above. Hence,
-\[
-\int_0^\infty u'(s,\a_1)^2 \frac{\diff s}{s}<\infty.
+Note that 
+\[ 
+F(\a_1)-F(l) < \infty \implies 
+\int_0^\infty u'(s,\a_1)^2 \frac{\diff s}{s}<\infty,
 \]
-
-We write 
-\[
-\half\left[u'(r,\a_1)\right]^2
-= F(\alpha_1)-F(u(r,\a_1))
--(n-1)\int_0^r\left[u'(s,\a_1)\right]^2\frac{\diff s}{s}.
-\]
-
-Then $\underset{r\to\infty}{\lim} u'(r,\a_1)^2$ exists. Since $u'(r,\a_1)<0$
-and $u(r,\a_1)$ is bounded, we have 
-\be \label{limudev}
-\underset{r\to\infty}{\lim} u'(r,\a_1)=0. 
+such that $u'(r,\a_1)^2/r$ converges as $r\to\infty$ by the Levi monotone
+convergence theorem. Then $u'(r,\a_1)^2$ converges, because... and since
+$u'(r,\a_1)<0$ everywhere, we deduce that $u'(r,\a_1)$ converges. However, since
+$0\leq u(r,\a_1)\leq \a_1$, we have
+\be \label{udevlim}
+\underset{r\to\infty}{\lim}~u'(r,\a_1) = 0.
 \ee
 
 
@@ -389,7 +375,7 @@ Now, we return to \cref{ivplim} and use $\limrtoinf u'(r,\a_1)=0$ to obtain
 
 % However, we know that $u'$ is bounded and even has to converge to 0. 
 %However, we found that $u'(r,\a_1)$ needs to be bounded and even converge to 0. 
-We have \eqref{limudev} and hence, we have
+We have \eqref{udevlim} and hence, we have 
 % Suppose that $u''$ is not bounded, then neither is $u'$. 
 % Hence, $u''(r,\a_1)$ needs to bounded and converge to 0. 
 $$\limrtoinf u''(r,\a_1)=0.$$ 
@@ -403,25 +389,22 @@ The desired result follows: $f(l)=0$.
 
 \begin{proof}[Proof step 2.]
 The nonlinearity $f(u)$ has more than one zero.  Both $f(0)=0$ and
-$f(\kappa)=0$. We will show that under assumption \eqref{h3}, only $l=0$
-satisfies the IVP \eqref{ivp}. 
+$f(\kappa)=0$. We will show that only $l=0$ satisfies the assumptions.
 
 Suppose to the contrary that $l=\kappa$. We will use the substitution
-\be
-\label{nudef}
-\nu(r)=r^{(1/2)(n-1)}\left[u(r,\a_1)-\kappa\right] 
-\ee 
+\[ \nu(r)=r^{(1/2)(n-1)}\left[u(r,\a_1)-\kappa\right] \] 
 in \cref{ivp} to obtain a differential equation in $\nu(r)$. In the remainder of
-the proof of this lemma, we will abbreviate $u(r,\a_1) = u(r)$. We note that
-$\nu(r)>0$ by definition, since we have $u(r)\downarrow\kappa$.
+the proof, we will abbreviate $u(r,\a_1) = u(r)$. We note that
+$\nu(r)>0$ by definition, as the assumption is that 
+$u(r)>\kappa$ for $r>0$ and $u(r)\downarrow\kappa$.
 
-We proceed to calculate the first derivative $\nu'(r)$
-% \begin{align*}\nu(r)&=r^{(N-1)/2}\left[u(r)-\kappa\right] \\
+We proceed to calculate the first derivative
+%\begin{align*}\nu(r)&=r^{(N-1)/2}\left[u(r)-\kappa\right] \\
 \[ \nu'(r)=\frac{1}{2}(n-1)r^{(n-3)/2}\left[u(r)-\kappa\right]+
 r^{(n-1)/2}u'(r),\]
 
-and the second derivative $\nu''(r)$, where we gather the terms by $u(r), u'(r)$ and
-$u''(r)$
+and the second derivative, where we gather the terms by $u(r), u'(r)$ and
+$u''(r)$ as
 \be \label{nupp}
 \nu''(r) = \frac{1}{4}(n-1)(n-3)r^{(n-5)/2}\left[u(r)-\kappa\right]
 + (n-1)r^{(n-3)/2}u'(r)+r^{(n-1)/2}u''(r).
@@ -432,7 +415,7 @@ We multiply the IVP \eqref{ivp} by $r^{(n-1)/2}$ to obtain
 -r^{(n-1)/2}u''(r)-(n-1)r^{(n-1)/2}r^{-1}u'(r) = f(u(r))r^{(n-1)/2}.
 \ee
 
-We can use this to simplify \eqref{nupp} to
+We can use this to simplify \eqref{nupp}
 \[
 \nu''(r) = \frac{1}{4}(n-1)(n-3)r^{(n-1)/2}r^{-2}\left[u(r)-\kappa\right]
 -f(u(r))r^{(n-1)/2}.
@@ -452,33 +435,25 @@ Lastly, we multiply by $-1$ to obtain the exact expression from \cite{ber81} as
 -\frac{(n-1)(n-3)}{4r^2} \right\}\nu.
 \ee
 
-In proof step 3, we will show that there exist $\omega>0$ and $R_1>0$, such that
+We can show that there exist $\omega>0$ and $R_1>0$, such that
 \be \label{omrlemeq} 
 \frac{f(u)}{u(r)-\kappa}
 -\frac{(n-1)(n-3)}{4r^2}\geq\omega
 \quad\text{for all}~r\geq R_1.
 \ee
-% We will first show how this leads to $l=0$ to conclude proof step 2.
+This will be done in proof step 3. We will first show how this leads to
+ $l=0$ to conclude proof step 2.
 
-We have $\nu''(r)<0$ for $r\geq R_1$, which implies by
-\[ \nu'(r)=\nu'(R_1) + \int_{R_1}^r \nu''(s)\diff{s} \]
-
-that
+We have $\nu''(r)<0$ for $r\geq R_1$, which implies that
 \[ \nu'(r)\downarrow L\geq-\infty,\quad\text{as}~r\to\infty. \]
 
-Suppose that $L<0$, then $\nu(r)\to - \infty$ as $r\to\infty$. However, by
-\eqref{nudef} we have $\nu>0$.
-% which contradicts $\nu(r)>0$. 
-
-Then $L\geq 0$. 
-%but since $\nu'(r)\downarrow L$, 
-This implies $\nu'(r)\geq0$ for $r\geq R_1$. But then $\nu(r)\geq \nu(R_1)>0$ for
-$r\geq R_1$. By \eqref{omrlemeq} and \eqref{nuivp}, we have
-%We substitute in \eqref{nuivp} and use \eqref{omrlemeq} to see
+Suppose that $L<0$, then $\nu(r)\to\-\infty$ as $r\to\infty$, which contradicts
+$\nu(r)>0$. On the other hand, suppose that $L\geq 0$, then $\nu(r)\geq
+\nu(R_1)>0$ for $r\geq R_1$. Substituting in \eqref{omrlemeq}, we have
 \[ -\nu''(r)\geq \omega\nu(R_1)>0, \]
 
 such that $\nu'(r)\to-\infty$ as $r\to\infty$. This contradicts $L\geq0$.
-Hence, we have $l=0$.
+Since $l=\kappa$ is contradictory in any case, we have $l=0$.
 \end{proof}
 
 \begin{proof}[Proof step 3.]
@@ -500,11 +475,12 @@ We choose $2\omega = \underset{r>0}{\max}\;M(r)$ and choose $R_1>0$ such that
 \end{proof}
 
 \section{$P$ is non-empty and open}
-In this section we will show that $P$ is non-empty and open.  The proof that
-$N$ is open is similar to the proof given for $P$. For the proof that $N$ is
-non-empty, we refer to "$I_-$ is non-empty" in \cite[p. 147]{ber81}.
+In this section we will show that $P$ is non-empty and open. \todogroup Refer
+to main theorem.\endgroup The existence of solutions in $F$ also requires that
+$N$ is non-empty and open. The proof that $N$ is open is similar to the proof
+given for $P$. For the proof that $N$ is non-empty, we refer to "$I_-$ is non-empty" in \cite[p. 147]{ber81}.
 % \subsection{$P$ is open}
-\begin{lemma} \label{psol}
+\begin{lemma}
 Solution set $P$ as defined in \eqref{pset}
 \[ P\coloneqq\Big\{\;\a>0 \;\Big|\; \exists r_0: 
 u'(r_0,\a)=0 \;\text{and}\; u(r,\a)>0 \;\text{for all}\; r\leq r_0 \;\Big\} \]
@@ -512,96 +488,91 @@ u'(r_0,\a)=0 \;\text{and}\; u(r,\a)>0 \;\text{for all}\; r\leq r_0 \;\Big\} \]
 is non-empty and open.
 \end{lemma}
 \begin{proof}[Proof step 1.]
-We will show that solution set $P$ is non-empty. Let $\a\in(\kappa,\a_0]$.  We
-refer to \eqref{h1} and \eqref{h2} for the definitions of $\kappa$ and $\a_0$.
+We will show that solution set $P$ is non-empty. Let $\a\in(\kappa,\a_0]$. 
+\todogroup Refer to definition of $\a_0$. \endgroup % We know that $F(\a)$ is increasing for $\a>\kappa$ and $F(\a_0)=0$ 
+% by assumptions on \eqref{glip} on $g$. Since $\a<\a_0$, we have $F(\a)<0$.
+Considering all initial conditions $(0,\infty)$ and the disjoint subsets $P$
+and $N$, if $\a\notin N$ and $\a\notin\left(P\cupdot N\right)$, then $\a\in P$.
 
-% {\red Superfluous?} Considering all initial conditions $(0,\infty)$ and the
-% disjoint subsets $P$ and $N$, if $\a\notin N$ and $\a\notin\left(P\cupdot
-% N\right)$, then $\a\in P$.
-
-First, we suppose by contradiction that $\a\in N$. By the definition of $N$ in
-\eqref{nset}, there exists a number $r_0>0$ such that
+First, we suppose by contradiction that $\a\in N$.  By the definition of $N$ in
+\eqref{nset} there exists a number $r_0>0$ such that
 \be \label{anprop} \begin{dcases}
 u(r_0,\a)=0,\quad\\
 u'(r,\a)<0\quad\text{for }~r\leq r_0.
 \end{dcases} \ee
 
-We restate \cref{gint} from Lemma \ref{gintlemma} for $r=r_0$ and use
-$F(u(r_0,\a))=F(0)=0$ 
+\todogroup Refer to gint lemma. \endgroup We restate \cref{gint} for $r=r_0$
 \be \label{gintr0}
 \half\left[u'(r_0,\a)\right]^2
 +(n-1)\int_0^{r_0}u'(s,\a)^2\frac{\diff s}{s}=
-F(\alpha).
-% -F(u(r_0,\a)).
+F(\alpha)-F(u(r_0,\a)).
 \ee
 
-The left hand side of \eqref{gintr0} is positive. For $\a\in(\kappa,\a_0]$, we
-have $F(\a)<0$. Hence $\a\notin N$. 
+The left hand side of \eqref{gintr0} is positive. But $F(u(r_0,\a))=F(0)=0$, by ...
+Furthermore, for $\a\in(\kappa,\a_0]$, we have $F(\a)<0$. Hence $\a\notin N$.
 
-Next, we suppose that $\a\notin P$. Thus $\a\notin (P\cupdot N)$. We have
-the situation of \eqref{evwposdec} 
-\[
-\begin{dcases}
+Next, we suppose that $\a\notin (P\cupdot N)$.  
+\todogroup Precise refs \endgroup Thus, by the definitions of $P$ and $N$, we have...
+\be \label{gsol} 
+    \begin{dcases}
 u(r,\a)>0\quad\text{for}~r\geq0,~\text{and}\\
-u'(r,\a)<0\quad\text{for}~r>0, 
-\end{dcases}
-\]
+u'(r,\a)<0\quad\text{for}~r>0. 
+    \end{dcases}
+\ee
+This implies \todogroup Be specific about the lemma statement and proof steps I refer to. \endgroup
+\be \label{gsolinf} 
+u(r,\a)\downarrow l\geq0\quad\text{as}~r\uparrow\infty, 
+\ee
 
-which is the setting of Lemma \ref{lemlim}. Thus, we have $l=0$ and by 
-\cref{limudev}, we have
-\[ \underset{r\to\infty}{\lim} u'(r,\a)=0. \] 
+and by Lemma \eqref{lemlim}, we know that
+\[ \underset{r\to\infty}{\lim} u'(r,\a)=0,\quad\text{and}~l=0. \] 
 
-Then \cref{gintr0} evaluates to 
-\[ (n-1)\int_0^\infty u'(s,\a)^2 \frac{\diff s}{s} = F(\a)<0, \]
+Thus, 
+\[ (n-1)\int_0^\infty u'(s,\a)^2 \frac{\diff s}{s} = F(\a)<0. \]
 
-but the left hand side is positive. We have $(\kappa,\a_0]\subset P$, since $\a$
-was chosen arbitrarily. % in $(\kappa,\a_0]$, 
+By this contradiction we have $\a\notin \left(P\cupdot N\right)$. Hence $(\kappa, \a_0]\subset P$.
+% \[ (\kappa,\a_0]\subset P. \qedhere\]
 \end{proof}
 
 \begin{proof}[Proof step 2.] 
-We will show that $P$ is open. Let $\a\in P$. There exists
-\[ r_0 \coloneqq \inf\left\{\;r>0 \;\middle|\;
-u'(r,\a)=0~\text{and}~u(r,\a)>0\;\right\} \]
+We will show that $P$ is open. 
+\todogroup Read Teschl or CodLev to be more precise about the circumstances
+that I assume, and the type of continuity this implies. \endgroup We know that the
+solution $u(r,\a)$ and its
+derivative $u'(r,\a)$ depend continuously on $\a$. Let $\a\in P$. There exists
+\[ r_0 \coloneqq \inf\left\{r>0 \;\middle|\;
+u'(r,\a)=0~\text{and}~u(r,\a)>0\right\} \]
 
-such that by the definition of $P$ in \eqref{pset}
-\begin{subequations}
-\begin{empheq}[left=\empheqlbrace\,]{align}
-u(r,\a)>0\quad\text{for all }r\in[0,r_0],\label{uposr0}  \\
+such that
+\be \label{posdec}
+\begin{dcases}
+u(r,\a)>0\quad\text{for all }r\in[0,r_0]\\
 u'(r,\a)<0\quad\text{for all }r\in(0,r_0).
-\end{empheq}
-\end{subequations}
+\end{dcases}
+\ee
 
 Evaluating the IVP \eqref{ivp} in $r_0$ yields
 $$ u''(r_0,\a) = -f(u(r_0,\a)). $$
 
-Suppose that $u''(r_0,\a)=0$. Then $-f(u(r_0,\a))=0$. The zeroes of $f(u)$ are
-$f(\kappa)=0$ and $f(0)=0$. Thus, $u(r_0,\a)=\kappa$ by \eqref{uposr0}. 
+Suppose that $u''(r_0,\a)=0$. Then $-f(u(r_0,\a))=0$. Therefore $u(r_0,\a)=\kappa$ or
+$u(r_0,\a)=0$. These would imply $u(r,\a)\equiv\kappa$ or $u(r,\a)\equiv 0$,
+which are both impossible in light of \eqref{posdec}. 
+\todogroup Mention uniqueness of the IVP, be precise about implication \endgroup
 
-Then, the differential equation \eqref{ivp} with
-\[
-\left\{
-\begin{aligned}
-u(r_0,\a)=\kappa,\\
-u'(r_0,\a)=0,\\
-u''(r_0,\a)=0 
-\end{aligned}
-\right.
-\]
-
-is solved by $u\equiv\kappa$, and by uniqueness of solutions this contradicts
-$u(0,\a)=\a > \kappa$.
-
-Hence $u''(r_0,\a)\neq 0$. Since $u'(r,\a)<0$ for $r<r_0$ and
-    $u'(r_0,\a)=0$, we have \[ u''(r_0,\a) > 0. \]
-
-Then there exists $r_1>r_0$, such that
+Suppose that $u''(r_0,\a)\neq 0$. Since 
+\be
+\begin{dcases}
+u'(r_0,\a)=0\quad\text{and}\\
+u'(r,\a)<0\quad\text{for}~r<r_0,
+\end{dcases}
+\ee  
+ we have $u''(r_0, \a)>0$. Then for $r_1>r_0$ near $r_0$, we have 
 \[ u(r,\a) > u(r_0,\a)\quad\text{for all }r\in(r_0,r_1]. \]
 
-% By the continuous dependence on $\a$, we have
-Since $u(r,\a)$ is pointwise continuous in $\a$, we have
+By the continuous dependence on $\a$, we have
 \[ \forall\epsilon>0\,
-\exists~\delta>0:~\left|\a-\beta\right|<\delta
-\implies~\left|u(r,\a)-u(r,\beta)\right|<\epsilon.
+\exists\;\delta>0:~\left|u(r,\a)-u(r,\beta)\right|<\epsilon
+\impliedby~\left|\a-\beta\right|<\delta.
 \]
 
 % In particular, for any $\epsilon$-neighborhood around $u(r_0,\a)$ and
@@ -617,8 +588,7 @@ For $\delta_{r_0}>0$ sufficiently small, we have
 and for $\delta_{r_1}>0$ sufficiently small, we have
 \[ \left|u(r_1,\a)-u(r_1,\beta)\right|<\epsilon. \]
 
-Let $\delta=\min\left\{\delta_{r_0}, \delta_{r_1}\right\}>0$. Then, for 
-$\left|\a-\beta\right|<\delta$, we have
+That is, for $\beta$ near $\a$ we have
 \be \label{asposdec}
 \begin{dcases}
 u(r_1,\beta) > u(r_0,\beta)\\
