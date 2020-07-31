@@ -1,0 +1,154 @@
+\subsection{Lower bound} 
+We now proceed to show that $u(r,\a)$ has a lower bound. Let
+$r_0\coloneqq\inf(r>0,u(r_0,\a)=0).$ Suppose without loss of generality that
+$r_0<\infty$ and $u'(r,\alpha)<0$. This is without loss of generality because
+$r_0=\infty$ implies $u(r,\a)>0$ for all $r>0$. So even if $r_0=\infty$, the
+solution $u(r,\a)$ is bounded below, by zero. 
+
+If both $u$ and $u'$ vanish simultaneously in $r_0$, that is, $u'(r_0,\a)=0$ as
+well, then $u(r,\a)\equiv0$. This is impossible. Thus $u'(r_0,\a)<0$. For the
+allowed initial conditions are $I=(0,\infty)$ or a restriction thereof.
+
+\begin{claim} 
+The derivative will decay hyperbolically for $r\geq r_0$ as,
+$$u'(r,\a)=\big(\frac{r_0}{r}\big)^{N-1}u'(r_0,\a)\geq u'(r_0,\a).$$ 
+\end{claim}
+\begin{claimproof} 
+Since the solution is decreasing, suppose for some $r_0>0$ to
+have $u(r_0,\a)=0$. Then by condition A1, for $r>r_0$ near $r_0$ the solution is
+negative and the nonlinearity is extended with $g(u(r,\a))=0$. Using this in the
+\cref{ivp} yields:
+  %(When $u(r,\a)\leq0$, $g(u(r))=0$.) To be safe, let
+  %$r_1=\inf(r>r_0,u(r,\a_1)\geq0)$. Then $u(r,\a)\leq0$ on $[r_0,r_1]$ and
+\be \label{ivpuneg} 
+-u''-\frac{N-1}{r}u'=0,
+\ee
+  %,\text{ for }r\in[r_0,r_1].$$
+which is valid so long as $u(r,\a)\leq0.$ 
+%\# (Does not make sense yet, maybe simplify the explanation. Sth like: u is
+%decreasing when g is zero. Then remove the safety of letting r1 be a possible
+%zero and solving between r0 and r1.) To be safe, let
+%$r_1=\inf(r>r_0,u(r,\a_1)=0)$. Then for $r\in[r_0,r_1)$ we have $u(r,\a)\leq0$. 
+Now solve \cref{ivpuneg} for $u'=u'(r,\a)$ on $[r_0,\infty)$:
+  %
+  \begin{align*} -\frac{d}{dr}u'-\frac{N-1}{r}u'&=0\\
+  \frac{du'}{dr}&=-\frac{N-1}{r}u'\\ \frac{du'}{u'}&=-\frac{N-1}{r}dr\\
+  \left.\ln{u'}\right\rvert_{r_0}^r&=\left[(N-1)\ln{r}\right]_r^{r_0}\\
+  \ln{u'(r)}-\ln{u'(r_0)}&=(N-1)\left[\ln{r_0}-\ln{r}\right]\\
+  \frac{u'(r)}{u'(r_0)}&=\left(\frac{r_0}{r}\right)^{N-1}\\
+  u'(r,\a)=\big(\frac{r_0}{r}\big)^{N-1}u'(r_0,\a)&\geq u'(r_0,\a).
+  %\text{ on }[r_0,r_1].
+  \end{align*}
+  %
+  %This expression is valid for $u(r,\a)\leq0$. Let
+  %$r_1=\inf(r>r_0,u(r,\a_1)=0)$. Suppose $r_1<\infty$. Then $u'(r,\a)\leq0$ on
+  %$[r_0,r_1]$. But $u(r,\a_1)>u(r,\a)$ for all $r\in(r_0,r_1)$. A
+  %contradiction, hence $u(r,\a)<0$ on $[r_0,\infty)$ and the hyperbolic decay
+  %holds on $[r_0,\infty)$.
+  %
+It follows that $u'(r,\a)\leq0$ on $[r_0,\infty)$. 
+%Hence $u(r,\a)<0$ on $(r_0,r)$.  which contradicts the assumption on $r_1$.
+%Thus $r_1=\infty$ and \# (Hence $u(r,\a)>0$ for $r>r_0$). 
+Note how $u'(r,\a)\uparrow0$ for $r\to\infty$. Then $u(r,\a)$ has some lower
+bound. Since the solution is bounded, $\underset{r\to\infty}{\lim}u(r,\a)=L$, it
+is defined on $(0,\infty)$.  \end{claimproof}
+
+\subsection{Upper bound} 
+\begin{claim} 
+%Solutions $u(r,\a)$ are decreasing and hence bounded above by the initial
+%condition: $u(r,\a)\leq u(0,\a)=\a$ for $r\geq0$. 
+$u(r,\a)\leq u(0,\a)=\a$ for $r\geq0$. 
+%and (ii) $u(r,\a)\geq U_{\text{min}}$ with $U_{\text{min}}$ finite. 
+\end{claim} 
+%\begin{claimproof} 
+%This follows from analysing the following
+%equation of which the derivation is given: 
+%\be \label{gint}
+%-\frac{1}{2}[u'(r)]^2-(N-1)\int_0^r[u'(s)]^2\frac{ds}{s}=
+%G(u(\alpha,r))-G(\alpha).  
+%\ee
+%
+
+We start with the \eqref{ivp} and multiply by $u'(r)$, then we integrate from
+$0$ to $r$ to obtain
+%\[ -u''(r)-\frac{N-1}{r}u'(r)=g(u(r)) \] 
+%@ Then multiplying by $u'(r)$ and integrating from $0$ to $r$ to obtain: 
+\[ -\int_0^r\left[u'(s)u''(s)\right]ds-
+\int_0^r\left[\frac{N-1}{s}[u'(s)]^2\right]\diff s=
+\int_0^r\left[u'(s)g(u(s))\right]\diff s. \] 
+%@ Now use (a) and (b) to simplify the first and last term of 
+%the equation in step 2: 
+By using the chain rule and the initial condition $u'(0)=0$ we obtain
+\[ \od{}{r}[u'(r)^2]=2u'(r)u''(r)\iff
+\half[u'(r)]^2= \int_0^r\left[u'(s)u''(s)\right]\diff s. \]
+  % @@ as well as $u'(0)=0$ by the IVP \eqref{ivp}, @@ the first term can be
+  % simplified as follows:
+  % \[-\int_0^r\left[u'(s)u''(s)\right]ds=-\frac{1}{2}\int_0^r\frac{d}{dr}[u'(r)^2]ds=-\frac{1}{2}\left(u'(r)^2-u'(0)^2\right)=-\frac{1}{2}u'(r)^2\].
+  @@ By the fundamental theorem of calculus: \[
+  \int_0^r\left[u'(s)g(u(s))\right]ds=
+  \int_0^r\left[\frac{du}{ds}g(u(s))\right]ds= \int_0^r g(u)du=
+  G(u(\alpha,r))-G(u(0,\alpha)).  \]
+  % -\frac{1}{2}[u'(r)]^2-(N-1)\int_0^r[u'(s)]^2\frac{ds}{s}&= \int_0^r
+  % g(u(s))\frac{du}{ds}ds= \int_0^r g(u)du.
+  @ Note that $u(0,\alpha)=\alpha$ to obtain \cref{eq:gint}: \[
+  -\frac{1}{2}[u'(r)]^2-(N-1)\int_0^r[u'(s)]^2\frac{ds}{s}=
+  G(u(\alpha,r))-G(\alpha).  \]
+  
+@ Now, suppose by contradiction that $u$ is not bounded above by the initial
+condition. That is, $u(r_0,\alpha)>u(0,\alpha)=\alpha$ for some $r_0>0$. 
+
+By assumption, $g$ is increasing on $(\kappa,\infty)$. As a result, $G$ is
+increasing on $(\kappa,\infty)$. That is, for $u(r,\a)>\kappa$ both $g$ and $G$
+are increasing.
+
+%@ This implies that
+$$G(u(r_0,\alpha))-G(u(0,\alpha))=G(u(r_0,\alpha))-G(\alpha)>0.$$ 
+%\end{easylist}
+
+An impossible result: the right hand side of \cref{eq:gint} is
+positive, yet the left hand side is obviously negative. By this contradiction,
+the assumption is wrong and $u(r,\a)$ is bounded above by the initial condition.
+That is, $u(r,\alpha)\leq\alpha$ for $r\geq0$.  
+%\end{claimproof}
+  %
+  % \begin{align*}\label{ivpint}
+  %
+  % \text{Starting from the IVP: }-u''(r)-\frac{N-1}{r}u'(r)&= g(u(r))\\
+  %
+  % -\int_0^r\left[u'(s)u''(s)\right]ds-
+  % \int_0^r\left[\frac{N-1}{s}[u'(s)]^2\right]ds&=
+  % \int_0^r\left[u'(s)g(u(s))\right]ds\\
+  %
+  % \notag\text{Use }\frac{d}{dr}\left[(u'(r))^2\right]= 2u'(r)u''(r)\iff
+  % -\frac{1}{2}[u'(r)]^2&= -\int_0^r\left[u'(s)u''(s)\right]ds\text{, and }
+  % u'(r)=\frac{du}{ds}:\\
+  %
+  % \\
+  %
+  % \end{align*}
+  %
+  % \showtheseframes
+  %
+  % {\color{teal}\begin{easylist}[enumerate] @ By the chain rule,
+  % \(\frac{d}{dr}[u'(r)^2]=2u'(r)u''(r)\).  @ Then,
+  % \(-\int_0^r\left[u'(s)u''(s)\right]ds=-\frac{1}{2}\int_0^r\frac{d}{dr}[u'(r)^2]ds=-\frac{1}{2}\left(u'(r)^2-u'(0)^2\right)\).
+  % @ By the initial value problem, \(u'(0)=0\).  @ Lastly,
+  % \(u'(s)g(u(s))ds=\frac{du}{ds}g(u(s))ds=g(u)du\).  \end{easylist}}
+  
+  
+  %
+  % Suppose that $u'>0$ for $r$ small.  Then $u(\alpha,r)>u(\alpha,0)$ and since
+  % $G$ is nondecreasing on $(\kappa,\lambda)$ the right hand side is positive
+  % $G(u(\alpha,r))-G(\alpha)>0$.  Then \begin{align*}
+  % -\frac{1}{2}[u'(r)]^2-(N-1)\int_0^r[u'(s)]^2\frac{ds}{s}&>0\\
+  % \frac{1}{2}[u'(r)]^2+(N-1)\int_0^r[u'(s)]^2\frac{ds}{s}&<0\quad\text{\Lightning},
+  % \end{align*} which is clearly impossible, both terms are positive.
+  % Conclusion: the solution is decreasing at first and bounded above by the
+  % initial condition. In fact, suppose $u(\alpha,r)\geq\alpha$ for some
+  % $r_0>0$, then again $G(u(r_0,\a))-G(\alpha)>0$ and the same contradiction is
+  % found.
+  %Define $r_1\coloneqq\inf(r>r_0,u(\alpha,r_1)>0)$. By condition (A1),
+  %$g(u(r_0))=0$.   {\color{red} How will the derivative evolve now? The
+  %derivative will vanish hyperbolically from there. In other words, let $r_0>0$
+  %such that $u(r_0,\a)=0$ and $u'(r_0,\a)\leq0$, then for $r\geq r_0$:
+  %
