@@ -142,7 +142,8 @@
 \definecolor{airforceblue}{rgb}{0.25, 0.45, 0.55}
 \definecolor{brightmaroon}{rgb}{0.76, 0.13, 0.28}
 \definecolor{cadmiumgreen}{rgb}{0.0, 0.50, 0.00}
-\definecolor{darkpastelgreen}{rgb}{0.20, 0.70, 0.10}
+% \definecolor{darkpastelgreen}{rgb}{0.20, 0.70, 0.10}
+\definecolor{darkpastelgreen}{rgb}{0.05, 0.55, 0.00}
 \definecolor{orangajappor}{rgb}{0.80, 0.40, 0.00}
 \newcommand{\todogroup}{\begingroup\color{brightmaroon}TODO: }
 \newcommand{\newgroup}{\begingroup\color{airforceblue}NEW: }

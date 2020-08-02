@@ -30,9 +30,9 @@
 \contentsline {subsection}{\numberline {3.1.2}Hypotheses on the non-autonomous term}{21}{subsection.3.1.2}% 
 \contentsline {section}{\numberline {3.2}Sturm theory and related lemmata}{22}{section.3.2}% 
 \contentsline {section}{\numberline {3.3}Basic properties of solutions}{23}{section.3.3}% 
-\contentsline {section}{\numberline {3.4}Auxiliary functions related to solutions}{26}{section.3.4}% 
-\contentsline {section}{\numberline {3.5}More advanced properties of solutions}{29}{section.3.5}% 
-\contentsline {section}{\numberline {3.6}Proof of main theorem}{32}{section.3.6}% 
-\contentsline {section}{\color {title}References}{32}{section.3.6}% 
+\contentsline {section}{\numberline {3.4}Auxiliary functions related to solutions}{27}{section.3.4}% 
+\contentsline {section}{\numberline {3.5}More advanced properties of solutions}{31}{section.3.5}% 
+\contentsline {section}{\numberline {3.6}Proof of main theorem}{34}{section.3.6}% 
+\contentsline {section}{\color {title}References}{34}{section.3.6}% 
 \gdef \the@ipfilectr {}
 \contentsfinish 
