@@ -5,8 +5,261 @@
 % ---
 
 % ---
+% 
+% % {\red Then $\sib$ is defined by the zero of $\phib$. Since $\beta$ was arbitrary,
+% % $\sib$ is defined by $\phib$ for all $\beta$ and $\sib$ is unique.  That $\sib$
+% % is continuous and decreasing is shown below.}
+% % 
+% %Draw the following: $x$-axis is the $\beta$-axis and goes from 0 to
+% %$\bar{\beta}$. The $y$-axis is the $r$-axis and goes from 0 (in $\bar{\beta}$)
+% %to some finite number $\sigma(0)>0$. For any $\beta$ between 0 and
+% %$\bar{\beta}$ there is a corresponding $\sigma(\beta)$. As this value needs to
+% %agree with the property of $\phi_{\beta}(r)$--$\phi_{\beta}(r)<0$ for
+% %$r<\sigma(\beta)$ and $\phi_{\beta}(r)>0$ for $r>\sigma{\beta}$-- for all
+% %$\beta$ then $\sigma$ is uniquely defined!
+% % 
+% % \revgroup 
+% % In $\phib(r)$, factor out a term of $V(r)u(r)^p>0$ and gather the other terms
+% % into $\xi(r)$ as follows:
+% % \begin{align*}
+% % \phi_{\beta}(r)&=\left[\beta(p-1)-2\right]V(r)u(r)^p-rV'(r)u(r)^p+
+% % 2\lambda u(r) \\
+% % &=V(r)u(r)^p\left[\beta(p-1)-2-\frac{rV'(r)u(r)^p}{V(r)u(r)^p}+
+% % \frac{2\lambda u(r)}{V(r)u(r)^p}\right]\\
+% % &=V(r)u(r)^p\left[\beta(p-1)-2-r\frac{V'(r)}{V(r)}+
+% % \frac{2\lambda}{V(r)u(r)^{p-1}}\right]\\
+% % &= V(r)u(r)^p\left[\beta(p-1)-2-\xi(r)\right]\\ 
+% % \text{where }\xi(r)&=r\frac{V'(r)}{V(r)}-\frac{2\lambda}{V(r)u(r)^{p-1}}.  
+% % \end{align*}
+% % \endgroup
+% % 
+% We note that by \eqref{}
+% \[
+% \phib(r)>0 \iff \beta > \Xi(r) \quad \text{and} \quad 
+% \phib(r)<0 \iff \beta < \Xi(r).
+% \]
+% 
+% {\red choose between two representations
+% We claim that $\xi(r)$ is non-positive and strictly decreasing on $(,)$
+% \be \label{xiclaim}
+% \begin{dcases}
+% \xi(r) \leq 0 \quad \text{on} ~ (,)\\
+% \xi'(r) < 0 \quad \text{on} ~ (,)
+% \end{dcases}
+% \ee
+% 
+% In other words: 
+% $$\xi(r)\leq0\text{ and }\xi'(r)<0\text{ on }(0,\za).$$ 
+% }
+% 
+% By \eqref{vh4}, we have $h'(r) \leq 0$ on $(0, \infty)$. Since $u'(r, \a) < 0$
+% by Lemma \ref{genlem2} and $V' \leq 0$ by \eqref{vh2}, the second term in
+% $\xi(r)$ is strictly decreasing. Hence, $\xi'(r) < 0$. 
+% 
+% % To see this, note how the first fraction in the expression for $\xi(r)$ is
+% % nonincreasing: 
+% % $$h(r)=r\frac{V'(r)}{V(r)}$$ 
+% % 
+% % as the numerator $V'(r)$ is negative everywhere, the denominator $V(r)$ is
+% % positive everywhere and of course $r>0$. By similar reasoning, the second term
+% % of $\xi(r)$ is strictly decreasing. We know that $V(r)$ is decreasing and so is
+% % $u(r)$ (hence $u(r)^{p-1}$ as well). Since the numerator $\lambda>0$ is constant
+% % and the denominator is strictly decreasing, the fraction is strictly increasing
+% % such that the second term of $\xi(r)$ is strictly decreasing. Thus $\xi(r)$ is
+% % strictly decreasing. 
+% 
+% Since $u(z(\alpha))=0$ for $\a \in N$ and $u(r, \a) \to 0$ as $r \to \infty$ for
+% $\a \in G$, we conclude that 
+% \be \label{xilim}
+% \lim_{r\to z(\alpha)}\xi(r)=-\infty,
+% \ee
+% 
+% {\red maybe clean up notation: introduce somewhere the notation $\za = \infty$
+% for $\a \in G$ to unite the cases for $\a \in G$ and $\a \in N$.}
+% 
+% % Even if $V(r)$ is non-zero, then still, the fraction blows up by the behaviour
+% % of $u(r)$ near $\za$.
+% % 
+% % Next, we can show that $\Xi(0)>0$ and $\Xi(r)$ is continuous and strictly
+% % decreasing. First $\Xi(r)$ is strictly decreasing because $\xi(r)$ is strictly
+% % decreasing and $\Xi(r)$ is a monotonous transformation \# ?. By similar
+% % argument, $\Xi(r)$ is continous. $\Xi(r)=\left[2+\xi(r)\right]/(p-1)$ satisfies
+% % $\Xi(0)>0$. To see that $\Xi(0)>0$, evaluate $\xi(r)$ in $r=0$ and compare:
+% % $$\Xi(0)>0\iff\xi(0)>-2.$$
+% % 
+% % Evaluating $\xi(0)$ for infinite $V(0)$ relies on \#. When $V(0)=\infty$ then
+% % the second term in $\xi(0)$ is zero, since $u(0,\a)^{p-1}=\a^{p-1}$. Then
+% % $\xi(0)=h_0$. And by \# $h_0+k\geq0$ so $h_0>-k$. Since $k\in(0,2)$ the lowest
+% % bound for $h_0$ is $-k>-2$. Alternatively, when $V(0)$ is finite, then $h_0=0$
+% % by \#. Then $$\xi(0)=-\frac{2\lambda}{\a^{p-1}V(0)}.$$ Now we can solve for $\a$
+% % to find the values of $\a$ for which $\xi(0)>-2$.  
+% \[
+% \Xi(0)>0\iff\xi(0)>-2.
+% \]
+% \revgroup 
+% 
+% \begin{align*}
+% -\frac{2\lambda}{\a^{p-1}V(0)}>-2\\ \frac{\lambda}{\a^{p-1}V(0)}<1\\
+% \frac{\lambda}{V(0)}<\a^{p-1}\\ 
+% \a > \left[\frac{\lambda}{V(0)}\right]^{\frac{1}{p-1}} 
+% \end{align*} 
+% 
+% which is confirmed by the assumption that $\a\in G\cup N$ \# is it?.
+% 
+% Trailing back our steps, we see that $\xi(0)>-2$ which implies $\Xi(0)>0$. For
+% any $\beta\in(0,\bar{\beta})$ we have
+% $$\beta<\Xi(r)\iff\beta(p-1)-2-\xi(r)<0\quad\text{ and vice versa.}$$ 
+% 
+% \# conclude that this verifies the existence of the unique function
+% $\sigma(\beta)$ with the aforementioned properties. that is $\sigma(\beta)$ is
+% continuous and decreasing and $\sigma(0)>0$ and $\sigma(\bar{\beta})=0$ as well
+% as $\sigma(\beta)$ determing the sign of $\phi_\beta(r)$ for all $\beta>0$.
+% \end{proof}
+% \endgroup
+% ---
+
+% 
+% In lemma 4 the above w \# argument will be used to show that the sign of
+% $\phib(r)$ is related to a continuous decreasing function $\sib(r)$ and this
+% function intersects $\rb$ in a unique $\beta_0$ (lemma 5). The specific
+% $\nu_{\beta_0}$ and $\rho_0=\rho(\beta_0)$ are used in lemma 6 with the Sturm
+% comparison theorem to show that $w$ has a unique zero on $(0,\za)$.
+% 
 
 % ---
+
+... we conclude that $\nu_{\beta}(r)$ satisfies the differential equation... 
+\be \label{nuivp}
+\nu_{\beta}''(r) + \frac{1}{r}\nu_{\beta}(r)' - \lambda\nu_{\beta} + 
+pV(r)u(r)^{p-1} \nu_{\beta} = \phi_{\beta}(r)
+\ee
+
+where the function $\phib(r)$ is defined as
+\be \label{phibdef}
+\phi_{\beta}(r) \coloneqq \left[\beta(p-1)-2\right] V(r)u(r)^p - 
+rV'(r)u(r)^p+2\lambda u(r).
+\ee
+\# derivation must be somewhere}
+
+% ---
+
+{\red Write about correspondence between zero of nub and rhob}
+
+\revgroup
+We will show that $\nub(r)$ changes sign in $\rb$. We note that on the one hand,
+that $u(r,\a) > 0$ for $0 < r < \za$. On the other hand, by \eqref{} we have
+% however by \eqref{nubdef} we have
+% was positive everywhere on $(0,\za)$ this is not necessarily true for $\nub$.  
+% Note that $u(r)>0$ so $\nub>0$ if $\tr-\beta<0$. 
+%
+% That is, 
+\be
+\begin{dcases}
+0 > \tr - \beta \iff \beta > \tr \iff \rb > r ~ \text{and}\\
+0 < \tr - \beta \iff \beta < \tr \iff \rb < r.
+\end{dcases}
+\ee
+
+{\red move up} Let $\beta>0$, then 
+\be \label{nubrhodep}
+\begin{dcases}
+\nu_{\beta}(r) < 0 \quad \text{if} ~ r > \rho(\beta) ~ \text{and} ~\\
+\nu_{\beta}(r) > 0 \quad \text{if} ~ r < \rho(\beta).
+\end{dcases}
+\ee
+
+Similarly, $\nub<0$ if $\beta<\tr\iff\rb<r$.  
+\endgroup
+
+
+% ---
+
+% {\red $\theta'(r)$ is increasing by a reference and $\tr \to \infty$ as $r \to
+% \za$ also by a reference. Reference $=$ Yanagida.}
+% Combined with the fact that $\theta(r)$ is increasing ($\theta'(r)>0$). 
+% Hence, $\theta(r)>0$ on $(0,\za)$. 
+% 
+% Lastly, the function is unbounded as
+% We claim that 
+% \[
+%     \underset{r\to\za}{\lim}\theta(r)=\infty.
+% \]
+% \endgroup
+% 
+
+% ---
+
+
+% \begin{multline}
+%     \nub''(r) + \frac{1}{r} \nub'(r) - \lambda \nub(r) + p V(r) u(r)^{p-1}
+%     \nub(r) \\
+%     = \lambda u(r) + \underline{\lambda r u'(r)} - V(r) u(r)^p
+%     - r V'(r) u(r)^p - \underline{r p V(r) u(r)^{p-1} u'(r)} + \beta u''(r)\\
+%     + u''(r) + \frac{1}{r} u'(r) + \frac{1}{r} \beta u'(r)
+%     - \underline{\lambda r u'(r)} - \lambda \beta u(r)
+%     + \underline{r p V(r) u(r)^{p-1} u'(r)} + \beta p V(r) u(r)^p
+% \end{multline}
+% 
+% ---
+
+% However, when the left hand side of \eqref{lyasolv} is non-negative, the
+% strict inequality breaks down, since the right hand side is non-positive. Hence,
+% \be \label{lyacond}
+%     \frac{1}{p+1} V(0)\alpha^{p+1}
+%     - \frac{\lambda}{2}\alpha^2
+%     \geq 0 \quad \iff \quad
+% 
+% are initial conditions $\a$ that cannot satisfy $E(0) < 0$. 
+% 
+% For initial conditions $\a \in P$, we can be sure that 
+% implies that any initial condition with $\a$
+% \be \label{e0sep}
+% \begin{dcases}
+%     E(0) \geq 0 \quad \text{for} ~ \a \in G \cup N \\
+%     E(0) < 0 \quad \text{for} ~ \a \in P.
+% \end{dcases}
+% \ee
+% On the other hand, if $E(0) < 0$, we have $\a \in P$. 
+% 
+% We will solve $E(0) < 0$ for $\a$, where we remember that $u(0, \a) = \a > 0$
+% \[ 
+%     E(0) = \half u'(0)^2 - \frac{\lambda}{2} \a^2
+%     + \frac{1}{p+1} V(0) \a^{p+1} < 0. 
+% \]
+% 
+% {\red actually, lim $(ru') = 0$ for $r$ down to $0$. 
+%     %WRONG: We use $u'(0)=0$ and $u(0)=\a$ to simplify the expression to
+% \[ 
+%     E(0) = -\frac{\lambda}{2}\alpha^2 + 
+%     \frac{1}{p+1} V(0)\alpha^{p+1} = 0. 
+% \]}
+% 
+% So that we obtain 
+% \[
+% \a < \left[\left( \frac{p+1}{2}\right) \frac{\lambda}{V(0)}
+% \right]^{\tfrac{1}{p-1}} .
+% \]
+% 
+% 
+% ---
+
+% and note
+% \be \begin{dcases}
+%     \phib(r) > 0 \iff \beta (p-1) - 2 - \xi(r) > 0, ~ \text{and}\\
+%     \phib(r) < 0 \iff \beta (p-1) - 2 - \xi(r) < 0.
+% \end{dcases} \ee
+% 
+% To study how the zero of {\red this term} depends on the choice of $\beta$ we
+% will define and analyse the function $\Xi(r)$
+% \[ 
+%     \beta (p-1) - 2 - \xi(r) = 0 
+% \]
+% 
+% we will define and analyse the function $\Xi(r)$ 
+% \[ 
+%     \beta (p-1) - 2 - \xi(r) = 0 \iff 
+%     \beta = \frac{2 + \xi(r)}{p - 1} \coloneqq \Xi(r).
+% \] 
 
 % ---
 

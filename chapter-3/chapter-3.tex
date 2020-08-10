@@ -14,13 +14,31 @@
 %      MARK THEOREM
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Main uniqueness theorem}
+In the previous chapter, we studied the shooting argument presented in
+\cite{ber81} that showed the existence of solutions to initial value problem 
+\eqref{ivp}. We will study the uniqueness of solutions to a related problem, see
+\eqref{genuivp} below. The method is due to Coffman and was later generalised
+by Kwong for the autonomous problem with arbitrary $n$.
+
+We note that setting $n = 2$ in \eqref{ivp} yields a specific case of
+\eqref{genuivp} where 
+\[
+    \lambda = 0, ~ p = 3 ~ \text{and} ~ V(r) = 1.
+\]
+
+In relation to the general problem \eqref{pde}, we obtain \eqref{genuivp} by
+setting $n = 2$ and
+\be \label{gennonlin}
+    f(u, r) = \lambda u - V(r) u^p.
+\ee
 % This chapter deals with a different initial value problem.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      MARK IVP
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{New initial value problem and nonlinearity}
-The uniqueness of ground state solutions to the initial value problem
+In \cite{gen11}, the uniqueness of ground state solutions was shown for
+% the initial value problem
 \be \label{genuivp}
 \begin{dcases}
 u'' + \frac{1}{r} u' - \lambda u + V(r) u^p = 0,\quad r>0,\quad 
@@ -29,23 +47,14 @@ u(0, \a) = \a > 0,\quad \underset{r\to 0}{\lim} ~ ru'(r ,\a) = 0,
 \end{dcases}
 \ee
 
-where $\lambda > 0$ and $p > 1$, {\red was proven} in \cite{gen11}. The
-assumptions on $V(r)$ required by \cref{genmain} are discussed in \cref{hypv}. 
+where $\lambda > 0$ and $p > 1$.  
+% The theorem is stated below, see \Cref{genmain}, in which certain assumptions
+% are made about $V(r)$. These are discussed in \cref{hypv}. 
 
-We note that setting $N = 2$ in \eqref{ivp} yields a specific case of
-\eqref{genuivp} where 
-\[
-    \lambda = 0, ~ p = 3 ~ \text{and} ~ V(r) = 1.
-\]
-
-In relation to the general problem \eqref{pde}, we have
-\be \label{gennonlin}
-    f(u, r) = \lambda u - V(r) u^p.
-\ee
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      MARK W IVP
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Furthermore, we will define $w = w(r,\a) \coloneqq \frac{\partial}{\partial \a}
+Furthermore, we define $w = w(r,\a) \coloneqq \frac{\partial}{\partial \a}
 u(r, a)$, which satisfies the IVP
 \be \label{genwivp}
 \begin{dcases}
@@ -59,9 +68,8 @@ u(r, a)$, which satisfies the IVP
 %      MARK HYPOTHESES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Hypotheses on the non-autonomous term}\label{hypv}
-\donegroup
 The nonlinearity \eqref{gennonlin} contains the non-autonomous term $V(r)$. The
-following assumptions will be made: $V(r)$ is continuous and continuously 
+following hypotheses are made: $V(r)$ is continuous and continuously
 differentiable
 \be \label{vh1} 
     V \in C^1 (0, \infty); 
@@ -80,15 +88,13 @@ Lastly, we define
 \be \label{hdef} h(r) \coloneqq r \frac{V'(r)}{V(r)} \ee
 and require that $h(r)$ is non-increasing on $(0, \infty)$ 
 \be \label{vh4} h'(r) \leq 0 \quad \text{on} ~ (0, \infty). \ee
-\endgroup
 
-We now state the main theorem of this chapter.
 \begin{theorem} \label{genmain}
-Suppose that \eqref{vh1}-\eqref{vh4} are satisfied. Then there exists $\a_0>0$ such
+Suppose that \eqref{vh1}--\eqref{vh4} are satisfied. Then there exists $\a_0>0$ such
 that the solution sets of \eqref{genuivp} have the following structure
 \[
-P = \left( 0, \a_0 \right), \quad G = \left\{ \a_0 \right\}, \quad N =
-\left( \a_0, \infty \right).
+    P = \left( 0, \a_0 \right), \quad G = \left\{ \a_0 \right\}, \quad N =
+    \left( \a_0, \infty \right).
 \]
 \end{theorem}
 
@@ -96,15 +102,14 @@ P = \left( 0, \a_0 \right), \quad G = \left\{ \a_0 \right\}, \quad N =
 %      MARK STURM
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Sturm theory and related lemmata}
-\donegroup
-The paper by Genoud {\red refers to / builds on} the paper by Kwong, which
-contains a recap of some Sturmian theory. In particular, the main Sturm
-comparison theorem and certain corollaries, as well as the concept of a
-\emph{disconjugay interval}.
-
-Important theory for the following lemmata is Sturm Comparison theorem as stated
-and proven in for example \cite[p.~246]{kwong}.
-
+% {\red see intro} The paper by Genoud {\red refers to / builds on} the paper by Kwong, which
+% contains a recap of some Sturmian theory. 
+% 
+% In particular, the main Sturm comparison theorem and certain corollaries, as
+% well as the concept of a \emph{disconjugay interval}.
+% 
+The Sturm comparison stated below is important for the following lemmata is
+and proven in (for example) \cite[p.~246]{kwong}.
 
 \begin{theorem}
     Let $U$ and $V$ be solutions, respectively, of the following equations
@@ -138,7 +143,6 @@ and proven in for example \cite[p.~246]{kwong}.
     $\infty$. 
 
 \end{theorem}
-\endgroup
 
 \begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -154,14 +158,12 @@ $\a$. Or actually, that $(\a, \a+\e)\subset N$ and if $\bar{\a}\in N$ then $\za 
 %      MARK LEMMA 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Basic properties of solutions}
-\donegroup
-In this section, we will derive basic properties of solutions to
+In this section, we derive basic properties of solutions to
 \eqref{genuivp}. In particular, we will find an initial condition that
 separates solutions into $\a \in P$ and $\a \in G \cup N$. Next, we will show
 that solutions with $\a \in G \cup N$ are strictly decreasing everywhere.
 Lastly, we show that the derivative with respect to the initial condition
 $w(r)$ has at least one zero in the interval $(0, \za)$. 
-\endgroup
 
 \begin{lemma}\label{genlem1}%\label{lya}
 Suppose that $V(0):=\underset{r\to0}{\lim}~V(r)$ exists and is finite. Then
@@ -169,7 +171,6 @@ Suppose that $V(0):=\underset{r\to0}{\lim}~V(r)$ exists and is finite. Then
 \right]^{1/(p-1)} \implies \alpha\in P. \]
 \end{lemma}
 \begin{proof}
-\donegroup
 We define the Lyapunov (or energy) function $E(r)$ as
 \be \label{lyadef} 
 E(r) \coloneqq \frac{1}{2}u'(r)^2
@@ -219,37 +220,26 @@ On the other hand, for $\a \in G$, we have $u(r) \to 0$ and $u'(r) \to 0$ as $r
 \be \label{epos} 
     E(r) \geq 0 \quad \text{for} ~ \a \in G \cup N.  
 \ee
-\endgroup
 
-In particular, we have 
-\be \label{e0sep}
-\begin{dcases}
-    E(0) \geq 0 \quad \text{for} ~ \a \in G \cup N \\
-    E(0) < 0 \quad \text{for} ~ \a \in P.
-\end{dcases}
+{\red In particular, we have $E(0) \geq 0 ~ \text{for} ~ \a \in G \cup N$. 
+% This has the following consequence. 
+When we solve $E(0) \geq 0$ for $\a$, we get
+\be \label{lyasolv}
+    \frac{1}{p+1} V(0)\alpha^{p+1}
+    - \frac{\lambda}{2}\alpha^2
+    \geq -\half u'(0)^2.
 \ee
-% On the other hand, if $E(0) < 0$, we have $\a \in P$. 
 
-We will solve $E(0) < 0$ for $\a$, where we remember that $u(0, \a) = \a > 0$
-\[ 
-    E(0) = \half u'(0)^2 - \frac{\lambda}{2} \a^2
-    + \frac{1}{p+1} V(0) \a^{p+1} < 0. 
-\]
+The inequality definitely holds whenever the left hand side of \eqref{lyasolv}
+is non-negative. We solve this case for $\a$ to obtain
+\be \label{alphgn}
+    \a \geq \left[
+            \left( \frac{p+1}{2}\right) \frac{\lambda}{V(0)}
+        \right]^{\tfrac{1}{p-1}}.
+\ee
 
-{\red actually, lim $(ru') = 0$ for $r$ down to $0$. 
-    %WRONG: We use $u'(0)=0$ and $u(0)=\a$ to simplify the expression to
-\[ 
-    E(0) = -\frac{\lambda}{2}\alpha^2 + 
-    \frac{1}{p+1} V(0)\alpha^{p+1} = 0. 
-\]}
-
-So that we obtain 
-\[
-\a < \left[\left( \frac{p+1}{2}\right) \frac{\lambda}{V(0)}
-\right]^{\tfrac{1}{p-1}} .
-\]
-
-
+These initial conditions must belong to $G \cup N$. 
+Any other initial conditions might belong to $G\cup N$ or to $P$.}
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -274,22 +264,20 @@ Then there exists $\epsilon > 0$ such that $u''(r, \a) < 0$ for $r \in (0,
 \epsilon)$ and we have
 \[ u'(\epsilon, \a) = \int_0^\epsilon u''(s, \a) ds < 0. \]
 
-\donegroup
 We claim that $u'(r, \a) < 0$ for all $r > 0$. Suppose by contradiction that
-there exists $r_0 \in (0,\za)$ such that $u'(r_0, \a)=0$. Then by
+there exists\\ $r_0 \in (0,\za)$ such that $u'(r_0, \a)=0$. Then by
 \eqref{genuivp} we have 
 \be \label{ivpdev0} 
 u''(r_0, \a) - \lambda u(r_0, \a) + V(r_0) u(r_0, \a)^p = 0. 
 \ee
 
 Since $u'(r, \a) < 0$ on $(0, r_0)$, we have $u''(r_0, \a) \geq 0$. 
-Solving for $u''(r_0, \a)$ in \eqref{ivpdev0} 
+When we separate $u''(r_0, \a)$ in \eqref{ivpdev0} 
 \[ \lambda u(r_0,\a) - V(r_0) u(r_0,\a)^p = u''(r_0, \a) \geq 0, \]
 
-where we can solve for $u(r_0, \a)$ to find that
+we can solve the left hand side for $u(r_0, \a)$ to find that
 \[ u(r_0, \a) \leq \left[ \frac{\lambda}{V(0)} \right]^{\tfrac{1}{p-1}} <
 \left[ \frac{p+1}{2} \frac{\lambda}{V(0)} \right]^{\tfrac{1}{p-1}}. \]
-\endgroup
 
 Now this implies by \eqref{lyadef} 
 %Lemma \ref{genlem1} 
@@ -297,8 +285,8 @@ that $E(r_0) <
 0$, which contradicts \eqref{epos}. Therefore, we have $u'(r) < 0$ for all $r
 \in (0, \za)$. 
 %{\red short?} 
-Lastly, if we have $u'(\za) = 0$ for $\a \in N$, we have $u
-\equiv 0$. Hence, we have $u'(\za) < 0$.
+Lastly, if $u'(\za) = 0$ for $\a \in N$, then $u \equiv 0$. 
+Hence, we have $u'(\za) < 0$.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -348,15 +336,15 @@ Furthermore, the right hand side of \eqref{genlem3longdiff} can be simplified to
     (p-1) \int_0^{\za} r V(r) u(r)^p w(r) \diff r,
 \]
 
-such that \eqref{genlem3longdiff} can be simplified to
+such that \eqref{genlem3longdiff} reads
 \be \label{genlem3neq}
 w(\za) \za u'(\za) = (p-1) \int_0^{\za} r V(r) u(r)^p w(r) \diff r.
 \ee
 
-By Lemma \ref{genlem2}, we have $u'(\za) < 0$. If $w > 0$ holds, then $w(\za) >
-0$ and the left hand side of \eqref{genlem3neq} is negative. However, the right
-hand side is positive. Hence, $w(\za) < 0$ and $w$ has at least one zero in $(0,
-\za)$. 
+By Lemma \ref{genlem2}, we have $u'(\za) < 0$. If $w > 0$ holds on $(0, \za)$,
+then $w(\za) \geq 0$ and the left hand side of \eqref{genlem3neq} is
+non-positive. However, the right hand side is positive. Hence, $w$ has at least
+one zero in $(0, \za)$. 
 
 On the other hand, for $\a \in G$, we assume by contradiction that $w > 0$
 on $(0, \infty)$. 
@@ -386,277 +374,269 @@ and combined with $u(0) = \a > 0$ and $w(r) = 1$ from \eqref{genuivp} and
     \frac{u(r)}{w(r)} > 0 \quad \text{on}~ (0, \infty).
 \ee
 
-{\red By several theorems and lemmata in \cite{genthes}, we know that the limit
-as r to infinity of \eqref{uwpos} is 0, contradicting \eqref{uwdev}.}
-
-{\red deal with $\a \in G$ case referring to Genouds thesis, which needs to be
-added to the references. EXPAND EXPAND} 
+The remainder of this proof consists of earlier results by Genoud. We refer to
+\cite[Proof of Lemma  2, p. 487]{gen11} for more details and the references. In
+summary, we can show that 
+\[
+    \underset{r\to\infty}{\lim} \frac{u(r)}{w(r)} = 0,
+\]
+contradicting \eqref{uwdev}. By this contradiction, $w$ has at least one zero on
+$(0, \infty)$.
+% 
+% {\red By several theorems and lemmata in \cite{genthes}, we know that the limit
+% as r to infinity of \eqref{uwpos} is 0, contradicting \eqref{uwdev}.}
+% 
+% {\red deal with $\a \in G$ case referring to Genouds thesis, which needs to be
+% added to the references. EXPAND EXPAND} 
 \end{proof}
 
 \section{Auxiliary functions related to solutions}
-$\theta$ and $\rho$ and $\nu$ and $\phi$ and $\xi$ mostly
+% $\theta$ and $\rho$ and $\nu$ and $\phi$ and $\xi$ mostly
 
-In the lemmata following, many related properties are used. This section is
-dedicated to properly introducing those functions and their properties. A
-\emph{shopping list}: we will introduce $\theta(r)$, $\rho(\beta)$,
-$\nu_\beta(r)$, $\phi_\beta(r)$. Then lemma 4 introduces $\sigma(\beta)$,
-$\xi(r)$, $\Xi(r)$. All of these functions are related to the original initial
-value problem in $u(r)$, to the problem in $w(r)$ or to the problem $\nu(r)$
-which is a transformation of the problem in $u(r)$ including the $\beta$
-parameter. This $\beta$ will be fixed in lemma 5 to construct a zero $\rho_0$
-for the $\nu(r)$ problem. In lemma 6 the problem in $\nu(r)$ and $w(r)$ are
-Sturm compared to show that the zero of $w(r)$ is unique. The uniqueness of the
-zero of $w(r)$ will translate to the monotone decreasing $\za$ which translates
-to the structure of $I=P\cup G\cup N$ and the required uniqueness result.
+In the lemmata that follow, many properties related to initial value problems
+\eqref{genuivp} and \eqref{genwivp} are used. This section is dedicated to
+introducing those functions and some of their properties. In the end, we will be
+familiar with the following functions and their properties: $\tr, ~ \rb, ~
+\nub(r) ~ \text{and} ~ \phib(r).$ Furthermore, in \Cref{genlem4}, we will define
+the function $\sib$ as the inverse of $\Xi(r)$, which is a transformation of
+$\xi(r)$, that relates the zero of $\phib(r)$ to $\beta$. This will be
+used in \Cref{genlem5} to find $\beta_0$, for which the zero of $\nub(r)$ and
+$\phib(r)$ coincide. From then on, we will fix $\beta = \beta_0$. By this
+construction $\nu(r)=\nu_{\beta_0}(r)$ has a unique zero, that can be used to
+show that $w(r)$ has a unique zero in \Cref{genlem6}.
 
-{\green First, we define the function $\theta(r)$ as: 
-\[ 
+% A \emph{shopping list}: we will introduce $\theta(r)$, $\rho(\beta)$,
+% $\nu_\beta(r)$, $\phi_\beta(r)$. Then lemma 4 introduces $\sigma(\beta)$,
+% $\xi(r)$, $\Xi(r)$. All of these functions are related to the original initial
+% value problem in $u(r)$, to the problem in $w(r)$ or to the problem $\nu(r)$
+% which is a transformation of the problem in $u(r)$ including the $\beta$
+% parameter. This $\beta$ will be fixed in lemma 5 to construct a zero $\rho_0$
+% for the $\nu(r)$ problem. In lemma 6 the problem in $\nu(r)$ and $w(r)$ are
+% Sturm compared to show that the zero of $w(r)$ is unique. The uniqueness of the
+% zero of $w(r)$ will translate to the monotone decreasing $\za$ which translates
+% to the structure of $I=P\cup G\cup N$ and the required uniqueness result.
+
+% \donegroup
+First, we define the function $\theta(r)$ as: 
+\be \label{thetadef} 
     \theta(r)\coloneqq-r\frac{u'(r)}{u(r)}\text{, for }r\in[0,z(\alpha).
-\]
+\ee
 
-The limit of $\theta(r)$ as $r \to 0$ is calculated as: 
+Next, the limit of $\theta(r)$ as $r \to 0$ is calculated as: 
 \[
-    \theta(0) = \underset{r \downarrow 0}{\lim} \theta(r) = 
+    \theta(0) = \underset{r \downarrow 0}{\lim} ~ \theta(r) = 
     \underset{r\downarrow0}{\lim} \left(-r\frac{u'(r)}{u(r)}\right) =
     \underset{r\downarrow0}{\lim}\frac{-ru'(r)}{\a} = 0.
-\]}
-
-\revgroup
-{\red $\theta'(r)$ is increasing by a reference and $\tr \to \infty$ as $r \to
-\za$ also by a reference. Reference $=$ Yanagida.}
-Combined with the fact that $\theta(r)$ is increasing ($\theta'(r)>0$). 
-Hence, $\theta(r)>0$ on $(0,\za)$. Lastly, the function is unbounded as
-$\underset{r\to\za}{\lim}\theta(r)=\infty$.
-
-To see this, let $\a\in N$ then $\za$ is the first zero of the solution
-$u(r,\a)$. Also, by \# the derivative is negative everywhere. Hence by
-definition of $\theta(r)$ the limit for $r\to\za$ is infinity. A similar
-argument holds for $\a\in G$.
-\endgroup
-
-\donegroup
-We define the inverse of $\tr$ as $\rho\coloneqq\theta^{-1}$, which exists
-since $\theta(r)$ is continuous and increasing. We have the relation
-\[
-    \rb = r \iff \theta(r) = \beta.
 \]
 
-We have $\rho(0) = 0$ and $\underset{\beta\to\infty}{\lim} \rb = \za$. Since
-$\rb$ is continuous and increasing in $\beta$, we have $\rb > 0$ on
-$(0,\infty)$. {\red \# image of $\theta(r)$ and inverse $\rb$. See notebook 23.}
+From Lemma 4.3 and Remark 4.1 (ii) in \cite{yana}, we know that $\tr$ is
+increasing on $(0, \za)$. Hence,
+\[
+    \tr > 0 ~ \text{on} ~ (0, \za).
+\]
 
-We define a transform of the solution $u(r)$ as 
+Lastly, let $\a\in N$. (A similar argument holds for $\a\in G$.) Then $\za$ is the first
+zero of the solution $u(r,\a)$. Also, by \Cref{genlem2} the derivative is
+negative everywhere.  Hence, by the definition of $\theta(r)$ in
+\eqref{thetadef}, we have
+\[
+    \underset{r\to\za}{\lim}\tr=\infty.
+\]
+We define $\nub(r)$ that depends on the solution $u(r)$ as 
 \be \label{nubdef} 
-    \nu_{\beta}(r) \coloneqq ru'(r) + \beta u(r) = -u(r)\{\theta(r)-\beta\}.
-\ee
-\endgroup
-
-\revgroup
-We will show that $\nub(r)$ changes sign in $\rb$. We note that on the one hand,
-that $u(r,\a) > 0$ for $0 < r < \za$. On the other hand, by \eqref{} we have
-% however by \eqref{nubdef} we have
-% was positive everywhere on $(0,\za)$ this is not necessarily true for $\nub$.  
-% Note that $u(r)>0$ so $\nub>0$ if $\tr-\beta<0$. 
-%
-% That is, 
-\be
-\begin{dcases}
-    0 > \tr - \beta \iff \beta > \tr \iff \rb > r ~ \text{and}\\
-    0 < \tr - \beta \iff \beta < \tr \iff \rb < r.
-\end{dcases}
+    \nu_{\beta}(r) \coloneqq ru'(r) + \beta u(r) =
+    -u(r)\left\{\theta(r)-\beta\right\}.
 \ee
 
-{\red move up} Let $\beta>0$, then 
-\be
-\begin{dcases}
-    \nu_{\beta}(r) < 0 \quad \text{if} ~ r > \rho(\beta) ~ \text{and} ~\\
-    \nu_{\beta}(r) > 0 \quad \text{if} ~ r < \rho(\beta).
-\end{dcases}
+%the inverse of $\tr$ as 
+We define $\rho\coloneqq\theta^{-1}$, which exists since $\theta(r)$ is
+continuous and increasing. Then, by \eqref{nubdef} % we have the relation
+\be \label{rhothetainverse}
+    \rb = r \iff \theta(r) = \beta.
 \ee
 
-Similarly, $\nub<0$ if $\beta<\tr\iff\rb<r$.  
-\endgroup
+Furthermore, we have $\rho(0) = 0$ and $\underset{\beta\to\infty}{\lim} \rb =
+\za$. Since $\rb$ is continuous and increasing in $\beta$, we have $\rb > 0$ on
+$(0,\infty)$. 
+% {\red \# image of $\theta(r)$ and inverse $\rb$. See notebook 23.}
 
-All of these properties can also be illustrated \#. 
-
-... we conclude that $\nu_{\beta}(r)$ satisfies the differential equation... 
-\be \label{nuivp}
-    \nu_{\beta}''(r) + \frac{1}{r}\nu_{\beta}(r)' - \lambda\nu_{\beta} + 
-    pV(r)u(r)^{p-1} \nu_{\beta} = \phi_{\beta}(r)
+There is a correspondence between the value of $\beta > 0$ and the sign of
+$\nub(r)$ by the definition of $\nub(r)$ in \eqref{nubdef} and
+the relation \eqref{rhothetainverse}
+\be \label{nubrhocorr}
+\nub(r) > 0 \quad \text{if} \quad r < \rb \quad \text{and} \quad
+\nub(r) < 0 \quad \text{if} \quad r > \rb.
 \ee
 
-where the function $\phib(r)$ on the right hand side is defined as
+We claim that $\nub''(r)$ satisfies the following differential equation
+\be \label{gennuivp}
+    \nub''(r) + \frac{1}{r} \nub'(r) - \lambda \nub(r) + p V(r) u(r)^{p-1}
+    \nub(r) = \phib(r),
+\ee
+
+where the function $\phib(r)$ is defined as
 \be \label{phibdef}
-    \phi_{\beta}(r) \coloneqq \left[\beta(p-1)-2\right] V(r)u(r)^p - 
-    rV'(r)u(r)^p+2\lambda u(r).
+\phi_{\beta}(r) \coloneqq \left[\beta(p-1)-2\right] V(r)u(r)^p - 
+rV'(r)u(r)^p+2\lambda u(r).
 \ee
-{\red \# derivation must be somewhere}
 
-In lemma 4 the above w \# argument will be used to show that the sign of
-$\phib(r)$ is related to a continuous decreasing function $\sib(r)$ and this
-function intersects $\rb$ in a unique $\beta_0$ (lemma 5). The specific
-$\nu_{\beta_0}$ and $\rho_0=\rho(\beta_0)$ are used in lemma 6 with the Sturm
-comparison theorem to show that $w$ has a unique zero on $(0,\za)$.
+To verify this, we calculate the first and second derivatives of $\nub(r)$ as
+defined in \eqref{nubdef}
+\begin{gather*}
+    \nub'(r) = ru''(r) + u'(r) + \beta u'(r) =
+        \lambda r u(r) - r V(r) u(r)^p + \beta u'(r)\\
+    \nub''(r) = \lambda u(r) + \lambda r u'(r) - V(r) u(r)^p
+    - r V'(r) u(r)^p - r p V(r) u(r)^{p-1} u'(r) + \beta u''(r).
+\end{gather*}
 
+We then calculate the terms of the left-hand side of \eqref{gennuivp} as
+\begin{gather*}
+    \frac{1}{r} \nub'(r) = u''(r) + \frac{1}{r} u'(r) + \frac{1}{r} \beta
+    u'(r)\\
+    - \lambda \nub(r) = - \lambda r u'(r) - \lambda \beta u(r)\\
+    p V(r) u(r)^{p-1} \nub(r) = r p V(r) u(r)^{p-1} u'(r) + \beta p V(r) u(r)^p.
+\end{gather*}
+
+We can add all the terms and write the differential equation as
+\begin{multline}
+    \nub''(r) + \frac{1}{r} \nub'(r) - \lambda \nub(r) + p V(r) u(r)^{p-1}
+    \nub(r) \\
+    = \lambda u(r) + \underline{\lambda r u'(r)} - V(r) u(r)^p
+    - r V'(r) u(r)^p - \underline{r p V(r) u(r)^{p-1} u'(r)} + \beta u''(r)\\
+    + u''(r) + \frac{1}{r} u'(r) + \frac{1}{r} \beta u'(r)\\
+    - \underline{\lambda r u'(r)} - \lambda \beta u(r)\\
+    + \underline{r p V(r) u(r)^{p-1} u'(r)} + \beta p V(r) u(r)^p.
+\end{multline}
+
+The underlined terms cancel out. By IVP \eqref{genuivp}, we can write 
+\[ \begin{dcases}
+    \lambda u(r) - V(r) u(r)^p = u''(r) + \frac{1}{r} u'(r)\\
+    - V(r) u(r)^p = u''(r) + \frac{1}{r} u'(r) - \lambda u(r) 
+\end{dcases}\]
+
+and use these substitutions to write 
+% \begin{multline}
+%     \nub''(r) + \frac{1}{r} \nub'(r) - \lambda \nub(r) + p V(r) u(r)^{p-1}
+%     \nub(r) \\
+%     = \lambda u(r) - V(r) u(r)^p - r V'(r) u(r)^p + \beta u''(r)\\
+%     + \lambda u(r) - V(r) u(r)^p 
+%     + \frac{1}{r} \beta u'(r) - \lambda \beta u(r) + \beta p V(r) u(r)^p
+% \end{multline}
+% 
+% and we gather some $\beta$ terms to write 
+% \begin{multline}
+%     \nub''(r) + \frac{1}{r} \nub'(r) - \lambda \nub(r) + p V(r) u(r)^{p-1}
+%     \nub(r) \\
+%     = 2 \lambda u(r) - 2 V(r) u(r)^p - r V'(r) u(r)^p
+%     + \beta \left( u''(r) + \frac{1}{r} u'(r) - \lambda u(r) \right)
+%     + \beta p V(r) u(r)^p,
+% \end{multline}
+% 
+% where we use $ - V(r) u(r)^p = u''(r) + \frac{1}{r} u'(r) - \lambda u(r)$
+% and factor out $V(r) u(r)^p$ to obtain
+\begin{multline}
+\nub''(r) + \frac{1}{r} \nub'(r) - \lambda \nub(r) + p V(r) u(r)^{p-1}
+\nub(r) \\
+= V(r) u(r)^p \left[ \beta (p-1) -2 \right] 
+- r V'(r) u(r)^p + 2 \lambda u(r) = \phib(r).
+\end{multline}
+
+%{\red All of these properties can also be illustrated \#.}
+%
+% We remember that the goal of this section is to show that $\nub$ has a
+% unique zero for some $\beta > 0$, which will be used in \Cref{genlem6} to show
+% that $w(r, \a)$ has a unique zero on $(0, \za)$. In fact, we can find a
+% $\beta_0$ such that the zero of $\nub$ and $\phib$ coincide. 
+Similar to how the sign of $\nub$ depends on the continuous increasing function
+$\rho(\beta)$, the sign of $\phib$ depends on $\beta$ by a continuous decreasing
+function $\sib$, see \Cref{genlem4} below. In \Cref{genlem5} we will conclude
+that there exists a unique $\beta_0$ such that 
+\[
+    \nu_{\beta_0}(\rho_0)=\phi_{\beta_0}(\rho_0) = 0 ~ 
+    \text{in} ~ \rho_0=\rho(\beta_0).
+\]
+
+The unique zero of $\nub$ will be used to show that $w$ has a unique zero in
+\Cref{genlem6}.
+\newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      MARK LEMMA 4
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \section{More advanced properties of solutions}
 \begin{lemma}\label{genlem4}
-Let $\alpha \in G \cup N$. There exist $\beta_0 > 0$ and a {\red unique} function
+Let $\alpha \in G \cup N$. There exist $\beta_0 > 0$ and a function
 $\sigma : [0, \bar\beta] \to [0, \infty)$ with the following properties:
 \begin{enumerate}[(a)]
 \item  $\sigma$ is continuous and decreasing, $\sigma(0) > 0$ and
 $\sigma(\bar\beta) = 0$; 
 \item for all $\beta > 0$ we have: 
 \[
-    \phi_\beta(r) < 0 \quad \text{if} ~ r < \sigma(\beta), 
-    \quad \text{and} \quad
-    \phi_\beta > 0 \quad \text{if} ~ r > \sigma(\beta). 
+\phi_\beta(r) < 0 \quad \text{if} \quad r < \sigma(\beta), 
+\quad \text{and} \quad
+\phi_\beta > 0 \quad \text{if} \quad r > \sigma(\beta). 
 \]
 \end{enumerate}
 \end{lemma}
 
 \begin{proof}
-\donegroup
-We fix $\beta>0$. Then $\phib(r)$ is fixed, as we can see from \eqref{phibdef}
+We fix $\beta>0$. To simplify $\phib(r)$ as defined in \eqref{phibdef}, we
+define the function
+\be \label{xidef}
+\xi(r) \coloneqq r \frac{V'(r)}{V(r)} - \frac{2 \lambda}{V(r) u(r)^{p-1}}.
+\ee
+
+Then $\phib(r)$ reads
 \[ 
-    \phib(r) = V(r) u(r)^p \left[ \beta (p-1) - 2 - \xi(r) \right]. 
+\phib(r) = V(r) u(r)^p \left[ \beta (p-1) - 2 - \xi(r) \right]. 
+\]
+
+The function $\xi(r)$ is negative and strictly decreasing on $(0, \za)$ with 
+\[
+\underset{r\to\za}{\lim} \xi(r) = -\infty.
 \]
 
 The sign of $\phib(r)$ depends on the term in brackets, since $V > 0$ by
-\eqref{vh2} and $u(r)^p > 0$ by \eqref{upos}. We will define $\Xi(r)$ and note
-that $\phib(r) > 0 \iff \Xi(r) > \beta$ and vice-versa.
-% \be \begin{dcases}
-%     \phib(r) > 0 \iff \beta (p-1) - 2 - \xi(r) > 0, ~ \text{and}\\
-%     \phib(r) < 0 \iff \beta (p-1) - 2 - \xi(r) < 0.
-% \end{dcases} \ee
-% 
-% To study how the zero of {\red this term} depends on the choice of $\beta$ we
-% will define and analyse the function $\Xi(r)$
-% \[ 
-%     \beta (p-1) - 2 - \xi(r) = 0 
-% \]
-% 
-% we will define and analyse the function $\Xi(r)$ 
-% \[ 
-%     \beta (p-1) - 2 - \xi(r) = 0 \iff 
-%     \beta = \frac{2 + \xi(r)}{p - 1} \coloneqq \Xi(r).
-% \] 
+\eqref{vh2} and $u(r)^p > 0$ by \eqref{upos}. We are interested in the zero of
+$\phib$. We will define $\Xi(r)$ such that 
 \[ 
-    \Xi(r) \coloneqq \frac{2 + \xi(r)}{p - 1} = \beta
-    \iff \beta (p-1) - 2 - \xi(r) = 0.
+\Xi(r) \coloneqq \frac{2 + \xi(r)}{p - 1} = \beta
+\iff \beta (p-1) - 2 - \xi(r) = 0.
 \]
-\endgroup
-{\red why does $\xi$ have only one zero?
-Argument why $\phib$ changes sign only once.}
 
-{\red Then $\sib$ is defined by the zero of $\phib$. Since $\beta$ was arbitrary,
-$\sib$ is defined by $\phib$ for all $\beta$ and $\sib$ is unique.  That $\sib$
-is continuous and decreasing is shown below.}
+Since $\Xi(r)$ is strictly decreasing and $\beta > 0$, there are no solutions
+unless $\Xi(0) > 0$.  We set $\Xi(0)=\bar\beta$. 
+% Then $\Xi(r) = \beta$ has one solution if $\Xi(0) > 0$. However, if
+% $\Xi(0) \leq 0$, there are no solutions, since $\beta > 0$. 
+We claim that $\Xi(0) > 0$, which is equivalent to $\xi(0) > -2$. If $V(0) =
+\infty$, then
+\[ 
+\xi(0) = \underset{r\downarrow 0}{\lim} ~ r\frac{V'}{V} = h_0.
+\]
 
-%Draw the following: $x$-axis is the $\beta$-axis and goes from 0 to
-%$\bar{\beta}$. The $y$-axis is the $r$-axis and goes from 0 (in $\bar{\beta}$)
-%to some finite number $\sigma(0)>0$. For any $\beta$ between 0 and
-%$\bar{\beta}$ there is a corresponding $\sigma(\beta)$. As this value needs to
-%agree with the property of $\phi_{\beta}(r)$--$\phi_{\beta}(r)<0$ for
-%$r<\sigma(\beta)$ and $\phi_{\beta}(r)>0$ for $r>\sigma{\beta}$-- for all
-%$\beta$ then $\sigma$ is uniquely defined!
+Thus, $h_0 \geq -k > -2$ by \cite[Remark 2.1]{gen11}. However, if $V(0) <
+\infty$, then
+\be \label{xivfin}
+\xi(0) = - \frac{2 \lambda}{\a^{p-1} V(0)}.
+\ee
 
-\revgroup 
-In $\phib(r)$, factor out a term of $V(r)u(r)^p>0$ and gather the other terms
-into $\xi(r)$ as follows:
-\begin{align*}
-\phi_{\beta}(r)&=\left[\beta(p-1)-2\right]V(r)u(r)^p-rV'(r)u(r)^p+
-2\lambda u(r) \\
-&=V(r)u(r)^p\left[\beta(p-1)-2-\frac{rV'(r)u(r)^p}{V(r)u(r)^p}+
-\frac{2\lambda u(r)}{V(r)u(r)^p}\right]\\
-&=V(r)u(r)^p\left[\beta(p-1)-2-r\frac{V'(r)}{V(r)}+
-\frac{2\lambda}{V(r)u(r)^{p-1}}\right]\\
-&= V(r)u(r)^p\left[\beta(p-1)-2-\xi(r)\right]\\ 
-\text{where }\xi(r)&=r\frac{V'(r)}{V(r)}-\frac{2\lambda}{V(r)u(r)^{p-1}}.  
-\end{align*}
-\endgroup
+We solve \eqref{xivfin} for $\a$ and conclude that $\xi(0) > -2$ whenever 
+\[ 
+    \a > \left[\frac{\lambda}{V(0)}\right]^\frac{1}{p-1},
+\]
 
-We note that by \eqref{}
+which is true by \Cref{genlem1}, since $\a \in G\cup N$.  Thus, for $\beta \in
+[0, \bar\beta]$
 \[
-    \phib(r)>0 \iff \beta > \Xi(r) \quad \text{and} \quad 
-    \phib(r)<0 \iff \beta < \Xi(r).
+    \phib(r) > 0 \iff \Xi(r) > \beta ~ \text{and} ~ 
+    \phib(r) < 0 \iff \Xi(r) < \beta.
 \]
 
-{\red choose between two representations
-We claim that $\xi(r)$ is non-positive and strictly decreasing on $(,)$
-\be \label{xiclaim}
-\begin{dcases}
-\xi(r) \leq 0 \quad \text{on} ~ (,)\\
-\xi'(r) < 0 \quad \text{on} ~ (,)
-\end{dcases}
-\ee
 
-In other words: 
-$$\xi(r)\leq0\text{ and }\xi'(r)<0\text{ on }(0,\za).$$ 
-}
-
-By \eqref{vh4}, we have $h'(r) \leq 0$ on $(0, \infty)$. Since $u'(r, \a) < 0$
-by Lemma \ref{genlem2} and $V' \leq 0$ by \eqref{vh2}, the second term in
-$\xi(r)$ is strictly decreasing. Hence, $\xi'(r) < 0$. 
-
-% To see this, note how the first fraction in the expression for $\xi(r)$ is
-% nonincreasing: 
-% $$h(r)=r\frac{V'(r)}{V(r)}$$ 
-% 
-% as the numerator $V'(r)$ is negative everywhere, the denominator $V(r)$ is
-% positive everywhere and of course $r>0$. By similar reasoning, the second term
-% of $\xi(r)$ is strictly decreasing. We know that $V(r)$ is decreasing and so is
-% $u(r)$ (hence $u(r)^{p-1}$ as well). Since the numerator $\lambda>0$ is constant
-% and the denominator is strictly decreasing, the fraction is strictly increasing
-% such that the second term of $\xi(r)$ is strictly decreasing. Thus $\xi(r)$ is
-% strictly decreasing. 
-
-Since $u(z(\alpha))=0$ for $\a \in N$ and $u(r, \a) \to 0$ as $r \to \infty$ for
-$\a \in G$, we conclude that 
-\be \label{xilim}
-    \lim_{r\to z(\alpha)}\xi(r)=-\infty,
-\ee
-
-{\red maybe clean up notation: introduce somewhere the notation $\za = \infty$
-for $\a \in G$ to unite the cases for $\a \in G$ and $\a \in N$.}
-
-\revgroup Even if $V(r)$ is non-zero, then still, the fraction blows up by the behaviour
-of $u(r)$ near $\za$.
-
-Next, we can show that $\Xi(0)>0$ and $\Xi(r)$ is continuous and strictly
-decreasing. First $\Xi(r)$ is strictly decreasing because $\xi(r)$ is strictly
-decreasing and $\Xi(r)$ is a monotonous transformation \# ?. By similar
-argument, $\Xi(r)$ is continous. $\Xi(r)=\left[2+\xi(r)\right]/(p-1)$ satisfies
-$\Xi(0)>0$. To see that $\Xi(0)>0$, evaluate $\xi(r)$ in $r=0$ and compare:
-$$\Xi(0)>0\iff\xi(0)>-2.$$
-
-Evaluating $\xi(0)$ for infinite $V(0)$ relies on \#. When $V(0)=\infty$ then
-the second term in $\xi(0)$ is zero, since $u(0,\a)^{p-1}=\a^{p-1}$. Then
-$\xi(0)=h_0$. And by \# $h_0+k\geq0$ so $h_0>-k$. Since $k\in(0,2)$ the lowest
-bound for $h_0$ is $-k>-2$. Alternatively, when $V(0)$ is finite, then $h_0=0$
-by \#. Then $$\xi(0)=-\frac{2\lambda}{\a^{p-1}V(0)}.$$ Now we can solve for $\a$
-to find the values of $\a$ for which $\xi(0)>-2$.  
-\begin{align*}
--\frac{2\lambda}{\a^{p-1}V(0)}>-2\\ \frac{\lambda}{\a^{p-1}V(0)}<1\\
-\frac{\lambda}{V(0)}<\a^{p-1}\\ 
-\a > \left[\frac{\lambda}{V(0)}\right]^{\frac{1}{p-1}} 
-\end{align*} 
-
-which is confirmed by the assumption that $\a\in G\cup N$ \# is it?.
-
-Trailing back our steps, we see that $\xi(0)>-2$ which implies $\Xi(0)>0$. For
-any $\beta\in(0,\bar{\beta})$ we have
-$$\beta<\Xi(r)\iff\beta(p-1)-2-\xi(r)<0\quad\text{ and vice versa.}$$ 
-
-\# conclude that this verifies the existence of the unique function
-$\sigma(\beta)$ with the aforementioned properties. that is $\sigma(\beta)$ is
-continuous and decreasing and $\sigma(0)>0$ and $\sigma(\bar{\beta})=0$ as well
-as $\sigma(\beta)$ determing the sign of $\phi_\beta(r)$ for all $\beta>0$.
+In conclusion, $\sib \coloneqq \left. \Xi(r)^{-1} \right|_{\left[0,
+\bar{\beta}\right]}$ satisfies the lemma.
 \end{proof}
-\endgroup
+\newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      MARK LEMMA 5
@@ -666,9 +646,13 @@ Let $\a\in G\cup N$. There exists a unique $\beta_0 > 0$ such that $\rho \left(
 \beta_0 \right) = \sigma \left( \beta_0 \right)$.
 \end{lemma}
 \begin{proof}
-This follows immediately from the {\red aforementioned} properties of $\rho(\beta)$ and
-$\sigma(\beta)$. Sketching the two graphs, there is a unique
-intersection.\hfill\\
+This follows immediately from property (b) of \Cref{genlem4} and correspondence
+\eqref{nubrhocorr}.
+%{\red aforementioned} 
+% properties of $\rho(\beta)$ and
+%$\sigma(\beta)$. 
+This unique intersection can also be seen from a sketch of the two graphs.
+\hfill\\
 
 \begin{centering}
 \begin{tikzpicture}[domain=0:5, samples=21,]
@@ -677,13 +661,13 @@ intersection.\hfill\\
 
 % graph
 \draw[thick, draw=red, ->]
-    (0,3.7) node[left] {$\sigma(0)$} to [out=0,in=180] (5,0);
+(0,3.7) node[left] {$\sigma(0)$} to [out=0,in=180] (5,0);
 \draw[thick, draw=blue]
-    (0,0) node[above left] {$\rho(0)$} to [out=0,in=180] (3.85,4.5);
+(0,0) node[above left] {$\rho(0)$} to [out=0,in=180] (3.85,4.5);
 \draw[thick, draw=blue, ->]
-    (3.85,4.5) to (5,4.5);
+(3.85,4.5) to (5,4.5);
 \draw[dashed]   (0,2.5) node[left]  {$\rho(\beta_0),\sigma(\beta_0)$}  -|
-                (2, 0)              node[below] {$\beta_0$};
+            (2, 0)              node[below] {$\beta_0$};
 \draw[dashed]   (0,4.5) node[left] {$\za$} to (5.5,4.5);
 \end{tikzpicture}
 \end{centering} 
@@ -707,9 +691,11 @@ intersection.\hfill\\
 %      MARK LEMMA 6
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{More advanced properties of solutions}
-We fix $\nu = \nu_{\beta_0}$ and $\rho_0 = \rho \left( \beta_0 \right)$. We will
-apply the Sturm comparison theorem to equations \eqref{} and \eqref{} in the 
-following lemma.
+We fix $\beta = \beta_0$. This fixes at least $\nu = \nu_{\beta_0} ~ \text{and}
+~ \rho_0 = \rho_{\beta_0}$, which will be used in the following lemma.   
+% $\nu = \nu_{\beta_0}$ and $\rho_0 = \rho \left( \beta_0 \right)$. 
+We will apply the Sturm comparison theorem to equations \eqref{genwivp} and 
+\eqref{nuivp} in the following lemma.
 
 \begin{lemma}\label{genlem6}
 For $\alpha\in G\cup N$, $~w(r,\a)$ has a unique zero $r_0\in(0,z(\alpha)).$
@@ -719,7 +705,7 @@ Furthermore, \hfill\\ $w(z(\alpha))<0$ for $\a\in N$ and if $\a\in G$, we have
 \]
 \end{lemma}
 \begin{proof}
-With simplifications from before, we have
+With the simplifications from before, we have
 % \be \label{nulivp}
 % \nu'' + \frac{1}{r} \nu' + \left[ p V(r) u(r)^{p-1} - \lambda \right] \nu < 0
 % \quad \text{and} ~ \nu < 0 \quad \text{on} ~ (0, \rho_0)
@@ -738,10 +724,12 @@ With simplifications from before, we have
 \quad \text{and} ~ \nu < 0 \quad \text{on} ~ (\rho_0, \za).
 \end{dcases} \ee
 
-Moreover, $\nu(0) = \beta_0 \a > 0$ and $\underset{r\to 0}{\lim} r\nu'(r) = 0$.
-Furthermore, if $\a\in N$, then 
-\[ \nu(\za) = \za u'(\za) < 0 \]
-by Lemma \ref{genlem2} and so $\nu$ has a unique zero $\rho_0$ in $[0,\za]$.
+Thus $\nu$ has a unique zero on $(0, \za)$.  Moreover, $\nu(0) = \beta_0 \a > 0$
+and $\underset{r\to 0}{\lim} r\nu'(r) = 0$. 
+%Thus, $\nu(0) > 0$.  
+{\red Maybe no display to fit on one page.} Furthermore, if $\a\in N$, then \[
+\nu(\za) = \za u'(\za) < 0 \] by Lemma \ref{genlem2} and so $\nu$ has a unique
+zero $\rho_0$ in $[0,\za]$.
 
 Let $\tau \in (0,\za)$ be the first zero of $w$, which exists by Lemma
 \ref{genlem3}. We remember that $w$ satisfies
@@ -777,15 +765,15 @@ of the differential equation with a zero before $c$ must have another zero
 in $(c, b)$. 
 \endgroup
 
-    Consider the same setting: equations \eqref{sturm:uivp} and
-    \eqref{sturm:vivp} satisfying the comparison condition
-    \eqref{sturm:compare}. In addition, we assume that $U \neq V$ in \emph{any}
-    neighborhood of $b$. If there exists a solution $V$ of \eqref{sturm:vivp}
-    with a largest zero at the point $\rho$, then the disconjugacy interval of
-    \eqref{sturm:uivp} is a strict superset of $(\rho, b)$. 
+Consider the same setting: equations \eqref{sturm:uivp} and
+\eqref{sturm:vivp} satisfying the comparison condition
+\eqref{sturm:compare}. In addition, we assume that $U \neq V$ in \emph{any}
+neighborhood of $b$. If there exists a solution $V$ of \eqref{sturm:vivp}
+with a largest zero at the point $\rho$, then the disconjugacy interval of
+\eqref{sturm:uivp} is a strict superset of $(\rho, b)$. 
 
-    One way to interpret the above is to remember that $V$ oscillates faster
-    than $U$ and note that any solution $U$ with a zero in $(\rho, b)$ 
+One way to interpret the above is to remember that $V$ oscillates faster
+than $U$ and note that any solution $U$ with a zero in $(\rho, b)$ 
 
 Indeed, if we had $\rho_0 \leq d$, we could find a solution $\tilde{w}$ linearly
 independent of $w$ such that $\tilde{w}(\tilde{r}) = 0$ for some $\tilde{r} > d
@@ -867,7 +855,7 @@ Let $\a \in G$. There exists $\epsilon > 0$ such that $(\a, \a + \epsilon)
 \end{lemma}
 \begin{proof}
 \donegroup
-We remember that $w(r)$ has a unique zero $r_0$ by \cref{genlem6} and since $\a
+We remember that $w(r)$ has a unique zero $r_0$ by \Cref{genlem6} and since $\a
 \in G$, we have $w(r) \to -\infty$ as $r \to \infty$. 
 % and $w(r) = w(r, \a) \coloneqq \frac{\partial}{\partial \a} u(r, \a)$. 
 This implies by Lemma 6 of \cite[p.~249]{kwong} that $r_0 \in (d, \infty)$,
@@ -927,7 +915,7 @@ Hence $z(r) \equiv u(r) - \tilde{u}(r) \to \infty$ as $r \to \infty$. This is
 impossible, since $0 < \tilde{u}(r) < u(r)$ on $(r_3, \infty)$ and $u(r) \to 0$
 as $r \to \infty$. Therefore, $\tilde{u}(r)$ must vanish at some point
 $\tilde{r} \in (r_3, \infty)$ and the proof is complete.
- 
+
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1151,17 +1139,17 @@ Even though solutions in sets $G$ and $N$ have been shown to be decreasing every
 \begin{proof}
 The Lagrange identity for \cref{ivp} and \cref{wvp} will yield information about the zeroes of $w(r)$. The cases $\a\in N$ and $\a\in G$ will be considered seperately. First, suppose $\a\in N$. The differential equations for $u$ and $w$ can be written as:
 \begin{gather*}
-  (ru'(r))'+r\left[-\lambda u(r)+V(r)u(r)^p\right]=0\\
-  (rw'(r))'+r\left[-\lambda w(r)+pV(r)u(r)^{p-1}w(r)\right]=0.
+(ru'(r))'+r\left[-\lambda u(r)+V(r)u(r)^p\right]=0\\
+(rw'(r))'+r\left[-\lambda w(r)+pV(r)u(r)^{p-1}w(r)\right]=0.
 \end{gather*}
 Multiply these equations by $w(r)$ and $u(r)$ respectively and subtract to obtain:
 \begin{gather*}
-	z(\alpha)w(r)(ru'(r))'-u(r)(rw'(r))'=r\left\{pV(r)u(r)^pw(r)-V(r)u(r)^pw(r)\right\},
+z(\alpha)w(r)(ru'(r))'-u(r)(rw'(r))'=r\left\{pV(r)u(r)^pw(r)-V(r)u(r)^pw(r)\right\},
 \end{gather*}
 Now integrate from $0$ to $\za$ to obtain: 
 \begin{gather*}
-  \int_0^{z(\alpha)}w(r)(ru'(r))'-u(r)(rw'(r))'dr=
-  \int_0^{z(\alpha)}r\left\{pV(r)u(r)^pw(r)-V(r)u(r)^pw(r)\right\}dr.
+\int_0^{z(\alpha)}w(r)(ru'(r))'-u(r)(rw'(r))'dr=
+\int_0^{z(\alpha)}r\left\{pV(r)u(r)^pw(r)-V(r)u(r)^pw(r)\right\}dr.
 \end{gather*}
 Now perform partial integration for the left hand side and remember $u(z(\a))=0$:
 % \begin{align*}
@@ -1206,7 +1194,7 @@ Lastly, the function is unbounded as $\underset{r\to\za}{\lim}\theta(r)=\infty$.
 The function $\theta(r)$ is continuous and increasing, so there exists an
 inverse function. We define $\rho \coloneqq \theta^{-1}$. Then
 \[
-    \rb = r \iff \theta(r) = \beta.
+\rb = r \iff \theta(r) = \beta.
 \]
 
 But what are the properties of this inverse function $\rb$? First, we must have
@@ -1261,10 +1249,10 @@ Next, we can show that $\Xi(0)>0$ and $\Xi(r)$ is continuous and strictly decrea
 
 Evaluating $\xi(0)$ for infinite $V(0)$ relies on \#. When $V(0)=\infty$ then the second term in $\xi(0)$ is zero, since $u(0,\a)^{p-1}=\a^{p-1}$. Then $\xi(0)=h_0$. And by \# $h_0+k\geq0$ so $h_0>-k$. Since $k\in(0,2)$ the lowest bound for $h_0$ is $-k>-2$. Alternatively, when $V(0)$ is finite, then $h_0=0$ by \#. Then $$\xi(0)=-\frac{2\lambda}{\a^{p-1}V(0)}.$$ Now we can solve for $\a$ to find the values of $\a$ for which $\xi(0)>-2$.
 \begin{align*}
-  -\frac{2\lambda}{\a^{p-1}V(0)}>-2\\
-  \frac{\lambda}{\a^{p-1}V(0)}<1\\
-  \frac{\lambda}{V(0)}<\a^{p-1}\\
-  \a > \left[\frac{\lambda}{V(0)}\right]^{\frac{1}{p-1}}
+-\frac{2\lambda}{\a^{p-1}V(0)}>-2\\
+\frac{\lambda}{\a^{p-1}V(0)}<1\\
+\frac{\lambda}{V(0)}<\a^{p-1}\\
+\a > \left[\frac{\lambda}{V(0)}\right]^{\frac{1}{p-1}}
 \end{align*}
 which is confirmed by the assumption that $\a\in G\cup N$ \# is it?.
 
@@ -1293,13 +1281,13 @@ intersection.\hfill\\
 
 % graph
 \draw[thick, draw=red, ->]
-    (0,3.7) node[left] {$\sigma(0)$} to [out=0,in=180] (5,0);
+(0,3.7) node[left] {$\sigma(0)$} to [out=0,in=180] (5,0);
 \draw[thick, draw=blue]
-    (0,0) node[above left] {$\rho(0)$} to [out=0,in=180] (3.85,4.5);
+(0,0) node[above left] {$\rho(0)$} to [out=0,in=180] (3.85,4.5);
 \draw[thick, draw=blue, ->]
-    (3.85,4.5) to (5,4.5);
+(3.85,4.5) to (5,4.5);
 \draw[dashed]   (0,2.5) node[left]  {$\rho(\beta_0),\sigma(\beta_0)$}  -|
-                (2, 0)              node[below] {$\beta_0$};
+            (2, 0)              node[below] {$\beta_0$};
 \draw[dashed]   (0,4.5) node[left] {$\za$} to (5.5,4.5);
 \end{tikzpicture}
 \end{centering} 
@@ -1369,9 +1357,9 @@ the function $w(r)$ must have a zero.
 Even more, the zero of $w$ will be to the left of the zero of $u(r)$.
 CIRKELREDENERING?
 Then $u(r)$ does not have a zero, the limit of $w(r)$ for $r$ to infinity is negative infinity.
-    To see this, note that for increasing $\alpha$, one will obtain a solution that \emph{has} a zero.
-    Hence in that $r$-value, the function $u(r)$ decreases with increasing $\alpha$, ergo,
-    the function $w(r)$ is increasingly ?? negative for $r$-values where $u(r)$ is positive.
+To see this, note that for increasing $\alpha$, one will obtain a solution that \emph{has} a zero.
+Hence in that $r$-value, the function $u(r)$ decreases with increasing $\alpha$, ergo,
+the function $w(r)$ is increasingly ?? negative for $r$-values where $u(r)$ is positive.
 \end{proof}
 \end{lemma}
 
@@ -1481,62 +1469,62 @@ There exists $\epsilon>0$ such that $(\alpha,\alpha+\epsilon)\subset N$.
 %     	\1 Since $\tilde\a$ was chosen arbitrarily in $(\alpha,\alpha+\epsilon)$, all $\a'\in(\alpha,\alpha+\epsilon)$ have $\alpha'\in N$.
 %     \end{outline}}
 
-    \seperate
+\seperate
 
-    By chapter 4, the solution set $G$ is non-empty.
-    Let $\alpha\in G$ and let $u(r;\alpha)$ be the corresponding solution.
-    The function $w(\alpha,r)=\frac{\partial}{\partial\alpha}u(\alpha;r)$ satisfies \ref.
+By chapter 4, the solution set $G$ is non-empty.
+Let $\alpha\in G$ and let $u(r;\alpha)$ be the corresponding solution.
+The function $w(\alpha,r)=\frac{\partial}{\partial\alpha}u(\alpha;r)$ satisfies \ref.
 
-    \seperate
+\seperate
 
-    By lemma \ref{wq}, the function $w$ is unbounded.
-    By lemma \ref{kwong6}, $w$ has a unique zero $r_0\in(d,\infty)$.
-    Kwong discusses the disconjugacy interval $(d,\infty)$ of \ref{} in more detail.
-    Let $r_1,r_2$ be such that $d<r_1<r_0<r_2$ and note that $w(r_1)>0$ and $w(r_2)<0$.
-    There exists $\epsilon>0$ such that, for all $\tilde\alpha\in(\alpha,\alpha+\epsilon)$,
-    $$\tilde u(r_1)>u(r_1)\text{ and }\tilde u(r_2)<u(r_2),$$ where $\tilde u=u(\tilde\alpha,r)$.
-    Hence there exists $r_3\in(r_1,r_2)$ such that the graphs of $u$ and $\tilde u$ intersect,
-    i.e. $\tilde u(r_3)=u(r_3)$. See also figure \ref{}.
+By lemma \ref{wq}, the function $w$ is unbounded.
+By lemma \ref{kwong6}, $w$ has a unique zero $r_0\in(d,\infty)$.
+Kwong discusses the disconjugacy interval $(d,\infty)$ of \ref{} in more detail.
+Let $r_1,r_2$ be such that $d<r_1<r_0<r_2$ and note that $w(r_1)>0$ and $w(r_2)<0$.
+There exists $\epsilon>0$ such that, for all $\tilde\alpha\in(\alpha,\alpha+\epsilon)$,
+$$\tilde u(r_1)>u(r_1)\text{ and }\tilde u(r_2)<u(r_2),$$ where $\tilde u=u(\tilde\alpha,r)$.
+Hence there exists $r_3\in(r_1,r_2)$ such that the graphs of $u$ and $\tilde u$ intersect,
+i.e. $\tilde u(r_3)=u(r_3)$. See also figure \ref{}.
 
-    \seperate
+\seperate
 
-    To conclude $\tilde\alpha\in N$ requires existence of a $\tilde r$ such that $\tilde u(\tilde r)=0$.
-    By contradiction, suppose that $\tilde u(r)>0$ for all $r>r_3$.
-    (Note that $\tilde u(r)\geq u(r)>0$ on $r\leq r_3$, since $u(r)>0$ for all $r$.)
+To conclude $\tilde\alpha\in N$ requires existence of a $\tilde r$ such that $\tilde u(\tilde r)=0$.
+By contradiction, suppose that $\tilde u(r)>0$ for all $r>r_3$.
+(Note that $\tilde u(r)\geq u(r)>0$ on $r\leq r_3$, since $u(r)>0$ for all $r$.)
 
-    Now, for $r>r_3$ and small, $\tilde u(r)<u(r)$.
-    Claim: $u(r)>\tilde u(r)$ for all $r>r_3$.
-    Define the difference between $u$ and $\tilde u$ as $z\coloneqq u-\tilde u$.
-    Note $u(r)>\tilde u(r)\iff z(r)>0$.
-    By contradiction, suppose there exists $r_4>r_3$ such that $\tilde u(r_4)=u(r_4)$ (equivalent to $z(r_4)=0$).
-    On $(r_3,r_4)$ the function $z$ satisfies:
-    % $$z''+\frac{1}{r}z'+\left[V(r)\frac{u^p-\tilde u^p}{u-\tilde u}\right]z = 0 $$
-    \begin{align*}
-    	&z''+\frac{1}{r}z'+\left[V(r)\frac{u^p-\tilde u^p}{u-\tilde u}\right]z = 0\quad\mathrm{because} \\
-    	(1):\quad &u'' + \frac{1}{r}u' -\lambda u + Vu^p = 0 \\
-    	(2):\quad &\tilde u'' + \frac{1}{r}\tilde u' -\lambda\tilde u + V\tilde u^p = 0\\
-    	(1) - (2):\quad &u'' - \tilde u'' + \frac{1}{r}u' - \frac{1}{r}\tilde u' -\lambda u + \lambda\tilde u + Vu^p - V\tilde u^p = 0\\
-    	 &z'' + \frac{1}{r}z' -\lambda z + \left[Vu^p - V\tilde u^p\right]
-    	\frac{u-\tilde u}{u-\tilde u} = 0\\
-    	 &z'' + \frac{1}{r}z' + \left[V(r)\frac{u^p-\tilde u^p}{u-\tilde u}-\lambda\right]z = 0
-    \end{align*}
+Now, for $r>r_3$ and small, $\tilde u(r)<u(r)$.
+Claim: $u(r)>\tilde u(r)$ for all $r>r_3$.
+Define the difference between $u$ and $\tilde u$ as $z\coloneqq u-\tilde u$.
+Note $u(r)>\tilde u(r)\iff z(r)>0$.
+By contradiction, suppose there exists $r_4>r_3$ such that $\tilde u(r_4)=u(r_4)$ (equivalent to $z(r_4)=0$).
+On $(r_3,r_4)$ the function $z$ satisfies:
+% $$z''+\frac{1}{r}z'+\left[V(r)\frac{u^p-\tilde u^p}{u-\tilde u}\right]z = 0 $$
+\begin{align*}
+    &z''+\frac{1}{r}z'+\left[V(r)\frac{u^p-\tilde u^p}{u-\tilde u}\right]z = 0\quad\mathrm{because} \\
+    (1):\quad &u'' + \frac{1}{r}u' -\lambda u + Vu^p = 0 \\
+    (2):\quad &\tilde u'' + \frac{1}{r}\tilde u' -\lambda\tilde u + V\tilde u^p = 0\\
+    (1) - (2):\quad &u'' - \tilde u'' + \frac{1}{r}u' - \frac{1}{r}\tilde u' -\lambda u + \lambda\tilde u + Vu^p - V\tilde u^p = 0\\
+     &z'' + \frac{1}{r}z' -\lambda z + \left[Vu^p - V\tilde u^p\right]
+    \frac{u-\tilde u}{u-\tilde u} = 0\\
+     &z'' + \frac{1}{r}z' + \left[V(r)\frac{u^p-\tilde u^p}{u-\tilde u}-\lambda\right]z = 0
+\end{align*}
 
-    \seperate
+\seperate
 
-    %Using Sturm theory, the zeroes of $z$ can be studied.
-    %and note that proving $z(r)>0$ on $(r_3,\infty)$ implies $\tilde u(r)<u(r)$ on that interval.
-    % This function satisfies the differential equation $$\label{zivp} BLA $$.
-    % \\ \\
+%Using Sturm theory, the zeroes of $z$ can be studied.
+%and note that proving $z(r)>0$ on $(r_3,\infty)$ implies $\tilde u(r)<u(r)$ on that interval.
+% This function satisfies the differential equation $$\label{zivp} BLA $$.
+% \\ \\
 
-    Also by Sturm comparison of $z$ and $w$, the latter oscillates faster.
-    Let $\tilde w$ be a solution of \eqref{wivp} such that $\tilde w(r_3)=0$.
+Also by Sturm comparison of $z$ and $w$, the latter oscillates faster.
+Let $\tilde w$ be a solution of \eqref{wivp} such that $\tilde w(r_3)=0$.
 
-    \seperate
+\seperate
 
-    By integration of the strong version of Sturm, $z(r)\to\infty$ as $r\to\infty$,
-    but this is impossible as $0<\tilde u(r)<u(r)$ on $(r_3,\infty)$ and $u(r)\to0$ as $r\to\infty$.
-    Therefore, $\tilde u$ vanishes at some point $\tilde r\in(r_3,\infty)$
-    and the proof is complete.
+By integration of the strong version of Sturm, $z(r)\to\infty$ as $r\to\infty$,
+but this is impossible as $0<\tilde u(r)<u(r)$ on $(r_3,\infty)$ and $u(r)\to0$ as $r\to\infty$.
+Therefore, $\tilde u$ vanishes at some point $\tilde r\in(r_3,\infty)$
+and the proof is complete.
 
 %     \comm{
 %     for any $\epsilon>0$, all solutions $\tilde u=u(\tilde\alpha,r)$ with $\tilde\alpha\in(\alpha,\alpha+\epsilon)$ are non-vanishing. Then  Remember that $w$ is the derivative of \eqref{ivp} with respect to the initial condition. And by \ref{} $w$ has a unique zero that is contained in the disconjugacy interval. [[]] Let $r_1,r_2$ be such that $d<r_1<r_0<r_2$ and note $w(r_1)=\frac{\partial}{\partial\alpha}u(\alpha;r_1)>0$ and $w(r_2)=\frac{\partial}{\partial\alpha}u(\alpha;r_2)<0$. Let $\epsilon>0$ such that for all $\tilde\alpha\in(\alpha,\alpha+\epsilon)$, $$\tilde u(r_1)>u(r_1)\text{ and }\tilde u(r_2)<u(r_2),$$ where $\tilde u=u(\tilde\alpha,r)$ and $\tilde\alpha\in(\alpha,\alpha+\epsilon)$. The solutions $u$ and $\tilde u$ intersect in some point $r_3$. THEY STURM COMPARE. RELATION Z=U-UT.}
@@ -1546,7 +1534,7 @@ There exists $\epsilon>0$ such that $(\alpha,\alpha+\epsilon)\subset N$.
 % \import{}{6conclusions.tex}
 
 
- 
+
 %\section{Conclusions}
 %  Within this research, the following concepts and results have been studied...
 %  \begin{easylist}[enumerate]
