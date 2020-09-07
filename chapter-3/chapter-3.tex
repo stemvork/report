@@ -17,8 +17,8 @@
 In the previous chapter, we studied the shooting argument presented in
 \cite{ber81} that showed the existence of solutions to initial value problem 
 \eqref{ivp}. We will study the uniqueness of solutions to a related problem, see
-\eqref{genuivp} below. The method is due to Coffman and was later generalised
-by Kwong for the autonomous problem with arbitrary $n$.
+\eqref{genuivp} below. The method is due to Coffman \cite{coffm} and was later
+generalised by Kwong \cite{kwong} for the autonomous problem with arbitrary $n$.
 
 We note that setting $n = 2$ in \eqref{ivp} yields a specific case of
 \eqref{genuivp} where 
@@ -55,7 +55,7 @@ where $\lambda > 0$ and $p > 1$.
 %      MARK W IVP
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Furthermore, we define $w = w(r,\a) \coloneqq \frac{\partial}{\partial \a}
-u(r, a)$, which satisfies the IVP
+u(r, \a)$, which satisfies the IVP
 \be \label{genwivp}
 \begin{dcases}
     w'' + \frac{1}{r} w' - \lambda w + p V(r) u^{p-1} w = 0,\quad r>0,\\
@@ -69,10 +69,9 @@ u(r, a)$, which satisfies the IVP
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Hypotheses on the non-autonomous term}\label{hypv}
 The nonlinearity \eqref{gennonlin} contains the non-autonomous term $V(r)$. The
-following hypotheses are made: $V(r)$ is continuous and continuously
-differentiable
+following hypotheses are made: $V(r)$ is continuously differentiable
 \be \label{vh1} 
-    V \in C^1 (0, \infty); 
+V \in C^1 \left( (0, \infty) \right); 
 \ee
 is positive and decreasing
 \be \label{vh2} 
@@ -89,6 +88,27 @@ Lastly, we define
 and require that $h(r)$ is non-increasing on $(0, \infty)$ 
 \be \label{vh4} h'(r) \leq 0 \quad \text{on} ~ (0, \infty). \ee
 
+% TODO: P, G and N definitions
+
+\subsection{Definitions of solution sets}
+In this chapter, the solution sets $P$, $G$ and $N$ are defined as
+\be \label{nset}
+N\coloneqq\Big\{\;\a>0 \;\Big|\; \exists r_0: 
+% u(r_0,\a)=0 \;\text{and}\; u'(r,\a)<0 \;\text{for}\; r\in(0,r_0] \;\Big\}.
+u(r_0,\a)=0\Big\}
+\ee
+\be \label{gset} 
+G\coloneqq\left\{\;\a>0 \;\middle|\; u(r,\a)>0 \;\text{for all}\;r>0\;
+    \text{and}\;
+\limrtoinf u(r,\a)=0\;\right\}  
+\ee
+\be \label{pset}
+P\coloneqq\Big\{\;\a>0 \;\Big|\; \exists r_0: 
+% u'(r_0,\a)=0 \;\text{and}\; u(r,\a)>0 \;\text{for}\; r\in(0,r_0] \;\Big\}.
+u(r,\a)>0 \;\text{for all}\; r>0\;\text{and}\;\a\notin G \;\Big\}
+\ee
+
+\subsection{Main theorem}
 \begin{theorem} \label{genmain}
 Suppose that \eqref{vh1}--\eqref{vh4} are satisfied. Then there exists $\a_0>0$ such
 that the solution sets of \eqref{genuivp} have the following structure
@@ -120,7 +140,7 @@ and proven in (for example) \cite[p.~246]{kwong}.
         V''(x) + f(x) V'(x) + G(x) V(x) = 0,\quad x \in (a, b),
     \ee
     
-    where $f, g$ and $G$ are continuos. Let $(\mu, \nu)$ be a subinterval in
+    where $f, g$ and $G$ are continuous. Let $(\mu, \nu)$ be a subinterval in
     which $V(x) \neq 0$ and $U(x) \neq 0$, and in which the comparison condition 
     \be \label{sturm:compare}
         G(x) \geq g(x) \quad \text{for all} ~ x \in (\mu, \nu)
@@ -200,8 +220,8 @@ E'(r) = -\frac{u'(r)^2}{r} + \frac{1}{p+1} V'(r)u(r)^{p+1} \leq 0,
 where $E'(r)\leq 0$ holds because $V' \leq 0$ by \eqref{vh2} and 
 \be \label{upos}
 \begin{dcases}
-    u(r) > 0 \quad \text{on} ~ [0, \infty) \quad \text{if} ~ \a \in P \cup G \\
-    u(r) \geq 0 \quad \text{on} [0,\za] \quad \text{if} ~ \a \in N.
+    u(r) > 0 \quad \text{for } r\in[0, \infty) \quad \text{if} ~ \a \in P \cup G, \\
+    u(r) \geq 0 \quad \text{for } r\in[0,\za] \quad \text{if} ~ \a \in N.
 \end{dcases}
 \ee
 
@@ -221,17 +241,16 @@ On the other hand, for $\a \in G$, we have $u(r) \to 0$ and $u'(r) \to 0$ as $r
     E(r) \geq 0 \quad \text{for} ~ \a \in G \cup N.  
 \ee
 
-{\red In particular, we have $E(0) \geq 0 ~ \text{for} ~ \a \in G \cup N$. 
+In particular, we have $E(0) \geq 0 ~ \text{for} ~ \a \in G \cup N$. 
 % This has the following consequence. 
-When we solve $E(0) \geq 0$ for $\a$, we get
+Then the left hand side is non-negative in the inequality {\red(why?)}
 \be \label{lyasolv}
     \frac{1}{p+1} V(0)\alpha^{p+1}
     - \frac{\lambda}{2}\alpha^2
     \geq -\half u'(0)^2.
 \ee
 
-The inequality definitely holds whenever the left hand side of \eqref{lyasolv}
-is non-negative. We solve this case for $\a$ to obtain
+We solve for $\a$ to obtain
 \be \label{alphgn}
     \a \geq \left[
             \left( \frac{p+1}{2}\right) \frac{\lambda}{V(0)}
@@ -239,7 +258,7 @@ is non-negative. We solve this case for $\a$ to obtain
 \ee
 
 These initial conditions must belong to $G \cup N$. 
-Any other initial conditions might belong to $G\cup N$ or to $P$.}
+Any other initial conditions might belong to $G\cup N$ or to $P$.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -260,8 +279,8 @@ $r \in (0, z(\alpha))$ and $u'(z(\alpha)) < 0$ if $\alpha \in N$.
 
 If $V(0) = \infty$ then ...}
 
-Then there exists $\epsilon > 0$ such that $u''(r, \a) < 0$ for $r \in (0,
-\epsilon)$ and we have
+Then, there exists $\epsilon > 0$ such that $u''(r, \a) < 0$ for $r \in (0,
+\epsilon)$ and
 \[ u'(\epsilon, \a) = \int_0^\epsilon u''(s, \a) ds < 0. \]
 
 We claim that $u'(r, \a) < 0$ for all $r > 0$. Suppose by contradiction that
@@ -279,14 +298,14 @@ we can solve the left hand side for $u(r_0, \a)$ to find that
 \[ u(r_0, \a) \leq \left[ \frac{\lambda}{V(0)} \right]^{\tfrac{1}{p-1}} <
 \left[ \frac{p+1}{2} \frac{\lambda}{V(0)} \right]^{\tfrac{1}{p-1}}. \]
 
-Now this implies by \eqref{lyadef} 
+This implies by \eqref{lyadef} 
 %Lemma \ref{genlem1} 
 that $E(r_0) <
-0$, which contradicts \eqref{epos}. Therefore, we have $u'(r) < 0$ for all $r
+0$, which contradicts \eqref{epos}. Therefore, $u'(r) < 0$ for all $r
 \in (0, \za)$. 
 %{\red short?} 
 Lastly, if $u'(\za) = 0$ for $\a \in N$, then $u \equiv 0$. 
-Hence, we have $u'(\za) < 0$.
+Hence, $u'(\za) < 0$.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -321,15 +340,15 @@ Now, we integrate from $0$ to $\za$ to obtain:
 \end{multline}
 
 By partial integration, the left hand side reads
-\[
+\be\label{partint}
 w(r) r u'(r) \at_0^{\za} - u(r) r w'(r) \at_0^{\za} 
-+ \int_0^{\za} r w'(r) u'(r) \diff r - \int_0^{\za} r u'(r) w'(r) \diff r,
-\]
++ \int_0^{\za} r w'(r) u'(r) \diff r - \int_0^{\za} r u'(r) w'(r) \diff r.
+\ee
 
-and using $u(\za) = 0$ and $r = 0$, the only term that remains is
-\[
+We use $u(\za) = 0$ and $r = 0$, such that \eqref{partint} reads
+\be\label{partintshort}
     w(\za) \za u'(\za).
-\]
+\ee
 
 Furthermore, the right hand side of \eqref{genlem3longdiff} can be simplified to
 \[
@@ -342,9 +361,9 @@ w(\za) \za u'(\za) = (p-1) \int_0^{\za} r V(r) u(r)^p w(r) \diff r.
 \ee
 
 By Lemma \ref{genlem2}, we have $u'(\za) < 0$. If $w > 0$ holds on $(0, \za)$,
-then $w(\za) \geq 0$ and the left hand side of \eqref{genlem3neq} is
-non-positive. However, the right hand side is positive. Hence, $w$ has at least
-one zero in $(0, \za)$. 
+then $w(\za) \geq 0$. Hence, the left hand side of \eqref{genlem3neq} is
+non-positive. However, the right hand side is positive. By this contradiction,
+$w$ has at least one zero in $(0, \za)$. 
 
 On the other hand, for $\a \in G$, we assume by contradiction that $w > 0$
 on $(0, \infty)$. 
@@ -357,31 +376,34 @@ We write
     = r w(r)^2 \left( \frac{u}{w} \right)'
 \ee
 
-such that \cref{uwdiff} integrated from $0$ to $r$ reads
+such that \eqref{uwdiff} integrated from $0$ to $r$ reads
 \be \label{uwli}
 r w(r)^2 \left( \frac{u}{w} \right)' = (p-1) \int_0^r s V(s) u(s)^p w(s) ds >0.
 \ee
 
 From \eqref{uwli}, we deduce that 
 \be \label{uwdev}
-    \left( \frac{u}{w} \right)' > 0 \quad \text{for}~ r \in (0, \infty),
+    \left( \frac{u}{w} \right)' > 0 \quad \text{for}~ r \in (0, \infty).
     % \quad \text{and} ~
 \ee
 
-and combined with $u(0) = \a > 0$ and $w(r) = 1$ from \eqref{genuivp} and
-\eqref{genwivp}, we conclude that
+We use $u(0) = \a > 0$ and $w(r) = 1$ from \eqref{genuivp}
+and \eqref{genwivp} to conclude that
 \be \label{uwpos}
     \frac{u(r)}{w(r)} > 0 \quad \text{on}~ (0, \infty).
 \ee
 
-The remainder of this proof consists of earlier results by Genoud. We refer to
-\cite[Proof of Lemma  2, p. 487]{gen11} for more details and the references. In
-summary, we can show that 
+We refer to \cite[Proof of Lemma  2, p. 487]{gen11} for the remaining details of
+this proof. The proof requires lemmata from the earlier work \cite{genthes}. In
+summary, they show that 
+%The remainder of this proof consists of earlier results by Genoud. We refer to
+%\cite[Proof of Lemma  2, p. 487]{gen11} for more details and the references. In
+%summary, we can show that 
 \[
-    \underset{r\to\infty}{\lim} \frac{u(r)}{w(r)} = 0,
+    \underset{r\to\infty}{\lim} \frac{u(r)}{w(r)} = 0.
 \]
-contradicting \eqref{uwdev}. By this contradiction, $w$ has at least one zero on
-$(0, \infty)$.
+This contradicts \eqref{uwdev}. Hence, $w$ has at least one zero on $(0,
+\infty)$.
 % 
 % {\red By several theorems and lemmata in \cite{genthes}, we know that the limit
 % as r to infinity of \eqref{uwpos} is 0, contradicting \eqref{uwdev}.}
@@ -393,17 +415,15 @@ $(0, \infty)$.
 \section{Auxiliary functions related to solutions}
 % $\theta$ and $\rho$ and $\nu$ and $\phi$ and $\xi$ mostly
 
-In the lemmata that follow, many properties related to initial value problems
-\eqref{genuivp} and \eqref{genwivp} are used. This section is dedicated to
-introducing those functions and some of their properties. In the end, we will be
-familiar with the following functions and their properties: $\tr, ~ \rb, ~
-\nub(r) ~ \text{and} ~ \phib(r).$ Furthermore, in \Cref{genlem4}, we will define
-the function $\sib$ as the inverse of $\Xi(r)$, which is a transformation of
-$\xi(r)$, that relates the zero of $\phib(r)$ to $\beta$. This will be
-used in \Cref{genlem5} to find $\beta_0$, for which the zero of $\nub(r)$ and
-$\phib(r)$ coincide. From then on, we will fix $\beta = \beta_0$. By this
-construction $\nu(r)=\nu_{\beta_0}(r)$ has a unique zero, that can be used to
-show that $w(r)$ has a unique zero in \Cref{genlem6}.
+This section is dedicated to introducing functions related to the initial value
+problems \eqref{genuivp} and \eqref{genwivp}. We introduce the functions $\tr, ~
+\rb, ~ \nub(r) ~ \text{and} ~ \phib(r).$ Furthermore, in \Cref{genlem4}, we will
+define the function $\sib$ as the inverse of $\Xi(r)$, which is a transformation
+of $\xi(r)$ that relates the zero of $\phib(r)$ to $\beta$. In \Cref{genlem5},
+we conclude that the zero of $\nub(r)$ and $\phib(r)$ coincide in $\beta_0$.
+From then on, we will fix $\beta = \beta_0$. By this construction
+$\nu(r)=\nu_{\beta_0}(r)$ has a unique zero. This is used in \Cref{genlem6} to
+show that $w(r)$ has a unique zero.
 
 % A \emph{shopping list}: we will introduce $\theta(r)$, $\rho(\beta)$,
 % $\nu_\beta(r)$, $\phi_\beta(r)$. Then lemma 4 introduces $\sigma(\beta)$,
@@ -435,14 +455,14 @@ increasing on $(0, \za)$. Hence,
     \tr > 0 ~ \text{on} ~ (0, \za).
 \]
 
-Lastly, let $\a\in N$. (A similar argument holds for $\a\in G$.) Then $\za$ is the first
-zero of the solution $u(r,\a)$. Also, by \Cref{genlem2} the derivative is
-negative everywhere.  Hence, by the definition of $\theta(r)$ in
+Lastly, let $\a\in N$. A similar argument holds for $\a\in G$. Then $\za$ is the
+first zero of the solution $u(r,\a)$. Also, by \Cref{genlem2} the derivative
+$u'(r,\a)$ is negative everywhere.  Hence, by the definition of $\theta(r)$ in
 \eqref{thetadef}, we have
 \[
     \underset{r\to\za}{\lim}\tr=\infty.
 \]
-We define $\nub(r)$ that depends on the solution $u(r)$ as 
+We define the function $\nub(r)$ that depends on the solution $u(r)$ as 
 \be \label{nubdef} 
     \nu_{\beta}(r) \coloneqq ru'(r) + \beta u(r) =
     -u(r)\left\{\theta(r)-\beta\right\}.
@@ -468,7 +488,7 @@ the relation \eqref{rhothetainverse}
 \nub(r) < 0 \quad \text{if} \quad r > \rb.
 \ee
 
-We claim that $\nub''(r)$ satisfies the following differential equation
+We claim that $\nub''(r)$ satisfies the differential equation
 \be \label{gennuivp}
     \nub''(r) + \frac{1}{r} \nub'(r) - \lambda \nub(r) + p V(r) u(r)^{p-1}
     \nub(r) = \phib(r),
@@ -489,7 +509,7 @@ defined in \eqref{nubdef}
     - r V'(r) u(r)^p - r p V(r) u(r)^{p-1} u'(r) + \beta u''(r).
 \end{gather*}
 
-We then calculate the terms of the left-hand side of \eqref{gennuivp} as
+We calculate the terms of the left-hand side of \eqref{gennuivp} as
 \begin{gather*}
     \frac{1}{r} \nub'(r) = u''(r) + \frac{1}{r} u'(r) + \frac{1}{r} \beta
     u'(r)\\
@@ -497,8 +517,8 @@ We then calculate the terms of the left-hand side of \eqref{gennuivp} as
     p V(r) u(r)^{p-1} \nub(r) = r p V(r) u(r)^{p-1} u'(r) + \beta p V(r) u(r)^p.
 \end{gather*}
 
-We can add all the terms and write the differential equation as
-\begin{multline}
+We add all the terms and write the differential equation as
+\begin{multline}\label{nudelong}
     \nub''(r) + \frac{1}{r} \nub'(r) - \lambda \nub(r) + p V(r) u(r)^{p-1}
     \nub(r) \\
     = \lambda u(r) + \underline{\lambda r u'(r)} - V(r) u(r)^p
@@ -514,7 +534,7 @@ The underlined terms cancel out. By IVP \eqref{genuivp}, we can write
     - V(r) u(r)^p = u''(r) + \frac{1}{r} u'(r) - \lambda u(r) 
 \end{dcases}\]
 
-and use these substitutions to write 
+and use these substitutions to simplify \eqref{nudelong} to
 % \begin{multline}
 %     \nub''(r) + \frac{1}{r} \nub'(r) - \lambda \nub(r) + p V(r) u(r)^{p-1}
 %     \nub(r) \\
@@ -534,7 +554,7 @@ and use these substitutions to write
 % 
 % where we use $ - V(r) u(r)^p = u''(r) + \frac{1}{r} u'(r) - \lambda u(r)$
 % and factor out $V(r) u(r)^p$ to obtain
-\begin{multline}
+\begin{multline}\label{nudeshort}
 \nub''(r) + \frac{1}{r} \nub'(r) - \lambda \nub(r) + p V(r) u(r)^{p-1}
 \nub(r) \\
 = V(r) u(r)^p \left[ \beta (p-1) -2 \right] 
@@ -552,13 +572,12 @@ $\rho(\beta)$, the sign of $\phib$ depends on $\beta$ by a continuous decreasing
 function $\sib$, see \Cref{genlem4} below. In \Cref{genlem5} we will conclude
 that there exists a unique $\beta_0$ such that 
 \[
-    \nu_{\beta_0}(\rho_0)=\phi_{\beta_0}(\rho_0) = 0 ~ 
-    \text{in} ~ \rho_0=\rho(\beta_0).
+    \nu_{\beta_0}(\rho_0)=\phi_{\beta_0}(\rho_0) = 0 \ \ 
+    \text{in} \ \ \rho_0=\rho(\beta_0).
 \]
 
 The unique zero of $\nub$ will be used to show that $w$ has a unique zero in
 \Cref{genlem6}.
-\newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      MARK LEMMA 4
@@ -580,25 +599,29 @@ $\sigma(\bar\beta) = 0$;
 \end{lemma}
 
 \begin{proof}
-We fix $\beta>0$. To simplify $\phib(r)$ as defined in \eqref{phibdef}, we
-define the function
+We fix $\beta>0$. We write \eqref{phibdef} as
+\be\label{phibdefshort} 
+\phib(r) = V(r) u(r)^p \left[ \beta (p-1) - 2 - \xi(r) \right], 
+\ee
+% w
+% To simplify $\phib(r)$ as defined in \eqref{phibdef}, we
+% define the function
+% Then $\phib(r)$ reads
+where
 \be \label{xidef}
 \xi(r) \coloneqq r \frac{V'(r)}{V(r)} - \frac{2 \lambda}{V(r) u(r)^{p-1}}.
 \ee
-
-Then $\phib(r)$ reads
-\[ 
-\phib(r) = V(r) u(r)^p \left[ \beta (p-1) - 2 - \xi(r) \right]. 
-\]
 
 The function $\xi(r)$ is negative and strictly decreasing on $(0, \za)$ with 
 \[
 \underset{r\to\za}{\lim} \xi(r) = -\infty.
 \]
 
-The sign of $\phib(r)$ depends on the term in brackets, since $V > 0$ by
+The sign of \eqref{phibdefshort}
+%$\phib(r)$ 
+depends on the term in brackets, since $V > 0$ by
 \eqref{vh2} and $u(r)^p > 0$ by \eqref{upos}. We are interested in the zero of
-$\phib$. We will define $\Xi(r)$ such that 
+$\phib$. We define the function $\Xi(r)$ such that 
 \[ 
 \Xi(r) \coloneqq \frac{2 + \xi(r)}{p - 1} = \beta
 \iff \beta (p-1) - 2 - \xi(r) = 0.
@@ -614,27 +637,28 @@ We claim that $\Xi(0) > 0$, which is equivalent to $\xi(0) > -2$. If $V(0) =
 \xi(0) = \underset{r\downarrow 0}{\lim} ~ r\frac{V'}{V} = h_0.
 \]
 
-Thus, $h_0 \geq -k > -2$ by \cite[Remark 2.1]{gen11}. However, if $V(0) <
-\infty$, then
+Thus, $h_0 \geq -k > -2$ by \cite[Remark 2.1]{gen11}. On the other hand, if
+$V(0) < \infty$, then
 \be \label{xivfin}
 \xi(0) = - \frac{2 \lambda}{\a^{p-1} V(0)}.
 \ee
 
-We solve \eqref{xivfin} for $\a$ and conclude that $\xi(0) > -2$ whenever 
+We solve \eqref{xivfin} for $\a$ 
 \[ 
     \a > \left[\frac{\lambda}{V(0)}\right]^\frac{1}{p-1},
 \]
-
-which is true by \Cref{genlem1}, since $\a \in G\cup N$.  Thus, for $\beta \in
+to conclude that $\xi(0) > -2$ for $\a\in G\cup N$ by \Cref{genlem1}.
+%which is true by \Cref{genlem1}, since $\a \in G\cup N$.  
+Thus, for $\beta \in
 [0, \bar\beta]$
 \[
-    \phib(r) > 0 \iff \Xi(r) > \beta ~ \text{and} ~ 
+    \phib(r) > 0 \iff \Xi(r) > \beta \ \ \text{and} \ \  
     \phib(r) < 0 \iff \Xi(r) < \beta.
 \]
 
 
 In conclusion, $\sib \coloneqq \left. \Xi(r)^{-1} \right|_{\left[0,
-\bar{\beta}\right]}$ satisfies the lemma.
+\bar{\beta}\right]}$ satisfies the properties of the lemma.
 \end{proof}
 \newpage
 
@@ -926,8 +950,13 @@ Let $\as \in N$. Then $\left[ \as, \infty \right) \subset N$ and $z : \left[
 \end{lemma}
 \begin{proof}
 $N$ is open subset of $(0, \infty)$ ...
+The set $N$ is an open subset of $(0, \infty)$ by continuous dependence on the
+initial data as given by \#. For $\hat{\a}$ close to $\a$, we have $u(\hat{r},
+\hat{\a})=0$ for some $\hat{r}$ near $r$.
 
-$z$ is continuous ...
+By Lemma \ref{genlem2}, we have $u'(r) < 0$ for all $r > 0$ if $\a \in N$.
+Hence, the graph of a solution $u(r, \a)$ with $\a \in N$ cannot be tangent to
+the $r$-axis and so the function $\za : N \to (0, \infty)$ is continuous.
 
 By Lemma \ref{genlem6}, we have $w(z(\as)) < 0$. Then, there exists $\epsilon >
 0$ such that

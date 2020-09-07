@@ -10,6 +10,7 @@ dissertation.pdf: force-build
 	bibtex chapter-1/chapter-1
 	bibtex chapter-2/chapter-2
 	bibtex chapter-3/chapter-3
+	bibtex chapter-4/chapter-4
 	xelatex -interaction=batchmode dissertation.tex
 	xelatex -interaction=batchmode dissertation.tex
 
