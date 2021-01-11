@@ -1,5 +1,29 @@
 \newcommand{\intrrr}{\int_{\R^3}}
 \chapter{Uniqueness}
+\section{Introduction}
+% In this chapter, we study the paper "Uniqueness of the Ground State Solution for
+% $\Delta u - u + u^3 = 0$ and a Variational Characterization of Other Solutions"
+% written in 1972 by Charles V. Coffman. 
+
+In chapter 2 \# reference.
+
+In this chapter, we study a paper from 1972 by Charles V. Coffman \cite{coffm}. 
+{\green This paper proves uniqueness of the positive radially symmetric ground
+state solution in $\R^3$.} {\red That is, there is precisely one positive radially
+symmetric solution that is twice differentiable and belongs to $L^4$.  Moreover,
+the Rayleigh quotient $J(u)$ attains its infimum.}
+
+{\red The Rayleigh quotient is generally obtained by multiplying with the solution and
+integrating with respect to \# the argument. In this way, we obtain the
+expression $$J(u) = \dfrac{\int\left|\nabla u\right|^2+u^2~dx}{\int u^4~dx}$$
+
+which is not a good minimiser. The functional has to be invariant in the same
+sense as the desired solution. Hence, square the numerator.}
+
+% The introduction refers to \# Finklestein, Nehari, Ryder and Berger.
+
+\hfill\hrule
+
 
 From \cite{nehari}, we know that
 \be\label{upde}
@@ -15,8 +39,8 @@ and $x_0 \in \R^3$. Here $J$ is the Rayleigh quotient associated with
 \eqref{upde},
 
 \be\label{rayl}
-J(u) = \frac{\left( \int_{\R^3} |\mathrm{grad} u|^2 + u^2 dx
-\right)^2}{\int_{R^3} u^4 \mathrm{d}x}
+% J(u) = \frac{\left( \intrrr |\mathrm{grad} u|^2 + u^2 dx
+J(u) = \frac{\left( \intrrr |\nabla u|^2 + u^2 \diff x \right)^2}{\int_{R^3} u^4 \diff x}
 \ee
 
 The right hand side of expression \eqref{rayl} is meaningful for $u\in H^1$ and

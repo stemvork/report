@@ -1,0 +1,198 @@
+% ------------------------------------------------------------------------
+% --------------------- SECTION 1 ----------------------------------------
+% ------------------------------------------------------------------------
+\begin{comment}
+\section{Original: Uniqueness of the Ground State Solution for $\Delta u - u + u^3 = 0$ and a Variational Characterization of Other Solutions}
+\begin{outline}
+\1 Introduction
+    \2 It is known that \be \Delta u - u + u^3 = 0 \ee in $\R^3$ has a positive radially symmetric solution $u=\phi_1\in C^2\cap L^4$.
+    \2 In this note we show that $\phi_1$ is unique. That is, there is precisely one positive radially symmetric solution of \eqref{upde} which belongs to $C^2\cap L^4$.
+    \2 Moreover, we show that for $u\in H^1$, $u\neq 0$ \be J(\phi_1) < J(u)\ee unless \be \label{utrans} u(x) = \lambda \phi_1(x+x_0) \ee for some non-zero real $\lambda$ and $x_0\in \R^3$.
+    \2 Here $J$ is the Rayleigh quotient associated with \eqref{upde}, \be \label{rqdef} J(u) = \frac{\left(\int \vert \mathrm{grad}\ u\vert^2 + u^2)\diff x\right)^2}{\int u^4 \diff x} \ee
+    \2 The expression on the right of \eqref{rqdef} is meaningful for $u\in H^1$, $u\neq0$; such functions will henceforth be referred to as \emph{admissible} functions.
+    \2 The equation \eqref{upde} is considered in Finklestein 1951, where it is asserted that there exist function $v_n(r) \in C^2(\left[0, \infty\right))$, $n=1, 2, \ldots$, such that for each $n$, $v_n$ has exactly $n-1$ isolated zeroes in $\left[0, \infty\right)$, decays exponentially for $r\to\infty$, and $\phi_n(x) = v_n(|x|)$ is a solution of \eqref{upde}.
+    \2 A rigorous proof of existence of $v_1$ was given by Nehari 1963; the proof of existence of $v_n$, $n\geq 1$, was given by Ryder 1967. Berger 1970 has proved the same results using the Lyusternik-Schnirelman theory.
+    \2 We have proved the main result of this note in order to answer some questions which are raised in Robinson 1971, but are not satisfactorily answered there. We also demonstrate the equivalence of several variational characterizations of the non-positive radially symmetric solutions \eqref{upde}.
+\1 Preliminaries
+    \2 We seek solutions to \eqref{upde} subject to the "boundary condition at infinity" \be \label{ubc} u \in L^4 \ee.
+    \2 The problem \eqref{upde}, \eqref{ubc} is equivalent to the integral equation \be \label{uint} u(x) = \int g(x-t)u^3(t)\diff t,\ee in $L^4$, where \be \label{gdef} g(x) = (4\pi)^{-1} \vert x\vert^{-1}e^{-\vert x \vert}.\ee 
+    \2 We list below a number of facts, most of which are standard or are obtained routinely by standard methods. The details, as well as a more complete bibliography concerning equation \eqref{upde}, will be found in Coffman CMU.
+    \2 First, concerning the space $H^1$, we have the following results:
+        \3 $C_0^\infty$ is dense in $H^1$.
+        \3 If $u\in H^1$, then $v=|u|\in H^1$ and \[ |u|_{1, 2}=|v|_{1,2}. \]
+        \3 If $u\in H^1$, then $u\in L^4$ and \be \label{ulb} |u|_{0, 4} \leq 2^{-1/2}|u|_{1, 2}. \ee
+        \3 Let $V$ denote the subspace of $H^1$ consisting of radially symmetric functions. The embedding $V\to L^4$ is compact.
+    \2 Except for the constant, the inequality \eqref{ulb} follows from Lemma 2 on page 11 of Ladyzhenskaya 1963, or from a more general inequality of Nirenberg 1955 which is quoted as Theorem 9.3 on page 24 of Friedman 1969.
+    \2 One can obtain the constant in \eqref{ulb} by using the representation $u=g\ast w$ where $w = -\Delta u + u$; by a) it suffices to prove \eqref{ulb} for $u\in C_0^\infty$.
+    \2 The assertion d) follows in a straightforward way from the Sobolev imbedding theorem and the inequality \[ 4\pi \int_{|x|\geq \rho} |v(x)|^4\diff x\leq 2\rho^{-1}|v|_{1, 2}^4 \] for $v\in V$, $\rho>0$.
+    \2 Concerning the convolution operator $\tau: u\to g\ast u$, where \[ (g\ast u)(x) = \int g(x-t)u(t)\diff t \] and $g$ given by \eqref{gdef}, we have the following results:
+        \3 If $u\in L^{4/3}$ then $v=g\ast u\in H^1\subseteq L^4$, $\int u v \diff x > 0$ unless $u=0$, and $v$ is a weak solution of \be \label{vpde} -\Delta + v = u. \ee
+        \3 If $u\in L^1\cap L^\infty$, then $v=g\ast u$ has bounded continuous first derivatives and \[ \underset{\lim}{|x|\to\infty} v(x) = 0. \]
+        \3 If $u\in L^1\cap L^\infty\cap C^1$ then $v=g\ast u\in C^2$ and $v$ satisfies \eqref{vpde}.
+        \3 Let $X$ and $Y$ denote the subspaces of $L^{4/3}$ and $L^4$, respectively, consisting radially symmetric functions. Then $Y=X^\ast$ and $\tau: X\to Y$ is compact.
+    \2 The first assertion of h) is obvious, and the second follows immediately from d) and e).
+    \2 Remark. For consideration of the equation \[ \Delta u - u + |u|^{p-2}u = 0, \] one replaces $L^4$ by $L^p$ and $L^{4/3}$ by $L^q$ where $p^{-1}+q^{-1} = 1$. If $2<p<6$, then c), d), e) and h) remain valid in this more general case (expect for a change of the constant in \eqref{ulb}); e) and h) of course fail for $p=2$.
+\1 Minimisation of $J$
+\1 Uniqueness Theorem
+\1 Numerical values for $\lambda_1$
+\1 Non-positive solutions
+\end{outline}
+\end{comment}
+
+\section{Introduction}
+In this chapter, we study the paper "Uniqueness of the Ground State Solution for $\Delta u - u + u^3 = 0$ and a Variational Characterization of Other Solutions" written in 1972 by Charles V. Coffman. 
+
+{\new This paper proves uniqueness of the positive radially symmetric ground state solution in $\R^3$. That is, there is precisely one positive radially symmetric solution that is twice differentiable and belongs to $L^4$. Moreover, the Rayleigh quotient $J(u)$ attains its infimum.
+
+The Rayleigh quotient is generally obtained by multiplying with the solution and integrating with respect to \# the argument. In this way, we obtain the expression $$J(u) = \dfrac{\int\left|\nabla u\right|^2+u^2~dx}{\int u^4~dx}$$
+
+which is not a good minimiser. The functional has to be invariant in the same sense as the desired solution. Hence, square the numerator.}
+
+The introduction refers to \# Finklestein, Nehari, Ryder and Berger.
+
+\begin{comment}
+The partial differential equation \be\label{upde}\Delta u - u + u^3 = 0\ee is similar to \# of chapter 2.
+
+The equation $$R'' + \frac{1}{r} R' - R + R^3 = 0$$ has a unique ground state solution due to the result by Coffman. The ground state solution $u$ is radially symmetric and positive everywhere. Moreover, $u = \phi_1 \in C^2 \cap L^4$, where $\phi_n(x) = v_n(|x|)$ are solutions to \eqref{upde}.
+\end{comment}
+
+% ------------------------------------------------------------------------
+% --------------------- SECTION 2 ----------------------------------------
+% ------------------------------------------------------------------------
+\section{Preliminaries}
+{\new This section summarises results concerning the space $H^1$ and the convolution operator $\tau: u\to g\ast u$.}
+
+The integral equation 
+%The problem \eqref{upde} subject to 
+%\be u\in L^4\ee 
+%is equivalent to
+\be \begin{cases}u(x) = \int g(x-t) u^3(t)~dt \\ u \in L^4\end{cases} \ee
+is equivalent to \eqref{upde},
+where
+\be g(x) = (4\pi)^{-1} |x|^{-1} e^{-|x|}. \#research\ee
+
+{\new This is the Yucawa potential. I have downloaded the reference Ladyzhenskaya. I have not been able to download the references Nirenberg, Friedman, Coffman.}
+
+The following two subsections discuss (mostly) standard results regarding the Sobolev space $H^1$ and the convolution operator $\tau: u \to g\ast u$. Further details were obtained from \#3 and \#14.
+
+\subsection{Some results regarding $H^1$}
+{\rewrite First, concerning the space $H^1$, we have the following results:}
+{\done \begin{enumerate}[a)]
+\item $C^\infty_0$ is dense in $H^1$.
+\item If $u\in H^1$ then $v=|u|\in H^1$ and
+$$|u|_{1,2}=|v|_{1,2}.$$
+\item If $u\in H^1$ then $u\in L^4$ and
+\be|u|_{0,4} \leq 2^{-1/4}|u|_{1,2}.\ee
+\item Let $V$ denote the subspace of $H^1$ consisting of radially symmetric functions. The embedding $V \to L^4$ is compact.
+\end{enumerate}}
+
+\subsection{Some results regarding the convolution operator}
+{\new \begin{enumerate}[a)]
+\setcounter{enumi}{4}
+\item If $u\in L^{4/3}$ then $v = g\ast u \in H^1\subseteq L^4$, $\int u~v~\mathrm{d} x>0$ unless $u=0$, and $v$ is a weak solution of 
+\be \label{vpde} -\Delta v + v = u. \ee
+\item If $u \in L^1\cap L^\infty$ then $v = g\ast u$ has bounded continuous first derivatives and 
+$\underset{|x|\to\infty}{\lim} v(x) = 0$.
+\item If $u\in L^1\cap L^\infty\cap C^1$ then $v = g\ast u\in C^2$ and $v$ satisfies \eqref{vpde}.
+\item Let $X$ and $Y$ denote the subspaces of $L^{4/3}$ and $L^4$ respectively, consisting of radially symmetric functions. Then $Y = X^\ast$ and $\tau : X \to Y$ is compact.
+\end{enumerate}}
+
+% ------------------------------------------------------------------------
+% --------------------- SECTION 3 ----------------------------------------
+% ------------------------------------------------------------------------
+\section{Minimisation of $J$}
+{\new This section first states that a solution $u\in L^4$ must belong to $H^1$.
+
+Then, in Lemma 3.1, if $u$ is an admissible solution ($u\in H^1$ and $u\neq 0$), then $\sigma(u)$ is admissible and
+(3.4) $$J(\sigma(u))\leq J(u)$$
+with equality only if $\sigma(u) = u$. Moreover, $\sigma(u)\in L^\infty$ ($\sigma(u)$ bounded) and $v=\sigma^2(u)$ has bounded continuous derivatives and satisfies
+(3.5) $$\underset{|x|\to\infty}{\lim} v(x)=0;$$
+finally $\sigma^3(u)\in C^2$.
+
+Lemma 3.2 and Lemma 3.3 state corollaries of Lemma 3.1.
+
+The implications are that solutions of the integral equation (2.2) are in $C^2$, have bounded first derivatives and vanish at the boundary.
+
+Furthermore, existence of a (radially symmetric) admissible function implies existence of a (radially symmetric) function in $C^2$ which is positive, has bounded first derivatives, vanishes at the boundary and satisfies (3.5) and satisfies
+(3.7) $$J(v)\leq J(u).$$
+
+Moreover, unless $u$ has the same properties and solves (2.2), the $v$ can be chosen so that (3.7) is a strict inequality.
+
+The section concludes with theorem 3.1 which states that for the ground state eigenvalue $\lambda_1$, there exists a $\phi_1\in V$ (hence radially symmetric) such that $J(\phi_1)=\lambda_1$. For $u\in H^1$, we have $J(u)>\lambda_1$ unless $u$ is a scaled translate of $\phi_1$.
+
+I have lent the book Polya[19] from the library (mentioned in the proof of 3.1).
+
+I have downloaded the references Mostow[16] and Moser[15].
+
+The proof of Theorem 3.1 shows the desired results of the paper except for the last statement. This requires Theorem 4.1.}
+
+{\revise The basic idea of Rayleigh quotient minimization is to find the ground state eigenfunction. Another interpretation is that we find the best constant for the imbedding $H^1 \to L^4$.}
+
+{\rewrite For $u\in L^4$, $u\neq 0$, we define $\sigma(u)$ by 
+\be \label{sigmadef} \left(\sigma(u)\right)(x) = c \int g(x-t)u^3(t)~dt \ee}
+
+% ------------------------------------------------------------------------
+% --------------------- SECTION 4 ----------------------------------------
+% ------------------------------------------------------------------------
+\section{Uniqueness theorem}
+{\new 
+Radially symmetric solutions of (1.1) are of the form $u(x)=|x|^{-1}w(|x|)$, where $w$ solves (4.1) $$w''-w+r^{-2}w^3=0.$$
+
+I have written out the substitution.
+
+The problem is transformed to an initial value problem where $a>0$ is the initial condition for $w(r)$. The basic facts are summarised in Lemma 4.1. The proofs are omitted. 
+
+Also, another (now regular) initial value problem in $\delta(r,a)$ is introduced. 
+
+**Question:** Regularity in which sense? Usually smoothness, here 
+Theorem 4.1 claims uniqueness of the parameter $a>0$ for which $w(r, a)$ is positive on $(0, \infty)$ and vanishes at infinity. This is implied by Lemma 4.2.
+
+By studying the zeroes of $w(r,a)$, we can show that $A$ ----the set of $a>0$ such that $w(r, a)$ has at least one zero in $(0, \infty)$----has a left endpoint.
+
+The proof of Theorem 4.1 seems reasonable.
+
+The proofs of Lemma 4.2, 4.3 and 4.4 seem intricated/confusing. }
+\subsection{Equivalence of integral problem}
+Consider radially symmetric solutions to \eqref{upde}. Then $u(x) = u(r)$ where $r=|x|$. Then, \eqref{upde} transforms to the ODE
+\be \label{uode} u'' + \frac{N-1}{r} u' - u + u^3 = 0 \ee 
+by \#. Furthermore, substituting $u(x) = r^{-1}w(r)$, we can calculate the derivatives of $u$ as
+\begin{enumerate}
+    \item $u'(r) = -r^{-2}w(r) + r^{-1}w'(r)$
+    \item $u''(r) = 2r^{-3}w(r) - 2r^{-2}w'(r) + r^{-1}w''(r)$.
+\end{enumerate}
+Then, since $N=3$, \eqref{uode} reads
+\begin{multline} 
+u''(r) + \frac{2}{r} - u(r) + u^3(r) \\
+= 2r^{-3}w(r) - 2r^{-2}w'(r) + r^{-1}w''(r)
++ \frac{2}{r}\left(-r^{-2}w(r) + r^{-1}w'(r)\right) \\
+- r^{-1}w(r) + r^{-3}w^3(r) = 0.
+\end{multline}
+This can be simplified to
+$$ r^{-1}\left(w'' - w + r^{-2}w^3 \right) = 0. $$
+In conclusion, since $r\neq 0$, this simplifies to
+\be \label{wode} w'' - w + r^{-2}w^3 = 0. \ee
+
+So indeed, positive radially symmetric solutions to \eqref{upde} are of the form 
+$$ u(x) = |x|^{-1} w(|x|) $$
+where $w(|x|)$ satisfies the differential equation \eqref{wode}.
+
+Therefore, uniqueness of $w(r)$ to
+\be \begin{dcases} \label{wbvp}
+    w'' - w + r^{-2}w^3 = 0,\\
+    0 < \lim_{r\to 0}r^{-1}w(r) < \infty,\\
+    \lim_{r\to\infty}w(r) = 0
+\end{dcases} \ee
+
+is sufficient for uniqueness of $\phi_1$ to \eqref{upde}.
+
+We can interpret \eqref{wbvp} as an initial value problem
+\be \begin{dcases} \label{wivp}
+    w'' - w + r^{-2}w^3 = 0,\\
+    \lim_{r\to 0}r^{-1}w(r) = a.
+\end{dcases} \ee
+
+% \subsection{Some basic facts regarding \eqref{wivp}}
+
+
+\end{document}
+
