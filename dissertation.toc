@@ -32,6 +32,6 @@
 \contentsline {section}{\numberline {3.3}Minimisation of $J$}{23}{section.3.3}%
 \contentsline {section}{\numberline {3.4}Uniqueness theorem}{24}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Derivation of equation for radially symmetric solutions}{25}{subsection.3.4.1}%
-\contentsline {section}{\color {title}References}{26}{equation.3.22}%
+\contentsline {section}{\color {title}References}{26}{equation.3.24}%
 \gdef \the@ipfilectr {}
 \contentsfinish 

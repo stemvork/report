@@ -1,3 +1,154 @@
+\begin{comment}
+% {\red That is, there is precisely one positive radially
+% symmetric solution that is twice differentiable and belongs to $L^4$.  Moreover,
+% the Rayleigh quotient $J(u)$ attains its infimum.}
+
+{\red The Rayleigh quotient is generally obtained by multiplying with the solution and
+integrating with respect to \# the argument. In this way, we obtain the
+expression $$J(u) = \dfrac{\int\left|\nabla u\right|^2+u^2~dx}{\int u^4~dx}$$
+
+which is not a good minimiser. The functional has to be invariant in the same
+sense as the desired solution. Hence, square the numerator.}
+
+% The introduction refers to \# Finklestein, Nehari, Ryder and Berger.
+
+\hfill\hrule
+
+From \cite{nehari}, we know that
+\be\label{upde}
+\Delta u - u + u^3 = 0
+\ee
+
+in $\R^3$ has a positive radially symmetric solution $u$. {\red in which space}
+This positive radially symmetric solution is unique. 
+
+Moreover, $u \in H^1$ and $u\neq 0$ implies $J(\phi_1) < J(u)$ unless
+$u(x) = \lambda \phi_1 \left( x + x_0 \right)$ for some non-zero, real $\lambda$
+and $x_0 \in \R^3$. Here $J$ is the Rayleigh quotient associated with
+\eqref{upde},
+
+\be\label{rayl}
+% J(u) = \frac{\left( \intrrr |\mathrm{grad} u|^2 + u^2 dx
+J(u) = \frac{\left( \intrrr |\nabla u|^2 + u^2 \diff x \right)^2}{\int_{R^3} u^4 \diff x}
+\ee
+
+The right hand side of expression \eqref{rayl} is meaningful for $u\in H^1$ and
+$u\neq 0$. Such functions will be referred to as \emph{admissible} functions.
+
+In \cite{finkelstein} the equation \eqref{upde} was considered.
+
+\begin{lemma}\label{coff1}
+There exist $v_n(r) \in C^2\left( \left[0, \infty \right) \right)$ where $n=1, 2,
+\ldots$, such that for each $n$, $v_n$ has exactly $n-1$ isolated zeroes in
+$\left[0, \infty \right)$, decays exponentially as $r\to\infty$ and $\phi_n(x) =
+v_n(|x|)$ is a solution of \eqref{upde}.
+\end{lemma}
+
+The proofs were given in % TODO. 
+\cite{nehari} and \cite{ryder}. The same
+results were obtained in \cite{berger} using Lyusternik-Schnirelman theory.
+
+This paper proves the main result %TODO
+below to answer the questions raised in \cite{robinson}.
+
+We seek solutions to \eqref{upde} subject to the boundary condition at infinity
+given by
+\be\label{boundcond} u \in L^4. \ee
+
+The problem \eqref{upde}, \eqref{boundcond} is equivalent to the integral
+equation
+\be\label{inteq} u(x) = \intrrr g(x - t) u^3(t) \diff t, \ee
+
+in $L^4$, where
+\be\label{testfunc} g(x) = (4\pi)^{-1} \left| x \right|^{-1} e^{-|x|}. \ee
+
+The details to the results below (as well as a more complete bibliography
+concering \eqref{upde}) can be found in \cite{coffmcarn}.
+
+\begin{itemize}
+\item $C_0^\infty$ is dense in $H^1$.
+\item If $u \in H^1$ then $v = |u| \in H^1$ and
+\be |u|_{1, 2} = |v|_{1, 2}. \ee
+\item If $u \in H^1$ then $u \in L^4$ and
+\be\label{ineq} |u|_{0, 4} \leq 2^{-\half} |u|_{1, 2}. \ee
+\item Let $V$ denote the subspace of $H^1$ consisting of radially symmetric
+functions. The embedding $V \to L^4$ is compact.
+\end{itemize}
+% TODO: notation of $|u|_{0, 4}$ related to Sobolev spaces?
+
+Except for the constant, \eqref{ineq} follows from \cite{Ladyzhenskaya} or from
+the more general inequality in \cite{nirenberg} or \cite{friedman}. The constant
+can be obtained from the representation $u = g\ast w$ where $w = - \Delta u +
+u$. It suffices to prove \eqref{ineq} for $u \in C_0^\infty$. The assertion d)
+follows in a straightforward way from the Sobolev imbedding theorem and the
+inequality
+\be 4\pi \int_{|x|\geq \rho} |v(x)|^4 \diff x \leq 2\rho^{-1} |v|_{1, 2}^4 \ee
+
+for $v \in V$, $\rho > 0$.
+
+    Concerning the convolution operator $\tau : u \to g \ast u$, where 
+    \be (g \ast u)(x) = \intrrr g(x-t) u(t) \diff t \ee
+    and $g$ is given by \eqref{testfunc}, we have the following results:
+
+\begin{itemize}
+\item $u \in L^{4/3}$ then $v = g \ast u \in H^1 \subseteq L^4$, $\intrrr u v
+\diff x > 0$ unless $u = 0$, and $v$ is a weak solution of
+\be\label{vpde} -\Delta v + v = u. \ee
+\item If $u \in L^1 \cap L^\infty$ then $v = g \ast u$ has bounded continuous
+first derivatives and
+\be \underset{|x|\to\infty}{\lim} v(x) = 0. \ee
+\item If $u \in L^1 \cap L^\infty \cap C^1$ then $v = g \ast u \in C^2$ and $v$
+satisfies \eqref{vpde}.
+\item Let $X$ and $Y$ denote the subspaces of $L^{4/3}$ and $L^4$ respectively,
+consisting of radially symmetric functions. Then $Y = X^*$ and $\tau : X \to Y$
+is compact.
+\end{itemize}
+
+The first assertion of h) is obvious, the second follows immediately from d) and
+e).
+
+\textbf{Remark} For consideration of the equation
+\be\label{upde2} \Delta u - u + |u|^{p-2} u = 0,\ee
+
+one replaces $L^4$ by $L^p$ and $L^{4/3}$ by $L^q$ where $p^{-1} + q^{-1} = 1$.
+If $2 < p < 6$, then c), d), e) and h) remain valid in this more general case
+(except for a change in the constant in \eqref{ineq}; e) and h) of course fail
+for $p=2$.
+
+\section{Minimization of $J$}
+For $u \in L^4$, $u\neq 0$, we define $\sigma(u)$ by
+\be\label{sigmadef} \left( \sigma(u) \right)(x) = c \intrrr g(x-t) u^3(t) \diff
+t \ee
+
+where $c > 0$ is chosen so that $v = \sigma(u)$ satisfies
+\be\label{sigmaint} \intrrr v^4 \diff x = 1.\ee
+
+This is possible since $u \in L^4$ implies $u^3 \in L^{4/3}$; thus by e), $g
+\ast (u^3) \in L^4$ and is non-zero. It is clear that up to positive factors the
+fixed points of $\sigma$ are precisely the non-trivial solutions of
+\eqref{rayl}. From e) above it follows that $\sigma$ actually maps $L^4$ into
+$H^1$ and thus by c), $\sigma$ can also be regarded as an operator in
+$H^1\setminus\{0\}$. In particular it follows that an $L^4$ solution of \eqref{rayl}
+must belong to $H^1$.
+
+\begin{lemma} Let $u$ be an admissible function with
+    \be\label{uint} \intrrr u^4 \diff x = 1. \ee
+    Then $\sigma(u)$ is admissible and
+    \be\label{jineq} J\left(\sigma(u)\right)\leq J(u) \ee
+    with equality only if $\sigma(u) = u$. Moreover, $\sigma(u) \in L^\infty$,
+    and $v=\sigma^2(u)$ has bounded continuous derivatives and satisfies
+    \be\label{vlim} \underset{|x|\to\infty}{\lim} v(x) = 0;\ee
+    finally $\sigma^3(u) \in C^2$.
+\end{lemma}
+\begin{proof}
+The admissibility of $\sigma(u)$ follows from e). By e), \eqref{sigmadef} and
+\eqref{uint}, $w=\sigma(u)$ satisfies
+\be \label{cineq} c = c \intrrr u^4 \diff x = \intrrr \left( \grad w \cdot \grad
+u + wu \right) \diff x \leq |u|_{1, 2}|w|_{1, 2}. \ee
+
+\end{proof}
+\end{comment}
+
 % ------------------------------------------------------------------------
 % --------------------- SECTION 1 ----------------------------------------
 % ------------------------------------------------------------------------
