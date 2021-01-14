@@ -1,0 +1,209 @@
+\section{Uniqueness theorem}
+The radially symmetric solutions of \eqref{upde} are of the form
+$$u(x)=|x|^{-1}w(|x|),$$ 
+where $w(r)$ ($r=|x|$) solves 
+\be\label{wvp}
+w''-w+r^{-2}w^3=0.
+\ee
+We refer to \ref{weqv} for the details.
+
+\todo{Improve this paragraph.}
+To prove the uniqueness of ground state solution $\phi_1$ for \eqref{upde}, it
+suffices to prove that \eqref{wvp} has at most one positive solution satisfying
+the following boundary conditions
+\be\label{wbc}
+0 < \underset{r\to0}{\lim}~r^{-1}w(r) < \infty,\quad
+\underset{r\to\infty}{\lim} w(r)=0.
+\ee
+
+\todo{Improve this paragraph.}
+The problem \eqref{wvp} is transformed to an initial value problem where 
+\be\label{wic}
+\underset{r\to0}{\lim}~r^{-1}w(r)=a>0.
+\ee
+
+\todo{Improve this paragraph.}
+The basic facts regarding the problem \eqref{wvp}, \eqref{wic} are summarised in
+Lemma 4.1. The proofs are omitted in \cite{coffm}. 
+
+\todo{Change variable $\delta$, fractions for derivatives and ..?}
+\begin{lemma}\label{dlem}
+    For each $a>0$ the equation \eqref{wvp} has a unique solution $w=w(r,a)$ 
+    which is of class $C^2$ on $\left(0, \infty\right)$ and satisfies
+    \eqref{wic}.  The partial derivatives $\partial w(r,a)/\partial a$ and
+    $\partial w'(r, a)/\partial a$ exist for all positive $r$ and $a$.
+    Furthermore, $\partial w(r, a)/\partial a$ coincides on $(0, \infty)$ with
+    the solution $\delta=\delta(r, a)$ of the regular initial value problem 
+    \be\label{dvp} \begin{cases}
+    \delta'' - \delta + 3r^{-2}w^2\delta=0,\\ 
+    \delta(0)=0,\quad\delta'(0)=1,
+    \end{cases}\ee
+    with $w=w(r, a)$; $\partial w'(r, a)/\partial a=\delta'(r, a)$.  
+\end{lemma}
+
+\todo{Rephrase result.}
+It is clear that a solution of \eqref{wvp} which satisfies
+\eqref{wbc} belongs to the one-parameter family $w=w(r, a)$, $a>0$; we
+therefore formulate our uniqueness result as follows.
+
+\begin{theorem}\label{uniqthm}
+There is at most one positive value of $a$ for which
+\be\label{wpos}w(r,a)>0,\quad 0<r<\infty\ee
+and
+\be\label{wlim}\underset{r\to\infty}{\lim} w(r, a)=0.\ee
+\end{theorem}
+
+\todo{Expand explanation}
+\Cref{uniqthm} is implied by the following lemma.
+
+\begin{lemma}
+    \begin{enumerate}[(i)]
+        \item If $a>0$ and $w(r, a)>0$ on $(0, z_1)$ with $w(z_1, a)=0$, then
+            $\delta(z_1, a)<0$.
+        \item If $a>0$ and $w(r, a)$ satisfies (4.5) and (4.6) then
+            \be\label{dlim}
+                \underset{r\to\infty}{\lim} e^{-r}\delta(r, a)<0.
+            \ee
+    \end{enumerate}
+\end{lemma}
+
+\begin{proof}[Proof of Theorem \ref{uniqthm}]
+    \todo{Proof step 1. $z_1$ is monotonically decreasing.}
+    Let
+    \be\label{adef}
+    A \coloneqq \left\{\;a>0 \;\middle|\; \exists r>0 \;:\; w(r,a)=0\;\right\}
+    \ee
+    and let
+    \be\label{z1def}
+    z_1 \coloneqq \inf\left\{\; r>0 \;\middle|\; w(r, a)=0\;\right\}.
+    \ee
+
+    % and let $z_1=z_1(a)$ be the least positive zero of $w(r, a)$ for any $a\in A$.
+    % If $a\in A$ and $z_1=z_1(a)$ is the least positive zero of $w(r,a)$, then,
+    \todo{Read up on implicit function theorem.}
+    By \cref{dlem} and the implicit function theorem, $z_1$ is differentiable
+    with respect to $a$ and
+
+    $$w'(z_1, a)\frac{\diff z_1}{\diff a} + \delta(z_1, a) = 0.$$
+
+    Since $w(r, a)>0$ on $(0, z_1)$ and $w(z_1, a)=0$, we have $w'(z_1, a)<0$. 
+    By \cref{dlem}(i) $\ldots<0$. 
+
+    Hence $$\dfrac{\diff z_1}{\diff a}<0\quad\text{on}~A.$$ 
+
+    Therefore, $z_1$ moves monotonically to the left as $a$ increases. 
+
+    Thus if $A$ is non-empty it is a semi-infinite interval. 
+   
+    \todo{Proof step 2. $a_1$ is the left endpoint of $A$ if $a_1$ satisifies
+    \eqref{wpos} and \eqref{wlim}.}
+    We next show that if \eqref{wpos} and \eqref{wlim} hold for $a=a_1$, then $A$ is non-empty and
+    $a_1$ is the left endpoint of $A$. 
+
+    This will clearly imply \Cref{uniqthm}.
+   
+    Let $a_1$ be as above and let $a_2>a_1$; we shall show that if $a_2-a_1$ is
+    sufficiently small, then the assumption 
+    \be\label{wass} w(r, a_2) > 0\quad\text{on}~(0, \infty)\ee 
+    leads to a contradiction. 
+
+    We put $w_i=w_i(r, a)$ for $i=1, 2$. 
+
+    By our assumption on $a_1$ and ii) of \cref{dlem}, we can choose $r_0>0$
+    such that.
+
+    \be\label{lbw1} 3r^{-2}w_1^2<\frac{1}{2},\quad r\geq r_0\ee
+    and
+
+    \be\label{...neg} \ldots.\ee
+
+    From \cref{...} and \eqref{...neg} it follows that if $a_2-a_1$ is
+    sufficiently small, then
+    \be\label{w2ltw1} w_2(r_0)<w_1(r_0),\quad w_2'(r_0)<w_1'(r_0).\ee
+
+    We put $v = w_1-w_2$, so that $v$ satisfies
+    \be\label{vivp} v'' - v + r^{-2}\left(w_1^2+w_1w_2+w_2^2\right)v=0.\ee
+
+    We suppose that $w_2(r,a_2)$ satisfies \eqref{wass} and that
+    \be\label{w2ltw1r0r1} 0<w_2<w_1\quad\text{on}~\left[r_0,r_1\right)\ee
+
+    for some $r_1>r_0$. Such an $r_1$ exists by \eqref{w2ltw1}.
+    \todo{Untangle the argumentation and make some pictures. Compare to Genoud.}
+
+
+\end{proof}
+
+% Also, another (now regular) initial value problem in $\delta(r,a)$ is introduced. 
+% 
+% **Question:** Regularity in which sense? Usually smoothness, here 
+% Theorem 4.1 claims uniqueness of the parameter $a>0$ for which $w(r, a)$ is positive on $(0, \infty)$ and vanishes at infinity. This is implied by Lemma 4.2.
+% 
+By studying the zeroes of $w(r,a)$, we can show that $A$ (the set of $a>0$
+such that $w(r, a)$ has at least one zero in $(0, \infty)$) has a left
+endpoint.
+
+\begin{lemma}
+Let $a>0$ and let $w=w(r,a)$ either vanish at least once in $(0, \infty)$
+    or satisfy \eqref{wlim}; then $a>\sqrt{2}$, $w(r, a)=r$ for precisely one value
+$r=r_0$ in $(0, z_1)$ and $w'(r_0, a)<0$.
+\end{lemma}
+\begin{proof}
+\end{proof}
+
+\begin{lemma}
+    $\alpha < y_1 < \beta.$
+\end{lemma}
+\begin{proof}
+\end{proof}
+
+%The proof of Theorem 4.1 seems reasonable.
+% The proofs of Lemma 4.2, 4.3 and 4.4 seem intricated/confusing.
+
+\subsection{Derivation of equation for radially symmetric solutions}\label{weqv}
+Consider radially symmetric solutions to \eqref{upde}. Then $u(x) = u(|x|) =
+u(r)$ . This transforms \eqref{upde} to the ODE \eqref{ivp}, restated here for
+$N=3$
+\be \label{uode} u'' + \frac{2}{r} u' - u + u^3 = 0 \ee 
+
+Furthermore, substituting $u(r) = r^{-1}w(r)$, we calculate the derivatives of
+$u$ as
+\begin{enumerate}
+    \item $u'(r) = -r^{-2}w(r) + r^{-1}w'(r)$
+    \item $u''(r) = 2r^{-3}w(r) - 2r^{-2}w'(r) + r^{-1}w''(r)$.
+\end{enumerate}
+% Then, since $N=3$, \eqref{uode} reads
+We substitute in \eqref{uode} to obtain
+\begin{multline} 
+u''(r) + \frac{2}{r} - u(r) + u^3(r) \\
+= 2r^{-3}w(r) - 2r^{-2}w'(r) + r^{-1}w''(r)
++ \frac{2}{r}\left(-r^{-2}w(r) + r^{-1}w'(r)\right) \\
+- r^{-1}w(r) + r^{-3}w^3(r) = 0,
+\end{multline}
+which is simplified to
+$$ r^{-1}\left(w'' - w + r^{-2}w^3 \right) = 0. $$
+In conclusion, since $r\neq 0$, we obtain
+\be \label{wode} w'' - w + r^{-2}w^3 = 0. \ee
+
+% So indeed, positive radially symmetric solutions to \eqref{upde} are of the form 
+% $$ u(x) = |x|^{-1} w(|x|) $$
+% where $w(|x|)$ satisfies the differential equation \eqref{wode}.
+% 
+% Therefore, uniqueness of $w(r)$ to
+% \be \begin{dcases} \label{wbvp}
+%     w'' - w + r^{-2}w^3 = 0,\\
+%     0 < \lim_{r\to 0}r^{-1}w(r) < \infty,\\
+%     \lim_{r\to\infty}w(r) = 0
+% \end{dcases} \ee
+% 
+% is sufficient for uniqueness of $\phi_1$ to \eqref{upde}.
+% 
+% We can interpret \eqref{wbvp} as an initial value problem
+% \be \begin{dcases} \label{wivp}
+%     w'' - w + r^{-2}w^3 = 0,\\
+%     \lim_{r\to 0}r^{-1}w(r) = a.
+% \end{dcases} \ee
+
+
+% \section{Introduction}
+
+%In the reference paper \cite{nehari}

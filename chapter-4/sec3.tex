@@ -1,0 +1,65 @@
+\section{Minimisation of $J$}
+This section first states that a solution $u\in L^4$ must belong to $H^1$.
+For $u\in L^4$, $u\neq 0$, we define $\sigma(u)$ by 
+\be \label{sigmadef} \left(\sigma(u)\right)(x) = c \int g(x-t)u^3(t)~dt \ee
+
+$[\ldots]$
+
+%($u\in H^1$ and $u\neq 0$)
+%Lemma 3.1
+\begin{lemma} 
+If $u$ is an admissible solution, then $\sigma(u)$ is admissible and
+\be\label{jsigma}
+J(\sigma(u))\leq J(u)
+\ee
+
+with equality only if $\sigma(u) = u$. Moreover, $\sigma(u)\in L^\infty$ 
+%($\sigma(u)$ bounded) 
+and $v=\sigma^2(u)$ has bounded continuous derivatives and satisfies
+\be\label{vlim}
+\underset{|x|\to\infty}{\lim} v(x)=0;
+\ee
+finally $\sigma^3(u)\in C^2$.
+\end{lemma}
+\begin{proof}
+\end{proof}
+
+The following two lemmata are corollaries of Lemma 3.1.
+\begin{lemma} 
+    If $v\in L^4$ is a solution of \eqref{uint} then $v\in C^2$, $v$ has
+    bounded first derivatives, and $v$ satisfies \eqref{vlim}.
+\end{lemma}
+\begin{lemma} 
+    If $u$ is any (radially symmetric) admissible function, then there is a
+    (raaially symmetric) admissible function $v\in C^2$ which is positive, has
+    bounded first derivatives and satisfies \eqref{vlim} and 
+\be\label{jvu}
+J(v)\leq J(u).
+\ee
+    Moreover, unless $u$ itself has the same properties and is a solution of 
+    \eqref{uint} (to within a positive factor), then $v$ can be chosen so that
+    inequality \eqref{jvu} is strict.
+\end{lemma}
+\begin{proof}
+\end{proof}
+
+% The implications are that solutions of the integral equation (2.2) are in $C^2$, have bounded first derivatives and vanish at the boundary.
+% 
+% Furthermore, existence of a (radially symmetric) admissible function implies existence of a (radially symmetric) function in $C^2$ which is positive, has bounded first derivatives, vanishes at the boundary and satisfies (3.5) and satisfies
+% 
+% Moreover, unless $u$ has the same properties and solves (2.2), the $v$ can be chosen so that (3.7) is a strict inequality.
+
+\begin{theorem}% 3.1 which states that for the ground state
+Let
+    $$\lambda_1 = \inf\left\{J(u): u~\text{admissible}\right\}.$$
+    There exists a $\phi_1\in V$ %(hence radially symmetric)
+    with 
+    $$J(\phi_1)=\lambda_1.$$ 
+    For $u\in H^1$, $J(u)>\lambda_1$ unless $u$ is of the form \eqref{uts}.
+\end{theorem}
+
+% I have lent the book Polya[19] from the library (mentioned in the proof of 3.1).
+% I have downloaded the references Mostow[16] and Moser[15].
+The proof of Theorem 3.1 shows the desired results of the paper except for the
+last statement. This requires \ref{uniqthm} of the next section.
+% The basic idea of Rayleigh quotient minimization is to find the ground state eigenfunction. Another interpretation is that we find the best constant for the imbedding $H^1 \to L^4$.
