@@ -24,23 +24,14 @@
 \contentsline {section}{\color {title}References}{18}{equation.2.34}%
 \gdef \the@ipfilectr {}
 \gdef \the@ipfilectr {@-4}
-\contentsline {chapter}{\numberline {3}Uniqueness}{21}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Main uniqueness theorem}{21}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}New initial value problem and nonlinearity}{21}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Hypotheses on the non-autonomous term}{22}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Definitions of solution sets}{22}{subsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.1.4}Main theorem}{22}{subsection.3.1.4}%
-\contentsline {section}{\numberline {3.2}Sturm theory and related lemmata}{22}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Basic properties of solutions}{23}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Auxiliary functions related to solutions}{26}{section.3.4}%
-\contentsline {section}{\numberline {3.5}More advanced properties of solutions}{30}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Proof of main theorem}{33}{section.3.6}%
-\contentsline {section}{\color {title}References}{33}{section.3.6}%
-\gdef \the@ipfilectr {}
-\gdef \the@ipfilectr {@-5}
-\contentsline {chapter}{\numberline {4}Uniqueness}{35}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Introduction}{35}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Minimization of $J$}{37}{section.4.2}%
-\contentsline {section}{\color {title}References}{38}{equation.4.18}%
+\contentsline {chapter}{\numberline {3}Uniqueness of ground state}{21}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction}{21}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Preliminary results for the integral equation}{22}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Some results regarding $H^1$}{22}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Some results regarding the convolution operator}{22}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Minimisation of $J$}{23}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Uniqueness theorem}{24}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Derivation of equation for radially symmetric solutions}{25}{subsection.3.4.1}%
+\contentsline {section}{\color {title}References}{26}{equation.3.22}%
 \gdef \the@ipfilectr {}
 \contentsfinish 
