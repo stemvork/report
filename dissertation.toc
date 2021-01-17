@@ -28,10 +28,10 @@
 \contentsline {section}{\numberline {3.1}Introduction}{21}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Preliminary results for the integral equation}{22}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Some results regarding $H^1$}{22}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Some results regarding the convolution operator}{22}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.2}Some results regarding the convolution operator}{23}{subsection.3.2.2}%
 \contentsline {section}{\numberline {3.3}Minimisation of $J$}{23}{section.3.3}%
 \contentsline {section}{\numberline {3.4}Uniqueness theorem}{24}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Derivation of equation for radially symmetric solutions}{26}{subsection.3.4.1}%
-\contentsline {section}{\color {title}References}{27}{equation.3.30}%
+\contentsline {subsection}{\numberline {3.4.1}Derivation of equation for radially symmetric solutions}{27}{subsection.3.4.1}%
+\contentsline {section}{\color {title}References}{28}{equation.3.31}%
 \gdef \the@ipfilectr {}
 \contentsfinish 

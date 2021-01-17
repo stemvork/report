@@ -1,44 +1,46 @@
 \section{Uniqueness theorem}
 The radially symmetric solutions of \eqref{upde} are of the form
 $$u(x)=|x|^{-1}w(|x|),$$ 
-where $w(r)$ ($r=|x|$) solves 
+where $w(|x|)=w(r)$ solves 
 \be\label{wvp}
 w''-w+r^{-2}w^3=0.
 \ee
 We refer to \ref{weqv} for the details.
 
-\todo{Improve this paragraph.}
-To prove the uniqueness of ground state solution $\phi_1$ for \eqref{upde}, it
-suffices to prove that \eqref{wvp} has at most one positive solution satisfying
-the following boundary conditions
+\todo{Rephrase this paragraph}
+To prove the uniqueness of the ground state solution $\phi_1$ for \eqref{upde},
+it suffices to prove that \eqref{wvp} has at most one positive solution
+satisfying the following boundary conditions
 \be\label{wbc}
+% \underset{r\to0}{\lim}~r^{-1}w(r) in some sense is u(0) \in (0, \infty)
 0 < \underset{r\to0}{\lim}~r^{-1}w(r) < \infty,\quad
 \underset{r\to\infty}{\lim} w(r)=0.
 \ee
 
-\todo{Improve this paragraph.}
-The problem \eqref{wvp} is transformed to an initial value problem where 
+% The problem \eqref{wvp},\eqref{wbc} is transformed to an initial value problem where 
+Similar to the shooting method in \ref{existence}, we consider the initial
 \be\label{wic}
 \underset{r\to0}{\lim}~r^{-1}w(r)=a>0.
 \ee
+condition rather than the boundary conditions \eqref{wbc}.  The basic facts
+regarding the problem \eqref{wvp}, \eqref{wic} are summarised in Lemma 4.1. The
+proofs are omitted in the original paper \cite{coffm}. 
 
-\todo{Improve this paragraph.}
-The basic facts regarding the problem \eqref{wvp}, \eqref{wic} are summarised in
-Lemma 4.1. The proofs are omitted in \cite{coffm}. 
-
-\todo{Change variable $\delta$, fractions for derivatives and ..?}
-\begin{lemma}\label{dlem}
+\begin{lemma}\label{qlem}
     For each $a>0$ the equation \eqref{wvp} has a unique solution $w=w(r,a)$ 
     which is of class $C^2$ on $\left(0, \infty\right)$ and satisfies
-    \eqref{wic}.  The partial derivatives $\partial w(r,a)/\partial a$ and
-    $\partial w'(r, a)/\partial a$ exist for all positive $r$ and $a$.
-    Furthermore, $\partial w(r, a)/\partial a$ coincides on $(0, \infty)$ with
-    the solution $\delta=\delta(r, a)$ of the regular initial value problem 
-    \be\label{dvp} \begin{cases}
-    \delta'' - \delta + 3r^{-2}w^2\delta=0,\\ 
-    \delta(0)=0,\quad\delta'(0)=1,
+    \eqref{wic}.  The partial derivatives $w_a(r, a) = \partial_a w(r, a) =
+    \frac{\partial w(r,a)}{\partial a}$ and $w_a'(r, a) = \partial_a w'(r, a) =
+    \frac{\partial w'(r, a)}{\partial a}$ exist for all $r>0$ and $a>0$.
+    %Let $q(r, a)$ denote $w_a(r, a)$. 
+    Furthermore, $w_a(r, a)$ coincides on $(0, \infty)$ with the solution
+    $q=q(r, a)$ of the regular initial value problem 
+    \be\label{qvp} \begin{cases}
+    q'' - q + 3r^{-2}w^2q=0,\\ 
+    q(0)=0,\quad q'(0)=1,
     \end{cases}\ee
-    with $w=w(r, a)$; $\partial w'(r, a)/\partial a=\delta'(r, a)$.  
+    with $w=w(r, a)$; $q'(r, a)=w_a'(r, a)$; $q''(r, a)=w_a''(r,
+    a)=\frac{\partial w''(r, a)}{\partial a}$.  
 \end{lemma}
 
 \todo{Rephrase result.}
@@ -56,18 +58,19 @@ and
 \todo{Expand explanation}
 \Cref{uniqthm} is implied by the following lemma.
 
-\begin{lemma}
+\begin{lemma}\label{qneglem}
     \begin{enumerate}[(i)]
         \item If $a>0$ and $w(r, a)>0$ on $(0, z_1)$ with $w(z_1, a)=0$, then
-            $\delta(z_1, a)<0$.
-        \item If $a>0$ and $w(r, a)$ satisfies (4.5) and (4.6) then
-            \be\label{dlim}
-                \underset{r\to\infty}{\lim} e^{-r}\delta(r, a)<0.
+            $q(z_1, a)<0$.
+        \item If $a>0$ and $w(r, a)$ satisfies \eqref{wpos} and \eqref{wlim} then
+            \be\label{qexplim}
+                \underset{r\to\infty}{\lim} e^{-r}q(r, a)<0.
             \ee
     \end{enumerate}
 \end{lemma}
 
 \begin{proof}[Proof of Theorem \ref{uniqthm}]
+    We assume \Cref{qneglem}.
     \todo{Proof step 1. $z_1$ is monotonically decreasing.}
     Let
     \be\label{adef}
@@ -81,15 +84,14 @@ and
     % and let $z_1=z_1(a)$ be the least positive zero of $w(r, a)$ for any $a\in A$.
     % If $a\in A$ and $z_1=z_1(a)$ is the least positive zero of $w(r,a)$, then,
     \todo{Read up on implicit function theorem.}
-    By \cref{dlem} and the implicit function theorem, $z_1$ is differentiable
+    By \cref{qlem} and the implicit function theorem, $z_1$ is differentiable
     with respect to $a$ and
 
     $$w'(z_1, a)\frac{\diff z_1}{\diff a} + \delta(z_1, a) = 0.$$
 
     Since $w(r, a)>0$ on $(0, z_1)$ and $w(z_1, a)=0$, we have $w'(z_1, a)<0$. 
-    By \cref{dlem}(i) $\ldots<0$. 
-
-    Hence $$\dfrac{\diff z_1}{\diff a}<0\quad\text{on}~A.$$ 
+    By \cref{qlem}(i), this implies $q(z_1, a)<0$.  Hence 
+    $$\dfrac{\diff z_1}{\diff a}<0\quad\text{on}~A.$$ 
 
     Therefore, $z_1$ moves monotonically to the left as $a$ increases. 
 
@@ -105,23 +107,26 @@ and
     Let $a_1$ be as above and let $a_2>a_1$; we shall show that if $a_2-a_1$ is
     sufficiently small, then the assumption 
     \be\label{wass} w(r, a_2) > 0\quad\text{on}~(0, \infty)\ee 
-    leads to a contradiction. 
+    leads to a contradiction. Note that the assumption \eqref{wass} implies  
+    $a_2\not\in A$, since $w(r, a_2)$ is assumed positive on $(0, \infty)$.
 
-    We put $w_i=w_i(r, a)$ for $i=1, 2$. 
+    We put $w_i=w_i(r, a_i)$ for $i=1, 2$\footnote{Correcting a typo in
+    the definition of $w_i$ given in \cite{coffm}.}. 
 
-    By our assumption on $a_1$ and ii) of \cref{dlem}, we can choose $r_0>0$
-    such that.
+    By our assumption on $a_1$ and ii) of \cref{qlem}, we can choose $r_0>0$
+    such that
 
-    \be\label{lbw1} 3r^{-2}w_1^2<\frac{1}{2},\quad r\geq r_0\ee
+    \be\label{ubw1} 3r^{-2}w_1^2<\frac{1}{2},\quad r\geq r_0\ee
     and
 
-    \be\label{...neg} \ldots.\ee
+    \be\label{qneg} q(r_0, a_1)<0,\quad\text{and}~q'(r_0, a_1)<0.\ee
 
-    From \cref{...} and \eqref{...neg} it follows that if $a_2-a_1$ is
-    sufficiently small, then
+    From \cref{qlem} and \eqref{qneg} it follows that if $a_2>a_1$ and $a_2-a_1$
+    is sufficiently small, then
     \be\label{w2ltw1} w_2(r_0)<w_1(r_0),\quad w_2'(r_0)<w_1'(r_0).\ee
 
-    We put $v = w_1-w_2$, so that $v$ satisfies
+    We put $v = w_1-w_2$, so that $v$ satisfies\footnote{Correcting a 
+    typo in (4.12) of \cite{coffm}.}
     \be\label{vivp} v'' - v + r^{-2}\left(w_1^2+w_1w_2+w_2^2\right)v=0.\ee
 
     We suppose that $w_2(r,a_2)$ satisfies \eqref{wass} and that
@@ -129,8 +134,31 @@ and
 
     for some $r_1>r_0$. Such an $r_1$ exists by \eqref{w2ltw1}.
     \todo{Untangle the argumentation and make some pictures. Compare to Genoud.}
-
-
+    \begin{itemize}
+        \item From \eqref{w2ltw1}, \eqref{vivp} and \eqref{ubw1} it follows that
+            $v$ is positive and convex on $\left[r_0, r_1\right)$; 
+        \item moreover, from \eqref{w2ltw1}, $v'(r_0)>0$ so that $v$ is
+            increasing on $\left[r_0, r_1\right)$. 
+        \item Thus \eqref{w2ltw1r0r1} holds at $r=r_1$;
+        \item hency by a standard argument we conclude that \eqref{w2ltw1r0r1}
+            holds on $\left[r_0, \infty\right)$ and that $v$ is increasing
+            there. 
+        \item The inequality \eqref{w2ltw1r0r1} on $\left[r_0, \infty\right)$
+            implies that
+            \be\label{wlimsumsq}
+                \underset{r\to\infty}{\lim}\left(w_1^2+w_1w_2+w_2^2\right)=0.
+            \ee
+        \item Using this fact and the monotone character of $v$, we conclude
+            from asymptotic integration of \eqref{vivp} that $v$ grows
+            exponentially as $r\to\infty$.
+        \item From the definition of $v$, this is clearly a contradiction of
+            \eqref{wlim} for $a=a_1$ and \eqref{wass}. 
+        \item We conclude therefore that \eqref{wass} cannot hold for $a_2>a_1$
+            and $a_2-a_1$ arbitrarily small;
+        \item therefore $a_2\in A$ for all $a_2>a_1$ with $a_2-a_1$ sufficiently
+            small. 
+        \item This completes the proof of \Cref{uniqthm}.
+    \end{itemize}
 \end{proof}
 
 % Also, another (now regular) initial value problem in $\delta(r,a)$ is introduced. 

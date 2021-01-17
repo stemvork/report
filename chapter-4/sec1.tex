@@ -3,6 +3,17 @@
 % $\Delta u - u + u^3 = 0$ and a Variational Characterization of Other Solutions"
 % written in 1972 by Charles V. Coffman. 
 
+\todo{Make connection to chapter 2 and discuss similarities and differences.
+Berestycki shows existence for $f(u)$ satisfying certain conditions, the problem
+considered here is the specific case for $f(u) = u - u^3$. 
+
+Existence in this paper was based on Nehari/Ryder/Berger. They show existence
+for a smaller (?) family of $f(u)$. Nehari: $f(u) = u - u^k$ with $1<k\leq 4$.
+Ryder more general: $\Delta u = u - u f(u^2)$. Berger: $i\frac{\partial
+u}{\partial t} = \Delta u + f(|x|, |u|^2)u$ under the assumption that $f(|x|,
+|u|^2)=k(|x|)|u|^\sigma$ for $0<\sigma<4$ and $k(|x|)$ a Lipschitz continuous
+positive bounded function.}
+
 In this chapter, we study a paper from 1972 by Charles V. Coffman \cite{coffm}. 
 The paper proves uniqueness of the positive radially symmetric (ground
 state) solution $u=\phi_1\in C^2\cap L^4$ for the equation
@@ -29,9 +40,14 @@ $\lambda_1 > 1$. The latter is shown only through approximations. Theorem 3.1 of
 J(u) = \dfrac{\left(\int\left|\nabla u\right|^2+u^2~dx\right)^2}{\int u^4~dx}
 \ee
 
-is indeed minimal for $u=\phi_1$ and for 
+is indeed minimal for %$u=\phi_1$ and for 
 \be\label{uts}
-u(x)=k\phi_1(x+x_0)
+u(x)=k\phi_1(x+x_0),\quad\text{where}~k\neq0~\text{and}~x_0\in\R^3
 \ee
-for any $k\neq 0$ and
-$x_0\in \R^3$.
+% for any $k\neq 0$ and $x_0\in \R^3$. 
+The right hand side of \eqref{rayleigh} is
+meaningful for admissible functions. \todo{Fit definition on same page?}
+
+\begin{definition} 
+    A function $u$ is \emph{admissible} if $u\in H^1$ and $u\neq 0$.
+\end{definition}
