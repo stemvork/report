@@ -10,7 +10,6 @@
 \contentsline {section}{\numberline {1.5}Polarisation field}{4}{section.1.5}%
 \contentsline {section}{\numberline {1.6}Implications of nonlinear polarisation}{6}{section.1.6}%
 \contentsline {section}{\numberline {1.7}Soliton solutions}{7}{section.1.7}%
-\contentsline {section}{\color {title}References}{8}{equation.1.22}%
 \gdef \the@ipfilectr {}
 \gdef \the@ipfilectr {@-3}
 \contentsline {chapter}{\numberline {2}Existence of ground state}{9}{chapter.2}%
@@ -21,17 +20,24 @@
 \contentsline {section}{\numberline {2.5}Interval of definition}{11}{section.2.5}%
 \contentsline {section}{\numberline {2.6}Asymptotics of positive decreasing solutions}{14}{section.2.6}%
 \contentsline {section}{\numberline {2.7}$P$ is non-empty and open}{16}{section.2.7}%
-\contentsline {section}{\color {title}References}{18}{equation.2.34}%
 \gdef \the@ipfilectr {}
 \gdef \the@ipfilectr {@-4}
-\contentsline {chapter}{\numberline {3}Uniqueness of ground state}{21}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Introduction}{21}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Preliminary results for the integral equation}{22}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Some results regarding $H^1$}{22}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Some results regarding the convolution operator}{23}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}Minimisation of $J$}{23}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Uniqueness theorem}{24}{section.3.4}%
+\contentsline {chapter}{\numberline {3}Uniqueness of ground state}{19}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction}{19}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Preliminary results for the integral equation}{20}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Some results regarding $H^1$}{20}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Some results regarding the convolution operator}{21}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Minimisation of $J$}{21}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Uniqueness theorem}{23}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Derivation of equation for radially symmetric solutions}{27}{subsection.3.4.1}%
-\contentsline {section}{\color {title}References}{28}{equation.3.31}%
 \gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-2}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-3}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-4}
+\gdef \the@ipfilectr {}
+\contentsline {section}{\color {title}References for Chapter 1}{28}{equation.3.35}%
+\contentsline {section}{\color {title}References for Chapter 2}{28}{equation.3.35}%
+\contentsline {section}{\color {title}References for Chapter 3}{28}{equation.3.35}%
 \contentsfinish 

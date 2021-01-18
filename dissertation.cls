@@ -16,7 +16,7 @@
 \RequirePackage[dutch,english]{babel}
 \RequirePackage{calc}
 \RequirePackage[nooneline,footnotesize]{caption}
-\RequirePackage{chapterbib}
+\RequirePackage[gather]{chapterbib}
 \RequirePackage{etaremune}
 \RequirePackage{fancyhdr}
 \RequirePackage[flushmargin,hang]{footmisc}

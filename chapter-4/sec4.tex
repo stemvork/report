@@ -5,26 +5,27 @@ where $w(|x|)=w(r)$ solves
 \be\label{wvp}
 w''-w+r^{-2}w^3=0.
 \ee
-We refer to \ref{weqv} for the details.
-
-\todo{Rephrase this paragraph}
+We refer to \ref{weqv} for more details on \eqref{wvp}.
+%
+% \todo{Rephrase this paragraph}
 To prove the uniqueness of the ground state solution $\phi_1$ for \eqref{upde},
 it suffices to prove that \eqref{wvp} has at most one positive solution
 satisfying the following boundary conditions
 \be\label{wbc}
 % \underset{r\to0}{\lim}~r^{-1}w(r) in some sense is u(0) \in (0, \infty)
 0 < \underset{r\to0}{\lim}~r^{-1}w(r) < \infty,\quad
-\underset{r\to\infty}{\lim} w(r)=0.
+\underset{r\to\infty}{\lim} w(r)=0
 \ee
 
 % The problem \eqref{wvp},\eqref{wbc} is transformed to an initial value problem where 
-Similar to the shooting method in \ref{existence}, we consider the initial
+Similar to the shooting method in \Cref{existence}, we consider the initial
+condition 
 \be\label{wic}
 \underset{r\to0}{\lim}~r^{-1}w(r)=a>0.
 \ee
-condition rather than the boundary conditions \eqref{wbc}.  The basic facts
-regarding the problem \eqref{wvp}, \eqref{wic} are summarised in Lemma 4.1. The
-proofs are omitted in the original paper \cite{coffm}. 
+rather than the boundary conditions \eqref{wbc}. The basic facts regarding the
+problem \eqref{wvp}, \eqref{wic} are summarised in Lemma 4.1. {\red The proofs
+are omitted in the original paper \cite{coffm}}. 
 
 \begin{lemma}\label{qlem}
     For each $a>0$ the equation \eqref{wvp} has a unique solution $w=w(r,a)$ 
@@ -43,10 +44,10 @@ proofs are omitted in the original paper \cite{coffm}.
     a)=\frac{\partial w''(r, a)}{\partial a}$.  
 \end{lemma}
 
-\todo{Rephrase result.}
-It is clear that a solution of \eqref{wvp} which satisfies
-\eqref{wbc} belongs to the one-parameter family $w=w(r, a)$, $a>0$; we
-therefore formulate our uniqueness result as follows.
+% \todo{Rephrase result.}
+The solution $w(r)$ to problem \eqref{wvp}, \eqref{wic} depends on the parameter
+$a>0$ (initial condition). This motivates us to write $w=w(r, a)$ and formulate
+the uniqueness result in terms of $a>0$.
 
 \begin{theorem}\label{uniqthm}
 There is at most one positive value of $a$ for which
@@ -55,8 +56,18 @@ and
 \be\label{wlim}\underset{r\to\infty}{\lim} w(r, a)=0.\ee
 \end{theorem}
 
-\todo{Expand explanation}
-\Cref{uniqthm} is implied by the following lemma.
+% \todo{Expand explanation}
+Similar to the approach in \Cref{existence}, the solutions $w(r,a)$ are of one
+of three types: (i) solutions that have a finite zero, (ii) solutions that are
+positive everywhere and (iii) solutions that are positive everywhere and vanish
+at infinity. We refer to definitions \eqref{nset}, \eqref{pset} and \eqref{gset}
+respectively. {\red Revise notation of this chapter to match/contract the
+notation in \Cref{existence} where necessary.} Let 
+\be\label{z1def}
+z_1 \coloneqq \inf\left\{\; r>0 \;\middle|\; w(r, a)=0\;\right\}.
+\ee
+We note that $z_1<\infty$ for $a\in N$ and we write $z_1=\infty$ for $a\in G\cup
+N$. \Cref{uniqthm} is implied by the following lemma.
 
 \begin{lemma}\label{qneglem}
     \begin{enumerate}[(i)]
@@ -70,22 +81,17 @@ and
 \end{lemma}
 
 \begin{proof}[Proof of Theorem \ref{uniqthm}]
-    We assume \Cref{qneglem}.
-    \todo{Proof step 1. $z_1$ is monotonically decreasing.}
+    We assume \Cref{qneglem}.  We first show that $z_1$ is a monotonically
+    decreasing function of $a>0$. 
     Let
     \be\label{adef}
-    A \coloneqq \left\{\;a>0 \;\middle|\; \exists r>0 \;:\; w(r,a)=0\;\right\}
-    \ee
-    and let
-    \be\label{z1def}
-    z_1 \coloneqq \inf\left\{\; r>0 \;\middle|\; w(r, a)=0\;\right\}.
+    A \coloneqq \left\{\;a>0 \;\middle|\; \exists r>0 \;:\; w(r,a)=0\;\right\}.
     \ee
 
     % and let $z_1=z_1(a)$ be the least positive zero of $w(r, a)$ for any $a\in A$.
     % If $a\in A$ and $z_1=z_1(a)$ is the least positive zero of $w(r,a)$, then,
-    \todo{Read up on implicit function theorem.}
-    By \cref{qlem} and the implicit function theorem, $z_1$ is differentiable
-    with respect to $a$ and
+    By \cref{qlem} and the implicit function theorem ({\red expand}), $z_1$ is
+    differentiable with respect to $a$ and
 
     $$w'(z_1, a)\frac{\diff z_1}{\diff a} + \delta(z_1, a) = 0.$$
 
@@ -94,15 +100,13 @@ and
     $$\dfrac{\diff z_1}{\diff a}<0\quad\text{on}~A.$$ 
 
     Therefore, $z_1$ moves monotonically to the left as $a$ increases. 
-
     Thus if $A$ is non-empty it is a semi-infinite interval. 
    
-    \todo{Proof step 2. $a_1$ is the left endpoint of $A$ if $a_1$ satisifies
-    \eqref{wpos} and \eqref{wlim}.}
-    We next show that if \eqref{wpos} and \eqref{wlim} hold for $a=a_1$, then $A$ is non-empty and
-    $a_1$ is the left endpoint of $A$. 
-
-    This will clearly imply \Cref{uniqthm}.
+    % \todo{Proof step 2. $a_1$ is the left endpoint of $A$ if $a_1$ satisifies
+    % \eqref{wpos} and \eqref{wlim}.}
+    Next, we show that if \eqref{wpos} and \eqref{wlim} hold for $a=a_1$, then
+    $A$ is non-empty and $a_1$ is the left endpoint of $A$. This will clearly
+    imply \Cref{uniqthm}.
    
     Let $a_1$ be as above and let $a_2>a_1$; we shall show that if $a_2-a_1$ is
     sufficiently small, then the assumption 
@@ -133,7 +137,7 @@ and
     \be\label{w2ltw1r0r1} 0<w_2<w_1\quad\text{on}~\left[r_0,r_1\right)\ee
 
     for some $r_1>r_0$. Such an $r_1$ exists by \eqref{w2ltw1}.
-    \todo{Untangle the argumentation and make some pictures. Compare to Genoud.}
+    % \todo{Untangle the argumentation and make some pictures. Compare to Genoud.}
     \begin{itemize}
         \item From \eqref{w2ltw1}, \eqref{vivp} and \eqref{ubw1} it follows that
             $v$ is positive and convex on $\left[r_0, r_1\right)$; 
@@ -176,12 +180,33 @@ Let $a>0$ and let $w=w(r,a)$ either vanish at least once in $(0, \infty)$
 $r=r_0$ in $(0, z_1)$ and $w'(r_0, a)<0$.
 \end{lemma}
 \begin{proof}
+{\red Proof steps.} The function $v(r, a)=r^{-1}w(r, a)$ satisfies
+\be\label{vivp} v'' + 2r^{-1}v' - v + v^3 = 0\ee
+and
+\be\label{vic} \lim_{r\to0} v(r, a) = a,\quad \lim_{r\to 0}v'(r, a)=0.\ee
+
+Upon differentiating the function
+$$\Phi(r) = (v')^2 + \half v^4 - v^2\quad\left(v=v(r, a)\right)$$
+and using \eqref{vivp}, \cite{coffm} concludes that, for $a>0$, $\Phi(r)$ is a
+strictly decreasing function of $r$. 
+
+We calculate $\Phi'(r)=\frac{\diff\Phi(r)}{\diff r}$ as
+$$\Phi'(r) = 2v'v'' + 2v^3v' - 2vv'.$$
+
+We rewrite \eqref{vivp} as
+$$v'' - v + v^3 = -2r^{-1}v'$$
+
+to conclude that 
+$$\Phi'(r) = 2v'\left(v'' - v + v^3\right)=-4r^{-1}(v')^2$$
 \end{proof}
+
+is strictly decreasing {\red on $(0, z_1)$}.
 
 \begin{lemma}
     $\alpha < y_1 < \beta.$
 \end{lemma}
 \begin{proof}
+{\red Requires skeleton.}
 \end{proof}
 
 %The proof of Theorem 4.1 seems reasonable.

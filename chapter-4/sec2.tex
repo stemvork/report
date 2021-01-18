@@ -1,5 +1,5 @@
-\section{Preliminary results for the integral equation}
-\todo{Refer to chapter 2 and be WAY more precise.}
+\section{Preliminary results for the integral equation}\label{sec2}
+% \todo{Refer to chapter 2 and be WAY more precise.}
 The problem \eqref{upde} subject to $u\in L^4$ is equivalent to the integral
 equation in $L^4$
 \be \begin{cases}\label{uint}
@@ -7,13 +7,15 @@ equation in $L^4$
     g(x) = (4\pi)^{-1} |x|^{-1} e^{-|x|}. %\# research
 \end{cases} \ee 
 
-Here $g(x)$ is the Yukawa (screened Coulomb) potential. This potential 
-is associated with the equation
-\be\label{yukawa}\Delta u - u = 0.\ee 
-We consider radially symmetric solutions to \eqref{yukawa}, $r=|x|$, which solve
-\be\label{yukrs}\frac{\diff}{\diff r^2}\left(ru\right)=ru.\ee 
-Hence, the Yukawa potential $u(r)$ is of the form $ru = e^{-r}
-\iff u(r) = r^{-1}e^{-r}$.
+Here $g(x)$ is the Yukawa (screened Coulomb) potential, see \ldots below.
+
+% Here $g(x)$ is the Yukawa (screened Coulomb) potential. This potential 
+% is associated with the equation
+% \be\label{yukawa}\Delta u - u = 0.\ee 
+% We consider radially symmetric solutions to \eqref{yukawa}, $r=|x|$, which solve
+% \be\label{yukrs}\frac{\diff}{\diff r^2}\left(ru\right)=ru.\ee 
+% Hence, the Yukawa potential $u(r)$ is of the form $ru = e^{-r}
+% \iff u(r) = r^{-1}e^{-r}$.
 
 % This is the Yucawa potential. I have downloaded the reference
 % Ladyzhenskaya. I have not been able to download the references Nirenberg,
@@ -29,13 +31,15 @@ Sobolev space $H^1$ and the convolution operator $\tau: u \to g\ast u$.
 \subsection{Some results regarding $H^1$} 
 First, concerning the space $H^1$, we have the following results: 
 \begin{enumerate}[a)] 
-    \item $C^\infty_0$ is dense in $H^1$. \todo{Manuel PDE lecture notes.}
+    \item $C^\infty_0$ is dense in $H^1$. 
     \item If $u\in H^1$, then $v=|u|\in H^1$ and $$|u|_{1,2}=|v|_{1,2}.$$ 
     \item If $u\in H^1$, then $u\in L^4$ and \be|u|_{0,4} \leq 2^{-1/4}|u|_{1,2}.\ee 
     \item Let $V$ denote the subspace of $H^1$ consisting of radially symmetric functions. The embedding $V \to L^4$ is compact.  
 \end{enumerate}
 \begin{proof}[Proof of (a)]
-Definition of dense.
+$C_0^\infty$ smooth functions with compact support. $H^1 = W^{1,2}$.
+Proof not fully given by Evans 5.3.2 Theorem 2, since we consider $\R^3$ rather
+than $U$ bounded. 
 \end{proof} 
 
 \subsection{Some results regarding the convolution operator} 
