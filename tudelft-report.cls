@@ -184,7 +184,7 @@
         Extension = .ttf
     ]{CambriaMath}
     %% The default style for text is Tahoma (sans-serif).
-%    \setlength\@largetitlesize{96pt}
+    \setlength\@largetitlesize{96pt}
     \renewcommand*\familydefault{\sfdefault}
     %% The default style for titles is Bookman Old Style (serif). 
     \def\titlefont{\tudsffamily}

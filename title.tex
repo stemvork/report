@@ -6,17 +6,17 @@
 %% Insert the TU Delft logo at the bottom of the page.
 
 %% Print the title in cyan.
-{\makeatletter
-\largetitlestyle\fontsize{64}{94}\selectfont\@title
-%\largetitlestyle\color{tudelft-cyan}\Huge\@title
+{\setstretch{4}\makeatletter
+%\largetitlestyle\fontsize{40}{94}\selectfont\@title
+\largetitlestyle\Huge\selectfont\@title
 \makeatother}
 
 %% Print the optional subtitle in black.
 {\makeatletter
 \ifx\@subtitle\undefined\else
     \bigskip
-   {\tudsffamily\fontsize{22}{32}\selectfont\@subtitle}    
-    %\titlefont\titleshape\LARGE\@subtitle
+   %{\tudsffamily\fontsize{22}{32}\selectfont\@subtitle}    
+    \titlefont\titleshape\LARGE\@subtitle
 \fi
 \makeatother}
 
@@ -31,8 +31,8 @@ by
 
 %% Print the name of the author.
 {\makeatletter
-%\largetitlefont\Large\bfseries\@author
-\largetitlestyle\fontsize{26}{26}\selectfont\@author
+\largetitlefont\Large\selectfont\@author
+%\largetitlestyle\fontsize{26}{26}\selectfont\@author
 \makeatother}
 
 \bigskip
@@ -50,8 +50,8 @@ at the Delft University of Technology.
 \vfill
 
 \begin{tabular}{lll}
-    Student number: & 1234567 \\
-    Project duration: & \multicolumn{2}{l}{March 1, 2012 -- January 1, 2013} \\
+    Student number: & 4099044 \\
+    % Project duration: & \multicolumn{2}{l}{March 1, 2012 -- January 1, 2013} \\
     Thesis committee: & Prof.\ dr.\  M.V.\ Gnann, & TU Delft, supervisor \\
         & Prof.\ dr.\ M.\ Blaauboer, & TU Delft \\
         %& Ir.\ A.\ Aaronson, & Acme Corporation
