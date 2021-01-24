@@ -1,6 +1,103 @@
-\documentclass[whitelogo]{tudelft-report}
+%\documentclass[whitelogo]{tudelft-report}
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{naturalnames}{hyperref}
+\documentclass{tudelft-report}
 \usepackage{natbib}
 \usepackage{changes}
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n} % fix the math font
+
+\usepackage[f]{esvect} % for nicer vectors
+\usepackage{mathtools} % for coloneqq
+\usepackage[parfill]{parskip} % for new pars
+\usepackage[noabbrev]{cleveref} % for easier referencing
+\usepackage{comment} % for commenting out large parts
+\usepackage{multicol} % for maxwell equations
+% \usepackage{lipsum}
+
+% review
+\usepackage{empheq} % for certain equation layouts
+% \usepackage{physics} % for absolute values
+\usepackage{commath} % for easier derivatives
+
+% \usepackage{biblatex}
+
+% easylist
+\usepackage[at]{easylist}
+\newcommand{\beel}{\begin{easylist}}
+\newcommand{\eeel}{\end{easylist}}
+\usepackage{enumerate}
+
+% theorem-like environments
+\usepackage{amsxtra}
+\usepackage{amsthm} 
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{definition}{Definition}[chapter]
+\newenvironment{claim}[1]{\par\noindent\underline{Claim:}\space#1}{}
+\newenvironment{claimproof}[1]{\par\noindent\underline{Proof of the
+claim:}\space#1}{\leavevmode\unskip\penalty9999
+\hbox{}\nobreak\hfill\quad\hbox{$\blacksquare$}}
+
+% improvements
+\renewcommand{\leq}{\leqslant} 
+\renewcommand{\geq}{\geqslant}
+\usepackage{marvosym} % for lightning symbol
+\usepackage{textcomp}
+
+% abbreviation of u
+\newcommand{\ua}{u(r,\alpha)} 
+\newcommand{\ub}{u(r,\beta)}
+
+% r specified, r0 = a, r1 = b
+\newcommand{\uaa}{u(r_0,\alpha)} 
+\newcommand{\uba}{u(r_1,\alpha)}
+\newcommand{\ubb}{u(r_1,\beta)} 
+\newcommand{\uab}{u(r_0,\beta)}
+
+% abbreviation of u average
+\newcommand{\uav}{\overline{u_{\alpha}}} 
+\newcommand{\uavv}{\half\uba-\half\uaa}
+
+% width of bar too small, switched to overline
+\renewcommand{\bar}[1]{\overline{#1}}
+
+% commands in lemma A and beyond
+\newcommand{\rb}{\rho(\beta)} 
+\newcommand{\tr}{\theta(r)}
+\newcommand{\sib}{\sigma(\beta)}
+
+% other abbreviations
+\newcommand{\half}{\frac{1}{2}}
+
+\newcommand{\ihat}{\hat{\textbf{\i}}} 
+\newcommand{\jhat}{\hat{\textbf{\j}}}
+
+% review
+%\newcommand{\pd}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\limrtoinf}{\underset{r\to\infty}{\lim}}
+\newcommand{\rplus}{\mathbb{R}_+} 
+\newcommand{\rtinf}{r\to\infty}
+\newcommand{\uowd}{\left(\frac{u}{w}\right)'}
+
+\newcommand{\be}{\begin{equation}} \newcommand{\ee}{\end{equation}}
+\newcommand{\lf}{\left} \newcommand{\ri}{\right} 
+\newcommand{\n}{\noindent}
+\newcommand{\f}{\frac}
+
+\renewcommand{\a}{\alpha} 
+\newcommand{\bt}{\beta} 
+%\newcommand{\del}{\delta}
+\newcommand{\eps}{\varepsilon}
+
+\newcommand{\za}{z(\alpha)} 
+\newcommand{\nub}{\nu_{\beta}}
+\newcommand{\phib}{\phi_{\beta}} 
+\newcommand{\one}{{\bf 1}}
+
+\newcommand{\red}{\color{red}}
+\newcommand{\green}{\color{darkpastelgreen}}
+
+\DeclareMathOperator{\grad}{grad}
 \begin{document}
 
 %% Use Roman numerals for the page numbers of the title pages and table of
@@ -29,9 +126,9 @@
 %\makecover
 
 %% Uncomment following 16 lines for a cover with a picture on the lower half only
-\title[tudelft-white]{Title}
-\subtitle[tudelft-black]{Optional subtitle}
-\author[tudelft-white]{J.\ Random Author}
+\title[tudelft-white]{On Existence and Uniqueness Results for some Nonlinear Schr\"odinger equations}
+%% \subtitle[tudelft-black]{Optional subtitle}
+\author[tudelft-white]{J.S. Eenhoorn}
 \affiliation{Technische Universiteit Delft}
 \coverimage{tank.jpg}
 \covertext[tudelft-white]{
@@ -50,7 +147,7 @@
 %% Include an optional title page.
 \input{title}
 
-\input{preface}
+% \input{preface}
 
 \tableofcontents
 
@@ -58,6 +155,8 @@
 \mainmatter
 
 \input{chapter-1}
+\input{chapter-2}
+\input{chapter-3}
 
 %% Use letters for the chapter numbers of the appendices.
 \appendix

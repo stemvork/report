@@ -1,133 +1,509 @@
-\chapter{Introduction}
+\newcommand{\Rom}{R_\omega(\bar{x})}
+\newcommand{\eiwz}{e^{i\omega z}}
 
-This document is intended to be both an example of the TU Delft \LaTeX{} template for reports and theses, as well as a short introduction to its use. It is not intended to be a general introduction to \LaTeX{} itself,\footnote{We recommend \url{http://en.wikibooks.org/wiki/LaTeX} as a reference and a starting point for new users.} and we will assume the reader to be familiar with the basics of creating and compiling documents.
+\newcommand{\eikzwt}{e^{i(k_0z-\omega_0t)}}
 
-Instructions on how to use this template under Windows and Linux, and which \LaTeX{} packages are required, can be found in \texttt{README.txt}.
+\newcommand{\ec}{\mathcal{E}}
+\newcommand{\ev}{\vv{\mathcal{E}}}
+\newcommand{\dc}{\mathcal{D}}
+\newcommand{\dv}{\vv{\mathcal{D}}}
 
-\section{Document Structure}
+\newcommand{\bv}{\vv{\mathcal{B}}}
+\newcommand{\hv}{\vv{\mathcal{H}}}
 
-Since a report, and especially a thesis, might be a substantial document, it is convenient to break it up into smaller pieces. In this template we therefore give every chapter its own file. The chapters (and appendices) are gathered together in \texttt{report.tex}, which is the master file describing the overall structure of the document. \texttt{report.tex} starts with the line
-\begin{quote}
-    \texttt{\textbackslash documentclass\{tudelft-report\}}
-\end{quote}
-which loads the TU Delft report template. The template is based on the \LaTeX{} \texttt{book} document class and stored in \texttt{tudelft-report.cls}. The document class accepts several comma-separated options. The default language is English, but this can be changed to Dutch (\emph{e.g.}, for bachelor theses) by specifying the \texttt{dutch} option:
-\begin{quote}
-    \texttt{\textbackslash documentclass[dutch]\{tudelft-report\}}
-\end{quote}
-Furthermore, hyperlinks are shown in blue, which is convenient when reader the report on a computer, but can be expensive when printing. They can be turned black with the \texttt{print} option. This will also turn the headers black instead of cyan.
+\newcommand{\pc}{\mathcal{P}}
+\newcommand{\pl}{\pc_\text{lin}}
+\newcommand{\pn}{\pc_\text{nl}}
+\newcommand{\pv}{\vv{\mathcal{P}}}
 
-If the document becomes large, it is easy to miss warnings about the layout in the \LaTeX{} output. In order to locate problem areas, add the \texttt{draft} option to the \texttt{\textbackslash documentclass} line. This will display a vertical bar in the margins next to the paragraphs that require attention. Finally, the \texttt{nativefonts} option can be used to override the automatic font selection (see below).
+\newcommand{\ca}{\chi^{\text{(1)}}}
+\newcommand{\cc}{\chi^{\text{(3)}}}
+\newcommand{\ww}{\omega_0}
+\newcommand{\kp}{k_\perp}
+\newcommand{\overeq}[1]{\overset{\eqref{#1}}{=}}
+%\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\bigo}[1]{\mathcal{O}\left(#1\right)}
 
-This template has the option to automatically generate a cover page with the \texttt{\textbackslash makecover} command. See the next section for a detailed description.
+\setlength\multicolsep{0pt}
 
-The contents of the report are included between the \texttt{\textbackslash begin\{document\}} and \texttt{\textbackslash end\{document\}} commands, and split into three parts by
-\begin{enumerate}
-\item\texttt{\textbackslash frontmatter}, which uses Roman numerals for the page numbers and is used for the title page and the table of contents;
-\item\texttt{\textbackslash mainmatter}, which uses Arabic numerals for the page numbers and is the style for the chapters;
-\item\texttt{\textbackslash appendix}, which uses letters for the chapter numbers, starting with `A'.
-\end{enumerate}
-The title page is defined in a separate file, \emph{e.g.}, \texttt{title.tex}, and included verbatim with \texttt{\textbackslash input\{title\}}.\footnote{Note that it is not necessary to specify the file extension.} Additionally, it is possible to include a preface, containing, for example, the acknowledgements. An example can be found in \texttt{preface.tex}. The table of contents is generated automatically with the \texttt{\textbackslash tableofcontents} command. Chapters are included after \texttt{\textbackslash mainmatter} and appendices after \texttt{\textbackslash appendix}. For example, \texttt{\textbackslash input\{chapter-1\}} includes \texttt{chapter-1.tex}, which contains this introduction.
+\chapter{Physics of NLS}
+\label{physics}
 
-The bibliography, finally, is generated automatically with
-\begin{quote}
-    \texttt{\textbackslash bibliography\{report\}}
-\end{quote}
-from \texttt{report.bib}. The bibliography style is specified in \texttt{tudelft-report.bst}, which is a modified version of \texttt{apsrev4-1.bst} (from REVTeX) designed to also display the titles of referenced articles. The template will automatically generate clickable hyperlinks if a URL or DOI (digital object identifier) is present for the reference. As an example, we cite the paper by Nobel laureate Andrei Geim and his pet hamster \citep{Geim2001}. Although it is possible to manage the bibliography by hand, we recommend using EndNote (available from Blackboard) or JabRef (available from \url{http://jabref.sourceforge.net/}).
+% \begin{abstract}
+% Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+% incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+% nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+% Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+% fugiat nulla pariatur.
+% \end{abstract}
 
-\section{Cover and Title Page}
 
-This template will automatically generate a cover page if you issue the \texttt{\textbackslash makecover} command. There are two formats for the cover page: one with a page-filling (`bleeding')
-illustration, with the title(s) and author(s) in large ultrathin typeface, and the other where the illustration fills the lower half of the A4, whereas title(s), author(s) and additional
-text are set in the standard sans-serif font on a plain background with a color chosen by the user. The last option is selected by the optional key \texttt{split}: \texttt{\textbackslash makecover[split]} yields
-a page with the illustration on the lower half. All illustrations are bleeding, in accordance with the TU Delft style.
+\section{Derive the wave equation from Maxwell}
+Any electromagnetic wave is governed by Maxwell's laws. In this work, we work in
+absence of external charges or currents. Then Maxwell's laws for the electric
+field $\ev$, magnetic field $\hv$, induction electric field $\dv$ and induction
+magnetic field $\bv$ are given by:
+% \vspace{-0.5cm}
+\begin{multicols}{2}
+\be\nabla\times\ev = -\frac{\partial \bv}{\partial t},\label{mwerot}\tag{1.1.a}\ee
+\be\nabla\times\hv = \frac{\partial \dv}{\partial t},\label{mwhrot}\tag{1.1.b}\ee
 
-Before generating the cover, you need to provide the information to put on it. This can be done with the following commands:
-\begin{itemize}
-\item\texttt{\textbackslash title[Optional Color]\{Title\}} \\
-    This command is used to provide the title of the document. The title
-    title is also printed on the spine. If you use a title page (see below), this information will be used there as well.
-    As the title, subtitle and author name are printed directly over the cover photo, it will often be necessary to adjust the print color in order to have
-    sufficient contrast between the text and the background. The optional color argument is used for this.
-\item\texttt{\textbackslash title[Optional Color]\{Subtitle\}} \\
-    This command is used to provide a subtitle for the document. If you use a title page (see below), this information will be used there as well.
-    It possible to adjust the print color in order to have
-    sufficient contrast between the text and the background -- the optional color argument is used for this.
-\item\texttt{\textbackslash author\{J.\ Random Author\}} \\
-    This command specifies the author. The default color is \texttt{tudelft-white}, but this may be adjusted in the same way as the titles.
-\item\texttt{\textbackslash affiliation\{Technische Universiteit Delft\}} \\
-    The affiliation is the text printed vertically on the front cover. It can be the affiliation, such as the university or department name, or be used for the document type (\emph{e.g.}, Master's thesis). The default color is again \texttt{tudelft-white}, adjustable through the \texttt{color} option.
-\item\texttt{\textbackslash coverimage\{cover.jpg\}} \\
-    With this command you can specify the filename of the cover image. The image is stretched to fill the full width of the front cover (including the spine if a back cover is present).
-\item\texttt{\textbackslash covertext\{Cover Text\}} \\
-    If a back cover is present, the cover text is printed on the back. Internally, this text box is created using the \LaTeX{} \texttt{minipage} environment, so it supports line breaks.
-\item\texttt{\textbackslash titleoffsetx\{OffsetX\},\textbackslash titleoffsety\{OffsetY\}}
-    If the cover page contains a page-filling picture (i.e., \texttt{split} is not specified with the \texttt{makecover} command, the best position of the title depends a lot on the picture chosen for it. The lower left corner of the minipage containing title, subtitle and author is 
-    specified by these two commands. The offsets are measured from the top left corner of the page. 
-\item\texttt{\textbackslash afiloffsetx\{AfilX\}, \textbackslash afiloffsety\{AfilY\}}
-    specifies the lower left corner of the text containing the affiliation, measured from the top left corner of the page. 
-\end{itemize}
+\be\nabla\cdot\dv=0,\label{mwddiv}\tag{1.1.c}\ee
+\be\nabla\cdot\bv=0.\label{mwbdiv}\tag{1.1.d}\ee
+\end{multicols}
+% \vspace{-0.25cm}
+The fields are in three-dimensional Cartesian coordinates, for example:
+$\ev=(\mathcal{E}_1,\mathcal{E}_2,\mathcal{E}_3)$ in ($x,y,z$)
+coordinates. Besides considering no external charges or currents, we consider
+unitary (relative) permittivities, such that the relation between fields and
+induction fields (electric or magnetic) is given as:
+% \vspace{-0.5cm}
+\begin{multicols}{2}
+\be \label{bind} \bv=\mu_0\hv,\tag{1.2.a}\ee
 
-In addition to \texttt{[split]}, the \texttt{\textbackslash makecover} command accepts several additional options for customizing the layout of the cover. 
-The most important of these is \texttt{back}. Supplying this option will generate a back cover as well as a front, including the spine. Since this requires a page size slightly larger than twice A4 (to make room for the spine), and \LaTeX{} does not support different page sizes within the same document, it is wise to create a separate file for the cover. \texttt{cover.tex} contains an example. The recommended page size for the full cover can be set with
-\begin{quote}
-    \textbackslash geometry\{papersize=\{1226bp,851bp\}\}
-\end{quote}
-after the document class and before \texttt{\textbackslash begin\{document\}}.
+\be \label{dind} \dv=\epsilon_0\ev.\tag{1.2.b}\ee
+\end{multicols}
+% \vspace{-0.25cm}
+The notation used here is from "The Nonlinear Schr\"odinger Equation" by G.
+Fibich \cite[p.~3]{fibg}. For more background on electrodynamics
+see "Introduction to Electrodynamics" by D.J. Griffiths \cite{grif}. This
+reference work also includes an introduction to the necessary vector calculus.
 
-The other options \texttt{\textbackslash makecover} accepts are
-\begin{itemize}
-\item\texttt{nospine} \\
-    If a back cover is generated, the title will also be printed in a black box on the spine. However, for smaller documents the spine might not be wide enough. Specifying this option disables printing the title on the spine.
-\item\texttt{frontbottom} \\
-    By default the black box on the front is situated above the blue box. Specifying this option will place the black box below the blue one.
-\item\texttt{spinewidth} \\
-    If a back cover is present, this option can be used to set the width of the spine. The default is \texttt{spinewidth=1cm}.
-\item\texttt{frontboxwidth}, \texttt{frontboxheight}, \texttt{backboxwidth}, \texttt{backboxheight} \\
-    As their names suggest, these options are used to set the width and height of the front (black) and back (blue) boxes. The default widths and heights are \texttt{4.375in} and \texttt{2.1875in}, respectively.
-\item\texttt{x}, \texttt{y} \\
-    The blue and black boxes touch each other in a corner. The location of this corner can be set with these options. It is defined with respect to the top left corner of the front cover. The default values are \texttt{x=0.8125in} and \texttt{y=3in}.
-\item\texttt{margin} \\
-    This option sets the margin between the borders of the boxes and their text. The default value is \texttt{12pt}.
-\end{itemize}
+%From these relations and the vector identity for the curl of the curl, a wave
+%equation can be derived. We specifically use
+%$\nabla\cdot\dv=\nabla\cdot\epsilon_0\ev=0$ and 
+%$\nabla\times\bv=\mu_0\frac{\partial\dv}{\partial t}$
+%to simplify the equation:
+We use vector calculus and Maxwell's laws to rewrite the curl of the curl:
+\begin{gather*}
+  \nabla\times\left(\nabla\times\ev\right)\overeq{mwerot}
+  \nabla\times\left(-\frac{\partial \bv}{\partial t}\right)=
+  -\frac{\partial}{\partial t}\left(\nabla\times\bv\right)
+  \overset{\substack{(\ref{mwhrot})\\(\ref{bind})}}{=}
+  -\mu_0\frac{\partial^2\mathcal{D}}{\partial t^2}\overeq{dind}
+  -\mu_0\epsilon_0\frac{\partial^2\mathcal{E}}{\partial t^2},\;\text{and}\\
+  \nabla\times\left(\nabla\times\ev\right)=
+  \nabla\left(\nabla\cdot\ev\right)-\nabla^2\ev=
+  \nabla\left(\nabla\cdot\ev\right)-\Delta\ev
+  \overset{\substack{(\ref{mwddiv})\\(\ref{dind})}}{=}
+  -\Delta\ev.
+\end{gather*}
+Combining these and using $\mu_0\epsilon_0=1/c^2$, we arrive at the vector wave equation:
+\setcounter{equation}{2}
+\begin{equation}
+\label{scwe}
+  \Delta\ev=\frac{1}{c^2}\frac{\partial^2\ev}{\partial t^2}.
+\end{equation}
 
-For a thesis it is desirable to have a title page within the document, containing information like the thesis committee members. To give you greater flexibility over the layout of this page, it is not generated by a command like \texttt{\textbackslash makecover}, but instead described in the file \texttt{title.tex}. Modify this file according to your needs. The example text is in English, but Dutch translations are provided in the comments. Note that for a thesis, the title page is subject to requirements which differ by faculty. Make sure to check these requirements before printing.
+\section{Validity of plane wave solutions}
+Stuyding the left and right hand sides of \cref{scwe}, we see that the vector
+wave equation is in fact a system of three scalar wave equations.
+\begin{equation*}
+  \Delta \ev = \Delta
+  \begin{bmatrix}
+    \mathcal{E}_x\\
+    \mathcal{E}_y\\
+    \mathcal{E}_z
+  \end{bmatrix} =
+  \begin{bmatrix}
+    \frac{\partial^2\mathcal{E}_x}{\partial x^2}+
+    \frac{\partial^2\mathcal{E}_x}{\partial y^2}+
+    \frac{\partial^2\mathcal{E}_x}{\partial z^2}\\
+    \frac{\partial^2\mathcal{E}_y}{\partial x^2}+
+    \frac{\partial^2\mathcal{E}_y}{\partial y^2}+
+    \frac{\partial^2\mathcal{E}_y}{\partial z^2}\\
+    \frac{\partial^2\mathcal{E}_z}{\partial x^2}+
+    \frac{\partial^2\mathcal{E}_z}{\partial y^2}+
+    \frac{\partial^2\mathcal{E}_z}{\partial z^2}
+  \end{bmatrix} = \frac{1}{c^2}
+  \begin{bmatrix}
+    \frac{\partial^2\mathcal{E}_x}{\partial t^2}\\
+    \frac{\partial^2\mathcal{E}_y}{\partial t^2}\\
+    \frac{\partial^2\mathcal{E}_z}{\partial t^2}
+  \end{bmatrix}
+\end{equation*}
+\begin{equation*}
+  \Delta \mathcal{E}_j =
+  \sum_{l=1}^3\left[\frac{\partial^2\mathcal{E}_j}{\partial x_l^2}\right] =
+  \frac{1}{c^2} \frac{\partial^2 \mathcal{E}_j}{\partial t^2}.
+\end{equation*}
+This motivates the following ansatz to such a scalar wave equation:
+\be \label{pws} \mathcal{E}_j=E_c e^{i(k_0 z-\omega_0 t)},\ee
+where $k_0$ is the wavenumber and $\ww$ the frequency. These are so 
+called plane wave solutions. The wavefronts have the simple
+geometry of an infinite plane at any $z$-value and the electric field is
+non-zero in the $x$ and $y$ directions. The wavefronts are spaced by the
+wavelength $\lambda$ and the wavenumber $k_0$ is the reciprocal of the
+wavelength.
 
-\section{Chapters}
+This plane wave travels in the positive $z$-direction for positive wavenumber
+$k_0$ and vice versa. Note that the solution does not depend on $x$ or $y$. As a
+result, for a fixed $z'$, the electric field $\mathcal{E}$ is constant in the
+$(x,y,z')$-plane. 
 
-Each chapter has its own file. For example, the \LaTeX{} source of this chapter can be found in \texttt{chapter-1.tex}. A chapter starts with the command
-\begin{quote}
-    \texttt{\textbackslash chapter\{Chapter title\}}
-\end{quote}
-This starts a new page, prints the chapter number and title and adds a link in the table of contents. If the title is very long, it may be desirable to use a shorter version in the page headers and the table of contents. This can be achieved by specifying the short title in brackets:
-\begin{quote}
-    \texttt{\textbackslash chapter[Short title]\{Very long title with many words which could not possibly fit on one line\}}
-\end{quote}
-Unnumbered chapters, such as the preface, can be created with \texttt{\textbackslash chapter*\{Chapter title\}}. Such a chapter will not show up in the table of contents or in the page header. To create a table of contents entry anyway, add
-\begin{quote}
-    \texttt{\textbackslash addcontentsline\{toc\}\{chapter\}\{Chapter title\}}
-\end{quote}
-after the \texttt{\textbackslash chapter} command. To print the chapter title in the page header, add
-\begin{quote}
-    \texttt{\textbackslash setheader\{Chapter title\}}
-\end{quote}
+We substitute \eqref{pws} in \cref{scwe}. Note that only $\Delta_z$ will be non-zero:
+% \begin{gather*}
+$$ \Delta \ec_j = % \frac{\partial^2}{\partial z^2} E_c \eikzwt = 
+k_0^2 \cdot E_c\eikzwt=\frac{1}{c^2} \omega_0^2 \cdot E_c \eikzwt $$
+yields the dispersion relation \eqref{disp}:
+\be \label{disp} k_0^2=\frac{\omega_0^2}{c^2}.\ee
+% \newgroup
+% The index of refraction $n$ depends on the wavelength $\lambda$. Equivalently,
+% since $$ k = \frac{2\pi}{\lambda} = \frac{\omega}{v_p}, $$
+% the index of refraction depends on the wavenumber $k$. \ldots 
+% \endgroup
+% 
+For a general direction in $(x,y,z)$-coordinates, define the wavevector 
+$$\vv{k}=(k_x,k_y,k_z),$$ 
+where $\left|\vv{k}^2\right|=k_0^2=k_x^2+k_y^2+k_z^2$. 
+This satisfies \cref{scwe} when $\vv{k}\perp\ev$ and
+\be \label{gpws} 
+\ec_j=E_c e^{i(\vv{k}\cdot \vv{r}-\omega_0 t)}.
+\ee
+%
 
-Chapters are subdivided into sections, subsections, subsubsections, and, optionally, paragraphs and subparagraphs. All can have a title, but only sections and subsections are numbered. As with chapters, the numbering can be turned off by using \texttt{\textbackslash section*\{\ldots\}} instead of \texttt{\textbackslash section\{\ldots\}}, and similarly for the subsection.
-\section{\textbackslash section\{\ldots\}}
-\subsection{\textbackslash subsection\{\ldots\}}
-\subsubsection{\textbackslash subsubsection\{\ldots\}}
-\paragraph{\textbackslash paragraph\{\ldots\}}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\section{Derivation of the Helmholtz equation} 
+We consider time-harmonic solutions to the scalar wave equation \eqref{scwe} of
+the form \be \label{cws} 
+\mathcal{E}_j(x,y,z,t)=e^{i\ww t}E(x,y,z) + \text{c.c}, \ee
+%
+which are continuous wave beam solutions as opposed to pulsed output beams.
+The continous beam has (approximately) constant power, whereas pulsed beams can
+reach higher peak powers. For more information on the operating principles of
+lasers, we refer to \cite{siegm}.
 
-\section{Fonts and Colors}
+Substituting \eqref{cws} in \cref{scwe} and taking the derivatives leads to the
+expression
+\begin{gather*}
+\Delta\left(e^{-i\ww t} E\right) = \frac{1}{c^2} \frac{\partial^2}{\partial t^2}
+\left( e^{-i\ww t} E \right) \\
+e^{-i\ww t}\Delta E = \frac{1}{c^2} (-i\ww)^2 E e^{-i\ww t},
+\end{gather*}
+%
+where we can divide by $e^{-i\ww t}\neq0$ and use the dispersion relation
+\eqref{disp} to arrive at the scalar linear Helmholtz equation for $E$
+%
+\be \label{lhh} \Delta E(x,y,z)+k_0^2 E = 0. 
+\ee 
+%
+% \begin{gather*}
+% \Delta E = -\frac{\ww^2}{c^2} E \implies \Delta E + k_0^2 E = 0,
+% \text{ with }k_0^2 = \frac{\ww^2}{c^2}.
+% \end{gather*}
+%
+%
+As an example, \cref{lhh} is solved by the general-direction plane
+waves \eqref{gpws}, where
+$$E=E_c e^{i(k_x x + k_y y + k_z z)}.$$ 
+%
 
-The fonts used by this template depend on which version of \LaTeX{} you use. Regular \LaTeX, \emph{i.e.}, if you compile your document with with \texttt{latex}, \texttt{pslatex} or \texttt{pdflatex}, will use Utopia for text, Fourier for math and Latin Modern for sans-serif and monospaced text. 
-However, if you want to adhere to the TU Delft house style, you will need to use \XeLaTeX, as it supports TrueType and OpenType fonts. Compiling with \texttt{xelatex} will use Arial for most titles and text, Courier New for monospace and Cambria for math. If you want to haf a sans-serif font for the
-main text, while using \texttt{latex}, \texttt{pslatex} or \texttt{pdflatex}, you can use the option \texttt{noroman} in the report style: \texttt{\textbackslash usepackage[\ldots,noroman]{tudelft-report}}. For document and part titles,  TU Delft Ultra Light is used. For quotes, columns and text in boxes, you use Georgia. If you want to use \XeLaTeX, but do not want to use the TU Delft house style fonts, you can add the \texttt{nativefonts} option to the document class. This will still use  TU Delft Utra Light and Arial on the cover, but not for the body of the document. If you need to use these fonts for certain sections in the main text, they are available via \texttt{\textbackslash tudrmfamily} (Georgia) and \texttt{\textbackslash tudtitlefamily} (TU Delft Utra Light).
+\section{Derivation of the Linear Schr\"odinger equation}
+% \revgroup
+\label{parax}
+We write the incoming field $E_0^\text{inc}(x,y)$ as a sum of plane waves. Then
+the electric field $E(x,y,z)$ for non-zero $z$-value follows from propagation.
+This is the plane wave spectrum representation of the electromagnetic field and
+it is essential to Fourier optics. We have
+%
+\begin{gather*} 
+E_0^\text{inc}(x,y) = \frac{1}{2\pi}\int_D E_c(k_x,k_y)\, e^{i(k_x x+k_y y)}
+\mathrm{d}k_x\mathrm{d}k_y,~\text{ such that }\\ 
+E(x,y,z) = \frac{1}{2\pi}\int_{\mathbb{R}^2} E_c(k_x,k_y)\,e^{i(k_x x+k_y y+
+\sqrt{k_0^2-k_x^2-k_y^2}\,z)}\mathrm{d}k_x\mathrm{d}k_y,
+\end{gather*}
+%
+where $D$ denotes the (circular) laser input beam domain. 
+For laser beams oriented in the $z$-direction, most of the plane wave modes 
+are nearly parallel to the $z$-axis, which implies $k_z\approx k_0$. We define
+$k_\perp^2 = k_x^2 + k_y^2$, such that $k_0^2 = k_\perp^2 + k_z^2$. It is
+equivalent to $k_0\approx k_z$ to say that $k_\perp \ll k_z$. 
+% These paraxial plane waves satisfy 
+% \begin{gather*}
+% k_\perp^2 << k_z^2,\quad k_\perp^2 = k_x^2 + k_y^2,\\
+% k_0^2=k_x^2 + k_y^2 + k_z^2 =k_\perp^2 + k_z^2,\\
+% \implies k_0^2\approx k_z^2.
+% \end{gather*}% 04052020B
 
-\begin{quote}
-  You have to learn the rules of the game. And then you have to play better than anyone else.\\
-  \emph{Albert Einstein}
-\end{quote}
+This motivates studying solutions of the form
+\be \label{cwz}
+E=e^{ik_0z}\psi(x,y,z)
+\ee
+%
+where $\psi(x,y,z)$ is an envelope (or amplitude) function. The envelope shape
+may vary over $z$, in contrast to soliton solutions, see \eqref{psol}. 
+%\endgroup
 
-The corporate colors of the TU Delft are cyan, black and white, available via \texttt{\textbackslash color\{{\color{tudelft-cyan}tudelft-cyan}\}}, \texttt{\textbackslash color\{{\color{tudelft-black}tudelft-black}\}} (which differs slightly from the default \texttt{\textbackslash color\{black\}}) and \texttt{\textbackslash color\{tudelft-white\}}, respectively. Apart from these three, the house style defines the basic colors \texttt{\color{tudelft-sea-green}tudelft-sea-green}, \texttt{\color{tudelft-green}tudelft-green}, \texttt{\color{tudelft-dark-blue}tudelft-dark-blue}, \texttt{\color{tudelft-purple}tudelft-purple}, \texttt{\color{tudelft-turquoise}tudelft-turquoise} and \texttt{\color{tudelft-sky-blue}tudelft-sky-blue}, as well as the accent colors \texttt{\color{tudelft-lavender}tudelft-lavender}, \texttt{\color{tudelft-orange}tudelft-orange}, \texttt{\color{tudelft-warm-purple}tudelft-warm-purple}, \texttt{\color{tudelft-fuchsia}tudelft-fuchsia}, \texttt{\color{tudelft-bright-green}tudelft-bright-green} and \texttt{\color{tudelft-yellow}tudelft-yellow}.
+Substituting \eqref{cwz} into the Helmholtz \cref{lhh} yields
+%
+\be \label{phh}
+\psi_{zz}(x,y,z) + 2ik_0\psi_z + \Delta_\perp\psi = 0,
+\ee
+%
+where $\Delta_\perp=\frac{\partial^2}{\partial x^2}
++\frac{\partial^2}{\partial y^2}$ such that $\Delta = \Delta_\perp + 
+\frac{\partial^2}{\partial z^2}$. Basically, this is the Helmholtz equation for
+the envelope function $\psi(x,y,z)$. Remember that for lasers beams oriented in
+the $z$-direction, the wavenumber $k_z$ dominates over $k_\perp$ such that 
+$k_0\approx k_z$. The envelope function $\psi(x,y,z)$  will vary slowly 
+in $z$ and curve even more slowly. 
+
+Claim: $\abs{\psi_{zz}}\ll k_0\abs{\psi_z}$ and 
+$\abs{\psi_{zz}}\ll \Delta_\perp\psi$. 
+
+%\revgroup 
+To see this, we first show that $k_0-k_z \ll 1$.  We factor out $k_0^2$, take the
+square root on both sides and linearise the square root term of the right hand
+side: 
+% 04052020E
+% 04052020G
+% \begin{gather*}
+$$ k_z^2=k_0^2+\kp^2=k_0^2\left(1-\frac{\kp^2}{k_0^2}\right)
+\implies
+k_z=k_0\left(1-\frac{\kp^2}{k_0^2}\right)^\frac{1}{2}
+\approx k_0\left(1-\frac{1}{2}\frac{\kp^2}{k_0^2}\right). $$
+Finally, we use $k_\perp\ll k_0$ to obtain the intermediate result:
+$$ k_0-k_z \approx k_0 - k_0 + \frac{1}{2}\frac{\kp^2}{k_0}=
+\frac{1}{2}\frac{\kp^2}{k_0}\ll1. $$
+
+For the first statement of the claim, $\abs{\psi_{zz}}\ll k_0\abs{\psi_z}$, it is equivalent
+to show that the ratio of $\abs{\psi_{zz}}$ over $k_0\abs{\psi_z}$ is much smaller than 1. 
+We calculate the ratio as follows:
+$$
+\frac{\left[\psi_{zz}\right]}{\left[k_0\psi_z\right]}=
+\frac{\left(k_0-k_z\right)^2 E_c}{k_0\left(k_0-k_z\right)E_c}=
+\frac{k_0-k_z}{k_0}=\frac{\kp}{k_0}\approx
+\frac{1}{2}\frac{\kp^2}{k_0}\cdot\frac{1}{k_0}\ll1.
+$$
+For the other statement of the claim, we calculate:
+$$
+\frac{\left[\psi_{zz}\right]}{\left[\Delta_\perp\psi_z\right]}=
+\frac{\left(k_0-k_z\right)^2 E_c}{\kp^2 E_c}=
+\frac{\left(k_0-k_z\right)^2}{\kp^2}\approx
+\frac{1}{\kp^2}\left(\frac{1}{2}\frac{\kp^2}{k_0}\right)=
+\frac{1}{4}\frac{\kp^2}{k_0^4}\ll\frac{1}{4}\frac{\kp^2}{k_0^2}\ll1.
+$$
+%\endgroup
+Using the approxations in \cref{phh} yields the
+linear Schr\"odinger equation:
+\be \label{lse}
+2ik_0\psi_z + \Delta_\perp\psi = 0.
+\ee
+
+\section{Polarisation field}
+Polarisation describes the influence of an electric field on the centers of the
+electrons of the medium. In our consideration, the medium is isotropic and homogenous. The polarisation field $\vv{P}$ contributes to the induction eletric field
+$$\dv = \epsilon_0 \ev + \pv.$$ 
+%which is then sometimes written as $$\dv = \epsilon\ev.$$
+%
+In the following, we assume that the electric field is linearly polarised, such
+that
+$$\ev=(\mathcal{E},0,0),~\pv=(\mathcal{P},0,0),~\dv=(\mathcal{D},0,0),$$
+%
+Furthermore, we assume that $\mathcal{E}$ is the continuous wave 
+electric field from \eqref{cws}.
+%$$\mathcal{E}(x,y,z,t)=e^{-i\omega_0t}E(x,y,z,t)+\text{c.c.}$$
+We write the Taylor expansion of the polarisation field $\pc=c\ec$ as:
+\be \label{ptay} 
+%\pc = c_0 + c_1\pc + c_2\pc ^2 + c_3\pc^3 + c_4\pc^4 + c_5\pc ^ 5 +
+%\text{h.o.t.},
+\pc = c_0 + c_1\pc + c_2\pc ^2 + c_3\pc^3 + c_4\pc^4 + c_5\pc ^ 5 + \bigo{\pc^6}
+\ee
+where the $c_i$ are real for all $i$. Note that $c_0=0$ except in ferro-electric
+materials. The constants $c_i$ are actually a function of the frequency
+$\ww$. We rewrite $c_i=\epsilon_0\chi^{\text{(i)}}(\ww)$, where $\chi^\text{(i)}$
+is the $i$-th order susceptibility. Then \cref{ptay} reads:
+\be \label{ptas}
+\pc = \epsilon_0\chi^\text{(1)}\mathcal{E} + \epsilon_0\chi^\text{(2)}\mathcal{E} ^2 + \epsilon_0\chi^\text{(3)}\mathcal{E}^3 + \epsilon_0\chi^\text{(4)}\mathcal{E}^4 + \epsilon_0\chi^\text{(5)}\mathcal{E} ^ 5 + \bigo{\pc^6}
+\ee
+%
+First we consider linear polarisation:
+$$\pl = \epsilon_0\ca(\ww)\mathcal{E}.$$
+% where $\ca$ is the first-order optical susceptibility, still a function of
+% the frequency $\ww$. 
+Then the induction electric field $\dc$ is given by:
+$$\mathcal{D}=
+\epsilon_0\mathcal{E}+\mathcal{P}_{\text{lin}} =
+\epsilon_0\ec + \epsilon_0\ca(\ww)\ec = 
+\epsilon_0\ec \left( 1 + \ca(\ww) \right) =
+\epsilon_0 n_0^2(\ww)\mathcal{E},$$
+where $n_0^2(\ww)\coloneqq 1 + \ca(\ww)$ is the linear index of 
+refraction (or refractive index) of the medium. 
+%
+%05052020F
+% With linear polarisation $\pl = \epsilon_0 \ca(\ww) \ec$ we get induction
+% electric field $$ \dc = \epsilon_0 \left(\ec + \ca(\ww) \ec\right) =
+% \epsilon_0 n_0^2(\ww) \ec, $$
+% with $n_0^2(\ww) \coloneqq 1 + \ca(\ww).$ This leads to a Helmholtz equation
+% that takes linear polarisation into account. See \cref{lhh} with $k_0^2 =
+% \frac{\ww^2}{c^2}n_0^2$. 
+
+With this updated induction electric field $\dc=\epsilon_0 n_0^2(\ww)\ec$, we
+can update the scalar wave equation and Helmholtz equation. Only the dispersion
+relation is affected by considering linear polarisation:
+% $\ec(x,y,z,t) = e^{i\ww t} E(x,y,z)$. 
+%
+\be \label{ldisp} 
+k_0^2 = \frac{\ww^2}{c^2}n_0^2(\ww).
+\ee
+%
+We now consider the nonlinear polarisation field $\pn$ 
+as the difference between the true polarisation and the linear approximation:
+$$\pc=\pl+\pn.$$
+%
+In an isotropic medium, the relation between $\pc$ and $\ec$ should be
+same in all directions. Replacing $\pc$ and $\ec$ by $-\pc$ and $-\ec$
+respectively, 
+%
+\begin{gather*}
+-\pn = \epsilon_0\chi^\text{(2)}\left(-\mathcal{E}\right) ^2 +
+\epsilon_0\chi^\text{(3)}\left(-\mathcal{E}\right)^3 +
+\epsilon_0\chi^\text{(4)}\left(-\mathcal{E}\right)^4 +
+\epsilon_0\chi^\text{(5)}\left(-\mathcal{E}\right) ^ 5 + \bigo{\pc^6}\\
+-\pn = \epsilon_0\chi^\text{(2)}\mathcal{E} ^2 -
+\epsilon_0\chi^\text{(3)}\mathcal{E}^3 +
+\epsilon_0\chi^\text{(4)}\mathcal{E}^4 -
+\epsilon_0\chi^\text{(5)}\mathcal{E} ^ 5 + \bigo{\pc^6},
+\end{gather*}
+%
+where we see that for the even exponents, the negative signs cancel. Hence, the
+even terms cannot contribute to $\pn$ and we have only the odd terms: 
+\be \label{pno}
+\pn = \epsilon_0\chi^\text{(3)}\mathcal{E}^3 +
+\epsilon_0\chi^\text{(5)}\mathcal{E} ^ 5 + \bigo{\pc^7}
+\ee
+%
+The leading-order term is called the Kerr nonlinearity:
+% \footnote{Fibich does not give the $\epsilon_0$, but other sources do e.g. 
+% \cite{butc}.}
+\be
+\label{kerr} \pn \approx \epsilon_0\ca(\ww)\ec^3.
+\ee
+% \todogroup Check in notes if the $\epsilon_0$ is actually there. Continue
+% writing about nonlinear (Kerr) polarisation, e.g. about Kerr mediums and about
+% the nonlinear Helmholz that follows. And that this Kerr nonlinearity is weak.
+% \endgroup
+
+\section{Implications of nonlinear polarisation}
+Substituting the continuous wave electric field \eqref{cws} into 
+\cref{kerr} yields
+$$ \pn \approx \epsilon_0 \cc(\ww) \ec^3 = 
+3 \cc(\ww) \left|E\right|^2 E e^{i\ww t} + 
+\cc(\ww) E^3 e^{3i\ww t} + \text{c.c.},$$
+%04052020(-1)
+%
+where the second term has a frequency of $3\ww$ (third harmonic). 
+This has almost no contribution due to the phase-mismatch with the first harmonic.
+Hence, we approximate
+%
+$$ \pn \approx 3 \epsilon_0 \cc(\ww) \left|E\right|^2 E e^{i\ww t} 
++ \text{c.c.} = 3 \epsilon_0 \cc(\ww) \ec. $$
+
+Then we simplify $\pn$ by defining 
+$$ n_2\coloneqq \frac{3\cc}{4\epsilon_0 n_0},$$
+so that we obtain the simplified expression
+$$\pn = 4\epsilon_0 n_0 n_2 \left|E\right|^2\ec.$$
+%
+This allows us to write the induction electric field $\dc$ as,
+$$ \dc = \epsilon_0 \ec + \pl + \pn = \epsilon_0 n^2 \ec,$$
+%
+where 
+$$n^2 = n_0^2 \left( 1 + \frac{4n_2}{n_0} \left|E\right|^2 \right) =
+n_0^2 + 3\cc(\ww)\frac{1}{\epsilon_0} |E|^2.$$
+
+For water, $n_2\sim10^{-22}$ which justifies neglecting nonlinear effects.
+With lasers, the nonlinear effect becomes more relevant, but is still weak. For a
+typical continuous wave laser with $|E|\sim10^9$, we still have a weak
+nonlinearity, as $n_2|E|\sim 10^{-4}\ll n_0\approx 1.33$.
+%
+% Since the nonlinearity is weak, we can rewrite the expression for $n$ as 
+% %$$n = n_0\left(1 + 4\frac{n_2}{n_0} |E|^2\right)$$ 
+% $$n = n_0\sqrt{1 + 4\frac{n_2}{n_0} |E|^2} \approx n_0 + 2n_2|E|^2$$ 
+% by linearisation of the square root.
+
+We update \cref{lhh} to the scalar nonlinear Helmholtz equation (NLH):
+\be \label{nlh}
+\Delta E(x,y,z) + k^2 E = 0,\quad\text{where }
+k^2 = k_0^2 \left( 1 + \frac{4n_2}{n_0} |E|^2 \right).
+\ee
+%
+We write $E(x,y,z)$ as the product of the $z$-propagation 
+and an envelope function $\psi(x,y,z)$:
+$$E = e^{ik_0 z}\psi$$ 
+%
+and substitute in \eqref{nlh} to obtain:
+\be \label{nlhcw} 
+\psi_{zz} + 2ik_0 \psi_z + \Delta_\perp \psi + 4 k_0^2 \frac{n_2}{n_0}
+\abs{\psi}^2\psi = 0.
+\ee
+%
+Just as in \cref{parax}, we apply the paraxial approximation, since
+for laser beams oriented in the $z$-direction, we have 
+$\abs{\psi_{zz}}\ll k_0\abs{\psi_z}, \abs{\psi_{zz}}\ll \Delta_\perp\psi$.
+We finally obtain the nonlinear Schr\"odinger equation (NLS):
+\be \label{nls}
+2ik_0\psi_z(z,\bar{x})+\Delta_\perp\psi+k_0^2\frac{4n^2}{n_0}\abs{\psi}^2\psi=0.
+\ee
+
+\section{Soliton solutions}
+The NLS \cref{nls} can be written as a dimensionless equation. Starting from 
+\cref{nlhcw}, we apply the rescaling of coordinates
+$(x,y,z)\to(\tilde{x},\tilde{y},\tilde{z})$ defined by:
+$$ \tilde{x} = \frac{x}{r_0}\quad \tilde{y}=\frac{y}{r_0}
+\quad \tilde{z} = \frac{z}{2L_\text{diff}}, $$
+%
+where $r_0$ is the input beam width and $L_\text{diff}$ is the diffraction
+length. We refer to chapter 2 of \cite{fibg} for more information on the
+geometrical optics of lasers. There, we also find that 
+$L_\text{diff}=k_0\cdot r_0^2$. To rescale $\tilde\psi$, we define:
+$$\tilde{\psi}=\frac{\psi}{E_c},\quad\text{where }
+E_c\coloneqq\underset{x,y}{\max}\left|\psi_0(x,y)\right|.$$
+%
+Through the rescaling we obtain the dimensionless NLH for $\tilde\psi$:
+$$\frac{f^2}{4}\tilde{\psi}_{\tilde{z}\tilde{z}}(\tilde{z},\tilde{x},\tilde{y})
++ i\tilde{\psi}_{\tilde{z}} +\Delta_\perp\tilde{\psi} 
++ \nu\left|\tilde{\psi}\right|^2\tilde{\psi}=0,$$
+that depends on a nonparaxiality parameter $f$
+and a nonlinearity parameter $\nu$:
+$$f = \frac{1}{r_0 k_0} = \frac{r_0}{L_\text{diff}},\quad
+\nu = r_0^2 k_0^2 \frac{4n_2}{n_0}E_c^2.$$
+%
+% where $\Delta_\perp = \frac{\partial^2}{\partial \tilde{x}^2} +
+% \frac{\partial^2}{\partial \tilde{y}^2}$ and $\nu = r_0^2 k_0^2 \frac{4n_2}{n_0}
+% E_c^2$ is the nonlinearity parameter and $f = \frac{1}{r_0 k_0} =
+% \frac{r_0}{L_\text{diff}}$ is the nonparaxiality parameter. Remember that $2\pi
+% f = \frac{\lambda}{r_0}$.
+%
+Here the approximation of paraxiality is valid for small $f\ll1$ 
+and this leads to  
+% $f^2\tilde{\psi}_{\tilde{z}\tilde{z}}<<\psi_{\tilde{z}\tilde{z}}$ and we obtain
+the dimensionless NLS \cref{dnls}, where the tildes have been dropped for brevity.
+%
+\be \label{dnls}
+i\psi_z(z,x,y) + \Delta_\perp\psi + \nu\left|\psi\right|^2\psi = 0.
+\ee
+% 
+% depending on $\nu$ only, not on $f$. For weak nonlinearity we have $\nu\sim 1$.
+% Suppose that the solution does not change shape when propagating. This is called
+% a soliton solution. 
+Radial solitary-wave solutions to \eqref{dnls} were considered in
+\cite{chia} with $\psi$ of the form: 
+\be \label{psol} 
+\psi_\omega^\text{solitary}(r,z) = e^{i\omega z}R_\omega(r),
+\ee
+%
+where $\omega$ is a real number and $R_\omega$ is the real solution of
+$$ -\omega R_\omega + \Delta_\perp R_\omega(r) + R_\omega^3 = 0. $$
+%
+This can be solved in general by, for example,
+$$ R_\omega(r) = \sqrt{\omega}R\left(\sqrt{\omega}r\right). $$
+However, taking $\omega=1$ leads to the simplest soliton equation
+\be \label{sol}
+R''(r) + \frac{1}{r} R' - R + R^3 = 0,\quad 0<r<\infty,
+\ee
+%
+subject to initial condition $R'(0)=0$ and integrability condition
+$\underset{r\to\infty}{\lim} R(r) = 0$. The (numerical) solution is known as the
+Townes profile, which is positive and monotonically decreasing in $r$.
+
+% \references{dissertation}
 

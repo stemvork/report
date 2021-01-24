@@ -1,0 +1,127 @@
+\section{Minimisation of $J$}
+This section first states that a solution $u\in L^4$ must belong to $H^1$.
+For $u\in L^4$, $u\neq 0$, we define $\sigma(u)$ by 
+\be \label{sigmadef} \left(\sigma(u)\right)(x) = c \int g(x-t)u^3(t)\diff t, \ee
+where $c>0$ is chosen to normalise $v=\sigma(u)$. That is,
+\be\label{vnorm} \int v^4\diff x = 
+\int \left(\sigma^4(u)\right)(x) \diff x =
+c^4 \int \left(\int g(x-t)u^3(t)\diff t\right)^4 \diff x = 1. \ee
+
+{\red Further details:}
+\begin{itemize}
+    \item $u\in L^4\implies u^3\in L^{4/3}$
+    \item $g\ast (u^3)\in L^4$ and $g\ast (u^3)\neq 0$
+    \item Fixed points of $\sigma$ are non-trivial solutions of \eqref{uint}
+    \item $\sigma: L^4\to H^1$
+    \item $\sigma$ is an operator in $H^1\setminus\{0\}$
+    \item $L^4$ solution of \eqref{uint} must belong to $H^1$
+\end{itemize}
+
+%($u\in H^1$ and $u\neq 0$)
+%Lemma 3.1
+\begin{lemma} 
+Let $u$ be an admissible solution with
+\be\label{uass} \int u^4 \diff x = 1.\ee
+
+Then $\sigma(u)$ is admissible and
+\be\label{jsigma}
+J(\sigma(u))\leq J(u)
+\ee
+
+with equality only if $\sigma(u) = u$. Moreover, $\sigma(u)\in L^\infty$ 
+%($\sigma(u)$ bounded) 
+and $v=\sigma^2(u)$ has bounded continuous derivatives and satisfies
+\be\label{vlim}
+\underset{|x|\to\infty}{\lim} v(x)=0;
+\ee
+finally $\sigma^3(u)\in C^2$.
+\end{lemma}
+\begin{proof}
+{\red Proof steps}
+\begin{itemize}
+    \item $\sigma(u)$ admissible follows from e) of \Cref{sec2}
+    \item By e), \eqref{sigmadef} and \eqref{uass}, $w=\sigma(u)$ satisfies
+        $$c=c\int u^4\diff x=\int\left(\nabla w\cdot \nabla u + wu\right)\diff
+        x\leq |u|_{1, 2}|w|_{1, 2}.$$
+    \item By e), \eqref{vnorm} and \eqref{uass}
+        \be\label{wucineq} 
+            \int\left(|\nabla w|^2+w^2\right) \diff x = c\int wu^3\diff x\leq
+            c|w|_{0, 4}|u|_{0, 4}^3=c.
+        \ee
+    \item Combining the inequalities yields
+        $$ |w|_{1, 2}\leq |u|_{1, 2},$$
+    \item which imply \eqref{jsigma} in view of \eqref{sigmadef} and
+        \eqref{uass}.
+    \item Equality can hold only if $w$ and $u$ are proportional, from the
+        application the Schwarz inequality.
+    \item The constant of proportionality must be 1, by \eqref{vnorm},
+        \eqref{uass} and \eqref{wucineq}.
+    \item The boundedness of $\sigma(u)$ follows from applying the Schwarz
+        inequality to \eqref{sigmadef} and then using the inequality
+        $$\int u^6\diff x\leq 48\left(\int|\nabla u|^2\diff x\right)^3;$$
+        from {\red 14, p.12} or {\red 11, Theorem 9.3, p.24}.
+    \item The remaining assertions follow from f) and g).
+\end{itemize}
+\end{proof}
+
+The following two lemmata are corollaries of Lemma 3.1.
+\begin{lemma} 
+    If $v\in L^4$ is a solution of \eqref{uint} then $v\in C^2$, $v$ has
+    bounded first derivatives, and $v$ satisfies \eqref{vlim}.
+\end{lemma}
+\begin{lemma}\label{jineqlem}
+    If $u$ is any (radially symmetric) admissible function, then there is a
+    (radially symmetric) admissible function $v\in C^2$ which is positive, has
+    bounded first derivatives and satisfies \eqref{vlim} and 
+\be\label{jvu}
+J(v)\leq J(u).
+\ee
+    Moreover, unless $u$ itself has the same properties and is a solution of 
+    \eqref{uint} (to within a positive factor), then $v$ can be chosen so that
+    inequality \eqref{jvu} is strict.
+\end{lemma}
+\begin{proof}
+{\red Insert skeleton.}
+\end{proof}
+
+% The implications are that solutions of the integral equation (2.2) are in $C^2$, have bounded first derivatives and vanish at the boundary.
+% 
+% Furthermore, existence of a (radially symmetric) admissible function implies existence of a (radially symmetric) function in $C^2$ which is positive, has bounded first derivatives, vanishes at the boundary and satisfies (3.5) and satisfies
+% 
+% Moreover, unless $u$ has the same properties and solves (2.2), the $v$ can be chosen so that (3.7) is a strict inequality.
+
+\begin{theorem}% 3.1 which states that for the ground state
+Let
+    $$\lambda_1 = \inf\left\{J(u): u~\text{admissible}\right\}.$$
+    There exists a $\phi_1\in V$ %(hence radially symmetric)
+    with 
+    $$J(\phi_1)=\lambda_1.$$ 
+    For $u\in H^1$, $J(u)>\lambda_1$ unless $u$ is of the form \eqref{uts}.
+\end{theorem}
+\begin{proof}
+{\red Proof steps}
+\begin{itemize}
+    \item That $J$ attains an infimum in the class of radially symmetric
+        admissible functions was shown in \cite{nehari}. This also follows from
+        assertion d) of \Cref{sec2}.
+    \item Suppose that $u\in H^1$ but no translate of $u$ is essentially
+        radially symmetric. 
+    \item For the purpose of showing that $J(u) > \lambda$, we can suppose by
+        \Cref{jineqlem} that $u$ is positive and of class $C^2$, and that
+        $u(x)\to 0$ as $|x|\to \infty$.
+    \item By the Schwarz symmetrization procedure (see {\red 19} or {\red 16,
+        Section 8}) we can produce a radially symmetric admissible function $v$
+        with $J(v)<J(u)$.
+    \item This shows that the infimum over all admissible functions is the same
+        as its infimum over the radially symmetric functions and therefore that
+        this infimum is attained. 
+    \item The final assertion of the theorem follows
+        from \Cref{uniqthm} below.
+\end{itemize}
+\end{proof}
+
+% I have lent the book Polya[19] from the library (mentioned in the proof of 3.1).
+% I have downloaded the references Mostow[16] and Moser[15].
+The proof of Theorem 3.1 shows the desired results of the paper except for the
+last statement. This requires \ref{uniqthm} of the next section.
+% The basic idea of Rayleigh quotient minimization is to find the ground state eigenfunction. Another interpretation is that we find the best constant for the imbedding $H^1 \to L^4$.
