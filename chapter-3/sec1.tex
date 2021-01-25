@@ -1,44 +1,51 @@
+\newcommand{\rd}[1]{{\red ({#1})}}
 \section{Introduction}
 % In this chapter, we study the paper "Uniqueness of the Ground State Solution for
 % $\Delta u - u + u^3 = 0$ and a Variational Characterization of Other Solutions"
 % written in 1972 by Charles V. Coffman. 
 
 % \todo{Make connection to chapter 2 and discuss similarities and differences.}
-In \Cref{existence} we studied the existence result \cite{ber81} for
+In \Cref{existence}, we studied the existence result \cite{ber81} for ground
+state solutions to the equation
 \be\label{updeber}
 \Delta u - u = f(u)\quad\text{in }\R^3,
 \ee
-where $f(u)$ satisfies certain general conditions. Motivated by \Cref{physics},
-we are interested in the specific case $f(u) = u - u^3$.  In the present
-chapter, we study the uniqueness result \cite{coffm} for the problem 
+where $f(u)$ satisfies the general conditions described in \Cref{fass}.
+Motivated by \Cref{physics}, we are interested in the specific case 
+$f(u) = u - u^3$. In this chapter, we study the uniqueness of positive radially
+symmetric solutions for
+the equation 
 \be\label{upde}
 \Delta u - u + u^3 = 0\quad\text{in }\R^3.
 \ee
 
-In particular, \cite{coffm}  proves uniqueness of the positive radially
-symmetric (ground state) solution $u=\phi_1\in C^2\cap L^4$ for \eqref{upde}.
-All function spaces considered in this chapter consist of real valued functions
-on $\R^3$. Furthermore, radial symmetry is with respect to the origin only. 
+The chapter is based on \cite{coffm}, which  proves uniqueness of the positive
+radially symmetric (ground state) solution $u=\phi_1\in C^2\cap L^4$ for
+\eqref{upde}. All function spaces considered in this chapter consist of real
+valued functions on $\R^3$. Furthermore, radial symmetry is with respect to the
+origin only.
 
-The existence of such a function $\phi_1$ was shown in \cite{nehari},
-where $\phi_1=v_1(|x|)$ solves \eqref{upde} as a specific case of $f(u) = u -
-u^k$ with $1<k\leq 4$. 
-
+The existence of such a solution $\phi_1$ was shown in \cite{nehari},
+where $\phi_1=v_1(|x|)$ solves $f(u) = u - u^k$ with $1<k\leq 4$. 
+%\eqref{upde} is the case where $k=3$.
 In addition, \cite{coffm} refers to the existence of functions $v_n(|x|)\in
-C^2([0, \infty))$, $n=1, 2, \ldots$, such that for each $n$, $v_n$ has exacly
-$n-1$ isolated zeroes in $[0, \infty)$ and decays exponentially as $r\to\infty$.
+C^2([0, \infty))$, where for each $n\geq 1$, the solution $v_n$ has exactly
+$n-1$ isolated zeroes in $[0,\infty)$ and decays exponentially as $r\to\infty$.
 This was shown in \cite{ryder}, which considered $f(u) = u - ug(u^2)$,
 as well as \cite{berger}, which considered
 $$i\frac{\partial u}{\partial t} = \Delta u + f(|x|, |u|^2)u$$ 
 under the assumption that $f(|x|, |u|^2)=k(|x|)|u|^\sigma$ for $0<\sigma<4$ and
-$k(|x|)$ a Lipschitz continuous positive bounded function.
+$k(|x|)$ a Lipschitz continuous positive bounded function. We note that
+\eqref{upde} is the specific case when $k=3$, $g(u^2)=u^2$ and
+$f(|x|,|u|^2)=u^2$ respectively.
 
-Furthermore, Theorem 3.1 of \cite{coffm} improves the result of \cite{robinson},
-which also studied \eqref{upde} (in the context of variational calculus).  In
-\cite{robinson}, they show that the Lagrangian associated with \eqref{upde} is
-zero in its first variation and the second variation is positive if $\lambda_1 >
-1$. The latter is shown only through approximations. Theorem 3.1 of \cite{coffm}
-shows that the Rayleigh quotient $J$ associated with \eqref{upde}
+Furthermore, Theorem 3.1 of \cite{coffm} improves \rd{vague} the result of
+\cite{robinson}, which studied \eqref{upde} in the context of variational
+calculus. In \cite{robinson}, they show that the Lagrangian associated with
+\eqref{upde} is zero in its first variation and the second variation is positive
+if $\lambda_1 > 1$. The latter is shown only through approximations. Theorem 3.1
+of \cite{coffm} shows that the Rayleigh quotient $J$ associated with
+\eqref{upde}
 \be\label{rayleigh} 
 J(u) = \dfrac{\left(\int\left|\nabla u\right|^2+u^2~dx\right)^2}{\int u^4~dx}
 \ee

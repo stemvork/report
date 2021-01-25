@@ -1,3 +1,4 @@
+% 4.1 is qlem en 4.2 is qneglem
 \section{Uniqueness theorem}
 The radially symmetric solutions of \eqref{upde} are of the form
 $$u(x)=|x|^{-1}w(|x|),$$ 
@@ -5,164 +6,202 @@ where $w(|x|)=w(r)$ solves
 \be\label{wvp}
 w''-w+r^{-2}w^3=0.
 \ee
-We refer to \ref{weqv} for more details on \eqref{wvp}.
+The derivation of \eqref{wvp} is included in \Cref{weqv} below.
 %
 % \todo{Rephrase this paragraph}
 To prove the uniqueness of the ground state solution $\phi_1$ for \eqref{upde},
 it suffices to prove that \eqref{wvp} has at most one positive solution
-satisfying the following boundary conditions
+satisfying the boundary conditions
 \be\label{wbc}
 % \underset{r\to0}{\lim}~r^{-1}w(r) in some sense is u(0) \in (0, \infty)
 0 < \underset{r\to0}{\lim}~r^{-1}w(r) < \infty,\quad
-\underset{r\to\infty}{\lim} w(r)=0
+\underset{r\to\infty}{\lim} w(r)=0.
 \ee
 
 % The problem \eqref{wvp},\eqref{wbc} is transformed to an initial value problem where 
 Similar to the shooting method in \Cref{existence}, we consider the initial
 condition 
 \be\label{wic}
-\underset{r\to0}{\lim}~r^{-1}w(r)=a>0.
+\underset{r\to0}{\lim}~r^{-1}w(r)=\a>0,
 \ee
-rather than the boundary conditions \eqref{wbc}. The basic facts regarding the
-problem \eqref{wvp}, \eqref{wic} are summarised in Lemma 4.1. {\red The proofs
-are omitted in the original paper \cite{coffm}}. 
+rather than the boundary conditions \eqref{wbc}. We write $w=w(r,\a)$ to denote
+the solution $w(r)$ with initial condition $\a>0$. The notation in this chapter
+differs from the source \cite{coffm} to agree with \Cref{existence}. The
+initial conditions $\a>0$ are categorised into three sets $P$, $G$ and $N$,
+similar to \eqref{pset}, \eqref{gset} and \eqref{nset} in \Cref{setsdef}.
 
-\begin{lemma}\label{qlem}
-    For each $a>0$ the equation \eqref{wvp} has a unique solution $w=w(r,a)$ 
-    which is of class $C^2$ on $\left(0, \infty\right)$ and satisfies
-    \eqref{wic}.  The partial derivatives $w_a(r, a) = \partial_a w(r, a) =
-    \frac{\partial w(r,a)}{\partial a}$ and $w_a'(r, a) = \partial_a w'(r, a) =
-    \frac{\partial w'(r, a)}{\partial a}$ exist for all $r>0$ and $a>0$.
+Furthermore, $\za<\infty$ is the first zero of the solution $u(r)$ if $\a\in N$
+and we write $\za=\infty$ if $\a\in G\cup N$.  Formally, let
+\be\label{zdef} z(\a)\coloneqq \sup 
+\left\{z^\ast>0\;\middle|\; w(r,\a) > 0~
+\text{for all}~r\in [0,z^\ast)\right\}.\ee
+We formulate the uniqueness of the ground state solution in terms of this
+initial condition $\a>0$ in \Cref{uniqthm} below.  The proof method is to show
+that $\za$ is monotonically decreasing and that an initial condition $\a_2$ in a
+right neighborhood of $\a_1\in G$ must belong to $N$.  The basic facts regarding
+the problem \eqref{wvp}, \eqref{wic} are summarised in \Cref{qlem}. The proof of
+\Cref{qlem} is omitted in the original paper \cite{coffm}.
+
+\newcommand{\was}{w_\a}
+\newcommand{\wa}{w_\a(r,\a)}
+\newcommand{\wap}{w_\a'(r,\a)}
+\newcommand{\qa}{q_\a(r,\a)}
+\newcommand{\qap}{q_\a'(r,\a)}
+\begin{lemma}\label{qlem} 
+    For each $\a>0$ the equation \eqref{wvp} has a unique solution $w=w(r,\a)$
+    which is of class $C^2\left((0, \infty)\right)$ and satisfies
+    \eqref{wic}.  The partial derivatives $\wa = \partial_\a w(r, \a) =
+    \frac{\partial w(r,\a)}{\partial \a}$ and $\wap = \partial_\a w'(r,
+    \a) = \frac{\partial w'(r, \a)}{\partial \a}$ exist for all $r>0$ and $\a>0$.
     %Let $q(r, a)$ denote $w_a(r, a)$. 
-    Furthermore, $w_a(r, a)$ coincides on $(0, \infty)$ with the solution
-    $q=q(r, a)$ of the regular initial value problem 
+    % Furthermore, $\wa$ coincides on $(0, \infty)$ with the solution
+    % $\qa$ of the regular initial value problem 
+    % \be\label{qvp} \begin{cases}
+    % q'' - q + 3r^{-2}w^2q=0,\\ 
+    % q(0)=0,\quad q'(0)=1,
+    % \end{cases}\ee
+    % with $w=w(r, a)$; $q'(r, a)=\wap$; $q''(r, a)=w_a''(r,
+    % a)=\frac{\partial w''(r, a)}{\partial a}$.  
+    Furthermore, $\was=\wa$ solves the regular initial value problem
     \be\label{qvp} \begin{cases}
-    q'' - q + 3r^{-2}w^2q=0,\\ 
-    q(0)=0,\quad q'(0)=1,
+        \was'' - \was + 3r^{-2}w^2\was=0,\quad\text{on}~(0,\infty)\\ 
+    \was(0,\a)=0,\quad \was'(0,\a)=1,
     \end{cases}\ee
-    with $w=w(r, a)$; $q'(r, a)=w_a'(r, a)$; $q''(r, a)=w_a''(r,
-    a)=\frac{\partial w''(r, a)}{\partial a}$.  
 \end{lemma}
 
 % \todo{Rephrase result.}
-The solution $w(r)$ to problem \eqref{wvp}, \eqref{wic} depends on the parameter
-$a>0$ (initial condition). This motivates us to write $w=w(r, a)$ and formulate
-the uniqueness result in terms of $a>0$.
+% \rd{Move up, remove repeat.} In the following lemmata, we will write
+% $w(r)=w(r,\a)$ since the solution $w(r)$ depends on the initial condition
+% $\a>0$. The uniqueness result is formulated in \Cref{uniqthm} below in terms of
+% $\a>0$.
+% The solution $w(r)$ to problem \eqref{wvp}, \eqref{wic} depends on the parameter
+% $a>0$ (initial condition). This motivates us to write $w=w(r, a)$ and formulate
+% the uniqueness result in terms of $a>0$.
 
 \begin{theorem}\label{uniqthm}
-There is at most one positive value of $a$ for which
-\be\label{wpos}w(r,a)>0,\quad 0<r<\infty\ee
+There is at most one $\a\in G$. That is, at most one $\a>0$ for which
+\be\label{wpos}w(r,\a)>0\quad\text{on}~(0,\infty)\ee% 0<r<\infty\ee
 and
-\be\label{wlim}\underset{r\to\infty}{\lim} w(r, a)=0.\ee
+\be\label{wlim}\underset{r\to\infty}{\lim} w(r, \a)=0.\ee
 \end{theorem}
 
 % \todo{Expand explanation}
-Similar to the approach in \Cref{existence}, the solutions $w(r,a)$ are of one
-of three types: (i) solutions that have a finite zero, (ii) solutions that are
-positive everywhere and (iii) solutions that are positive everywhere and vanish
-at infinity. We refer to definitions \eqref{nset}, \eqref{pset} and \eqref{gset}
-respectively. {\red Revise notation of this chapter to match/contract the
-notation in \Cref{existence} where necessary.} Let 
-\be\label{z1def}
-z_1 \coloneqq \inf\left\{\; r>0 \;\middle|\; w(r, a)=0\;\right\}.
-\ee
-We note that $z_1<\infty$ for $a\in N$ and we write $z_1=\infty$ for $a\in G\cup
-N$. \Cref{uniqthm} is implied by the following lemma.
+% \rd{Move up, remove repeat.} Similar to the approach in \Cref{existence}, the
+% solutions $w(r,a)$ are of one of three types: (i) solutions that have a finite
+% zero, (ii) solutions that are positive everywhere and (iii) solutions that are
+% positive everywhere and vanish at infinity. We refer to definitions
+% \eqref{nset}, \eqref{pset} and \eqref{gset} respectively. {\red Revise notation
+% of this chapter to match/contract the notation in \Cref{existence} where
+% necessary.} Let \rd{sup over $w>0$ rather than inf}
+% \be\label{z1def}
+% z_1 \coloneqq \inf\left\{\; r>0 \;\middle|\; w(r, a)=0\;\right\}.
+% \ee
+% We note that $z_1<\infty$ for $a\in N$ and we write $z_1=\infty$ for $a\in G\cup
+% N$. 
+\rd{Expand introduction of lemma} \Cref{uniqthm} is implied by the following lemma.
 
 \begin{lemma}\label{qneglem}
     \begin{enumerate}[(i)]
-        \item If $a>0$ and $w(r, a)>0$ on $(0, z_1)$ with $w(z_1, a)=0$, then
-            $q(z_1, a)<0$.
-        \item If $a>0$ and $w(r, a)$ satisfies \eqref{wpos} and \eqref{wlim} then
+        \item If $\a>0$ and $w(r, \a)>0$ on $(0, \za)$ with $w(\za, \a)=0$, then
+            $\was(\za,\a)<0$.
+        \item If $\a>0$ and $w(r, \a)$ satisfies \eqref{wpos} and \eqref{wlim} then
             \be\label{qexplim}
-                \underset{r\to\infty}{\lim} e^{-r}q(r, a)<0.
+                \underset{r\to\infty}{\lim} e^{-r}\was(r, \a)<0.
             \ee
     \end{enumerate}
 \end{lemma}
 
 \begin{proof}[Proof of Theorem \ref{uniqthm}]
-    We assume \Cref{qneglem}.  We first show that $z_1$ is a monotonically
-    decreasing function of $a>0$. 
-    Let
-    \be\label{adef}
-    A \coloneqq \left\{\;a>0 \;\middle|\; \exists r>0 \;:\; w(r,a)=0\;\right\}.
-    \ee
+We assume \Cref{qneglem}. The proof will be in two steps. We first show that
+$\za$ is monotonically decreasing in $\a>0$. Then, we show that if $\a_1>0$
+satisfies the conditions \eqref{wpos}, \eqref{wlim} of \Cref{uniqthm}, then any
+$\a_2>\a_1$ with $\a_2-\a_1>0$ arbitrarily small has $z(\a_2)<\infty$.  That is,
+$\a_2\in N$.
 
-    % and let $z_1=z_1(a)$ be the least positive zero of $w(r, a)$ for any $a\in A$.
-    % If $a\in A$ and $z_1=z_1(a)$ is the least positive zero of $w(r,a)$, then,
-    By \cref{qlem} and the implicit function theorem ({\red expand}), $z_1$ is
-    differentiable with respect to $a$ and
+% \rd{Replaced by $N$} Let
+% \be\label{adef}
+% A \coloneqq \left\{\;\a>0 \;\middle|\; \exists r>0:\; w(r,\a)=0\;\right\}.
+% \ee
+%
+If $\a\in N$, then $\za<\infty$ and we have $w(\za,\a)=0$ and $w'(\za,\a)<0$.
+%\rd{if $N$ is non-empty, then let $\a\in N$?} 
+Then, by the implicit function theorem $\za$ is differentiable with respect
+to $\a$ on $N$ and we have
 
-    $$w'(z_1, a)\frac{\diff z_1}{\diff a} + \delta(z_1, a) = 0.$$
+$$\was(\za, \a) + w'(\za, \a)\frac{\diff \za}{\diff \a} = 0.$$
 
-    Since $w(r, a)>0$ on $(0, z_1)$ and $w(z_1, a)=0$, we have $w'(z_1, a)<0$. 
-    By \cref{qlem}(i), this implies $q(z_1, a)<0$.  Hence 
-    $$\dfrac{\diff z_1}{\diff a}<0\quad\text{on}~A.$$ 
-
-    Therefore, $z_1$ moves monotonically to the left as $a$ increases. 
-    Thus if $A$ is non-empty it is a semi-infinite interval. 
+The term $\was(\za,\a)<0$ by \cref{qlem}(i) and $w'(\za,\a)<0$ by the
+definition of $\za$. Hence 
+$$\dfrac{\diff \za}{\diff \a}<0\quad\text{on}~N.$$ 
+%
+Therefore, $\za$ is monotonically decreasing in $\a>0$. Hence, if $N$ is
+non-empty, it is a semi-infinite interval.
+    % \end{proof}
    
     % \todo{Proof step 2. $a_1$ is the left endpoint of $A$ if $a_1$ satisifies
     % \eqref{wpos} and \eqref{wlim}.}
-    Next, we show that if \eqref{wpos} and \eqref{wlim} hold for $a=a_1$, then
-    $A$ is non-empty and $a_1$ is the left endpoint of $A$. This will clearly
-    imply \Cref{uniqthm}.
+In the second proof step, we assume that \eqref{wpos} and \eqref{wlim} hold for
+$\a_1>0$, or equivalently, that $\a_1\in G$. Under this assumption, we deduce
+that $\a_1$ is the left endpoint of $N$.
+% is non-empty and we show that if \eqref{wpos} and \eqref{wlim} hold for
+% $a=a_1$, then $A$ is non-empty and $a_1$ is the left endpoint of $A$. 
+This will clearly imply \Cref{uniqthm}.
    
-    Let $a_1$ be as above and let $a_2>a_1$; we shall show that if $a_2-a_1$ is
-    sufficiently small, then the assumption 
-    \be\label{wass} w(r, a_2) > 0\quad\text{on}~(0, \infty)\ee 
-    leads to a contradiction. Note that the assumption \eqref{wass} implies  
-    $a_2\not\in A$, since $w(r, a_2)$ is assumed positive on $(0, \infty)$.
+Let $\a_1\in G$ and let $\a_2>\a_1$. We show that if $\a_2-\a_1$ is
+sufficiently small, then the assumption 
+\be\label{wass} w(r, \a_2) > 0\quad\text{on}~(0, \infty)\ee 
+leads to a contradiction. Note that assumption \eqref{wass} implies  
+$\a_2\not\in N$. % since $w(r, \a_2)$ is assumed positive on $(0, \infty)$.
+We put $w_i=w_i(r, \a_i)$ for $i=1, 2$\footnote{Correcting a typo in
+the definition of $w_i$ given in \cite{coffm}.}. 
 
-    We put $w_i=w_i(r, a_i)$ for $i=1, 2$\footnote{Correcting a typo in
-    the definition of $w_i$ given in \cite{coffm}.}. 
+By our assumption on $\a_1$ and ii) of \cref{qlem}, we can choose $r_0>0$
+such that
 
-    By our assumption on $a_1$ and ii) of \cref{qlem}, we can choose $r_0>0$
-    such that
+\be\label{ubw1} 3r^{-2}w_1^2<\frac{1}{2},\quad\text{for}~r\geq r_0\ee
+and
 
-    \be\label{ubw1} 3r^{-2}w_1^2<\frac{1}{2},\quad r\geq r_0\ee
-    and
+\be\label{qneg} \was(r_0, \a_1)<0,\quad\text{and}~\was'(r_0, \a_1)<0.\ee
 
-    \be\label{qneg} q(r_0, a_1)<0,\quad\text{and}~q'(r_0, a_1)<0.\ee
+From \cref{qlem} and \eqref{qneg} it follows that if $\a_2>\a_1$ and $\a_2-\a_1$
+is sufficiently small, then
+\be\label{w2ltw1} 
+w_2(r_0,\a_1)<w_1(r_0,\a_1),\quad w_2'(r_0,\a_1)<w_1'(r_0,\a_1).\ee
 
-    From \cref{qlem} and \eqref{qneg} it follows that if $a_2>a_1$ and $a_2-a_1$
-    is sufficiently small, then
-    \be\label{w2ltw1} w_2(r_0)<w_1(r_0),\quad w_2'(r_0)<w_1'(r_0).\ee
+We put $v = w_1-w_2$, so that $v$ satisfies\footnote{Correcting a 
+typo in (4.12) of \cite{coffm}.}
+\be\label{vivp} v'' - v + r^{-2}\left(w_1^2+w_1w_2+w_2^2\right)v=0.\ee
 
-    We put $v = w_1-w_2$, so that $v$ satisfies\footnote{Correcting a 
-    typo in (4.12) of \cite{coffm}.}
-    \be\label{vivp} v'' - v + r^{-2}\left(w_1^2+w_1w_2+w_2^2\right)v=0.\ee
+We suppose that $w_2(r,\a_2)$ satisfies \eqref{wass} and that for some $r_1>r_0$
+\be\label{w2ltw1r0r1} 0<w_2<w_1\quad\text{on}~\left[r_0,r_1\right).\ee
 
-    We suppose that $w_2(r,a_2)$ satisfies \eqref{wass} and that
-    \be\label{w2ltw1r0r1} 0<w_2<w_1\quad\text{on}~\left[r_0,r_1\right)\ee
-
-    for some $r_1>r_0$. Such an $r_1$ exists by \eqref{w2ltw1}.
-    % \todo{Untangle the argumentation and make some pictures. Compare to Genoud.}
-    \begin{itemize}
-        \item From \eqref{w2ltw1}, \eqref{vivp} and \eqref{ubw1} it follows that
-            $v$ is positive and convex on $\left[r_0, r_1\right)$; 
-        \item moreover, from \eqref{w2ltw1}, $v'(r_0)>0$ so that $v$ is
-            increasing on $\left[r_0, r_1\right)$. 
-        \item Thus \eqref{w2ltw1r0r1} holds at $r=r_1$;
-        \item hency by a standard argument we conclude that \eqref{w2ltw1r0r1}
-            holds on $\left[r_0, \infty\right)$ and that $v$ is increasing
-            there. 
-        \item The inequality \eqref{w2ltw1r0r1} on $\left[r_0, \infty\right)$
-            implies that
-            \be\label{wlimsumsq}
-                \underset{r\to\infty}{\lim}\left(w_1^2+w_1w_2+w_2^2\right)=0.
-            \ee
-        \item Using this fact and the monotone character of $v$, we conclude
-            from asymptotic integration of \eqref{vivp} that $v$ grows
-            exponentially as $r\to\infty$.
-        \item From the definition of $v$, this is clearly a contradiction of
-            \eqref{wlim} for $a=a_1$ and \eqref{wass}. 
-        \item We conclude therefore that \eqref{wass} cannot hold for $a_2>a_1$
-            and $a_2-a_1$ arbitrarily small;
-        \item therefore $a_2\in A$ for all $a_2>a_1$ with $a_2-a_1$ sufficiently
-            small. 
-        \item This completes the proof of \Cref{uniqthm}.
-    \end{itemize}
+Such an $r_1$ exists by \eqref{w2ltw1}.
+% \todo{Untangle the argumentation and make some pictures. Compare to Genoud.}
+\begin{itemize}
+    \item From \eqref{w2ltw1}, \eqref{vivp} and \eqref{ubw1} it follows that
+        $v$ is positive and convex on $\left[r_0, r_1\right)$; 
+    \item moreover, from \eqref{w2ltw1}, $v'(r_0)>0$ so that $v$ is
+        increasing on $\left[r_0, r_1\right)$. 
+    \item Thus \eqref{w2ltw1r0r1} holds at $r=r_1$;
+    \item hency by a standard argument we conclude that \eqref{w2ltw1r0r1}
+        holds on $\left[r_0, \infty\right)$ and that $v$ is increasing
+        there. 
+    \item The inequality \eqref{w2ltw1r0r1} on $\left[r_0, \infty\right)$
+        implies that
+        \be\label{wlimsumsq}
+            \underset{r\to\infty}{\lim}\left(w_1^2+w_1w_2+w_2^2\right)=0.
+        \ee
+    \item Using this fact and the monotone character of $v$, we conclude
+        from asymptotic integration of \eqref{vivp} that $v$ grows
+        exponentially as $r\to\infty$.
+    \item From the definition of $v$, this is clearly a contradiction of
+        \eqref{wlim} for $\a=\a_1$ and \eqref{wass}. 
+    \item We conclude therefore that \eqref{wass} cannot hold for $\a_2>\a_1$
+        and $\a_2-\a_1$ arbitrarily small;
+    \item therefore $\a_2\in N$ for all $\a_2>\a_1$ with $\a_2-\a_1$ sufficiently
+        small. 
+    \item This completes the proof of \Cref{uniqthm}.
+\end{itemize}
 \end{proof}
 
 % Also, another (now regular) initial value problem in $\delta(r,a)$ is introduced. 
@@ -170,44 +209,133 @@ N$. \Cref{uniqthm} is implied by the following lemma.
 % **Question:** Regularity in which sense? Usually smoothness, here 
 % Theorem 4.1 claims uniqueness of the parameter $a>0$ for which $w(r, a)$ is positive on $(0, \infty)$ and vanishes at infinity. This is implied by Lemma 4.2.
 % 
-By studying the zeroes of $w(r,a)$, we can show that $A$ (the set of $a>0$
-such that $w(r, a)$ has at least one zero in $(0, \infty)$) has a left
-endpoint.
+By studying the zeroes of $w(r,\a)$, we can show that $N$ has a left endpoint.
 
-\begin{lemma}
-Let $a>0$ and let $w=w(r,a)$ either vanish at least once in $(0, \infty)$
-    or satisfy \eqref{wlim}; then $a>\sqrt{2}$, $w(r, a)=r$ for precisely one value
-$r=r_0$ in $(0, z_1)$ and $w'(r_0, a)<0$.
+\newcommand{\va}{v(r, a)}
+\begin{lemma}\label{vlem}
+Let $\a>0$ and let $w=w(r,\a)$ either vanish at least once in $(0, \infty)$ or
+satisfy \eqref{wlim}; then $\a>\sqrt{2}$, $w(r, \a)=r$ for precisely one value
+$r=r_0$ in $(0, \za)$, and $w'(r_0, \a)<0$.
 \end{lemma}
 \begin{proof}
-{\red Proof steps.} The function $v(r, a)=r^{-1}w(r, a)$ satisfies
+{\red Proof steps.} The function $\va=r^{-1}w(r, \a)$ satisfies
 \be\label{vivp} v'' + 2r^{-1}v' - v + v^3 = 0\ee
 and
-\be\label{vic} \lim_{r\to0} v(r, a) = a,\quad \lim_{r\to 0}v'(r, a)=0.\ee
+\be\label{vic} \lim_{r\to0} v(r, \a) = \a,\quad \lim_{r\to 0}v'(r, \a)=0.\ee
 
-Upon differentiating the function
+We define the function
 $$\Phi(r) = (v')^2 + \half v^4 - v^2\quad\left(v=v(r, a)\right)$$
-and using \eqref{vivp}, \cite{coffm} concludes that, for $a>0$, $\Phi(r)$ is a
-strictly decreasing function of $r$. 
-
-We calculate $\Phi'(r)=\frac{\diff\Phi(r)}{\diff r}$ as
+and differentiate with respect to $r$
 $$\Phi'(r) = 2v'v'' + 2v^3v' - 2vv'.$$
 
-We rewrite \eqref{vivp} as
-$$v'' - v + v^3 = -2r^{-1}v'$$
+By rewriting \eqref{vivp} as %, $\Phi(r)$ is a
+$$v'' - v + v^3 = -2r^{-1}v',$$
+we calculate $\Phi'(r)$ as 
+$$\Phi'(r) = 2v'\left(v'' - v + v^3\right)=-4r^{-1}(v')^2.$$
 
-to conclude that 
-$$\Phi'(r) = 2v'\left(v'' - v + v^3\right)=-4r^{-1}(v')^2$$
+Hence, $\Phi(r)$ is a strictly decreasing function of $r$. 
+%for $\a>0$
+%We calculate $\Phi'(r)=\frac{\diff\Phi(r)}{\diff r}$ as
+%
+%We rewrite \eqref{vivp} as
+%
+%to conclude that 
+
+%is strictly decreasing on $(0, \za)$.
+\begin{itemize}
+    \item Since $-v^2<\Phi(r)$, it follows from the monotone character of $\Phi$
+        that if $\Phi(r_0)\leq 0$ for some $r_0$ in $[0,\infty)$, then $v$ does
+        not vanish in $(r_0,\infty)$ and $\liminf_{r\to\infty} v^2(r)>0$.
+    \item If $0<\a\leq\sqrt{2}$, then from \eqref{vic} it follows that
+        $\Phi(0)\leq 0$ and that $w$ neither vanishes on $(0,\infty)$ nor
+        satisfies \eqref{wlim}, since \eqref{wlim} clearly implies
+        $\lim_{r\to\infty}v(r)=0$.
+    \item Suppose now that $\wa$ were to satisfy the hypothesis of \cref{vlem}
+        but that for $r_0\in(0,\za)$, $w(r_0)=r_0$ while $w'(r_0)\geq0$.
+    \item Since $w$ is convex as long as $0<w<r$, this assumption would imply
+        the existence of an $r_1$ with $r_0<r_1<\za$ such that $w(r_1)=r_1$, so
+        that the assertion concerning the sign of the slope where $w$ crosses
+        the $45^\circ$ line reduces to the assertion that there is  single such
+        crossing in $(0,\za)$.
+    \item Suppose that there were two such crossings, $r_0,r_1$. We would then
+        have $v(r_0)=v(r_1)=1$, and we can assume that $0<v<1$ on $(r_0,r_1)$.
+    \item There is then an $r_3\in(r_0,r_1)$ with $v'(r_3)=0$, but then
+        $\Phi(r_3)<0$.
+    \item This implies, as indicated above, that $w$ cannot vanish on
+        $(r_3,\infty)$ nor satisfy \eqref{wlim}.
+    \item Thus the assumption that $w(r)-r$ can vanish twice in $(0,\za)$ has
+        led to a contradiction and the proof of the lemma is complete.
+\end{itemize}
 \end{proof}
 
-is strictly decreasing {\red on $(0, z_1)$}.
+For $w=\wa$ as in \Cref{vlem}, it follows from that result that there will exist
+positive numbers $a, b, c$ which are, respectively, the least positive values of
+$r$ for which $$w'(r)=1,\quad w'(r)=0,\quad w(r)=r.$$
 
+Moreover, by \Cref{vlem}, $0<a<b<c<\za$, $r<w(r)$ on $(0,c)$ and $0<w(r)<r)$ on
+$(c,\za)$. Finally, $w$ is concave on $(0,c)$ and convex on $(c, \za)$.
+
+We shall require the following identities which are valid for $w=\wa$,
+$\was=\wa$:
+\be\label{ids1}
+(w'\was-\was'w)'=2r^{-2}w^3\was,
+\ee
+\be\label{ids2}
+(w'\was'-w''\was)'=-2r^{-3}w^3\was,
+\ee
+\be\label{ids3}
+\rd{typo}\left(r(w'\was'-w''\was)'\right.=-2w\was,
+\ee
+\be\label{ids4}
+\left((w'-1)\was'-w''\was\right)'=-r^{-3}\was(w-r)^2(2w+r),
+\ee
+\be\label{ids5}
+\rd{typo}\left[r\left((w'-1)\was'-w''\was)-(w'-1)\was\right)\right]'=r^{-1}\was(w-r)(3w+r).
+\ee
+
+Let $y_1$ denote the least positive zero of $\was=\wa$.
 \begin{lemma}
     $\alpha < y_1 < \beta.$
 \end{lemma}
 \begin{proof}
-{\red Requires skeleton.}
+\begin{itemize}
+    \item Suppose first that $$y_1\leq\alpha$$ and integrate (4.20) between 0 and
+        $y_1$. The expression $q(w-r)(3w+3)$ is positive on $(0,y_1)$, which
+        implies $$y_1(w'(y_1)-1)q'(y_1)>0.$$
+    \item Because of the definition of $\alpha$ the assumption (4.21) implies
+        that $w'(y_1)\geq 1$, while clearly $q'(y_1)<0$, so that the assumption
+        (4.21) has led to a contradiction.
+    \item Suppose next that $$y_1\geq\beta$$ and integrate (4.18) between 0 and
+        $\beta$. This give $$-w''(\beta)q(\beta)<0;$$ but (4.22) implies
+        $q(\beta)\geq0$ and clearly $w''(\beta)<0$, so (4.22) has also led to a
+        contradiction and the lemma is proved.
+\end{itemize}
 \end{proof}
+
+\begin{itemize}
+    \item Since $w$ is concave on $(0,\gamma)$, we have $w'(r)<1$ on
+        $(\alpha,\gamma)$. In particular by \Cref{qlem} $$w'(y_1)<1.$$
+\end{itemize}
+\begin{proof}[Remainder of proof of \Cref{qneglem}]
+\begin{itemize}
+    \item Suppose that $q$ has a zero, say $y_2$, in $(y_1,z_1]$ and integrate
+        (4.19) between $y_1$ and $y_2$. This gives \be\label{y2wqint}\ldots\diff
+        r.\ee
+    \item We assume (as we obviously can) that $q<0$ on $(y_1,y_2)$. Then
+        $q'(y_1)<0$ and by (4.23), $(w'(y_1)-1)<0$, so that the right side of
+        (4.24) is positive. Since $q'(y_2)>0$, (4.24) implies that $w'(y_2)>1$.
+        This is clearly a contradiction since $w'<1$ on $(\alpha,\gamma)$ and,
+        since $w$ is convex on $(\gamma,z_1]$, $w'<0$ on that interval. Thus
+        $q<0$ on $(y_1,z_2]$ and i) of \Cref{qneglem} is proved.
+
+\end{itemize}
+\end{proof}
+
+If $w$ satisfies (4.5) and (4.6), then $w'(r)<0$ on $(\beta,\infty)$ and $q<0$
+on $(y_1,\infty)$. Integration of (4.19) from $y_1$ to $\gamma$ gives
+$q'(\gamma)<0$, and integration of (4.17) from $\gamma$ then gives
+$$\lim_{r\to\infty}(w'(r)q'(r)-w''(r)q(r))>0,$$ and this implies that $-q$ grows
+exponentially. This comples the proof of \Cref{qneglem}.
 
 %The proof of Theorem 4.1 seems reasonable.
 % The proofs of Lemma 4.2, 4.3 and 4.4 seem intricated/confusing.

@@ -19,7 +19,7 @@ c^4 \int \left(\int g(x-t)u^3(t)\diff t\right)^4 \diff x = 1. \ee
 
 %($u\in H^1$ and $u\neq 0$)
 %Lemma 3.1
-\begin{lemma} 
+\begin{lemma} \label{sigmalem}
 Let $u$ be an admissible solution with
 \be\label{uass} \int u^4 \diff x = 1.\ee
 
@@ -81,7 +81,19 @@ J(v)\leq J(u).
     inequality \eqref{jvu} is strict.
 \end{lemma}
 \begin{proof}
-{\red Insert skeleton.}
+\begin{itemize}
+    \item Except for the positivity and the assertion about radial symmetry, the
+        result follows immediately from \cref{sigmalem}.
+    \item It suffices to prove the positivity assertion for continuous $u$; we
+        replace such a $u$ by $|u|$, whence by b) $$J(|u|)=J(u).$$
+    \item By continuity $u$ and $|u|$ must vanish at some point of $\R^3$ unless
+        $u$ is already of one sign.
+    \item If the latter is not the case, then since $g$ is positive,
+        $\sigma(|u|)$ will be positive; we cannot then have $\sigma(|u|)=|u|$,
+        and therefore $J(\sigma(|u|))<J(|u|)=J(u)$.
+    \item The assertion concerning radial symmetry follows from the observation
+        that $\sigma$ preserves radial symmetry.
+\end{itemize}
 \end{proof}
 
 % The implications are that solutions of the integral equation (2.2) are in $C^2$, have bounded first derivatives and vanish at the boundary.
@@ -123,5 +135,5 @@ Let
 % I have lent the book Polya[19] from the library (mentioned in the proof of 3.1).
 % I have downloaded the references Mostow[16] and Moser[15].
 The proof of Theorem 3.1 shows the desired results of the paper except for the
-last statement. This requires \ref{uniqthm} of the next section.
+last statement. This requires \Cref{uniqthm} of the next section.
 % The basic idea of Rayleigh quotient minimization is to find the ground state eigenfunction. Another interpretation is that we find the best constant for the imbedding $H^1 \to L^4$.
