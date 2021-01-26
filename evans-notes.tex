@@ -1,0 +1,180 @@
+\chapter{Notes on Evans Chapter 5}
+
+\section{Introduction}
+\beel[itemize]
+@ Sobolev spaces are often the proper settings to apply ideas of functional
+analysis to glean information concerning PDE.
+@ The intention is to take various specific PDE and recast them as operators
+acting on appropriate linear spaces.
+@ We write $A~:~X\to Y$, where operator $A$ encodes the structure of the partial
+differential equations, including possibly boundary conditions etc., and $X$ and
+$Y$ are function spaces.
+@ This results in being able to apply general and elegant principles of
+functional analysis (Appendix D) to study the solvability of various equations
+involving $A$.
+@ The hard work is in finding the right spaces $X$, $Y$ and the right abstract
+operators $A$.
+@ Sobolev spaces are designed to make this work out properly and are usually
+chosen for $X$, $Y$.
+@ Chapters 6-7 study linear elliptic, parabolic and hyperbolic PDE and Chapters
+8-9 study nonlinear elliptic and parabolic PDE.
+@ Readers may wish to study Appendix D before going further.
+\eeel
+
+\newcommand{\seq}[1]{\ensuremath{\big\{#1_k\big\}_{k=1}^\infty}}
+\newcommand{\subseq}[1]{\ensuremath{\big\{{#1_k}_j\big\}_{j=1}^\infty}}
+\section{Appendix D}
+\subsection{Banach spaces}
+Let $X$ denote a real linear space.
+\beeli
+@ Define a mapping $\norm{\phantom{u}}~:~X\to[0,\infty)$ as a norm if
+@@ (i) $\norm{u+v} \leq \norm{u}+\norm{v}$
+@@ (ii) $\norm{\lambda u}=|\lambda|\norm{u}~\text{for all}~u\in X, \lambda\in \R$,
+@@ (iii) $\norm{u} = 0~\text{if and only if}~u=0$.
+Hereafter we assume $X$ is a normed linear space.
+
+@ We say a sequence $\seq{u}\subset X$ converges to $u\in X$,
+written $u_k\to u$, if $\lim_{k\to\infty}\norm{u_k-u}=0.$
+@ (i) A sequence $\seq{u}\subset X$ is called a Cauchy sequence provided for each
+$\epsilon > 0$ there exists $N>0$ such that
+$$\norm{u_k-u_l}<\epsilon\quad\text{for all}~k,l\geq N.$$
+@ (ii) $X$ is complete if each Cauchy sequence in $X$ converges; that is,
+whenever $\seq{u}$ is a Cauchy sequence, there exists $u\in X$ such that
+\seq{u} converges to $u$.
+@ (iii) A Banach space $X$ is a complete, normed linear space.
+@ We say $X$ is separable if $X$ a countable dense subset.
+@ Examples
+@@ (i) $L^p$ spaces. Assume $U$ is an open subset of $\R^n$ and $1\leq
+p\leq\infty$. If $f:U\to\R$ is measurable, we define
+\begin{equation*}\norm{f}_{L^p(U)}\coloneqq\begin{cases} \left(\int_U |f|^p \diff
+    x\right)^{1/p}~&\text{if}~1\leq p<\infty,\\
+\esssup_U~|f|~&\text{if}~p=\infty.\end{cases}\end{equation*}
+
+We define $L^p(U)$ to be the linear space of all measurable functions $f:U\to\R$
+for which $\norm{f}_{L^p(U)}<\infty$. Then $L^p(U)$ is a Banach space, provided
+we identify two functions which agree a.e.
+@@ (ii) H\"older spaces.
+@@ (iii) Sobolev spaces.
+\eeel
+\subsection{Hilbert spaces}
+Let $H$ be a real linear space.
+
+\beeli
+@ A mapping $(\ ,\ ):H\times H\to \R$ is called an inner product if
+@@ (i) $(u, v) = (v, u)$ for all $u,v\in H$,
+@@ (ii) the mapping $u\mapsto (u,v)$ is linear for each $v\in H$,
+@@ (iii) $(u,u)\geq 0$ for all $u\in H$,
+@@ (iv) $(u,u)=0$ if and only if $u=0$.
+
+@ If $(\ ,\ )$ is an inner product, the associated norm is
+\be\label{ipnorm} \norm{u}\coloneqq (u,u)^{1/2}\quad(u\in H).\ee
+The Cauchy-Schwarz inequality states
+\be\label{csineq} |(u,v)|\leq\norm{u}\norm{v}\quad(u,v\in H).\ee
+This inequality is proved as in Appendix B.2. Using \eqref{csineq}, we easily
+verify \eqref{ipnorm} defines a norm on $H$.
+@ A Hilbert space $H$ is a Banach space endowed with an inner product which
+generates the norm.
+@ Examples
+@@ The space $L^2(U)$ is a Hilbert space, with $$(f,g)=\int_U fg\diff x.$$
+@@ The Sobolev space $H^1(U)$ is a Hilbert space, with $$(f,g)=\int_U fg+Df\cdot
+Dg\diff x.$$
+@ (i) Two elements $u,v\in H$ are orthogonal if $(u,v)=0$.
+@ (ii) A countable $\seq{w}\subset H$ is called orthonormal if
+$$\begin{cases}(w_k,w_l)=0 & (k,l=1,\ldots;k\neq l)\\\norm{w_k}=1 &
+    (k=1,\ldots).\end{cases}$$
+    if $u\in H$ and $\seq{w}\subset H$ is an orthonormal basis, we can write $$
+    u=\sum_{k=1}^\infty(u,w_k)w_k,$$ the series converging in $H$. In addition
+    $$\norm{u}^2=\sum_{k=1}^\infty(u,w_k)^2.$$
+    @ If $S$ is a subspace of $H$, $S^\perp=\left\{u\in
+    H\middle|(u,v)=0~\text{for all}~v\in S\right\}$ is the subspace orthogonal
+    to $S$.
+\eeel
+
+\subsection{Bounded linear operators.}
+\subsubsection{Linear operators on Banach spaces.}
+Let $X$ and $Y$ be real Banach spaces.
+
+\beeli
+@ (i) A mapping $A:X\to Y$ is a linear operator provided $$A[\lambda u+\mu v] =
+\lambda Au + \mu Av$$ for all $u, v\in X,\lambda,\mu\in\R$.
+@ (ii) The range of $A$ is $R(A)\coloneqq\left\{v\in Y\middle|v=Au~\text{for
+some}u\in X\right\}$ and the null space of $A$ is $N(A)\coloneqq\left\{u\in
+X\middle| Au=0\right\}$.
+@ A linear operator $A:X\to Y$ is bounded if
+$$\norm{A}\coloneqq\sup\left\{\norm{Au}_Y\middle|\norm{u}_X\leq
+1\right\}<\infty.$$ It is easy to check that a bounded linear operator on
+$A:X\to Y$ is continuous.
+@ A linear operator $A:X\to Y$ is called closed if whenever $u_k\to u$ in $X$
+and $Au_k\to v$ in $Y$, then $$Au=v.$$
+@ Thoerem 1 (Closed Graph Theorem). Let $A:X\to Y$ be a closed, linear operator.
+Then $A$ is bounded.
+@ Let $A:X\to X$ be a bounded linear operator.
+@@ (i) The resolvent set of $A$ is $$\rho(A)=\left\{\eta\in\R\middle|(A-\eta
+I)~\text{is one-to-one and onto}\right\}.$$
+@@ (ii) The spectrum of $A$ is $$\sigma(A)=\R-\rho(A).$$
+If $\eta\in\rho(A)$, the Closed Graph Theorem then implies that the inverse
+$(A-\eta I)^{-1}:X\to X$ is a bounded linear operator.
+@ (i) We say $\eta\in\sigma(A)$ is an eigenvalue of $A$ provided $$N(A-\eta
+I)\neq\varnothing.$$ We write $\sigma_p(A)$ to denote the collection of
+eigenvalues; $\sigma_p(A)$ is the point spectrum.
+@ (ii) If $\eta$ is an eigenvalue and $w\neq 0$ satisfies $$Aw=\eta w,$$ we say
+$w$ is an associated eigenvector (of $\eta$).
+@ (i) A bounded linear operator $u^\ast:X\to\R$ is called a bounded linear
+functional on $X$.
+@ (ii) We write $X^\ast$ to denote the collection of all bounded linear
+functionals on $X$; $X^\ast$ is the dual space of $X$.
+@ (i) If $u\in X$,$u^\ast\in X^\ast$ we write $$\langle u^\ast,u\rangle$$ to
+denote the real number $u^\ast(u)$. The symbol $\langle\cdot{,}\rangle$ denotes
+the pairing of $X^\ast$ and $X$.
+@ (ii) We define
+$$\norm{u^\ast}\coloneqq\sup\left\{\langle u^\ast,u\rangle\;\middle|\;\norm{u}\leq
+1\right\}.$$
+@ (iii) A Banach space is reflexive if $(X^\ast)^\ast=X$. More precisely, this
+means that for each $u^{\ast\ast}\in(X^\ast)^\ast$, there exists $u\in X$ such
+that $$\langle u^{\ast\ast},u^\ast\rangle=\langle u^\ast,u\rangle\quad\text{for
+all}u^\ast\in X^\ast.$$
+\eeel
+\subsubsection{Linear operators on Hilbert spaces.}
+\beeli
+@ Now let $H$ be a real Hilbert space, wih inner product $(\cdot{,}\cdot)$.
+@ Theorem 2 (Riesz Representation Theorem). $H^\ast$ can be canonically
+identified with $H$; more precisely, for each $u^\ast\in H^\ast$ there exists a
+unique element $u\in H$ such that $$\langle u^\ast,v\rangle=(u,v)\quad\text{for
+all}v\in H.$$ The mapping $u^\ast\mapsto u$ is a linear isomorphism of $H^\ast$
+onto $H$.
+@ (i) If $A:H\to H$ is bounded, linear operator, its adjoint $A^\ast :H\to H$
+satisfies $$(Au,v)=(u,A^\ast v)$$ for all $u,v\in H$. 
+@ (ii) $A$ is symmetric if $A^\ast=A$.
+\eeel
+\subsection{Weak convergence}
+\newcommand{\wto}{\rightharpoonup}
+\beeli
+@ Let $X$ denote a real Banach space.
+@ We say a sequence $\seq{u}\subset X$ converges weakly to $u\in X$ written
+$$u_k\rightharpoonup u,$$ if
+$$\langle u^\ast,u_k\rangle\to\langle u^\ast,u\rangle$$ for each bounded linear
+function $u^\ast\in X^\ast$.
+@ It is easy to check that if $u_k\to u$, then $u_k\rightharpoonup u$. It is
+also true that any weakly convergent sequence is bounded. In addition,
+$u_k\rightharpoonup u$, then $$\norm{u}\leq \liminf_{k\to\infty}\norm{u_l}.$$
+@ Theorem 3 (Weak compactness). Let $X$ be a reflexive Banach space and suppose
+the sequence $\seq{u}\subset X$ is bounded. Then there exists a subsequence
+$\subseq{u}\subset\seq{u}$ and $u\in X$ such that $${u_k}_j\wto u.$$
+@ In other words, bounded sequences in a reflexive Banach space are weakly
+precompact. In particular, a bounded sequence in a Hilbert space contains a
+weakly convergent subsequence.
+@ Mazur's Theorem asserts that a convex, closed subset of $X$ is weakly closed.
+\eeel
+
+\rd{Skipped last of Appendix D}
+
+\section{H\"older spaces}
+Assume $U\subset\R^n$ is open and $0<\gamma\leq 1.$ We have previously
+considered the class of Lipschitz continuous functions $u:U\to \R$, which by
+definition sastisfy the estimate \be\label{lipschitz}|u(x)-u(y)|\leq
+C|x-y|~(x,y\in U)\ee for some $C$. Now \eqref{lipschitz} of course implies $u$
+is continuous and more importantly provides a uniform modulus of continuity. It
+turns out to be useful to consider also functions $u$ satisfying a variant of
+\eqref{lipschitz}, namely \be\label{hoelder}|u(x)-u(y)|\leq
+C|x-y|^\gamma~(x,y\in U)\ee for some $0<\gamma\leq 1$ and a constant $C$.
+Such a function is said to be H\"older continuous with exponent $\gamma$.

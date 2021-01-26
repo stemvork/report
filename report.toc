@@ -23,5 +23,15 @@
 \contentsline {section}{\numberline {3.3}Minimisation of $J$}{16}{section.3.3}%
 \contentsline {section}{\numberline {3.4}Uniqueness theorem}{19}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Derivation of equation for radially symmetric solutions}{23}{subsection.3.4.1}%
-\contentsline {chapter}{Bibliography}{25}{appendix*.14}%
+\contentsline {chapter}{\numberline {4}Notes on Evans Chapter 5}{25}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction}{25}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Appendix D}{25}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Banach spaces}{25}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Hilbert spaces}{26}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Bounded linear operators.}{27}{subsection.4.2.3}%
+\contentsline {subsubsection}{Linear operators on Banach spaces.}{27}{subsection.4.2.3}%
+\contentsline {subsubsection}{Linear operators on Hilbert spaces.}{28}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Weak convergence}{28}{subsection.4.2.4}%
+\contentsline {section}{\numberline {4.3}H\"older spaces}{29}{section.4.3}%
+\contentsline {chapter}{Bibliography}{31}{appendix*.14}%
 \contentsfinish 

@@ -5,6 +5,7 @@
 \usepackage{natbib}
 \usepackage{changes}
 \DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n} % fix the math font
+\DeclareMathOperator*{\esssup}{ess\,sup}
 
 \usepackage[f]{esvect} % for nicer vectors
 \usepackage{mathtools} % for coloneqq
@@ -17,14 +18,17 @@
 
 % review
 \usepackage{empheq} % for certain equation layouts
-% \usepackage{physics} % for absolute values
+% \usepackage{physics} % for absolute values and norms
 \usepackage{commath} % for easier derivatives
+\usepackage{etoolbox}
+\AtBeginEnvironment{easylist}{\ListProperties(Start1=1)}
 
 % \usepackage{biblatex}
 
 % easylist
 \usepackage[at]{easylist}
 \newcommand{\beel}{\begin{easylist}}
+\newcommand{\beeli}{\begin{easylist}[itemize]}
 \newcommand{\eeel}{\end{easylist}}
 \usepackage{enumerate}
 
@@ -159,6 +163,7 @@ claim:}\space#1}{\leavevmode\unskip\penalty9999
 \input{chapter-1}
 \input{chapter-2}
 \input{chapter-3}
+\input{evans-notes}
 
 %% Use letters for the chapter numbers of the appendices.
 \appendix
