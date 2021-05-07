@@ -8,7 +8,7 @@
 \newif\if@roman
 \@romantrue
 %\newif\if@whitetitle
-% \newif\if@whitelogo
+\newif\if@whitelogo
 \DeclareOption{dutch}{\@dutchtrue\@englishfalse}
 \DeclareOption{roman}{\@romantrue}
 \DeclareOption{noroman}{\@romanfalse}
@@ -16,7 +16,7 @@
 \DeclareOption{nativefonts}{\@nativefontstrue}
 \DeclareOption{print}{\@printtrue}
 %\DeclareOption{whitetitle}{\@whitetitletrue}
-% \DeclareOption{whitelogo}{\@whitelogotrue}
+\DeclareOption{whitelogo}{\@whitelogotrue}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ExecuteOptions{english}
 \ProcessOptions\relax
@@ -184,10 +184,10 @@
         Extension = .ttf
     ]{CambriaMath}
     %% The default style for text is Tahoma (sans-serif).
-    %% \setlength\@largetitlesize{96pt}
     \renewcommand*\familydefault{\sfdefault}
     %% The default style for titles is Bookman Old Style (serif). 
     \def\titlefont{\tudsffamily}
+    \def\@largetitlesize{96pt}
     \def\largetitlefont{\tudtitlefamily}
     \def\titleshape{}
     \def\largetitleshape{\titleshape}
@@ -242,7 +242,7 @@
 \if@print
    \colorlet{title}{black}
 \else
-    \colorlet{title}{tudelft-cyan}
+   \colorlet{title}{tudelft-cyan}
 \fi
 
 %% We use A4 paper with slightly smaller margins than the default (scale = 0.7).
@@ -448,21 +448,25 @@
           \node at (front top left)[anchor=north west,inner sep=\@cover@margin]{
              \begin{minipage}[t][\@cover@fronttextheight]{\@cover@fronttextwidth}
                  %% Print the title and optional subtitle at the top in white.
-                   {\titlefont\color{\@titlecolor}\fontsize{58}{58}\selectfont\@title}
+                   %% {\titlestyle\color{\@titlecolor}\fontsize{34}{34}\selectfont\@title}
+                   {\largetitlestyle\color{\@titlecolor}\fontsize{34}{34}\selectfont\@title}
                     \ifx\@subtitle\undefined\else
 %                     \\[3mm]
                      \vfill
                      
-                     {\titlefont\color{\@subtitlecolor}\fontsize{52}{52}\selectfont\@subtitle}
+                     %% {\titlefont\color{\@subtitlecolor}\fontsize{34}{34}\selectfont\@subtitle}
+                     {\largetitlestyle\color{\@titlecolor}\fontsize{34}{34}\selectfont\@subtitle}
                    \fi
                  %% Print the author.
                    \vfill
                   
-                   {\titlefont\color{\@authorcolor}\fontsize{52}{52}\selectfont\@author}
+                   %% {\titlefont\color{\@authorcolor}\fontsize{34}{34}\selectfont\@author}
+                   {\largetitlestyle\color{\@titlecolor}\fontsize{34}{34}\selectfont\@author}
                    \ifx\@cover@text\undefined\else
                      \vfill
                      
-                     {\titlefont\color{\@covertextcolor}\fontsize{18}{18}\selectfont\@cover@text}
+                       %% {\titlefont\color{\@covertextcolor}\fontsize{18}{18}\selectfont\@cover@text}
+                       {\largetitlestyle\color{\@titlecolor}\fontsize{18}{18}\selectfont\@cover@text}
                    \fi
              \end{minipage}
             };

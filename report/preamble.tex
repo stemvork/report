@@ -2,6 +2,7 @@
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{naturalnames}{hyperref}
 
+%\documentclass[whitelogo]{tudelft-report}
 \documentclass{tudelft-report}
 
 \usepackage{natbib}
@@ -23,6 +24,7 @@
 \usepackage{empheq} % for certain equation layouts
 % \usepackage{physics} % for absolute values and norms
 % \usepackage{commath} % for easier derivatives
+\usepackage{custom}
 \usepackage{etoolbox}
 \AtBeginEnvironment{easylist}{\ListProperties(Start1=1)}
 
@@ -107,73 +109,3 @@ claim:}\space#1}{\leavevmode\unskip\penalty9999
 \newcommand{\green}{\color{darkpastelgreen}}
 
 \DeclareMathOperator{\grad}{grad}
-\begin{document}
-
-%% Use Roman numerals for the page numbers of the title pages and table of
-%% contents.
-\frontmatter
-
-%% Uncomment following 19 lines for a cover with a picture on the lower half only
-%\title[tudelft-white]{Title}
-%\subtitle[tudelft-cyan]{Optional subtitle}
-%\author[tudelft-white]{J.\ Random Author}
-%\affiliation{Technische Universiteit Delft}
-%\coverimage{cover.jpg}
-%\titleoffsetx{10cm}
-%\titleoffsety{10cm}
-%\afiloffsetx{1cm}
-%\afiloffsety{18cm}
-%\covertext[tudelft-white]{
-%    \textbf{Cover Text} \\
-%    possibly \\
-%    spanning 
-%    multiple 
-%    lines
-%    \vfill
-%    ISBN 000-00-0000-000-0
-%}
-%\makecover
-
-%% Uncomment following 16 lines for a cover with a picture on the lower half only
-\title[tudelft-white]{On Existence and Uniqueness Results for some Nonlinear Schr\"odinger equations}
-%% \subtitle[tudelft-black]{Optional subtitle}
-\author[tudelft-white]{J.S. Eenhoorn}
-\affiliation{Technische Universiteit Delft}
-\coverimage{tank.jpg}
-\covertext[tudelft-white]{
-    \textbf{Cover Text} \\
-    possibly \\
-    spanning 
-    multiple 
-    lines
-    \vfill
-    ISBN 000-00-0000-000-0
-}
-\setpagecolor{tudelft-cyan}
-\makecover[split]
-
-
-%% Include an optional title page.
-\input{title}
-
-% \input{preface}
-
-\tableofcontents
-
-%% Use Arabic numerals for the page numbers of the chapters.
-\mainmatter
-
-\input{chapter-1}
-\input{chapter-2}
-\input{chapter-3}
-\input{evans-notes}
-
-%% Use letters for the chapter numbers of the appendices.
-\appendix
-
-%\input{appendix-a}
-
-\bibliography{report}
-
-\end{document}
-
