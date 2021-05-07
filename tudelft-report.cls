@@ -184,7 +184,7 @@
         Extension = .ttf
     ]{CambriaMath}
     %% The default style for text is Tahoma (sans-serif).
-    \setlength\@largetitlesize{96pt}
+    %% \setlength\@largetitlesize{96pt}
     \renewcommand*\familydefault{\sfdefault}
     %% The default style for titles is Bookman Old Style (serif). 
     \def\titlefont{\tudsffamily}
@@ -239,11 +239,11 @@
 
 %% Use TU Delft cyan as the color for titles, unless the 'print' option is
 %% specified. % JMT changed this: all titles black!
-% \if@print
-    \colorlet{title}{black}
-%\else
-%    \colorlet{title}{tudelft-cyan}
-%\fi
+\if@print
+   \colorlet{title}{black}
+\else
+    \colorlet{title}{tudelft-cyan}
+\fi
 
 %% We use A4 paper with slightly smaller margins than the default (scale = 0.7).
 \geometry{a4paper,hscale=0.75,vscale=0.8}

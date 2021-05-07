@@ -1,11 +1,11 @@
-\babel@toc {english}{}
+\selectlanguage *{english}
 \contentsline {chapter}{\numberline {1}Physics of NLS}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Derive the wave equation from Maxwell}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Validity of plane wave solutions}{1}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Derivation of the Helmholtz equation}{2}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Derivation of the Linear Schr\"odinger equation}{3}{section.1.4}%
 \contentsline {section}{\numberline {1.5}Polarisation field}{4}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Implications of nonlinear polarisation}{5}{section.1.6}%
+\contentsline {section}{\numberline {1.6}Implications of nonlinear polarisation}{4}{section.1.6}%
 \contentsline {section}{\numberline {1.7}Soliton solutions}{5}{section.1.7}%
 \contentsline {chapter}{\numberline {2}Existence of ground state}{7}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Initial value problem and nonlinearity}{7}{section.2.1}%
@@ -31,7 +31,7 @@
 \contentsline {subsection}{\numberline {4.2.3}Bounded linear operators.}{27}{subsection.4.2.3}%
 \contentsline {subsubsection}{Linear operators on Banach spaces.}{27}{subsection.4.2.3}%
 \contentsline {subsubsection}{Linear operators on Hilbert spaces.}{28}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}Weak convergence}{28}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.4}Weak convergence}{29}{subsection.4.2.4}%
 \contentsline {section}{\numberline {4.3}H\"older spaces}{29}{section.4.3}%
 \contentsline {chapter}{Bibliography}{31}{appendix*.14}%
 \contentsfinish 
